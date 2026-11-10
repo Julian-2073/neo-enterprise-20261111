@@ -1,0 +1,64 @@
+URL: http://127.0.0.1:3102/analysis/people?businessId=test-b&dataNature=demo
+Browser tab: 1, Title: "NEO · 增长决策工作台", URL: "http://127.0.0.1:3102/analysis/people?businessId=test-b&dataNature=demo".
+1 AXWebArea NEO · 增长决策工作台, URL: 127.0.0.1:3102/analysis/people?businessId=test-b&dataNature=demo
+	2 container
+		3 link Description: NEO, Value: 127.0.0.1:3102/?businessId=test-b&dataNature=demo
+		4 container 经营导航
+			5 link Description: 今日经营, Value: 127.0.0.1:3102/?businessId=test-b&dataNature=demo
+			6 link Description: 我的客户, Value: 127.0.0.1:3102/analysis/people?businessId=test-b&dataNature=demo
+			7 link Description: 供应链与库存, Value: 127.0.0.1:3102/analysis/goods?businessId=test-b&dataNature=demo
+			8 link Description: 渠道与竞品, Value: 127.0.0.1:3102/analysis/market?businessId=test-b&dataNature=demo
+			9 link Description: 数据导入, Value: 127.0.0.1:3102/data/imports?businessId=test-b&dataNature=demo
+		10 link Description: 演示入口, Value: 127.0.0.1:3102/demo
+	11 container
+		12 text 企业
+		13 pop up button (collapsed, settable) Description: 企业, Value: 本地验收企业 B, Secondary Actions: Expand
+			58 menu
+				59 本地验收企业 A
+				60 (selected) 本地验收企业 B
+		14 text 数据性质
+		15 pop up button (collapsed, settable) Description: 数据性质, Value: 验收样例, Secondary Actions: Expand
+			16 menu
+				17 (selected) 验收样例
+				18 业务导入 · 待业务核实
+		19 text 管理员
+		20 heading 我的客户, Value: 1
+			21 text 我的客户
+		22 container
+			23 text 截至日期
+			24 date field (settable) 截至日期
+				25 container
+					61 stepper
+					62 stepper
+					63 stepper
+				29 pop up button 显示日期选择器 显示日期选择器
+			30 text 统计起日
+			31 date field (settable) 统计起日
+				32 container
+					64 stepper
+					65 stepper
+					66 stepper
+				36 pop up button 显示日期选择器 显示日期选择器
+			37 text 统计止日
+			38 date field (settable) 统计止日
+				39 container
+					67 stepper
+					68 stepper
+					69 stepper
+				43 pop up button 显示日期选择器 显示日期选择器
+			44 text 商品 ID
+			45 text field (settable) 商品 ID
+			46 text 渠道
+			47 text field (settable) 渠道
+			48 button 生成 / 更新快照
+		49 text 默认统计截至日期前的八个完整自然周；库存使用独立截至时点。所有页面读取同一快照。
+		50 heading 尚无经营快照, Value: 2
+			51 text 尚无经营快照
+		52 text 先导入并确认数据，再生成快照。缺失数据不会自动补成演示值。
+		53 link Description: 进入数据导入, Value: 127.0.0.1:3102/data/imports?businessId=test-b&dataNature=demo
+	54 container
+		55 text 数据来自已提交导入记录。来源覆盖与业务真实性需另行核实。
+		56 link Description: 预测与协同, Value: 127.0.0.1:3102/analysis/overview?businessId=test-b&dataNature=demo
+		57 link Description: 周报, Value: 127.0.0.1:3102/reports/weekly?businessId=test-b&dataNature=demo
+
+The focused UI element is 1 AXWebArea NEO · 增长决策工作台, URL: 127.0.0.1:3102/analysis/people?businessId=test-b&dataNature=demo

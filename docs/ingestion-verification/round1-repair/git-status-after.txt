@@ -1,0 +1,39 @@
+ M .openai/hosting.json
+ M AGENTS.md
+ M README.md
+ M app/analysis/goods/page.tsx
+ M app/analysis/market/page.tsx
+ M app/analysis/overview/page.tsx
+ M app/analysis/people/page.tsx
+ M app/api/data/route.ts
+ M app/page.tsx
+ M app/reports/weekly/page.tsx
+ M cloudflare-env.d.ts
+ M components/neo-demo/prototype.tsx
+ M components/neo-demo/shell.tsx
+ M components/neo-demo/weekly-report.tsx
+ M db/schema.ts
+ M drizzle/meta/_journal.json
+ M package-lock.json
+ M package.json
+ M tests/rendered-html.test.mjs
+ M vite.config.ts
+?? app/api/v1/
+?? app/data/
+?? app/demo/
+?? components/business/
+?? docs/api/
+?? docs/ingestion-verification/
+?? "docs/\346\225\260\346\215\256\345\257\274\345\205\245\345\274\200\345\217\221\344\270\216\351\252\214\346\224\266.md"
+?? drizzle/0002_massive_spacker_dave.sql
+?? drizzle/0003_ingestion_invariants.sql
+?? drizzle/0004_yielding_serpent_society.sql
+?? drizzle/meta/0002_snapshot.json
+?? drizzle/meta/0003_snapshot.json
+?? drizzle/meta/0004_snapshot.json
+?? public/import-samples/
+?? public/import-templates/
+?? scripts/
+?? server/
+?? tests/ingestion.test.mjs
+?? tests/workspace-navigation.test.mjs

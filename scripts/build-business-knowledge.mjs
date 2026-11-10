@@ -1,0 +1,8 @@
+import {readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..'),dir=path.join(root,'docs/business-knowledge/research');
+const rules=JSON.parse(await readFile(path.join(dir,'业务关系与规则.json'),'utf8'));const research=JSON.parse(await readFile(path.join(dir,'成熟实践与补全项.json'),'utf8'));
+if(rules.items.length!==30||research.items.length!==50||new Set(rules.items.map(r=>r.id)).size!==30)throw Error('Business knowledge catalog structure changed; review before publishing');
+const src=new Set(research.sources.map(s=>s.id));if(rules.items.some(r=>r.sources.some(s=>!src.has(s))))throw Error('Unknown knowledge source');
+const files=['业务关系与规则.json','成熟实践与补全项.json'];const sourceHashes={};for(const f of files)sourceHashes[f]=createHash('sha256').update(await readFile(path.join(dir,f))).digest('hex');
+const data={version:'neo-business-knowledge-20261006-v1',sourceDate:rules.date,sourceHashes,kind:'REFERENCE_GUIDANCE',enterpriseConfirmation:'unconfirmed',rules:rules.items,practices:research.items.map(({code_paths,...r})=>({...r,codePaths:code_paths.map(p=>p.includes('/growthos-dashboard/')?p.split('/growthos-dashboard/')[1]:p)})),sources:research.sources};
+const digest=createHash('sha256').update(JSON.stringify(data)).digest('hex');await writeFile(path.join(root,'agent-service/neo_agent/business-knowledge.json'),JSON.stringify({...data,digest},null,2)+'\n');console.log(JSON.stringify({version:data.version,rules:data.rules.length,practices:data.practices.length,sources:data.sources.length,digest}));

@@ -1,0 +1,574 @@
+{
+  "date": "2026-10-04",
+  "items": [
+    {
+      "id": "K01",
+      "relationship": "企业→来源→业务主键",
+      "rule": "对象键由企业、资料性质、来源命名空间和外部ID决定；同外部ID跨来源可能不是同对象。",
+      "fields": [
+        "businessId",
+        "dataNature",
+        "sourceNamespace",
+        "externalId",
+        "canonicalId"
+      ],
+      "must_confirm": "跨来源订单和客户的可靠匹配方法",
+      "scope": "全部",
+      "sources": [
+        "S01",
+        "S07"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K02",
+      "relationship": "客户↔外部身份",
+      "rule": "多个身份可指向一客户；一外部身份在同一有效时点应只指一客户，姓名相同不能作为自动合并依据。",
+      "fields": [
+        "customerId",
+        "identityNamespace",
+        "externalId",
+        "effectiveFrom",
+        "effectiveTo",
+        "availableAt"
+      ],
+      "must_confirm": "共享账号、家庭账户、误合并后的拆分处理",
+      "scope": "客户",
+      "sources": [
+        "S07",
+        "S04"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K03",
+      "relationship": "客户→事件→订单",
+      "rule": "聚合事件数量不能还原独立客户；可识别事件与订单在可信身份映射后才进入同群转化。",
+      "fields": [
+        "eventId",
+        "contactId",
+        "orderId",
+        "occurredAt",
+        "productId",
+        "channelId"
+      ],
+      "must_confirm": "匿名覆盖比例、订单身份缺失如何标partial",
+      "scope": "客户",
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K04",
+      "relationship": "订单→明细→SKU",
+      "rule": "一订单可有多明细、同明细多件；订单笔数、明细数、件数、客户数四种指标不可互换。",
+      "fields": [
+        "orderId",
+        "lineId",
+        "skuId",
+        "quantity",
+        "customerId"
+      ],
+      "must_confirm": "组合装、赠品、套装拆分及企业订单",
+      "scope": "销售",
+      "sources": [
+        "S09",
+        "S03"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K05",
+      "relationship": "漏斗步骤→同群体",
+      "rule": "依首次进入起点形成队列，后续阶段按顺序在固定观察窗完成；未成熟客户不是失败客户。",
+      "fields": [
+        "cohortStage",
+        "entryTime",
+        "windowDays",
+        "orderedSteps",
+        "asOf"
+      ],
+      "must_confirm": "起点A1/A2/A3、是否严格有序、观察窗长短",
+      "scope": "客户",
+      "sources": [
+        "S08"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K06",
+      "relationship": "漏斗↔渠道和商品",
+      "rule": "同渠道转化与跨渠道转化是两种问题；漏斗各步过滤规则须保持可解释，不能任意换分母。",
+      "fields": [
+        "channelPolicy",
+        "productPolicy",
+        "stepFilters",
+        "attributionPolicy"
+      ],
+      "must_confirm": "跨商品成交是否计入该商品转化",
+      "scope": "客户/渠道",
+      "sources": [
+        "S08"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K07",
+      "relationship": "支付→退款→净留存客户",
+      "rule": "支付转化与最终保留购买不同。发生过支付的客户不会因后续退款自动从支付历史消失。",
+      "fields": [
+        "paidAt",
+        "refundAt",
+        "refundAmount",
+        "fullyRefunded",
+        "observationWindow"
+      ],
+      "must_confirm": "全退款是否排除、截至时点及新客/老客口径",
+      "scope": "客户/退款",
+      "sources": [
+        "S09",
+        "S08"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K08",
+      "relationship": "A5→复购/评价/推荐",
+      "rule": "复购、评价、推荐分开度量；统一归到A5是产品分类，不能因此认为都是同一种忠诚或获客。",
+      "fields": [
+        "repeatOrderId",
+        "reviewEvent",
+        "referralId",
+        "cohortId"
+      ],
+      "must_confirm": "复购窗口、推荐是否需验证新客成交",
+      "scope": "客户",
+      "sources": [
+        "S26",
+        "S08"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K09",
+      "relationship": "上游事件→成交滞后",
+      "rule": "不同业务的咨询至支付时长不同；旧原型固定滞后一周不应变成通用经营规律。",
+      "fields": [
+        "eventAt",
+        "paidAt",
+        "conversionLagDistribution"
+      ],
+      "must_confirm": "观察期与行业周期，是否有时间完整的身份链",
+      "scope": "客户/预测",
+      "sources": [
+        "S08",
+        "S14"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K10",
+      "relationship": "支付→履约/出库",
+      "rule": "paid证明支付记录，不能独立证明实物出库；支付件数预测和履约需求预测需单独命名。",
+      "fields": [
+        "paymentId",
+        "paidAt",
+        "fulfillmentId",
+        "shippedAt",
+        "shippedQuantity"
+      ],
+      "must_confirm": "预售、延迟发货、拆单和取消是否影响预测目标",
+      "scope": "销售/库存",
+      "sources": [
+        "S09",
+        "S10"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K11",
+      "relationship": "销售额→退款→净成交",
+      "rule": "当前NEO净成交是同期支付金额减同期退款金额；不是自动等同税务收入、Shopify净销售或现金到账。",
+      "fields": [
+        "amountCents",
+        "discount",
+        "tax",
+        "shipping",
+        "refundAt",
+        "settlementAt"
+      ],
+      "must_confirm": "amount是否含税、运费、折扣；采用哪一经营口径",
+      "scope": "金额",
+      "sources": [
+        "S09"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K12",
+      "relationship": "净成交→成本→广告→贡献",
+      "rule": "本项目贡献口径为净成交减变动成本减广告费用；未包含的固定费用和成本使其不能称净利润。",
+      "fields": [
+        "variableCostCents",
+        "spendCents",
+        "costCoverage",
+        "allocationRule"
+      ],
+      "must_confirm": "平台佣金/履约费是否已含成本，是否存在重复扣减",
+      "scope": "金额",
+      "sources": [
+        "S09",
+        "S03"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K13",
+      "relationship": "退款金额↔退货件数↔返库",
+      "rule": "退款可无退货、退货可未退款，返库还取决于验收和是否可售；三个量不可绑成必然同步。",
+      "fields": [
+        "refundType",
+        "refundAmount",
+        "returnedUnits",
+        "restockedSellableUnits"
+      ],
+      "must_confirm": "主模板quantity>0需兼容金额型退款，破损如何计价",
+      "scope": "退款/库存",
+      "sources": [
+        "S09",
+        "S10"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K14",
+      "relationship": "费用→渠道/商品分摊",
+      "rule": "费用有成交、触点、成本三种关联；未归属商品的费用不能忽略后称该商品完整贡献。",
+      "fields": [
+        "costChannel",
+        "campaignId",
+        "productId",
+        "allocatedAmount",
+        "allocationVersion"
+      ],
+      "must_confirm": "采用直接关联还是已确认分摊；余项如何保留",
+      "scope": "费用",
+      "sources": [
+        "S03",
+        "S12"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K15",
+      "relationship": "SKU→仓库→库存观测",
+      "rule": "库存是状态而非流水；按SKU×仓库取时点最新可用观测，不能把连续多天库存相加。",
+      "fields": [
+        "skuId",
+        "warehouseId",
+        "observedAt",
+        "availableAt",
+        "state",
+        "units"
+      ],
+      "must_confirm": "盘点与系统库存不一致时优先级和新鲜度要求",
+      "scope": "库存",
+      "sources": [
+        "S10",
+        "S04"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K16",
+      "relationship": "在库→可售/承诺占用/不可售",
+      "rule": "可售不含在途；输入可售若已扣占用，推演不能再扣同一占用一次。",
+      "fields": [
+        "onHand",
+        "available",
+        "committed",
+        "reserved",
+        "damaged",
+        "incoming"
+      ],
+      "must_confirm": "源系统的sellable定义及安全库存是否已预留",
+      "scope": "库存",
+      "sources": [
+        "S10"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K17",
+      "relationship": "渠道↔共享仓库库存",
+      "rule": "两个渠道可以竞争同一SKU库存；筛一个渠道时不能假定其他渠道不占用库存。",
+      "fields": [
+        "skuId",
+        "warehouseId",
+        "channelAllocation",
+        "reservations",
+        "priority"
+      ],
+      "must_confirm": "分配规则、共享/专属库存、其他渠道占用量",
+      "scope": "库存/渠道",
+      "sources": [
+        "S10",
+        "S01"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K18",
+      "relationship": "到货计划→实际收货→可售",
+      "rule": "ETA是计划，收货是事实，质检后才可能可售；取消和改ETA应留版本，不能把计划当已收货。",
+      "fields": [
+        "planId",
+        "status",
+        "plannedEta",
+        "receivedAt",
+        "acceptedUnits",
+        "knownAt"
+      ],
+      "must_confirm": "运输、采购、收货、质检的提前期与状态转移",
+      "scope": "供给",
+      "sources": [
+        "S10",
+        "S11"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K19",
+      "relationship": "仓间调拨→数量/成本守恒",
+      "rule": "同批调拨减少源仓、增加目的仓，总件数不凭空增加；运输中另有在途状态与费用。",
+      "fields": [
+        "transferId",
+        "sourceWarehouse",
+        "destWarehouse",
+        "units",
+        "cost",
+        "receivedAt"
+      ],
+      "must_confirm": "起运与入库是否跨日，损耗及费用归属",
+      "scope": "供给",
+      "sources": [
+        "S10"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K20",
+      "relationship": "备货目标→安全库存/Min-Max",
+      "rule": "人工目标和统计安全库存不同；先维护目标、提前期和来源，数据充分后再估需求波动。",
+      "fields": [
+        "minimumUnits",
+        "maximumUnits",
+        "leadTime",
+        "serviceLevel",
+        "ruleVersion"
+      ],
+      "must_confirm": "实际服务水平、MOQ/包装倍数、采购与资金约束",
+      "scope": "供给",
+      "sources": [
+        "S11"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K21",
+      "relationship": "货盘角色→达标分子/分母",
+      "rule": "按SKU还是SKU×仓评价必须先定；跨仓同SKU若按SKU口径只能计一次；无观测不是零库存。",
+      "fields": [
+        "roleId",
+        "eligibleSkuIds",
+        "threshold",
+        "observedCoverage",
+        "ruleEffectiveFrom"
+      ],
+      "must_confirm": "新SKU是否进入分母，角色多重归属及货盘目标",
+      "scope": "供给",
+      "sources": [
+        "S03",
+        "S10"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K22",
+      "relationship": "历史销量→潜在需求/缺货",
+      "rule": "缺货可能截断销量，替代品销量也可能上升；零销量不能直接解释为零需求。",
+      "fields": [
+        "stockoutAt",
+        "lostDemandAttempt",
+        "substituteSku",
+        "availabilityHistory"
+      ],
+      "must_confirm": "有没有缺货时段或尝试购买数据；不能无证据恢复需求",
+      "scope": "预测/供给",
+      "sources": [
+        "S28"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K23",
+      "relationship": "广告归因→增量成交",
+      "rule": "归因回答触点如何获得记账贡献，增量回答没有广告时会不会发生；ROAS与iROAS分开。",
+      "fields": [
+        "attributionWindow",
+        "exposure",
+        "controlAssignment",
+        "incrementalValue"
+      ],
+      "must_confirm": "试点对照设计、足够样本、转换滞后和观察范围",
+      "scope": "渠道/情景",
+      "sources": [
+        "S12",
+        "S22"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K24",
+      "relationship": "价格/促销→销量/商品替代",
+      "rule": "价格变化需固定规格和净价；短期增长可能是跨商品替代或提前购买，不能一项增加就算企业净增加。",
+      "fields": [
+        "netPrice",
+        "promoPeriod",
+        "comparableSku",
+        "otherSkuSales",
+        "postPeriod"
+      ],
+      "must_confirm": "本企业价格弹性、促销后期、库存/费用和交叉替代",
+      "scope": "情景",
+      "sources": [
+        "S13",
+        "S29"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K25",
+      "relationship": "外部事件→日期/适用范围",
+      "rule": "发布日、发生日和抓取日不同；能读原文只证明取得资料，事实及适用性仍须核查。",
+      "fields": [
+        "eventDate",
+        "publishedAt",
+        "retrievedAt",
+        "region",
+        "entity",
+        "quoteLocation",
+        "status"
+      ],
+      "must_confirm": "政策/价格事件生效日、来源可靠性及是否重复转载",
+      "scope": "市场",
+      "sources": [
+        "S23",
+        "S13"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K26",
+      "relationship": "指标同期变化→因果假说",
+      "rule": "渠道热度、促销、销量与库存可能共同受季节等影响；外部变化应先形成假说与反证。",
+      "fields": [
+        "candidateCause",
+        "temporalOrder",
+        "confounders",
+        "alternatives",
+        "testPlan"
+      ],
+      "must_confirm": "哪些变量影响投放决策、是否控制了中介变量",
+      "scope": "市场/诊断",
+      "sources": [
+        "S13"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K27",
+      "relationship": "业务发生时间↔系统可知时间",
+      "rule": "当时可知的未来计划可用，当时未知的历史资料不能加入当时回测；源历史时间不能替代系统入库时间。",
+      "fields": [
+        "effectiveFrom",
+        "effectiveTo",
+        "occurredAt",
+        "availableAt",
+        "asOf",
+        "knownAt"
+      ],
+      "must_confirm": "客户提供的历史知悉记录能否核验；没有时只能事件日回放",
+      "scope": "数据/回测",
+      "sources": [
+        "S04",
+        "S14"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K28",
+      "relationship": "预测→情景→选择→实际结果",
+      "rule": "点预测、假设范围、概率区间、老板选择、实际观察五类记录分开；比较固定输入与计算版本。",
+      "fields": [
+        "forecastId",
+        "scenarioId",
+        "decisionId",
+        "inputHash",
+        "calculationVersion",
+        "actualWindow"
+      ],
+      "must_confirm": "作用参数证据与观察设计，保存选择不意味着执行",
+      "scope": "决策",
+      "sources": [
+        "S14",
+        "S15",
+        "S22"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K29",
+      "relationship": "酒店预订→入住日×房型房晚",
+      "rule": "预订日决定何时收到消息，入住日决定库存到期；pickup、取消、未到店、维修停用房需分别记录。",
+      "fields": [
+        "bookedAt",
+        "stayDate",
+        "roomType",
+        "onBooks",
+        "pickup",
+        "cancellations",
+        "outOfOrder"
+      ],
+      "must_confirm": "售房与入住分母、ADR收入范围、渠道佣金与房晚成本",
+      "scope": "酒店原型；非当前零售主线",
+      "sources": [
+        "S24",
+        "S25"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    },
+    {
+      "id": "K30",
+      "relationship": "画廊作品→所有权/寄售→成交",
+      "rule": "作品可为单件或限量版；保管位置不等于所有权；寄售全成交额与画廊佣金收入不可直接混同。",
+      "fields": [
+        "artworkId",
+        "edition",
+        "ownerId",
+        "consignmentContract",
+        "location",
+        "commissionRule"
+      ],
+      "must_confirm": "合同与收入口径需业务材料确认；此项为行业适配假设",
+      "scope": "画廊旧原型；未建立真实业务规则",
+      "sources": [
+        "S01",
+        "S09"
+      ],
+      "status": "知识补全建议；商户规则仍需确认"
+    }
+  ]
+}

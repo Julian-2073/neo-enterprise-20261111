@@ -1,0 +1,1 @@
+ALTER TABLE `ontology_builds` ADD `generation_id` text REFERENCES neo_business_generations(id);

@@ -1,0 +1,200 @@
+URL: http://127.0.0.1:3102/data/imports?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+Browser tab: 1, Title: "NEO · 增长决策工作台", URL: "http://127.0.0.1:3102/data/imports?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8".
+1 AXWebArea NEO · 增长决策工作台, URL: 127.0.0.1:3102/data/imports?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+	2 container
+		3 link Description: NEO, Value: 127.0.0.1:3102/?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+		4 container 经营导航
+			5 link Description: 今日经营, Value: 127.0.0.1:3102/?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+			6 link Description: 我的客户, Value: 127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+			7 link Description: 供应链与库存, Value: 127.0.0.1:3102/analysis/goods?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+			8 link Description: 渠道与竞品, Value: 127.0.0.1:3102/analysis/market?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+			9 link Description: 数据导入, Value: 127.0.0.1:3102/data/imports?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+		10 link Description: 演示入口, Value: 127.0.0.1:3102/demo
+		11 container
+			12 text 企业
+			13 pop up button (collapsed, settable) Description: 企业, Value: 本地验收企业 A, Secondary Actions: Expand
+				14 menu
+					15 (selected) 本地验收企业 A
+					16 本地验收企业 B
+		17 container
+			18 text 数据性质
+			19 pop up button (collapsed, settable) Description: 数据性质, Value: 验收样例, Secondary Actions: Expand
+				20 menu
+					21 (selected) 验收样例
+					22 业务导入 · 待业务核实
+		23 text 管理员
+		24 heading 数据导入, Value: 1
+			25 text 数据导入
+		26 text 先校验预览，再确认入库。每文件最多 1,000 条、1 MiB；仅接收 UTF-8 标准 CSV。
+		27 container
+			28 container
+				29 text 模板
+				30 pop up button (collapsed, settable) Description: 模板, Value: 经营事件, Secondary Actions: Expand
+					31 menu
+						32 (selected) 经营事件
+						33 订单与退款
+						34 库存快照
+						35 渠道投放费用
+			36 container
+				37 text 来源名称
+				38 text field (settable) Description: 来源名称, Value: NEO 本地验收样例
+			39 container
+				40 text 覆盖起日
+				41 date field (settable) Description: 覆盖起日, Value: 2026-09-01
+					42 container
+						182 stepper
+						183 stepper
+						184 stepper
+					46 pop up button 显示日期选择器 显示日期选择器
+			47 container
+				48 text 覆盖止日
+				49 date field (settable) Description: 覆盖止日, Value: 2026-09-02
+					50 container
+						185 stepper
+						186 stepper
+						187 stepper
+					54 pop up button 显示日期选择器 显示日期选择器
+			55 container
+				56 text CSV 文件
+				57 button CSV 文件
+			58 button 上传并校验
+			59 text 行为次数；支持 A1–A3 与 A5，不接收累计快照、订单或费用。
+			60 link Description: 下载标准模板, Value: 127.0.0.1:3102/api/v1/import-templates/events?businessId=test-a&dataNature=demo&format=csv
+			61 link Description: 下载隔离验收样例, Value: 127.0.0.1:3102/import-samples/demo-events.csv
+			62 button 校验此模板的验收样例
+			63 text 覆盖日期由数据提供者声明。相同来源名称应持续复用，订单退款须使用原订单来源。
+		188 container
+			189 heading 批次预览：repair-add-seven.csv, Value: 2
+				190 text 批次预览： repair-add-seven.csv
+			191 text 可确认入库  ·  1  条 · 重复  0  条 · 校验版本  1
+			192 button 确认入库并更新看板
+			193 link Description: 下载原文件, Value: 127.0.0.1:3102/api/v1/ingestion-batches/8eeb1586-fd4b-4e70-9e85-8782bd027a9d/file?businessId=test-a&dataNature=demo
+			194 link Description: 下载错误报告, Value: 127.0.0.1:3102/api/v1/ingestion-batches/8eeb1586-fd4b-4e70-9e85-8782bd027a9d/issues?businessId=test-a&dataNature=demo&format=csv
+			195 link Description: 查看经营看板, Value: 127.0.0.1:3102/?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+			196 heading 有效记录预览, Value: 3
+				197 text 有效记录预览
+			198 text 存在错误时，下面的有效行也不会被部分入库。
+			199 button (collapsed) 第 2 条, Secondary Actions: Expand
+				200 text 第 
+				201 text 2
+				202 text  条
+		64 container
+			65 container
+				66 text 截至日期
+				67 date field (settable) Description: 截至日期, Value: 2026-09-02
+					68 container
+						69 stepper
+						70 stepper
+						71 stepper
+					72 pop up button 显示日期选择器 显示日期选择器
+			73 container
+				74 text 统计起日
+				75 date field (settable) Description: 统计起日, Value: 2026-09-01
+					76 container
+						77 stepper
+						78 stepper
+						79 stepper
+					80 pop up button 显示日期选择器 显示日期选择器
+			81 container
+				82 text 统计止日
+				83 date field (settable) Description: 统计止日, Value: 2026-09-02
+					84 container
+						85 stepper
+						86 stepper
+						87 stepper
+					88 pop up button 显示日期选择器 显示日期选择器
+			89 container
+				90 text 商品 ID
+				91 text field (settable) 商品 ID
+			92 container
+				93 text 渠道
+				94 text field (settable) 渠道
+			95 button 生成 / 更新快照
+			96 text 默认统计截至日期前的八个完整自然周；库存使用独立截至时点。所有页面读取同一快照。 快照  snap-aa67f4067707  ·  2026-09-01  至  2026-09-02  · 截至  2026-09-02  · Asia/Shanghai
+		97 container
+			98 heading 导入历史, Value: 2
+				99 text 导入历史
+			100 table
+				122 row
+					123 cell
+						124 text 文件
+					125 cell
+						126 text 性质
+					127 cell
+						128 text 类型
+					129 cell
+						130 text 状态
+					131 cell
+						132 text 新增
+					133 cell
+						134 text 重复
+				203 row
+					204 cell
+						205 button repair-add-seven.csv
+					206 cell
+						207 text 验收样例
+					208 cell
+						209 text 经营事件
+					210 cell
+						211 text 可确认入库
+					212 cell
+						213 text 0
+					214 cell
+						215 text 0
+				101 row
+					102 cell
+						103 button demo-expenses.csv
+					135 cell
+						136 text 验收样例
+					137 cell
+						138 text 渠道投放费用
+					139 cell
+						140 text 已入库
+					141 cell
+						142 text 1
+					143 cell
+						144 text 0
+				104 row
+					105 cell
+						106 button demo-inventory.csv
+					145 cell
+						146 text 验收样例
+					147 cell
+						148 text 库存快照
+					149 cell
+						150 text 已入库
+					151 cell
+						152 text 3
+					153 cell
+						154 text 0
+				107 row
+					108 cell
+						109 button demo-orders.csv
+					155 cell
+						156 text 验收样例
+					157 cell
+						158 text 订单与退款
+					159 cell
+						160 text 已入库
+					161 cell
+						162 text 3
+					163 cell
+						164 text 0
+				110 row
+					111 cell
+						112 button demo-events.csv
+					165 cell
+						166 text 验收样例
+					167 cell
+						168 text 经营事件
+					169 cell
+						170 text 已入库
+					171 cell
+						172 text 2
+					173 cell
+						174 text 0
+		113 text 数据来自已提交导入记录。来源覆盖与业务真实性需另行核实。
+		114 link Description: 预测与协同, Value: 127.0.0.1:3102/analysis/overview?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+		115 link Description: 周报, Value: 127.0.0.1:3102/reports/weekly?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+
+The focused UI element is 1 AXWebArea NEO · 增长决策工作台, URL: 127.0.0.1:3102/data/imports?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8

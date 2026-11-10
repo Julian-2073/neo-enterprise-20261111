@@ -1,0 +1,5 @@
+// A received fragment is not published business evidence until its complete
+// provider manifest is sealed. The placeholder is the frozen knowledge cutoff.
+export const registeredInputVisibility=(alias:string)=>`NOT EXISTS(SELECT 1 FROM neo_business_imports m WHERE m.id=${alias}.import_id AND json_type(m.payload,'$.group')='object' AND NOT EXISTS(SELECT 1 FROM neo_business_imports sealed WHERE sealed.business_id=${alias}.business_id AND sealed.data_nature=${alias}.data_nature AND sealed.request_id='seal:'||json_extract(m.payload,'$.group.id') AND sealed.created_at<=?))`;
+// Both publication and proof readers must use the same latest published revision.
+export const currentRegisteredInput=(alias:string)=>`${alias}.known_at<=? AND ${registeredInputVisibility(alias)} AND NOT EXISTS(SELECT 1 FROM neo_business_inputs newer WHERE newer.business_id=${alias}.business_id AND newer.data_nature=${alias}.data_nature AND newer.source_id=${alias}.source_id AND newer.record_key=${alias}.record_key AND newer.revision>${alias}.revision AND newer.known_at<=? AND ${registeredInputVisibility('newer')})`;

@@ -1,0 +1,39 @@
+{
+  "time": "2026-10-03T09:29:34.996Z",
+  "browsers": [
+    {
+      "family": "chrome",
+      "id": "3",
+      "metadata": {
+        "extensionInstanceId": "2c0b108b-3c13-49c7-93ed-7d65e94113cd"
+      },
+      "name": "Chrome",
+      "profileName": "您的 Chrome",
+      "type": "extension"
+    },
+    {
+      "id": "2",
+      "metadata": {
+        "codexSessionId": "01a10087-6673-7e51-96ff-5353cb461b21"
+      },
+      "name": "Codex In-app Browser",
+      "type": "iab"
+    }
+  ],
+  "primary": {
+    "browserId": "2",
+    "tabId": "1",
+    "newSnapshotURL": "http://127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea"
+  },
+  "independent": {
+    "browserId": "3",
+    "tabId": "1084666186",
+    "url": "http://127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea"
+  },
+  "csv": {
+    "chooserUsed": true,
+    "file": "/private/tmp/neo-r1-repair-MnU654/repair-add-seven.csv",
+    "batchId": "8eeb1586-fd4b-4e70-9e85-8782bd027a9d",
+    "browserDownload": "/Users/majun/Downloads/original.csv"
+  }
+}

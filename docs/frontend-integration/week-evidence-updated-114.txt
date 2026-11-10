@@ -1,0 +1,155 @@
+http://127.0.0.1:3102/demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "我的客户":
+      - /url: /demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "供应链与库存":
+      - /url: /demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "渠道与竞品":
+      - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - generic: 本周行动周报
+  - generic: 本地验收企业 A
+  - generic: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02 · 截至 2026-09-02
+  - generic: 验收样例 · 已保存
+- main:
+  - heading "我的客户" [level=1]
+  - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+  - button "A1 曝光行为 114 次":
+    - text: A1 曝光行为
+    - generic: "114"
+    - generic: 次
+  - text: 待接入
+  - generic: →
+  - button "A2 互动行为 待补数据 次":
+    - text: A2 互动行为
+    - generic: 待补数据
+    - generic: 次
+  - text: 待接入
+  - generic: →
+  - button "A3 意向行为 10 次":
+    - text: A3 意向行为
+    - generic: "10"
+    - generic: 次
+  - text: 待接入
+  - generic: →
+  - generic: 前期比较待接入
+  - button "A4 支付订单 2 笔":
+    - text: A4 支付订单
+    - generic: "2"
+    - generic: 笔
+  - button "查看记录口径和证据 →"
+  - region "4A 经营脉搏":
+    - heading "4A 经营脉搏" [level=3]
+    - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+    - generic: 曝光行为（次）
+    - generic: 互动行为（次）
+    - generic: 意向行为（次）
+    - generic: 支付订单（笔）
+    - application:
+      - generic: 09-01–09-02
+      - generic: "0"
+      - generic: "26"
+      - generic: "52"
+      - generic: "79"
+      - generic: "105"
+      - generic: "131"
+  - heading "统计期净成交额组成" [level=2]
+  - strong: ¥300.00
+  - generic "商品 / 平台 / 履约成本 ¥140.00"
+  - generic "投放费用 ¥30.00"
+  - generic "贡献毛利 ¥130.00"
+  - generic: 商品 / 平台 / 履约成本
+  - generic: ¥140.00 · 46.7%
+  - generic: 投放费用
+  - generic: ¥30.00 · 10.0%
+  - generic: 贡献毛利
+  - generic: ¥130.00 · 43.3%
+  - complementary "转化纠察智能体演示面板":
+    - heading "转化纠察智能体" [level=2]
+    - button "重置演示对话" [disabled]:
+    - button "建议行动 · 待接入" [disabled]:
+      - generic: 建议行动 · 待接入
+    - paragraph: 智能体后端待接入。当前页面只读取已保存的经营数据与证据，不生成经营判断。
+    - textbox "输入问题或经营补充" [disabled]:
+      - /placeholder: 智能体对话后端待接入
+    - generic: 补充经营信息或继续追问
+    - button "发送消息" [disabled]:
+    - generic: 智能体对话、研判与行动后端待接入
+  - link "查看联动证据 →":
+    - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - dialog "2026-09-01 至 2026-09-02 周期数据":
+    - button "关闭证据详情" [active]: ×
+    - generic: 证据详情 · 已保存验收样例
+    - heading "2026-09-01 至 2026-09-02 周期数据" [level=2]
+    - generic: financial：支付订单（笔）：2 ；净成交额：¥300.00；投放费用：¥30.00；变动成本：¥140.00；贡献毛利：¥130.00；行为（次）：A1：114 ；A2：待补数据；A3：10 ；A5：待补数据
+    - term: 统计范围
+    - definition: 2026-09-01 至 2026-09-02 · snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - term: 来源
+    - definition:
+      - text: 已提交导入记录 · 10 条
+      - paragraph:
+        - text: NEO前端接入第二组隔离样例 · orders.csv · 第 2 条 CSV 记录
+        - text: source_record_id：front-paid；occurred_at：2026-09-02T04:00:00.000Z；business_date：2026-09-02；product_id：P1；sku_id：SKU1；channel：抖音；order_id：front-order2；order_line_id：front-line2；entry_type：paid；quantity：1 ；amount_cents：¥100.00；variable_cost_cents：¥40.00
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/314f51b4-0b7a-4f90-a13e-b6036c9bb920/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO 本地验收样例 · demo-events.csv · 第 2 条 CSV 记录
+        - text: source_record_id：ev1；occurred_at：2026-08-31T16:00:00.000Z；business_date：2026-09-01；product_id：P1；sku_id：待补数据；channel：抖音；event_type：content_view；quantity：100 ；contact_id：待补数据
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/3b75fb23-b8f7-41c9-8d35-c19234d1c3d3/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO 本地验收样例 · demo-events.csv · 第 3 条 CSV 记录
+        - text: source_record_id：ev2；occurred_at：2026-08-31T16:00:00.000Z；business_date：2026-09-01；product_id：P1；sku_id：待补数据；channel：抖音；event_type：inquiry；quantity：10 ；contact_id：待补数据
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/3b75fb23-b8f7-41c9-8d35-c19234d1c3d3/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO 本地验收样例 · demo-expenses.csv · 第 2 条 CSV 记录
+        - text: source_record_id：ad1；occurred_at：2026-08-31T16:00:00.000Z；business_date：2026-09-01；product_id：P1；sku_id：待补数据；channel：抖音；amount_cents：¥20.00
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/7992cd1d-7eac-43b3-89c5-6e1bff100e9a/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO 本地验收样例 · repair-add-seven.csv · 第 2 条 CSV 记录
+        - text: source_record_id：repair-add-seven；occurred_at：2026-09-01T16:00:00.000Z；business_date：2026-09-02；product_id：P1；sku_id：待补数据；channel：抖音；event_type：impression；quantity：7 ；contact_id：待补数据
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/8eeb1586-fd4b-4e70-9e85-8782bd027a9d/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO前端接入第二组隔离样例 · events.csv · 第 2 条 CSV 记录
+        - text: source_record_id：front-ev7；occurred_at：2026-09-02T04:00:00.000Z；business_date：2026-09-02；product_id：待补数据；sku_id：待补数据；channel：抖音；event_type：impression；quantity：7 ；contact_id：待补数据
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/d86f8823-ed68-4978-81a2-7961637254fb/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO前端接入第二组隔离样例 · expenses.csv · 第 2 条 CSV 记录
+        - text: source_record_id：front-ad；occurred_at：2026-09-01T16:00:00.000Z；business_date：2026-09-02；product_id：P1；sku_id：SKU1；channel：抖音；amount_cents：¥10.00
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/ef5015ab-4f92-4354-b7e0-f5e8681f26b2/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO 本地验收样例 · demo-orders.csv · 第 2 条 CSV 记录
+        - text: source_record_id：pay1；occurred_at：2026-08-31T16:00:00.000Z；business_date：2026-09-01；product_id：P1；sku_id：SKU1；channel：抖音；order_id：O1；order_line_id：L1；entry_type：paid；quantity：2 ；amount_cents：¥200.00；variable_cost_cents：¥100.00
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/f675cc4a-d78d-4771-9f0f-4b9d51bd0e7c/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO 本地验收样例 · demo-orders.csv · 第 3 条 CSV 记录
+        - text: source_record_id：pay2；occurred_at：2026-08-31T16:00:00.000Z；business_date：2026-09-01；product_id：P1；sku_id：SKU2；channel：抖音；order_id：O1；order_line_id：L2；entry_type：paid；quantity：1 ；amount_cents：¥100.00；variable_cost_cents：¥50.00
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/f675cc4a-d78d-4771-9f0f-4b9d51bd0e7c/file?businessId=test-a&dataNature=demo
+      - paragraph:
+        - text: NEO 本地验收样例 · demo-orders.csv · 第 4 条 CSV 记录
+        - text: source_record_id：refund1；occurred_at：2026-09-01T16:00:00.000Z；business_date：2026-09-02；product_id：P1；sku_id：SKU1；channel：抖音；order_id：O1；order_line_id：L1；entry_type：refund；quantity：1 ；amount_cents：¥100.00；variable_cost_cents：¥50.00
+        - link "下载原文件":
+          - /url: /api/v1/ingestion-batches/f675cc4a-d78d-4771-9f0f-4b9d51bd0e7c/file?businessId=test-a&dataNature=demo
+    - term: 数据时间
+    - definition: 2026-09-02
+    - term: 说明
+    - definition: 按自然日筛选；不足完整自然周时显示实际区间；库存不按销售渠道筛选，按仓库和商品/SKU展示。；仅汇总已导入来源；覆盖日期是提供者声明，未经业务核实。；行为次数、支付订单数与客户人数不同，不计算客户转化率。；库存是各仓库/SKU最近一次已导入值，不保证企业全量或实时。；退款计入实际发生日，可能使该期净成交额为负。
+    - paragraph: 来源是已保存的导入记录；覆盖范围与业务真实性需另行核实。CSV 行号按逻辑记录计数。
+- contentinfo: 数据来自已提交导入记录 · snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631 · 来源覆盖与业务真实性需另行核实
+- generic: "0"

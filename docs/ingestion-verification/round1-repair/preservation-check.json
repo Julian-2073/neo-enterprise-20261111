@@ -1,0 +1,38 @@
+{
+  "checkedFiles": 187,
+  "unchangedFiles": 182,
+  "changes": [
+    {
+      "path": "components/business/workspace.tsx",
+      "before": "3e14ecd269051b39aa42e227aa860256942b0760ab3d202206d63dac709fde5f",
+      "after": "ca7b2a8a60dd9c8433ef233233948c3f5cbb8a006cc410312ce3e25e740f6e07"
+    },
+    {
+      "path": "docs/ingestion-verification/README.md",
+      "before": "896449b8734ba183969630f1b2939a013343a62772033ab22fc4ca033ad5a809",
+      "after": "2ad938ca04804f17b658d33c900b7de37e043a5dd4959e24c88e68aa7fa37fd0"
+    },
+    {
+      "path": "docs/数据导入开发与验收.md",
+      "before": "99f2b95b5c95960ebd709e9a20b5c20dd667a82aa41781669e72b8422a53951d",
+      "after": "217691f12acd84f7aa83dc17cac07156c3626e6fc6e42a8cc6ce81c2c308373d"
+    },
+    {
+      "path": "package-lock.json",
+      "before": "0f3fdb7c43ed5f3ca75fb6ad2c786a9212a35e65ae1c36a40ee010d6296e9c93",
+      "after": "3b96382e8d07dc663fc4ff1a657542f7d048e66040b9996f3eb79e817f9e4c6b"
+    },
+    {
+      "path": "package.json",
+      "before": "ee2339db187250d0c89d2c0bc40097e662a2ac61ff118f9d13f2b6f158e2528f",
+      "after": "651e737bf7aa4ba4bf7b955275b182577a45464cd899c94a6ae48a9fdadb2041"
+    }
+  ],
+  "unexpectedChanges": [],
+  "newCode": [
+    "components/business/use-workspace.ts",
+    "tests/workspace-navigation.test.mjs"
+  ],
+  "gitHead": "17fefe49a355552e5fa819e511d05e7463381f9d",
+  "uncommitted": true
+}

@@ -1,0 +1,17 @@
+.neo-live-home-sections{display:grid;gap:16px}
+.neo-live-home-sections .neo-teaser{padding:24px;gap:20px}
+.neo-live-home-sections .neo-teaser-copy h3{font-size:22px;line-height:1.4;margin:16px 0 8px}
+.neo-live-home-sections .neo-teaser-copy>p{font-size:14px;line-height:1.7;margin:0 0 14px}
+.neo-live-home-sections .neo-summary-stat{margin:8px 0;gap:28px}
+.neo-live-home-sections .neo-summary-stat strong{font-size:28px;color:#0867e9;font-variant-numeric:tabular-nums}
+.neo-live-home-sections .neo-summary-stat small{font-size:12px;font-weight:400;display:inline}
+.neo-live-home-sections .neo-summary-stat span>small{display:block;margin-top:4px}
+.neo-live-home-sections .neo-home-period{display:block;font-size:12px;line-height:1.6;color:#8398b8}
+.neo-live-home-sections .neo-mini-matrix{overflow-x:auto}
+.neo-live-home-sections .neo-mini-matrix-row>button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:5px;padding:12px}
+.neo-live-home-sections .neo-mini-matrix-row>button>b{font-size:13px;line-height:1.5}
+.neo-live-home-sections .neo-mini-matrix-row>button>span{font-size:12px;color:#738db4}
+.neo-live-home-sections .neo-mini-matrix-row>button strong{font-size:16px;color:#126be7;font-variant-numeric:tabular-nums}
+.neo-live-home-sections .neo-mini-matrix-row>button small{font-size:11px}
+.neo-live-home-sections .neo-home-empty{padding:24px;color:#8398b8;font-size:14px}
+@media(max-width:900px){.neo-live-home-sections .neo-teaser{padding:18px}.neo-live-home-sections .neo-summary-stat strong{font-size:24px}}

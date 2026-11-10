@@ -1,0 +1,733 @@
+{
+  "schemaVersion": "isolated-synthetic-v1",
+  "businessId": "neo-sim-acceptance-20261004",
+  "businessName": "NEO 隔离模拟企业",
+  "dataNature": "demo",
+  "dataLabel": "SYNTHETIC_DEMO",
+  "seed": 20261004,
+  "periodStart": "2026-04-06",
+  "periodEnd": "2026-09-20",
+  "asOf": "2026-09-24",
+  "normalRecordCounts": {
+    "businesses": 1,
+    "products": 4,
+    "product_roles": 3,
+    "skus": 8,
+    "channels": 2,
+    "warehouses": 2,
+    "customers": 240,
+    "events": 1997,
+    "orders": 252,
+    "inventory": 400,
+    "expenses": 192,
+    "order_customer_links": 252,
+    "demand_attempts": 252,
+    "inventory_ledger": 334,
+    "arrival_plan_versions": 81,
+    "arrival_receipts": 75,
+    "channel_budgets": 48,
+    "fictional_market_events": 2
+  },
+  "importBatches": [
+    {
+      "kind": "events",
+      "file": "normal/imports/events-01-01.csv",
+      "rows": 233,
+      "bytes": 18971,
+      "coverageStart": "2026-04-06",
+      "coverageEnd": "2026-05-03",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 events",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "events",
+      "file": "normal/imports/events-02-01.csv",
+      "rows": 244,
+      "bytes": 19822,
+      "coverageStart": "2026-05-04",
+      "coverageEnd": "2026-05-31",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 events",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "events",
+      "file": "normal/imports/events-03-01.csv",
+      "rows": 306,
+      "bytes": 24808,
+      "coverageStart": "2026-06-01",
+      "coverageEnd": "2026-06-28",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 events",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "events",
+      "file": "normal/imports/events-04-01.csv",
+      "rows": 363,
+      "bytes": 29463,
+      "coverageStart": "2026-06-29",
+      "coverageEnd": "2026-07-26",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 events",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "events",
+      "file": "normal/imports/events-05-01.csv",
+      "rows": 419,
+      "bytes": 33915,
+      "coverageStart": "2026-07-27",
+      "coverageEnd": "2026-08-23",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 events",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "events",
+      "file": "normal/imports/events-06-01.csv",
+      "rows": 432,
+      "bytes": 35030,
+      "coverageStart": "2026-08-24",
+      "coverageEnd": "2026-09-20",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 events",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "orders",
+      "file": "normal/imports/orders-01-01.csv",
+      "rows": 24,
+      "bytes": 2689,
+      "coverageStart": "2026-04-06",
+      "coverageEnd": "2026-05-03",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 orders",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "orders",
+      "file": "normal/imports/orders-02-01.csv",
+      "rows": 36,
+      "bytes": 3943,
+      "coverageStart": "2026-05-04",
+      "coverageEnd": "2026-05-31",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 orders",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "orders",
+      "file": "normal/imports/orders-03-01.csv",
+      "rows": 45,
+      "bytes": 4899,
+      "coverageStart": "2026-06-01",
+      "coverageEnd": "2026-06-28",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 orders",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "orders",
+      "file": "normal/imports/orders-04-01.csv",
+      "rows": 45,
+      "bytes": 4914,
+      "coverageStart": "2026-06-29",
+      "coverageEnd": "2026-07-26",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 orders",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "orders",
+      "file": "normal/imports/orders-05-01.csv",
+      "rows": 40,
+      "bytes": 4362,
+      "coverageStart": "2026-07-27",
+      "coverageEnd": "2026-08-23",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 orders",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "orders",
+      "file": "normal/imports/orders-06-01.csv",
+      "rows": 62,
+      "bytes": 6690,
+      "coverageStart": "2026-08-24",
+      "coverageEnd": "2026-09-24",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 orders",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "inventory",
+      "file": "normal/imports/inventory-01-01.csv",
+      "rows": 64,
+      "bytes": 6940,
+      "coverageStart": "2026-04-06",
+      "coverageEnd": "2026-05-03",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 inventory",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "inventory",
+      "file": "normal/imports/inventory-02-01.csv",
+      "rows": 64,
+      "bytes": 6874,
+      "coverageStart": "2026-05-04",
+      "coverageEnd": "2026-05-31",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 inventory",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "inventory",
+      "file": "normal/imports/inventory-03-01.csv",
+      "rows": 64,
+      "bytes": 6891,
+      "coverageStart": "2026-06-01",
+      "coverageEnd": "2026-06-28",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 inventory",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "inventory",
+      "file": "normal/imports/inventory-04-01.csv",
+      "rows": 64,
+      "bytes": 6844,
+      "coverageStart": "2026-06-29",
+      "coverageEnd": "2026-07-26",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 inventory",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "inventory",
+      "file": "normal/imports/inventory-05-01.csv",
+      "rows": 64,
+      "bytes": 6772,
+      "coverageStart": "2026-07-27",
+      "coverageEnd": "2026-08-23",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 inventory",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "inventory",
+      "file": "normal/imports/inventory-06-01.csv",
+      "rows": 80,
+      "bytes": 8474,
+      "coverageStart": "2026-08-24",
+      "coverageEnd": "2026-09-24",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 inventory",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "expenses",
+      "file": "normal/imports/expenses-01-01.csv",
+      "rows": 32,
+      "bytes": 2553,
+      "coverageStart": "2026-04-06",
+      "coverageEnd": "2026-05-03",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 expenses",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "expenses",
+      "file": "normal/imports/expenses-02-01.csv",
+      "rows": 32,
+      "bytes": 2553,
+      "coverageStart": "2026-05-04",
+      "coverageEnd": "2026-05-31",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 expenses",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "expenses",
+      "file": "normal/imports/expenses-03-01.csv",
+      "rows": 32,
+      "bytes": 2577,
+      "coverageStart": "2026-06-01",
+      "coverageEnd": "2026-06-28",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 expenses",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "expenses",
+      "file": "normal/imports/expenses-04-01.csv",
+      "rows": 32,
+      "bytes": 2585,
+      "coverageStart": "2026-06-29",
+      "coverageEnd": "2026-07-26",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 expenses",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "expenses",
+      "file": "normal/imports/expenses-05-01.csv",
+      "rows": 32,
+      "bytes": 2585,
+      "coverageStart": "2026-07-27",
+      "coverageEnd": "2026-08-23",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 expenses",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    },
+    {
+      "kind": "expenses",
+      "file": "normal/imports/expenses-06-01.csv",
+      "rows": 32,
+      "bytes": 2589,
+      "coverageStart": "2026-08-24",
+      "coverageEnd": "2026-09-20",
+      "sourceName": "SYNTHETIC_DEMO neo-sim-acceptance-20261004 expenses",
+      "dataNature": "demo",
+      "templateVersion": "1",
+      "businessId": "neo-sim-acceptance-20261004"
+    }
+  ],
+  "ontologyImports": [
+    {
+      "typeId": "product",
+      "file": "normal/ontology/product.csv",
+      "rows": 4,
+      "definitionId": "neo-default-v1"
+    },
+    {
+      "typeId": "sku",
+      "file": "normal/ontology/sku.csv",
+      "rows": 8,
+      "definitionId": "neo-default-v1"
+    },
+    {
+      "typeId": "role",
+      "file": "normal/ontology/role.csv",
+      "rows": 3,
+      "definitionId": "neo-default-v1"
+    },
+    {
+      "typeId": "channel",
+      "file": "normal/ontology/channel.csv",
+      "rows": 2,
+      "definitionId": "neo-default-v1"
+    },
+    {
+      "typeId": "warehouse",
+      "file": "normal/ontology/warehouse.csv",
+      "rows": 2,
+      "definitionId": "neo-default-v1"
+    },
+    {
+      "typeId": "arrival",
+      "file": "normal/ontology/arrival.csv",
+      "rows": 2,
+      "definitionId": "neo-default-v1"
+    }
+  ],
+  "notSupportedInFourTemplates": [
+    "customer master",
+    "order/customer linkage",
+    "plan version and business known_at",
+    "inventory ledger",
+    "market fiction",
+    "budget declarations",
+    "master revisions"
+  ],
+  "dbs": [
+    "databases/people.sqlite",
+    "databases/goods.sqlite",
+    "databases/market.sqlite"
+  ],
+  "forbiddenBusinessIds": [
+    "neo-live-demo",
+    "demo-coca-fitness",
+    "test-a",
+    "test-b"
+  ],
+  "tests": "all runtime writes use new synthetic tenant in this checkout only; no patrol/LLM/network",
+  "files": {
+    "README.md": {
+      "sha256": "7e40354ccd05ea5c767b0414e13a14281c9e0ec3265676b66c32495f579035db",
+      "bytes": 9307
+    },
+    "counterexamples/cases.json": {
+      "sha256": "7551102cb7b9efe51032153f4a39c7dfff2488d06d3752c3ce2c3da413d93c80",
+      "bytes": 3078
+    },
+    "counterexamples/content-conflict.csv": {
+      "sha256": "b5605e56964d99bbefed5e015a45db9a24c77224185db8831e7a0f801eca09d0",
+      "bytes": 163
+    },
+    "counterexamples/cross-enterprise-sku.csv": {
+      "sha256": "6023bd5b1989dabf57a1bfd9e8c9902506756357137144d2a8526a4e71ce6352",
+      "bytes": 244
+    },
+    "counterexamples/exact-duplicate.csv": {
+      "sha256": "e657eba7c420c4022a21e509cb4b7be94e4b55e8738a0a64f62cc282ca88f86d",
+      "bytes": 163
+    },
+    "counterexamples/late-record.csv": {
+      "sha256": "adf2b83a2f67c4131eebb2be4f23f011cff6db035fe27a7c541824741eb835f4",
+      "bytes": 163
+    },
+    "counterexamples/legitimate-zero-stock.csv": {
+      "sha256": "204ed355cbcc1a9c996c8b0e05c702c25b9ad5ab3c0d33065ed0c5ab23e0dc86",
+      "bytes": 203
+    },
+    "counterexamples/missing-channel.csv": {
+      "sha256": "7aeefb3419ce08f2d34409e96e8081ed08dc79a992bfadd7144a7c0170a01905",
+      "bytes": 157
+    },
+    "counterexamples/missing-cost.csv": {
+      "sha256": "5623a1fbc8a1cd80b667e74c00bd92623242ebf057fb4f8dbc3db958397ef9f2",
+      "bytes": 232
+    },
+    "counterexamples/missing-required.csv": {
+      "sha256": "efb23bee492c46557e788659b14d53b0659fb4d392d92c439cd8ba12438fc6a7",
+      "bytes": 139
+    },
+    "counterexamples/negative-amount.csv": {
+      "sha256": "b0a94b7a683b2b601c91456e45d9422355e434268f7676869428ef92fad912be",
+      "bytes": 232
+    },
+    "counterexamples/product-sku-mismatch.csv": {
+      "sha256": "f6fb9b615921e3cac6872893f03e0241576df50d19e40c963a78a3fbc04d7498",
+      "bytes": 244
+    },
+    "counterexamples/unmatched-refund.csv": {
+      "sha256": "67c3fb852886e181fa4380a58ada7b2e556751100fa7e149a770c752426d25cd",
+      "bytes": 248
+    },
+    "databases/goods.sql": {
+      "sha256": "bc63d86aaebb5751cdde23eda6ddb854d735e923e1f6dae56b99b293b8e0fca3",
+      "bytes": 164897
+    },
+    "databases/goods.sqlite": {
+      "sha256": "274e410a60f7c5bf8e8b85c21fe25e72687e37b876baa8b8efc4ee6448229e10",
+      "bytes": 245760
+    },
+    "databases/market.sql": {
+      "sha256": "72d1b2fdf3726968315b2435c3380bc73b596af38004e5cfb80a73c2542b12aa",
+      "bytes": 36104
+    },
+    "databases/market.sqlite": {
+      "sha256": "1180955b285912a561a0cace4a0d5e4531142585610443cae429b21ef0c49546",
+      "bytes": 118784
+    },
+    "databases/people.sql": {
+      "sha256": "b445e5445178f5f45c5875bbee7b13dd221b1adb4f6000c7a716db7d90cbef7b",
+      "bytes": 424982
+    },
+    "databases/people.sqlite": {
+      "sha256": "1c3d872d35330dc6ed8dec74b2d5f9c7a4fb39f33e6f8802adf648f4e148be3a",
+      "bytes": 495616
+    },
+    "design.json": {
+      "sha256": "604504273dae83c0b1bc4c53853aa35480cb3611a893deb590841e5ddf5dbb22",
+      "bytes": 5886
+    },
+    "expected-results.json": {
+      "sha256": "0587dd36c6f1ec23a5f3ed61e5e4334ea27345a3d3717b78263c51cfd6625fd8",
+      "bytes": 405536
+    },
+    "field-dictionary.csv": {
+      "sha256": "fbcda8a8c35793b27c29b97149b96bcebe822c9f52b04ee9389d29e58f2cd8ab",
+      "bytes": 18969
+    },
+    "field-mapping.json": {
+      "sha256": "b5ae6e17aba20cae9774f14dde9c8d9c4dcb1a718e0d616694dd1e99152ab902",
+      "bytes": 4912
+    },
+    "generators/generate.py": {
+      "sha256": "019abfe8fe5231573d95afa59583954b0f4adfcd387054f935350c948fc47f8e",
+      "bytes": 27454
+    },
+    "generators/oracle.py": {
+      "sha256": "76d11b8a6c719093ce5e237f57cb5ccafdd9eaec118e2f8b06ba586297a3d8b8",
+      "bytes": 11848
+    },
+    "generators/query_known_plans.py": {
+      "sha256": "d038a692bd166c1289b18eaaf638d5904a64a2d422c9b850c435d3807ee21a8d",
+      "bytes": 1632
+    },
+    "generators/validate.py": {
+      "sha256": "c552bf308439c4fbc82cf46618206ff63b7fcfadeea80cb5eedb67c90cc17318",
+      "bytes": 12646
+    },
+    "manual-fixture.json": {
+      "sha256": "55c808d49df7aeb2b5d547c42579fb238b2248ae1bade3290f55792896572dfd",
+      "bytes": 1603
+    },
+    "normal/imports/events-01-01.csv": {
+      "sha256": "5a38a4b596dd46e9f3706a54f1cb637f3215b81dcc771c19ba7ecc6e55fa539b",
+      "bytes": 18971
+    },
+    "normal/imports/events-02-01.csv": {
+      "sha256": "73f917485e4b1833430efabf4ca6c109108a096f4fb838cbe129efc6d20466c9",
+      "bytes": 19822
+    },
+    "normal/imports/events-03-01.csv": {
+      "sha256": "fa3f929581a732b57ef71a3c42acaa0d0f3ad3a53079344a483d8c3f44dfd8f3",
+      "bytes": 24808
+    },
+    "normal/imports/events-04-01.csv": {
+      "sha256": "480f7fb29f2c7184cfbe3d9e139afce4a0de1202d4c22058463d4316466d8cd1",
+      "bytes": 29463
+    },
+    "normal/imports/events-05-01.csv": {
+      "sha256": "dff9d242add2b613edf3c2c416a16101e44377f52d2145f03598227dc626751d",
+      "bytes": 33915
+    },
+    "normal/imports/events-06-01.csv": {
+      "sha256": "7b64691c14afe8072b17b5be50fc6255770f263b2753370a816ec0ae50ba2c40",
+      "bytes": 35030
+    },
+    "normal/imports/expenses-01-01.csv": {
+      "sha256": "d08fc842705730d14c9bc7f907f4ee0287434c81101ed3cbc6a4559f5c1e4243",
+      "bytes": 2553
+    },
+    "normal/imports/expenses-02-01.csv": {
+      "sha256": "0981ead5f1fa089cd0ad24899c85d7e2dfb5125217eff90ae59a57a8a2e6790c",
+      "bytes": 2553
+    },
+    "normal/imports/expenses-03-01.csv": {
+      "sha256": "5dede193b8ef1bd9c17e5bbdf55067350ef980c1b0204b38dcee4589ae77a896",
+      "bytes": 2577
+    },
+    "normal/imports/expenses-04-01.csv": {
+      "sha256": "036c6af3a620f6659294e293f72aef3ace39de4eb712ddc08f4db1bd61a769ea",
+      "bytes": 2585
+    },
+    "normal/imports/expenses-05-01.csv": {
+      "sha256": "c2b2a91c67c5d7803f2d8eac72793f0c00ec9b0e29fec9a459aef908883d5518",
+      "bytes": 2585
+    },
+    "normal/imports/expenses-06-01.csv": {
+      "sha256": "c7ca4ad02b493cd35ba77fc618e153ae499f399e74bbd0ce9ac3b4709884604b",
+      "bytes": 2589
+    },
+    "normal/imports/inventory-01-01.csv": {
+      "sha256": "44d695de6161f1245890da905ba18a3bb65101014cb894cfdd60811180b1ba63",
+      "bytes": 6940
+    },
+    "normal/imports/inventory-02-01.csv": {
+      "sha256": "8a62610eb4cfa6331bc5e94183669687ab37f9963e190dfe8385a706c00721e0",
+      "bytes": 6874
+    },
+    "normal/imports/inventory-03-01.csv": {
+      "sha256": "91075a559f4b9204dc143e056868184a8da351cffd41c397d245cb299dc80ad5",
+      "bytes": 6891
+    },
+    "normal/imports/inventory-04-01.csv": {
+      "sha256": "54485779a117ff63706ec11acf8f56b1922f577cb927c1aec8bb9e3239e91c3f",
+      "bytes": 6844
+    },
+    "normal/imports/inventory-05-01.csv": {
+      "sha256": "8b6534019ec6b360efe80cffb74744b59e635bce83ab2d56c18180fa55b539b7",
+      "bytes": 6772
+    },
+    "normal/imports/inventory-06-01.csv": {
+      "sha256": "9fb05a365921901f95f6754945ac4dfdeede5fa28f966b0b062504e78639d5d7",
+      "bytes": 8474
+    },
+    "normal/imports/orders-01-01.csv": {
+      "sha256": "d0dbff30bb61bf6e79d2e82d7d3a3e258b1a03ab0adae2f1a13a8c27b201919a",
+      "bytes": 2689
+    },
+    "normal/imports/orders-02-01.csv": {
+      "sha256": "5164ea47d55af03b163f086d933f7fe390637a1d85c993898248c231437648cb",
+      "bytes": 3943
+    },
+    "normal/imports/orders-03-01.csv": {
+      "sha256": "dabbfef613aa9882224b289ee99c36316f6cb4c2e0fc1951f33e6dcc8812d87b",
+      "bytes": 4899
+    },
+    "normal/imports/orders-04-01.csv": {
+      "sha256": "8284c4324c8c81e650fad3b2f1ec17f1ab31d3987df27610645ac6cb8a7c8a9b",
+      "bytes": 4914
+    },
+    "normal/imports/orders-05-01.csv": {
+      "sha256": "15bbbdbc6c75e9605f19b016735c00840877e35b8b8cafadcc54eee50f33fc63",
+      "bytes": 4362
+    },
+    "normal/imports/orders-06-01.csv": {
+      "sha256": "61aade83b1b4d390ccb9311f0493a075d124e63561f2c5e145ad23fececc3d90",
+      "bytes": 6690
+    },
+    "normal/master/businesses.csv": {
+      "sha256": "0ce2f72e5eca4ce50f72ea1514859d12ade7bbe14d71f307c3fa798e5e88d273",
+      "bytes": 111
+    },
+    "normal/master/channels.csv": {
+      "sha256": "fb46c130e55b6ded021cc5bd40a90a2ed2f27319adc3ed94b3511afa702a8eb4",
+      "bytes": 180
+    },
+    "normal/master/customers.csv": {
+      "sha256": "6847f77c659c9255c97d274991782f63a0c82a2a7516fec141cb2aa7c00b9fe0",
+      "bytes": 23815
+    },
+    "normal/master/product_roles.csv": {
+      "sha256": "95dff967269df1b3d2f2eef74b6fc9edc56c6855aeeb0853b0688fb07d47ff8a",
+      "bytes": 395
+    },
+    "normal/master/products.csv": {
+      "sha256": "4d6cc414bc604e8486a41993e8e68d494a1ff786fdcb17faf3e9e74e8ca9f92a",
+      "bytes": 687
+    },
+    "normal/master/skus.csv": {
+      "sha256": "b003cab75347f20e4e69e5def6ba22a1d5516438274c5d0f247a493e1f208dd5",
+      "bytes": 854
+    },
+    "normal/master/warehouses.csv": {
+      "sha256": "05f8d9e4ac8d9eb69f8bae5cb65f36f578c5a7d0c8cd29a0005e482504dbb2bc",
+      "bytes": 169
+    },
+    "normal/ontology/arrival.csv": {
+      "sha256": "c21d1f472b0d920453c80fb9cfa4887804c383208aec4c4a5c6aab153527b4d9",
+      "bytes": 127
+    },
+    "normal/ontology/channel.csv": {
+      "sha256": "45283959f310d0fea607b041069750147f6ec67107d8c4bb0d9f610bed4a8670",
+      "bytes": 70
+    },
+    "normal/ontology/product.csv": {
+      "sha256": "f5a4d8b71b82bbf35171c1ec5cc944098b96e85b35e7a5de691f7eca5a035c34",
+      "bytes": 149
+    },
+    "normal/ontology/role.csv": {
+      "sha256": "3229f655f61f6176621a5b136cc3b4fb83a991112734190207fe3b196cb3845a",
+      "bytes": 151
+    },
+    "normal/ontology/sku.csv": {
+      "sha256": "aae94665ffbb816c12f6ff76e7af04567368644c29bb7bc2cc58ec57f5b0a4df",
+      "bytes": 484
+    },
+    "normal/ontology/warehouse.csv": {
+      "sha256": "0329a9019a138ffdbede7910a91c0bab147122f583d5c8a6bd7a6b91de44e2c6",
+      "bytes": 59
+    },
+    "normal/raw/events.csv": {
+      "sha256": "ad597e379b74f06f0e8621ad408f3ee14a63bcd796b54c25c45e06dd5bd0de8a",
+      "bytes": 161609
+    },
+    "normal/raw/expenses.csv": {
+      "sha256": "3984a6b6ec2d266480197e2edfda4f3e1109a3697884daa61efd3fffb31c2d03",
+      "bytes": 15097
+    },
+    "normal/raw/inventory.csv": {
+      "sha256": "b7e5c8cf4fdedbe49243607f29169d28942117a01363c6cb7f088f9684d41ece",
+      "bytes": 42160
+    },
+    "normal/raw/orders.csv": {
+      "sha256": "70139b40d937a3fb9ebdef8d3f3cc089f4243362956d13b883e3956f46fe0f0f",
+      "bytes": 26837
+    },
+    "normal/sidecars/arrival_plan_versions.csv": {
+      "sha256": "ab68476d377c7d4831de15e2d3430611b4d50b6458aa762c74f48729f40a4cb9",
+      "bytes": 10895
+    },
+    "normal/sidecars/arrival_receipts.csv": {
+      "sha256": "a12b01b5d517ec672deeb96731846d023f6209d4ce9d16517345db8bb7527010",
+      "bytes": 10808
+    },
+    "normal/sidecars/channel_budgets.csv": {
+      "sha256": "1b89dd1da94340d2e590b0a8211932886e305db361780dcec4a57ae838b047b0",
+      "bytes": 5268
+    },
+    "normal/sidecars/demand_attempts.csv": {
+      "sha256": "87f7f13810a614d5eba5fb63f6fd93d76b467e47b826aec95754d4fdd7d2d899",
+      "bytes": 33528
+    },
+    "normal/sidecars/fictional_market_events.csv": {
+      "sha256": "4e8aa2352df6f7421d2043bba585aa83d3fc2fdf2e4624c9f5d90d977f85e09d",
+      "bytes": 495
+    },
+    "normal/sidecars/inventory_ledger.csv": {
+      "sha256": "6c980fab783a409040807424254dca2f8e53b29d3a22083f45f96285f680c597",
+      "bytes": 50685
+    },
+    "normal/sidecars/order_customer_links.csv": {
+      "sha256": "1b20379efd1f904fbf5862c3c366c66752edacc43a5b0cfbeadbad698365ed4d",
+      "bytes": 39597
+    },
+    "normal/source-records.json": {
+      "sha256": "b00d1a5e683a4a9154008f3a9c5daa3d3c9fd643e60809c7d7fc075c599f13f7",
+      "bytes": 1274222
+    },
+    "primary-foreign-keys.csv": {
+      "sha256": "64d6886e6874a27ddf56bf4b0e45048c8bddf0e1e557196de67d8fb6dfeecb11",
+      "bytes": 1453
+    },
+    "reports/backend-validation.json": {
+      "sha256": "a51ccd84b68b9a12fe2833b76f3adef1a28bad68d3fa43c89a08915ed380b452",
+      "bytes": 14536
+    },
+    "reports/build-validation.json": {
+      "sha256": "740872404039db565292099e22725c6b0ab379c9b2ea08d874cf8592100db73b",
+      "bytes": 333
+    },
+    "reports/counterexample-readbacks.json": {
+      "sha256": "7fb4a19d5ab7b43d6d3f06411729777124a991b8da6a8d71d2976aef36d10671",
+      "bytes": 18574
+    },
+    "reports/isolation-initial-attempt.json": {
+      "sha256": "c4b84e9c2964e15bc59083730ae060bde33284f1a09c76122b735bb6201460c0",
+      "bytes": 457
+    },
+    "reports/product-readbacks.json": {
+      "sha256": "7af3fe291dffdeb3efb1122d3436a232c6106b115130cd71eb3f0e45ac5a7dbd",
+      "bytes": 86548
+    },
+    "reports/quality-validation.json": {
+      "sha256": "76742e7bd51031a5ec95deae2f479b33ba4905964d6873b45a313f675b3091fa",
+      "bytes": 668462
+    },
+    "字段字典与接入映射.md": {
+      "sha256": "03ecac19a0e56685646c63fb67124ea4ac8d945f4bdc89d9b580d3684a6d2d57",
+      "bytes": 4934
+    }
+  },
+  "generatorFiles": {
+    "scripts/synthetic-data/catalog.py": "0d8c31fd8c42c516057f2e40edebd91894fc61c183d97fad1ef72d42ea89c7cb",
+    "scripts/synthetic-data/generate.py": "019abfe8fe5231573d95afa59583954b0f4adfcd387054f935350c948fc47f8e",
+    "scripts/synthetic-data/oracle.py": "76d11b8a6c719093ce5e237f57cb5ccafdd9eaec118e2f8b06ba586297a3d8b8",
+    "scripts/synthetic-data/query_known_plans.py": "d038a692bd166c1289b18eaaf638d5904a64a2d422c9b850c435d3807ee21a8d",
+    "scripts/synthetic-data/validate.py": "c552bf308439c4fbc82cf46618206ff63b7fcfadeea80cb5eedb67c90cc17318",
+    "scripts/synthetic-data/verify-backend.mjs": "d399c630186e17769531fc62b9867721811c519ae38aaa3c82b0e33ebbd35723"
+  },
+  "acceptanceStatus": "developer_verified; orchestrator independent acceptance pending",
+  "backendValidation": 209,
+  "independentQualityChecks": 15850
+}

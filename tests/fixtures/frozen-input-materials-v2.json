@@ -1,0 +1,683 @@
+{
+  "version": "frozen-input-materials-v2",
+  "dataLabel": "SYNTHETIC_DEMO",
+  "notice": "Independent synthetic material revision; not real publications, enterprise effects, model answers or scores.",
+  "observationAt": "2026-10-08T01:00:00.000Z",
+  "knowledge": {
+    "knowledge-wrong_region": {
+      "sources": [
+        {
+          "id": "guangdong-fitness",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/guangdong-fitness.html",
+          "title": "合成广东器材企业扶持办法",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "guangdong-fitness",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 本办法仅接受登记地址在广东省的室内固定式健身器材经营企业。申请单位须提供广东省登记地址证明。",
+            "第二条 申请材料包括登记证明、经营产品目录和2026年度销售凭证；本办法未列浙江省申请渠道。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-effective_future": {
+      "sources": [
+        {
+          "id": "future-rule",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/future-rule.html",
+          "title": "合成健身器材经营规则",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "future-rule",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 本规则适用于全国室内固定式电动跑步机经营者。",
+            "第二条 本规则自2026年11月1日起实施，实施前仍按经营者已登记的现行规则办理。新规则要求在商品页列明紧急停止装置测试记录编号。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-expired": {
+      "sources": [
+        {
+          "id": "ended-support",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/ended-support.html",
+          "title": "合成器材登记支持办法",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "ended-support",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 浙江省室内固定式健身器材经营单位可按本办法提交登记材料。",
+            "第二条 本办法实施期限为2026年1月1日至2026年10月7日。原发布档案仅有本文件，档案清单截至2026年10月8日未新增续期文件。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-repost": {
+      "sources": [
+        {
+          "id": "repost-original",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/repost-original.html",
+          "title": "合成器材登记材料清单",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "repost-original",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 浙江省器材经营者申报须提交登记地址、产品类别和销售凭证。",
+            "第二条 文件编号 SYN-FIT-2026-01，2026年10月1日发布，自2026年10月15日起接受材料。"
+          ]
+        },
+        {
+          "id": "repost-1",
+          "version": 1,
+          "url": "https://example.org/neo-synthetic-v2/repost-1.html",
+          "title": "合成转载 1",
+          "issuer": "合成资料编写者",
+          "kind": "synthetic_repost",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "repost-original",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 浙江省器材经营者申报须提交登记地址、产品类别和销售凭证。",
+            "第二条 文件编号 SYN-FIT-2026-01，2026年10月1日发布，自2026年10月15日起接受材料。"
+          ]
+        },
+        {
+          "id": "repost-2",
+          "version": 1,
+          "url": "https://example.net/neo-synthetic-v2/repost-2.html",
+          "title": "合成转载 2",
+          "issuer": "合成资料编写者",
+          "kind": "synthetic_repost",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "repost-original",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 浙江省器材经营者申报须提交登记地址、产品类别和销售凭证。",
+            "第二条 文件编号 SYN-FIT-2026-01，2026年10月1日发布，自2026年10月15日起接受材料。"
+          ]
+        },
+        {
+          "id": "repost-3",
+          "version": 1,
+          "url": "https://example.org/neo-synthetic-v2/repost-3.html",
+          "title": "合成转载 3",
+          "issuer": "合成资料编写者",
+          "kind": "synthetic_repost",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "repost-original",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 浙江省器材经营者申报须提交登记地址、产品类别和销售凭证。",
+            "第二条 文件编号 SYN-FIT-2026-01，2026年10月1日发布，自2026年10月15日起接受材料。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "kind": "repost_of",
+          "fromSource": "repost-1",
+          "toSource": "repost-original"
+        },
+        {
+          "kind": "repost_of",
+          "fromSource": "repost-2",
+          "toSource": "repost-original"
+        },
+        {
+          "kind": "repost_of",
+          "fromSource": "repost-3",
+          "toSource": "repost-original"
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-unchanged": {
+      "sources": [
+        {
+          "id": "unchanged-body",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/unchanged-body.html",
+          "title": "合成器材备案规则",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "unchanged-body",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 浙江省室内固定式器材经营单位提交产品目录及登记地址。",
+            "第二条 文件于2026年10月1日发布，自2026年10月15日起实施；产品目录每季度核对一次，正文版本标识 SYN-UNCHANGED-1。"
+          ]
+        }
+      ],
+      "observations": [
+        "2026-10-08T01:00:00.000Z",
+        "2026-10-09T01:00:00.000Z"
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-conflict": {
+      "sources": [
+        {
+          "id": "official-detail",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/official-detail.html",
+          "title": "合成正式实施细则",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "official-detail",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 本细则适用于登记地址在浙江省、登记职工人数不超过20人的室内固定式健身器材经营单位。",
+            "第二条 申请单位提交职工名册和登记证明；职工人数以登记日期2026年9月30日的名册为准。本细则自2026年10月15日起实施。"
+          ]
+        },
+        {
+          "id": "media-summary",
+          "version": 1,
+          "url": "https://example.org/neo-synthetic-v2/media-summary.html",
+          "title": "合成媒体政策摘要",
+          "issuer": "合成资料编写者",
+          "kind": "synthetic_media_summary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-02",
+          "originalId": "official-detail",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "本摘要摘编《合成正式实施细则》，转载关联文件编号 official-detail。摘要所列职工人数门槛为不超过50人，登记地址为浙江省。",
+            "摘要发布日期2026年10月2日，编写者为合成媒体；本文未附实施细则原件或变更文件。"
+          ]
+        }
+      ],
+      "relations": [
+        {
+          "kind": "summary_of",
+          "fromSource": "media-summary",
+          "toSource": "official-detail"
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 30
+      }
+    },
+    "knowledge-unreadable": {
+      "sources": [
+        {
+          "id": "login-only",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/login-only.html",
+          "title": "合成受限来源",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "login-only",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。"
+          ]
+        }
+      ],
+      "unreadable": true,
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-missing_clause": {
+      "sources": [
+        {
+          "id": "fee-registration",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/fee-registration.html",
+          "title": "合成平台登记公告",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "fee-registration",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 本平台开展商户年度登记，经营者提交联系地址、产品类别与售后联系方式。",
+            "第二条 登记时间为2026年10月15日至2026年10月31日，附件一为登记表，附件二为联络表，提交材料须载明经营商品类别。"
+          ]
+        }
+      ],
+      "inquiry": "请核对本公告中跑步机商品的免佣比例。",
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-missing_date": {
+      "sources": [
+        {
+          "id": "undated-effect",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/undated-effect.html",
+          "title": "合成售后登记要求",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "undated-effect",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 浙江省室内固定式器材经营者应保存售后工单，并按产品目录登记维修联系渠道。",
+            "第二条 登记项目包括售后工单编号、产品型号、维修联系渠道和材料文件名；附件一为工单格式，附件二为联系渠道登记表。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-competitor_claim": {
+      "sources": [
+        {
+          "id": "brand-sales",
+          "version": 1,
+          "url": "https://example.org/neo-synthetic-v2/brand-sales.html",
+          "title": "合成竞争品牌商品页",
+          "issuer": "合成资料编写者",
+          "kind": "synthetic_brand_self_report",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "brand-sales",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "合成品牌 Z 的商品页写道：我们的型号X跑步机销量第一。发布方为合成品牌Z市场部。",
+            "商品目录显示型号X、品牌Z与广告口号，页脚署名为合成品牌Z市场部，页面栏目包括产品介绍、立即购买和品牌故事。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12,
+        "competitors": [
+          "合成品牌 Z"
+        ]
+      }
+    },
+    "knowledge-scope_unknown": {
+      "sources": [
+        {
+          "id": "scale-subsidy",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/scale-subsidy.html",
+          "title": "合成地区及规模登记支持办法",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "scale-subsidy",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 本办法接受登记地址在浙江省且登记职工人数不超过20人的室内固定式器材经营单位。",
+            "第二条 企业提交登记地址证明和2026年9月30日职工名册。补充材料须由申请人签署，本办法自2026年10月15日起实施。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": null,
+        "registeredEmployees": null
+      }
+    },
+    "knowledge-no_change": {
+      "sources": [
+        {
+          "id": "marine-news",
+          "version": 1,
+          "url": "https://example.net/neo-synthetic-v2/marine-news.html",
+          "title": "合成广东海产品行业新闻",
+          "issuer": "合成资料编写者",
+          "kind": "synthetic_industry_news",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "marine-news",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "广东省海产品冷链行业协会举行海虾出口冷库交流活动，讨论海产品保鲜与冷冻包装。",
+            "活动于2026年10月1日在广东举办，参会产品目录包括海虾和冷冻海鱼，交流主题为海产品保鲜温度与出口冷冻包装工艺。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-watch": {
+      "sources": [
+        {
+          "id": "draft-safety",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/draft-safety.html",
+          "title": "合成跑步机标准意见稿",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "consultation_draft",
+          "publishedAt": "2026-10-01",
+          "originalId": "draft-safety",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "本文件为征求意见稿 SYN-DRAFT-FIT-2026，意见征集截止日期为2026年10月31日，正式标准尚未发布，拟实施日期未确定。",
+            "草案第三条拟增加电动跑步机紧急停止装置每年留存一次测试记录的要求，征集对象包括室内固定式跑步机经营与生产单位。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      }
+    },
+    "knowledge-impact": {
+      "sources": [
+        {
+          "id": "published-safety",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/published-safety.html",
+          "title": "合成正式跑步机安全标准",
+          "issuer": "合成资料发布处",
+          "kind": "synthetic_primary",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "published-safety",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "第一条 本标准正式发布编号 SYN-FIT-SAFETY-2026，适用于全国室内固定式电动跑步机，自2026年11月1日起实施。",
+            "第三条 经营者须在首次销售前查验每款电动跑步机紧急停止装置测试记录，记录须载明型号、测试日期和装置响应结果。",
+            "第四条 商品目录与测试记录的型号应一致，测试记录须由执行测试的单位留档，记录格式包含型号、测试日期、装置响应结果和记录编号。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      },
+      "productRecords": [
+        {
+          "entityId": "{entityId}",
+          "productCategory": "室内固定式电动跑步机",
+          "testRecordId": null,
+          "lastTestDate": null
+        }
+      ]
+    },
+    "knowledge-memory_candidate": {
+      "sources": [
+        {
+          "id": "candidate-note",
+          "version": 1,
+          "url": "https://example.com/neo-synthetic-v2/candidate-note.html",
+          "title": "合成库存调查记录",
+          "issuer": "合成资料编写者",
+          "kind": "synthetic_model_note",
+          "publicationStatus": "published",
+          "publishedAt": "2026-10-01",
+          "originalId": "candidate-note",
+          "paragraphs": [
+            "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+            "本轮调查记录当前商品可售库存为100件，近期补货到货时间尚未做历史统计。",
+            "模型讨论笔记提出安全库存20件的候选值，笔记状态为candidate；确认操作者和确认时间均为空，企业现行确认规则目录中无该阈值。"
+          ]
+        }
+      ],
+      "confirmed": {
+        "region": "浙江",
+        "registeredEmployees": 12
+      },
+      "candidates": [
+        {
+          "id": "candidate-safety-stock",
+          "state": "candidate",
+          "entityId": "{entityId}",
+          "thresholdUnits": 20,
+          "confirmedBy": null,
+          "confirmedAt": null
+        }
+      ]
+    }
+  },
+  "supplements": {
+    "ecommerce-refund_margin": {
+      "refundOperations": [
+        {
+          "orderId": "refund-1",
+          "returnedUnits": null,
+          "receiptStatus": "unconfirmed",
+          "inspectionStatus": "unconfirmed",
+          "warehouseId": null
+        }
+      ]
+    },
+    "ecommerce-warehouse_zero": {
+      "fulfillmentAllocation": {
+        "eastChannelEligibility": null,
+        "westToEastLeadDays": null,
+        "confirmedBy": null
+      },
+      "investigation": {
+        "serviceCapacityEvidenceIds": [],
+        "demandEvidenceIds": []
+      }
+    },
+    "ecommerce-arrival_plan": {
+      "arrivalOperations": [
+        {
+          "quantity": 80,
+          "status": "planned",
+          "receiptAt": null,
+          "inspectionAt": null
+        }
+      ]
+    },
+    "ecommerce-competitor_uncomparable": {
+      "productComparison": {
+        "ownModel": "X",
+        "competitorModel": "X",
+        "comparableSpecification": null,
+        "netPriceCents": null,
+        "discountConditions": null,
+        "advertisedRanking": "第一",
+        "publisherKind": "brand_self_report"
+      }
+    },
+    "hotel-roomnight_capacity": {
+      "demandRequests": [
+        {
+          "date": "2026-10-01",
+          "requestedRoomNights": 10,
+          "state": "potential"
+        }
+      ]
+    },
+    "hotel-refund_hotel": {
+      "refundOperations": [
+        {
+          "orderId": "refund",
+          "amountCents": 100000,
+          "costsIncurred": true,
+          "channelFeeRefundable": null
+        }
+      ]
+    },
+    "manufacturing-wip_not_finished": {
+      "productionOperations": [
+        {
+          "quantity": 50,
+          "status": "planned",
+          "finalInspectionStatus": "not_completed"
+        }
+      ]
+    },
+    "manufacturing-batch_loss": {
+      "productionMethod": {
+        "unitsPerProduct": 2,
+        "lossRateBps": null,
+        "confirmedBy": null
+      }
+    },
+    "dialogue-sku_hold": {
+      "addRecords": [
+        {
+          "kind": "order",
+          "entityId": "SKU-R1",
+          "quantity": 2,
+          "amountCents": 20000,
+          "variableCostCents": 0,
+          "entryType": "refund",
+          "orderId": "dialogue-r1-refund",
+          "businessDate": "2026-09-25"
+        }
+      ],
+      "inventoryAllocation": {
+        "requestedUnitsBySku": {
+          "SKU_R1": null,
+          "SKU_S2": null
+        },
+        "forecastDemandConfirmed": false
+      }
+    },
+    "dialogue-topic_hold": {
+      "addRecords": [
+        {
+          "kind": "order",
+          "quantity": 2,
+          "amountCents": 20000,
+          "variableCostCents": 0,
+          "entryType": "refund",
+          "orderId": "dialogue-refund",
+          "businessDate": "2026-09-25"
+        }
+      ],
+      "decisionObservation": {
+        "executionRecords": [],
+        "observedChange": {
+          "netSalesDirection": "increase",
+          "observationKind": "user_report",
+          "knownAt": "2026-10-08T01:00:00.000Z"
+        },
+        "attributionExperimentId": null
+      }
+    },
+    "dialogue-hypothesis_hold": {
+      "investigation": {
+        "subject": "inventory_sales",
+        "state": "open",
+        "causalExperimentId": null,
+        "serviceCapacityEvidenceIds": []
+      }
+    },
+    "dialogue-investigation_resume": {
+      "addRecords": [
+        {
+          "kind": "arrival",
+          "quantity": 80,
+          "status": "planned",
+          "warehouseId": "east",
+          "businessDate": "2026-10-07"
+        }
+      ],
+      "investigation": {
+        "id": "arrival-inquiry",
+        "state": "open",
+        "plannedReceiptDate": "2026-10-07",
+        "actualReceiptDate": null,
+        "observationWindowEnd": "2026-10-15",
+        "observedThrough": "2026-10-08",
+        "sourceKind": "registered_plan",
+        "executionRecords": []
+      }
+    },
+    "dialogue-user_correction": {
+      "addRecords": [
+        {
+          "kind": "arrival",
+          "quantity": 80,
+          "status": "planned",
+          "warehouseId": "east",
+          "businessDate": "2026-10-07"
+        }
+      ],
+      "arrivalOperations": [
+        {
+          "quantity": 80,
+          "status": "planned",
+          "receiptAt": null,
+          "inspectionAt": null
+        }
+      ]
+    },
+    "dialogue-confirm_rule": {
+      "candidates": [
+        {
+          "id": "dialogue-candidate-safety",
+          "state": "candidate",
+          "thresholdUnits": 20,
+          "confirmedBy": null,
+          "confirmedAt": null
+        }
+      ],
+      "confirmedEnterpriseRules": []
+    },
+    "hotel-policy_region": {
+      "policySource": {
+        "id": "shanghai-hotel",
+        "version": 1,
+        "url": "https://example.com/neo-synthetic-v2/shanghai-hotel.html",
+        "title": "合成上海小微酒店登记支持办法",
+        "issuer": "合成资料发布处",
+        "kind": "synthetic_primary",
+        "publicationStatus": "published",
+        "publishedAt": "2026-10-01",
+        "originalId": "shanghai-hotel",
+        "paragraphs": [
+          "本文为 NEO 隔离验收的 SYNTHETIC_DEMO 合成资料，发布方及规则均为虚构，不是主管部门公告或真实企业运行效果。",
+          "第一条 本办法适用于登记地址在上海市的小微酒店企业，需提供上海市登记地址证明和规模材料。",
+          "第二条 本文件自2026年10月15日起实施，材料只接受上海市酒店企业，档案中不包含杭州对应办法。"
+        ]
+      }
+    }
+  }
+}

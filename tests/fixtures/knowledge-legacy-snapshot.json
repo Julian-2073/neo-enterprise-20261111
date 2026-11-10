@@ -1,0 +1,940 @@
+{
+  "knownAt": "2026-10-04T18:01:49.203Z",
+  "id": "legacy-structure-fixture",
+  "businessId": "test-a",
+  "businessName": "原始模拟结构离线验收",
+  "dataNature": "demo",
+  "asOf": "2026-09-24",
+  "periodStart": "2026-04-06",
+  "periodEnd": "2026-09-20",
+  "productId": null,
+  "channel": null,
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-04T18:01:49.203Z",
+  "calculationVersion": "ingestion-v1.4-full24",
+  "batchIds": [
+    "0674bbd0-e689-4361-bf8f-ded6879c5c2c",
+    "12b0f5cd-b4f9-48c6-8f1e-85e4bbc451ec",
+    "1600836a-e31b-462e-9db8-a46cb5d95e66",
+    "1aabda59-7354-48d4-ae42-c90212b08a1d",
+    "238a3613-fdfd-4a03-bce7-a07245955fae",
+    "2dbd0317-ccf4-41e8-9002-aa9b31976027",
+    "389c19bb-01bf-432a-8c01-59c829f816d9",
+    "3dba2268-a84c-482b-a36f-977db549477a",
+    "5a7e2ee0-aa26-4504-946b-d1dd747ae3f3",
+    "5e1ee453-a19c-44f4-8950-8090cb7933e4",
+    "63505d7f-4bfe-42c2-b0f1-3ace8c4e5509",
+    "65844e8d-6e7c-49ee-ad63-be4197b3de8c",
+    "6a86708b-5987-4ff0-94e1-9d030c9d197b",
+    "6b9e4e46-936c-4807-8013-8f919da3ee72",
+    "6fc657a2-8d3a-4f59-bb1a-bd1862fe8be7",
+    "7072fff7-7b97-4c35-a6e5-b6768a975a55",
+    "74dabfac-7c6c-42f9-8ac2-427a2d59d787",
+    "963d940c-3328-4b5a-83b2-5d4bcb6670b2",
+    "9c82723f-4899-4f3c-805a-1dc23befb719",
+    "a5d5d712-4a23-4fdd-a425-a66e34ef0281",
+    "a67c4941-8632-42b6-929d-6909f3c59388",
+    "b6ebc6ba-f675-4cb8-ae33-ba03d08aba4b",
+    "bb598c94-a70b-4b3e-b084-1a0855d8195e",
+    "bfb0432f-e5d9-4366-9cce-c23f77cc7a7a",
+    "d6d72b07-d672-49e6-9cd4-540983a8b6a8",
+    "d7a2f282-0f9a-4266-b5bd-3a0c2329dfae",
+    "d8964b24-9532-4a4b-b138-36915fecdbac",
+    "e3ab2bc5-9cd9-47ca-a2e1-c7f4b07c9533",
+    "e8331a9c-cf27-46b0-9734-506811d92021",
+    "ea01298e-85e7-42ce-b7a2-cacfac2b7505",
+    "ea4acfd2-705d-46bf-a96a-181f6cbbddee",
+    "ea840ec3-cd31-4d03-8e6e-58b09a2cf540"
+  ],
+  "coverage": [
+    {
+      "batchId": "12b0f5cd-b4f9-48c6-8f1e-85e4bbc451ec",
+      "kind": "roles",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-03-30",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "d7a2f282-0f9a-4266-b5bd-3a0c2329dfae",
+      "kind": "channels",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-03-30",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "a67c4941-8632-42b6-929d-6909f3c59388",
+      "kind": "warehouses",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-03-30",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "d6d72b07-d672-49e6-9cd4-540983a8b6a8",
+      "kind": "customers",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-03-30",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "389c19bb-01bf-432a-8c01-59c829f816d9",
+      "kind": "products",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-03-30",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "1600836a-e31b-462e-9db8-a46cb5d95e66",
+      "kind": "skus",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-03-30",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "ea4acfd2-705d-46bf-a96a-181f6cbbddee",
+      "kind": "supply_rules",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-03-30",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "bfb0432f-e5d9-4366-9cce-c23f77cc7a7a",
+      "kind": "arrivals",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-03-30",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "5e1ee453-a19c-44f4-8950-8090cb7933e4",
+      "kind": "orders",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-04-06",
+      "end": "2026-05-03"
+    },
+    {
+      "batchId": "6b9e4e46-936c-4807-8013-8f919da3ee72",
+      "kind": "orders",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-05-04",
+      "end": "2026-05-31"
+    },
+    {
+      "batchId": "0674bbd0-e689-4361-bf8f-ded6879c5c2c",
+      "kind": "orders",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-06-01",
+      "end": "2026-06-28"
+    },
+    {
+      "batchId": "9c82723f-4899-4f3c-805a-1dc23befb719",
+      "kind": "orders",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-06-29",
+      "end": "2026-07-26"
+    },
+    {
+      "batchId": "7072fff7-7b97-4c35-a6e5-b6768a975a55",
+      "kind": "orders",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-07-27",
+      "end": "2026-08-23"
+    },
+    {
+      "batchId": "963d940c-3328-4b5a-83b2-5d4bcb6670b2",
+      "kind": "orders",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-08-24",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "e3ab2bc5-9cd9-47ca-a2e1-c7f4b07c9533",
+      "kind": "inventory",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-04-06",
+      "end": "2026-05-03"
+    },
+    {
+      "batchId": "a5d5d712-4a23-4fdd-a425-a66e34ef0281",
+      "kind": "inventory",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-05-04",
+      "end": "2026-05-31"
+    },
+    {
+      "batchId": "b6ebc6ba-f675-4cb8-ae33-ba03d08aba4b",
+      "kind": "inventory",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-06-01",
+      "end": "2026-06-28"
+    },
+    {
+      "batchId": "3dba2268-a84c-482b-a36f-977db549477a",
+      "kind": "inventory",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-06-29",
+      "end": "2026-07-26"
+    },
+    {
+      "batchId": "5a7e2ee0-aa26-4504-946b-d1dd747ae3f3",
+      "kind": "inventory",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-07-27",
+      "end": "2026-08-23"
+    },
+    {
+      "batchId": "6a86708b-5987-4ff0-94e1-9d030c9d197b",
+      "kind": "inventory",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-08-24",
+      "end": "2026-09-24"
+    },
+    {
+      "batchId": "ea01298e-85e7-42ce-b7a2-cacfac2b7505",
+      "kind": "expenses",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-04-06",
+      "end": "2026-05-03"
+    },
+    {
+      "batchId": "63505d7f-4bfe-42c2-b0f1-3ace8c4e5509",
+      "kind": "expenses",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-05-04",
+      "end": "2026-05-31"
+    },
+    {
+      "batchId": "65844e8d-6e7c-49ee-ad63-be4197b3de8c",
+      "kind": "expenses",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-06-01",
+      "end": "2026-06-28"
+    },
+    {
+      "batchId": "1aabda59-7354-48d4-ae42-c90212b08a1d",
+      "kind": "expenses",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-06-29",
+      "end": "2026-07-26"
+    },
+    {
+      "batchId": "d8964b24-9532-4a4b-b138-36915fecdbac",
+      "kind": "expenses",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-07-27",
+      "end": "2026-08-23"
+    },
+    {
+      "batchId": "74dabfac-7c6c-42f9-8ac2-427a2d59d787",
+      "kind": "expenses",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-08-24",
+      "end": "2026-09-20"
+    },
+    {
+      "batchId": "238a3613-fdfd-4a03-bce7-a07245955fae",
+      "kind": "events",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-04-06",
+      "end": "2026-05-03"
+    },
+    {
+      "batchId": "6fc657a2-8d3a-4f59-bb1a-bd1862fe8be7",
+      "kind": "events",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-05-04",
+      "end": "2026-05-31"
+    },
+    {
+      "batchId": "2dbd0317-ccf4-41e8-9002-aa9b31976027",
+      "kind": "events",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-06-01",
+      "end": "2026-06-28"
+    },
+    {
+      "batchId": "e8331a9c-cf27-46b0-9734-506811d92021",
+      "kind": "events",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-06-29",
+      "end": "2026-07-26"
+    },
+    {
+      "batchId": "ea840ec3-cd31-4d03-8e6e-58b09a2cf540",
+      "kind": "events",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-07-27",
+      "end": "2026-08-23"
+    },
+    {
+      "batchId": "bb598c94-a70b-4b3e-b084-1a0855d8195e",
+      "kind": "events",
+      "sourceId": "neo-sim-acceptance-20261004:540ac700bd474713bbdface39385dd54a2560c037978503a1cc9a0b473701e76",
+      "start": "2026-08-24",
+      "end": "2026-09-20"
+    }
+  ],
+  "dataStatus": "demo",
+  "limitations": [
+    "库存不按销售渠道筛选，按仓库和商品/SKU展示。",
+    "仅汇总已导入来源；覆盖日期是提供者声明，未经业务核实。",
+    "行为次数、支付订单数与客户人数不同，不计算客户转化率。",
+    "库存是各仓库/SKU最近一次已导入值，不保证企业全量或实时。",
+    "退款计入实际发生日，可能使该期净成交额为负。"
+  ],
+  "data": {
+    "financial": {
+      "paidOrders": 223,
+      "netRevenueCents": 75099420,
+      "spendCents": 2375000,
+      "variableCostCents": 46986000,
+      "contributionMarginCents": 25738420
+    },
+    "events": {
+      "A1": 903,
+      "A2": 687,
+      "A3": 341,
+      "A5": 66
+    },
+    "inventoryCostCents": 8943000,
+    "inventory": [
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-east-sim-M1-S1",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-M1",
+        "sku_id": "sim-M1-S1",
+        "channel": null,
+        "warehouse_id": "sim-W-east",
+        "sellable_units": 0,
+        "inventory_cost_cents": 0,
+        "in_transit_units": 0,
+        "safety_units": 2,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:66",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:66"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-west-sim-M1-S1",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-M1",
+        "sku_id": "sim-M1-S1",
+        "channel": null,
+        "warehouse_id": "sim-W-west",
+        "sellable_units": 7,
+        "inventory_cost_cents": 231000,
+        "in_transit_units": 0,
+        "safety_units": 1,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:67",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:67"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-east-sim-M1-S2",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-M1",
+        "sku_id": "sim-M1-S2",
+        "channel": null,
+        "warehouse_id": "sim-W-east",
+        "sellable_units": 6,
+        "inventory_cost_cents": 198000,
+        "in_transit_units": 0,
+        "safety_units": 2,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:68",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:68"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-west-sim-M1-S2",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-M1",
+        "sku_id": "sim-M1-S2",
+        "channel": null,
+        "warehouse_id": "sim-W-west",
+        "sellable_units": 2,
+        "inventory_cost_cents": 66000,
+        "in_transit_units": 0,
+        "safety_units": 1,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:69",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:69"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-east-sim-R1-S1",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-R1",
+        "sku_id": "sim-R1-S1",
+        "channel": null,
+        "warehouse_id": "sim-W-east",
+        "sellable_units": 2,
+        "inventory_cost_cents": 252000,
+        "in_transit_units": 0,
+        "safety_units": 2,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:70",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:70"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-west-sim-R1-S1",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-R1",
+        "sku_id": "sim-R1-S1",
+        "channel": null,
+        "warehouse_id": "sim-W-west",
+        "sellable_units": 3,
+        "inventory_cost_cents": 378000,
+        "in_transit_units": 0,
+        "safety_units": 2,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:71",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:71"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-east-sim-R1-S2",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-R1",
+        "sku_id": "sim-R1-S2",
+        "channel": null,
+        "warehouse_id": "sim-W-east",
+        "sellable_units": 0,
+        "inventory_cost_cents": 0,
+        "in_transit_units": 0,
+        "safety_units": 2,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:72",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:72"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-west-sim-R1-S2",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-R1",
+        "sku_id": "sim-R1-S2",
+        "channel": null,
+        "warehouse_id": "sim-W-west",
+        "sellable_units": 3,
+        "inventory_cost_cents": 378000,
+        "in_transit_units": 0,
+        "safety_units": 2,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:73",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:73"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-east-sim-S2-S1",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-S2",
+        "sku_id": "sim-S2-S1",
+        "channel": null,
+        "warehouse_id": "sim-W-east",
+        "sellable_units": 0,
+        "inventory_cost_cents": 0,
+        "in_transit_units": 0,
+        "safety_units": 2,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:74",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:74"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-west-sim-S2-S1",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-S2",
+        "sku_id": "sim-S2-S1",
+        "channel": null,
+        "warehouse_id": "sim-W-west",
+        "sellable_units": 4,
+        "inventory_cost_cents": 1180000,
+        "in_transit_units": 0,
+        "safety_units": 1,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:75",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:75"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-east-sim-S2-S2",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-S2",
+        "sku_id": "sim-S2-S2",
+        "channel": null,
+        "warehouse_id": "sim-W-east",
+        "sellable_units": 4,
+        "inventory_cost_cents": 1180000,
+        "in_transit_units": 0,
+        "safety_units": 2,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:76",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:76"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-west-sim-S2-S2",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-S2",
+        "sku_id": "sim-S2-S2",
+        "channel": null,
+        "warehouse_id": "sim-W-west",
+        "sellable_units": 4,
+        "inventory_cost_cents": 1180000,
+        "in_transit_units": 0,
+        "safety_units": 1,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:77",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:77"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-east-sim-X2-S1",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-X2",
+        "sku_id": "sim-X2-S1",
+        "channel": null,
+        "warehouse_id": "sim-W-east",
+        "sellable_units": 2,
+        "inventory_cost_cents": 1560000,
+        "in_transit_units": 1,
+        "safety_units": 1,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:78",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:78"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-west-sim-X2-S1",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-X2",
+        "sku_id": "sim-X2-S1",
+        "channel": null,
+        "warehouse_id": "sim-W-west",
+        "sellable_units": 1,
+        "inventory_cost_cents": 780000,
+        "in_transit_units": 0,
+        "safety_units": 0,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:79",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:79"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-east-sim-X2-S2",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-X2",
+        "sku_id": "sim-X2-S2",
+        "channel": null,
+        "warehouse_id": "sim-W-east",
+        "sellable_units": 2,
+        "inventory_cost_cents": 1560000,
+        "in_transit_units": 1,
+        "safety_units": 1,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:80",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:80"
+      },
+      {
+        "source_record_id": "sim-I-2026-09-24-sim-W-west-sim-X2-S2",
+        "occurred_at": "2026-09-24T15:00:00.000Z",
+        "business_date": "2026-09-24",
+        "product_id": "sim-X2",
+        "sku_id": "sim-X2-S2",
+        "channel": null,
+        "warehouse_id": "sim-W-west",
+        "sellable_units": 0,
+        "inventory_cost_cents": 0,
+        "in_transit_units": 0,
+        "safety_units": 0,
+        "factId": "6a86708b-5987-4ff0-94e1-9d030c9d197b:81",
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:stock-6a86708b-5987-4ff0-94e1-9d030c9d197b:81"
+      }
+    ],
+    "channels": [
+      {
+        "channel": "sim-douyin",
+        "paidOrders": 127,
+        "netRevenueCents": 44652085,
+        "spendCents": 1375000,
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:channel-sim-douyin"
+      },
+      {
+        "channel": "sim-tmall",
+        "paidOrders": 96,
+        "netRevenueCents": 30447335,
+        "spendCents": 1000000,
+        "evidenceId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:channel-sim-tmall"
+      }
+    ],
+    "weeks": [
+      {
+        "start": "2026-04-06",
+        "end": "2026-04-12",
+        "events": {
+          "A1": 28,
+          "A2": 13,
+          "A3": 6,
+          "A5": 1
+        },
+        "paidOrders": 3,
+        "netRevenueCents": 359700,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-04-13",
+        "end": "2026-04-19",
+        "events": {
+          "A1": 28,
+          "A2": 20,
+          "A3": 9,
+          "A5": null
+        },
+        "paidOrders": 3,
+        "netRevenueCents": 509700,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-04-20",
+        "end": "2026-04-26",
+        "events": {
+          "A1": 28,
+          "A2": 18,
+          "A3": 9,
+          "A5": 2
+        },
+        "paidOrders": 5,
+        "netRevenueCents": 1207510,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-04-27",
+        "end": "2026-05-03",
+        "events": {
+          "A1": 28,
+          "A2": 26,
+          "A3": 12,
+          "A5": 5
+        },
+        "paidOrders": 11,
+        "netRevenueCents": 4689515,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-05-04",
+        "end": "2026-05-10",
+        "events": {
+          "A1": 28,
+          "A2": 17,
+          "A3": 12,
+          "A5": 2
+        },
+        "paidOrders": 11,
+        "netRevenueCents": 2514410,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-05-11",
+        "end": "2026-05-17",
+        "events": {
+          "A1": 28,
+          "A2": 20,
+          "A3": 13,
+          "A5": 2
+        },
+        "paidOrders": 6,
+        "netRevenueCents": 2249400,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-05-18",
+        "end": "2026-05-24",
+        "events": {
+          "A1": 28,
+          "A2": 22,
+          "A3": 11,
+          "A5": 2
+        },
+        "paidOrders": 10,
+        "netRevenueCents": 2363525,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-05-25",
+        "end": "2026-05-31",
+        "events": {
+          "A1": 28,
+          "A2": 19,
+          "A3": 10,
+          "A5": 2
+        },
+        "paidOrders": 6,
+        "netRevenueCents": 1145905,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-06-01",
+        "end": "2026-06-07",
+        "events": {
+          "A1": 30,
+          "A2": 26,
+          "A3": 14,
+          "A5": 6
+        },
+        "paidOrders": 11,
+        "netRevenueCents": 6348910,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-06-08",
+        "end": "2026-06-14",
+        "events": {
+          "A1": 32,
+          "A2": 27,
+          "A3": 13,
+          "A5": 5
+        },
+        "paidOrders": 8,
+        "netRevenueCents": 2609410,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-06-15",
+        "end": "2026-06-21",
+        "events": {
+          "A1": 34,
+          "A2": 22,
+          "A3": 11,
+          "A5": 1
+        },
+        "paidOrders": 8,
+        "netRevenueCents": 3158105,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-06-22",
+        "end": "2026-06-28",
+        "events": {
+          "A1": 36,
+          "A2": 31,
+          "A3": 15,
+          "A5": 3
+        },
+        "paidOrders": 13,
+        "netRevenueCents": 3554735,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-06-29",
+        "end": "2026-07-05",
+        "events": {
+          "A1": 38,
+          "A2": 23,
+          "A3": 15,
+          "A5": 2
+        },
+        "paidOrders": 10,
+        "netRevenueCents": 2644510,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-07-06",
+        "end": "2026-07-12",
+        "events": {
+          "A1": 41,
+          "A2": 37,
+          "A3": 15,
+          "A5": 4
+        },
+        "paidOrders": 10,
+        "netRevenueCents": 2352620,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-07-13",
+        "end": "2026-07-19",
+        "events": {
+          "A1": 43,
+          "A2": 31,
+          "A3": 13,
+          "A5": 2
+        },
+        "paidOrders": 11,
+        "netRevenueCents": 5915725,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-07-20",
+        "end": "2026-07-26",
+        "events": {
+          "A1": 45,
+          "A2": 35,
+          "A3": 16,
+          "A5": 3
+        },
+        "paidOrders": 10,
+        "netRevenueCents": 4794520,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-07-27",
+        "end": "2026-08-02",
+        "events": {
+          "A1": 45,
+          "A2": 38,
+          "A3": 17,
+          "A5": 3
+        },
+        "paidOrders": 8,
+        "netRevenueCents": 2624205,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-08-03",
+        "end": "2026-08-09",
+        "events": {
+          "A1": 45,
+          "A2": 38,
+          "A3": 21,
+          "A5": 4
+        },
+        "paidOrders": 10,
+        "netRevenueCents": 3197025,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-08-10",
+        "end": "2026-08-16",
+        "events": {
+          "A1": 45,
+          "A2": 38,
+          "A3": 17,
+          "A5": 2
+        },
+        "paidOrders": 8,
+        "netRevenueCents": 5375815,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-08-17",
+        "end": "2026-08-23",
+        "events": {
+          "A1": 45,
+          "A2": 39,
+          "A3": 19,
+          "A5": 3
+        },
+        "paidOrders": 13,
+        "netRevenueCents": 4287630,
+        "spendCents": 95000
+      },
+      {
+        "start": "2026-08-24",
+        "end": "2026-08-30",
+        "events": {
+          "A1": 50,
+          "A2": 38,
+          "A3": 20,
+          "A5": 3
+        },
+        "paidOrders": 13,
+        "netRevenueCents": 478715,
+        "spendCents": 118750
+      },
+      {
+        "start": "2026-08-31",
+        "end": "2026-09-06",
+        "events": {
+          "A1": 50,
+          "A2": 36,
+          "A3": 17,
+          "A5": 3
+        },
+        "paidOrders": 11,
+        "netRevenueCents": 3232010,
+        "spendCents": 118750
+      },
+      {
+        "start": "2026-09-07",
+        "end": "2026-09-13",
+        "events": {
+          "A1": 50,
+          "A2": 38,
+          "A3": 20,
+          "A5": 4
+        },
+        "paidOrders": 14,
+        "netRevenueCents": 3887020,
+        "spendCents": 118750
+      },
+      {
+        "start": "2026-09-14",
+        "end": "2026-09-20",
+        "events": {
+          "A1": 50,
+          "A2": 35,
+          "A3": 16,
+          "A5": 2
+        },
+        "paidOrders": 10,
+        "netRevenueCents": 5598800,
+        "spendCents": 118750
+      }
+    ]
+  },
+  "evidenceIds": {},
+  "domain": {
+    "products": [
+      {
+        "id": "sim-M1",
+        "name": "sim-M1"
+      },
+      {
+        "id": "sim-M1",
+        "name": "sim-M1"
+      },
+      {
+        "id": "sim-M1",
+        "name": "sim-M1"
+      },
+      {
+        "id": "sim-M1",
+        "name": "sim-M1"
+      },
+      {
+        "id": "sim-R1",
+        "name": "sim-R1"
+      },
+      {
+        "id": "sim-R1",
+        "name": "sim-R1"
+      },
+      {
+        "id": "sim-R1",
+        "name": "sim-R1"
+      },
+      {
+        "id": "sim-R1",
+        "name": "sim-R1"
+      },
+      {
+        "id": "sim-S2",
+        "name": "sim-S2"
+      },
+      {
+        "id": "sim-S2",
+        "name": "sim-S2"
+      },
+      {
+        "id": "sim-S2",
+        "name": "sim-S2"
+      },
+      {
+        "id": "sim-S2",
+        "name": "sim-S2"
+      },
+      {
+        "id": "sim-X2",
+        "name": "sim-X2"
+      },
+      {
+        "id": "sim-X2",
+        "name": "sim-X2"
+      },
+      {
+        "id": "sim-X2",
+        "name": "sim-X2"
+      },
+      {
+        "id": "sim-X2",
+        "name": "sim-X2"
+      }
+    ]
+  }
+}

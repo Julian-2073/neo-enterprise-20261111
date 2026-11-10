@@ -1,0 +1,1 @@
+ALTER TABLE `ingestion_batches` ADD `validation_started_at` text DEFAULT '' NOT NULL;

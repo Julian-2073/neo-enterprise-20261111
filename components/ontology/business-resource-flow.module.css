@@ -1,0 +1,13 @@
+.frame{margin:18px 0;padding:12px;background:#f6f9fa;border:1px solid #e1e9ed;border-radius:8px;min-width:0}
+.canvas{height:620px;margin-top:12px;border:1px solid #dce7ec;border-radius:6px;overflow:hidden}
+.node{width:208px;min-height:76px;padding:11px 13px;background:white;border:1px solid #a8c0c8;border-radius:9px;box-shadow:0 2px 6px #264e5d0a}
+.node strong{display:block;color:#16323d;font-size:14px;line-height:1.7}
+.node span,.node code{display:block;color:#607e8b;font-size:10px;line-height:1.7}
+.node code{color:#849aa5;overflow-wrap:anywhere}
+.frame :global(.react-flow__node.selected) .node{border-color:#206a80;background:#e8f2f5;box-shadow:0 0 0 2px #206a8015}
+.frame :global(.react-flow__handle){width:6px;height:6px;background:#b3ccd6;border:1px solid #87aaba}
+.frame :global(.react-flow__minimap){width:130px;height:90px;border:1px solid #d7e3e8;border-radius:5px;overflow:hidden}
+.frame :global(.react-flow__attribution){font-size:9px}
+.frame output{align-self:center;min-width:42px;font-size:12px;color:#65808d}
+.status{font-size:12px!important;margin:10px 0 0!important}
+@media(max-width:620px){.canvas{height:480px}.frame{padding:8px}}

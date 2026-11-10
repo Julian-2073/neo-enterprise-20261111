@@ -1,0 +1,55 @@
+http://127.0.0.1:3102/demo?page=weekly&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?businessId=&dataNature=demo
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?businessId=&dataNature=demo
+    - link "我的客户":
+      - /url: /demo?page=people&businessId=&dataNature=demo
+    - link "供应链与库存":
+      - /url: /demo?page=goods&businessId=&dataNature=demo
+    - link "渠道与竞品":
+      - /url: /demo?page=market&businessId=&dataNature=demo
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&businessId=&dataNature=demo
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&businessId=&dataNature=demo
+    - generic: 本周行动周报
+  - generic: 经营数据加载中
+  - generic: 暂无经营快照 · 截至 待导入
+  - generic: 验收样例 · 无快照
+- main:
+  - text: 老板工作台 / 行动追踪
+  - heading "本周行动周报" [level=1]
+  - paragraph: 从经营判断走到行动，查看已经确认的状态和下一步。
+  - generic: 周报后端待接入
+  - text: 本周重点议题
+  - heading "等待导入经营数据" [level=2]
+  - paragraph: 尚无经过确认的行动、经营诊断与复盘记录。
+  - generic: 转化 待接入
+  - generic: 供给规则 待接入
+  - generic: 数据截至 待导入
+  - link "查看联动证据":
+    - /url: /demo?page=overview&view=evidence&businessId=&dataNature=demo
+    - text: 查看联动证据
+  - text: 行动进度
+  - strong: 待接入
+  - paragraph: 周报及行动后端尚未接入。
+  - generic: 待接入 · 尚无已保存行动
+  - text: 本周行动清单 · 待接入
+  - heading "行动后端待接入" [level=2]
+  - generic: 待接入
+  - generic: 负责人
+  - text: 待接入
+  - generic: 目标
+  - text: 待接入
+  - generic: 计划日期
+  - text: 待接入
+  - paragraph: 行动执行、结果及周报后端待接入。
+  - link "查看行动与更新状态":
+    - /url: /demo?page=overview&view=action&businessId=&dataNature=demo
+    - text: 查看行动与更新状态
+  - paragraph: 当前仅展示已保存经营快照的范围，不表示已生成经营周报。
+- contentinfo: 数据来自已提交导入记录 · 尚无经营快照 · 来源覆盖与业务真实性需另行核实

@@ -1,0 +1,99 @@
+http://127.0.0.1:3102/demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "我的客户":
+      - /url: /demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "供应链与库存":
+      - /url: /demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "渠道与竞品":
+      - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - generic: 本周行动周报
+  - generic: 本地验收企业 A
+  - generic: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02 · 截至 2026-09-02
+  - generic: 验收样例 · 已保存
+- main:
+  - heading "供应链与库存" [level=1]
+  - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+  - generic: 入门品
+  - generic: 商品角色与供给目标待接入
+  - strong: 待补数据 SKU · 待补数据
+  - generic: 主力成交品
+  - generic: 商品角色与供给目标待接入
+  - strong: 待补数据 SKU · 待补数据
+  - generic: 旗舰形象品
+  - generic: 商品角色与供给目标待接入
+  - strong: 待补数据 SKU · 待补数据
+  - heading "关键商品" [level=2]
+  - table:
+    - rowgroup:
+      - row "商品 经营角色 净销量 当前可售 在途 · 到货 可售天数 状态":
+        - columnheader "商品"
+        - columnheader "经营角色"
+        - columnheader "净销量"
+        - columnheader "当前可售"
+        - columnheader "在途 · 到货"
+        - columnheader "可售天数"
+        - columnheader "状态"
+    - rowgroup:
+      - row "P1 / SKU1 · W1 待接入 待补数据 件 0 件 2 件 · — 待补数据 天 已导入 · 2026-09-02":
+        - cell "P1 / SKU1 · W1":
+          - generic: P1 / SKU1 · W1
+        - cell "待接入"
+        - cell "待补数据 件"
+        - cell "0 件"
+        - cell "2 件 · —"
+        - cell "待补数据 天"
+        - cell "已导入 · 2026-09-02":
+          - generic: 已导入 · 2026-09-02
+      - row "P1 / SKU1 · W2 待接入 待补数据 件 6 件 1 件 · — 待补数据 天 已导入 · 2026-09-02":
+        - cell "P1 / SKU1 · W2":
+          - generic: P1 / SKU1 · W2
+        - cell "待接入"
+        - cell "待补数据 件"
+        - cell "6 件"
+        - cell "1 件 · —"
+        - cell "待补数据 天"
+        - cell "已导入 · 2026-09-02":
+          - generic: 已导入 · 2026-09-02
+  - region "三类货盘 · 供给脉搏":
+    - heading "三类货盘 · 供给脉搏" [level=3]
+    - paragraph: 商品角色与供给目标待接入
+    - generic: 入门品
+    - generic: 主力成交品
+    - generic: 旗舰形象品
+    - application:
+      - generic: 09-01–09-02
+  - heading "库存资金结构" [level=2]
+  - text: 已导入库存成本货值
+  - generic: ¥300.00
+  - generic: 入门品
+  - generic: 待补数据 · 待接入
+  - generic: 主力成交品
+  - generic: 待补数据 · 待接入
+  - generic: 旗舰形象品
+  - generic: 待补数据 · 待接入
+  - paragraph: 缺货机会情景：待补数据–待补数据 · 不代表已发生损失
+  - complementary "供需纠察智能体演示面板":
+    - heading "供需纠察智能体" [level=2]
+    - button "重置演示对话" [disabled]:
+    - button "建议行动 · 待接入" [disabled]:
+      - generic: 建议行动 · 待接入
+    - paragraph: 智能体后端待接入。当前页面只读取已保存的经营数据与证据，不生成经营判断。
+    - textbox "输入问题或经营补充" [disabled]:
+      - /placeholder: 智能体对话后端待接入
+    - generic: 补充经营信息或继续追问
+    - button "发送消息" [disabled]:
+    - generic: 智能体对话、研判与行动后端待接入
+  - link "查看联动证据 →":
+    - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- contentinfo: 数据来自已提交导入记录 · snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631 · 来源覆盖与业务真实性需另行核实
+- generic: 09-01–09-02

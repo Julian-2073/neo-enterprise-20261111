@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX `uq_material_version` ON `business_facts` (`business_id`,`data_nature`,`kind`,`record_key`) WHERE "business_facts"."kind" IN ('roles','products','skus','channels','warehouses','customers','customer_identities','arrivals','supply_rules');

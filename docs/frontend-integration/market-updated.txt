@@ -1,0 +1,75 @@
+http://127.0.0.1:3102/demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "我的客户":
+      - /url: /demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "供应链与库存":
+      - /url: /demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "渠道与竞品":
+      - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - generic: 本周行动周报
+  - generic: 本地验收企业 A
+  - generic: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02 · 截至 2026-09-02
+  - generic: 验收样例 · 已保存
+- main:
+  - heading "渠道与竞品" [level=1]
+  - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+  - heading "需求场景" [level=3]
+  - paragraph: 需求来源待接入
+  - generic: 待接入
+  - generic "暂无可核验比较数据": 来源待接入
+  - heading "竞品态势" [level=3]
+  - paragraph: 竞品来源待接入
+  - generic: 待接入
+  - generic "暂无可核验比较数据": 来源待接入
+  - heading "渠道效率" [level=3]
+  - paragraph: 效率指标待接入
+  - generic: 待接入
+  - generic "暂无可核验比较数据": 来源待接入
+  - heading "渠道 × 商品角色 · 经营态势" [level=2]
+  - paragraph: 商品角色及态势规则待接入。
+  - generic: 入门品
+  - generic: 主力成交品
+  - generic: 旗舰形象品
+  - generic: 抖音
+  - button "待接入 尚无商品角色归属与经营规则" [disabled]:
+    - generic: 待接入
+    - generic "尚无商品角色归属与经营规则"
+  - button "待接入 尚无商品角色归属与经营规则" [disabled]:
+    - generic: 待接入
+    - generic "尚无商品角色归属与经营规则"
+  - button "待接入 尚无商品角色归属与经营规则" [disabled]:
+    - generic: 待接入
+    - generic "尚无商品角色归属与经营规则"
+  - paragraph: 红色表示规则提示需核查，不代表已经证明原因。
+  - heading "市场变化 · 待接入" [level=2]
+  - paragraph: 同期观察 · 待验证
+  - heading "统计期渠道经营与投入 · 已导入范围" [level=2]
+  - strong: ¥30.00
+  - generic "抖音 · 订单 2 笔 · 净成交 ¥300.00 ¥30.00"
+  - button "抖音 · 订单 2 笔 · 净成交 ¥300.00 ¥30.00 · 100.0%":
+    - generic: 抖音 · 订单 2 笔 · 净成交 ¥300.00
+    - generic: ¥30.00 · 100.0%
+  - complementary "市场观察智能体演示面板":
+    - heading "市场观察智能体" [level=2]
+    - button "重置演示对话" [disabled]:
+    - button "建议行动 · 待接入" [disabled]:
+      - generic: 建议行动 · 待接入
+    - paragraph: 智能体后端待接入。当前页面只读取已保存的经营数据与证据，不生成经营判断。
+    - textbox "输入问题或经营补充" [disabled]:
+      - /placeholder: 智能体对话后端待接入
+    - generic: 补充经营信息或继续追问
+    - button "发送消息" [disabled]:
+    - generic: 智能体对话、研判与行动后端待接入
+  - link "查看联动证据 →":
+    - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- contentinfo: 数据来自已提交导入记录 · snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631 · 来源覆盖与业务真实性需另行核实

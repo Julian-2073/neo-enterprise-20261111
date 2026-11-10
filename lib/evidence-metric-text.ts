@@ -1,0 +1,1 @@
+export const evidenceMetricText=(m:{value:number|null;unit:string})=>m.value==null?'资料不足':m.unit==='人民币分'?`¥${(m.value/100).toLocaleString('zh-CN',{maximumFractionDigits:2})}`:m.unit==='比例'?`${(m.value*100).toFixed(1)}%`:`${m.value.toLocaleString('zh-CN',{maximumFractionDigits:2})} ${m.unit}`;

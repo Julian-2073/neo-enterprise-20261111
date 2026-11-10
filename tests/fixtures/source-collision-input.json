@@ -1,0 +1,87 @@
+{
+  "snapshot": {
+    "id": "sim-source-collision",
+    "businessId": "neo-sim-acceptance-20261004",
+    "dataNature": "demo",
+    "asOf": "2026-09-24",
+    "periodStart": "2026-09-14",
+    "periodEnd": "2026-09-20",
+    "data": {
+      "weeks": [
+        {
+          "start": "2026-09-14",
+          "end": "2026-09-20"
+        }
+      ]
+    },
+    "evidenceIds": {},
+    "coverage": [
+      {
+        "kind": "orders",
+        "sourceId": "sim-source-A",
+        "start": "2026-09-14",
+        "end": "2026-09-20"
+      },
+      {
+        "kind": "orders",
+        "sourceId": "sim-source-B",
+        "start": "2026-09-14",
+        "end": "2026-09-20"
+      }
+    ]
+  },
+  "domain": {},
+  "facts": [
+    {
+      "id": "sim-A-line1",
+      "sourceId": "sim-source-A",
+      "kind": "orders",
+      "fact": {
+        "product_id": "sim-P1",
+        "sku_id": "sim-S1",
+        "channel": "sim-c1",
+        "business_date": "2026-09-14",
+        "order_id": "sim-same-order",
+        "entry_type": "paid",
+        "quantity": 1,
+        "amount_cents": 10000,
+        "variable_cost_cents": 6000,
+        "order_line_id": "1"
+      }
+    },
+    {
+      "id": "sim-A-line2",
+      "sourceId": "sim-source-A",
+      "kind": "orders",
+      "fact": {
+        "product_id": "sim-P1",
+        "sku_id": "sim-S1",
+        "channel": "sim-c1",
+        "business_date": "2026-09-14",
+        "order_id": "sim-same-order",
+        "entry_type": "paid",
+        "quantity": 1,
+        "amount_cents": 10000,
+        "variable_cost_cents": 6000,
+        "order_line_id": "2"
+      }
+    },
+    {
+      "id": "sim-B-line1",
+      "sourceId": "sim-source-B",
+      "kind": "orders",
+      "fact": {
+        "product_id": "sim-P1",
+        "sku_id": "sim-S1",
+        "channel": "sim-c1",
+        "business_date": "2026-09-14",
+        "order_id": "sim-same-order",
+        "entry_type": "paid",
+        "quantity": 1,
+        "amount_cents": 10000,
+        "variable_cost_cents": 6000,
+        "order_line_id": "1"
+      }
+    }
+  ]
+}

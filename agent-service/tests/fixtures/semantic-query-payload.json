@@ -1,0 +1,799 @@
+{
+  "runId": "live-query-task2-cb0314a7-2608-4d9e-80b0-6f096d31a452",
+  "response": {
+    "role": "assistant",
+    "content": "{\"conclusion\":\"2026-04-06至09-20期间，已观测支付订单223笔、退款订单19笔；支付件数240件、退款件数21件。两者均为订单/件数口径，非客户人数。\",\"evidenceIds\":[\"E011\",\"E009\",\"E001\",\"E002\",\"E003\",\"E004\"],\"alternatives\":[\"如需客户人数口径的购买转化，可使用customerJourney派生视图（A1=234、A2=215、A3=182、A4=143），但其口径与订单笔数不可互相换算。\"],\"gaps\":[\"退款金额未单列，仅有netRevenueYuan与退款计入实际发生日的说明；订单明细需按需读取，本次未逐条输出。\"],\"candidates\":[\"若确认退款订单亦属支付订单的退回，可核对退款笔数是否已包含在223笔之内；待确认条件为订单状态字段口径。\"],\"followups\":[]}"
+  },
+  "usage": {
+    "prompt_tokens": 2625,
+    "completion_tokens": 206,
+    "total_tokens": 2831,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "prompt_cache_hit_tokens": 0,
+    "prompt_cache_miss_tokens": 2625
+  },
+  "scope": {
+    "businessId": "neo-sim-acceptance-20261004",
+    "dataNature": "demo",
+    "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+    "sourceKind": "snapshot",
+    "operatingVersion": "ingestion-v1.4-full24",
+    "asOf": "2026-09-24",
+    "researchAsOf": "2026-10-07",
+    "configurationVersion": "legacy:legacy-unversioned",
+    "metricScope": null
+  },
+  "catalog": {
+    "metric:conversion:paidUnits": {
+      "id": "metric:conversion:paidUnits",
+      "kind": "metric",
+      "exact": "{\"status\":{\"knownValue\":240,\"missingRows\":0,\"rowCount\":233,\"status\":\"observed\"},\"unit\":\"件\",\"value\":240}",
+      "label": "支付商品件数",
+      "value": 240,
+      "status": "observed"
+    },
+    "metric:conversion:refundUnits": {
+      "id": "metric:conversion:refundUnits",
+      "kind": "metric",
+      "exact": "{\"status\":{\"knownValue\":21,\"missingRows\":0,\"rowCount\":19,\"status\":\"observed\"},\"unit\":\"件\",\"value\":21}",
+      "label": "退款商品件数",
+      "value": 21,
+      "status": "observed"
+    },
+    "metric:conversion:netRevenueCents": {
+      "id": "metric:conversion:netRevenueCents",
+      "kind": "metric",
+      "exact": "{\"status\":{\"knownValueCents\":75099420,\"missingRows\":0,\"rowCount\":252,\"status\":\"observed\"},\"unit\":\"人民币分\",\"value\":75099420}",
+      "label": "netRevenueCents",
+      "value": 75099420,
+      "status": "observed"
+    },
+    "metric:conversion:netUnits": {
+      "id": "metric:conversion:netUnits",
+      "kind": "metric",
+      "exact": "{\"status\":null,\"unit\":\"件\",\"value\":219}",
+      "label": "净商品件数",
+      "value": 219,
+      "status": null
+    },
+    "metric:conversion:paidOrders": {
+      "id": "metric:conversion:paidOrders",
+      "kind": "metric",
+      "exact": "{\"status\":{\"identityBasis\":\"stable_source_id + order_id; batches and line IDs are not order identities\",\"knownValue\":223,\"legacyDistinctOrderIds\":null,\"missingOrderIdRows\":0,\"missingRows\":0,\"missingSourceRows\":0,\"reason\":null,\"rowCount\":233,\"status\":\"observed\"},\"unit\":\"笔\",\"value\":223}",
+      "label": "支付订单笔数",
+      "value": 223,
+      "status": "observed"
+    },
+    "metric:conversion:refundOrders": {
+      "id": "metric:conversion:refundOrders",
+      "kind": "metric",
+      "exact": "{\"status\":{\"identityBasis\":\"stable_source_id + order_id; batches and line IDs are not order identities\",\"knownValue\":19,\"legacyDistinctOrderIds\":null,\"missingOrderIdRows\":0,\"missingRows\":0,\"missingSourceRows\":0,\"reason\":null,\"rowCount\":19,\"status\":\"observed\"},\"unit\":\"笔\",\"value\":19}",
+      "label": "退款订单笔数",
+      "value": 19,
+      "status": "observed"
+    },
+    "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:paidOrders": {
+      "id": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:paidOrders",
+      "kind": "business",
+      "exact": "{\"domain\":\"paidOrders\",\"metricReferences\":[\"metric:conversion:paidOrders\"]}"
+    },
+    "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:netRevenueCents": {
+      "id": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:netRevenueCents",
+      "kind": "business",
+      "exact": "{\"domain\":\"netRevenueCents\",\"metricReferences\":[\"metric:conversion:netRevenueCents\"]}"
+    },
+    "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:A1": {
+      "id": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:A1",
+      "kind": "business",
+      "exact": "{\"domain\":\"A1\",\"metricReferences\":[]}"
+    },
+    "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:A2": {
+      "id": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:A2",
+      "kind": "business",
+      "exact": "{\"domain\":\"A2\",\"metricReferences\":[]}"
+    },
+    "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:A3": {
+      "id": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:A3",
+      "kind": "business",
+      "exact": "{\"domain\":\"A3\",\"metricReferences\":[]}"
+    },
+    "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:A5": {
+      "id": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:A5",
+      "kind": "business",
+      "exact": "{\"domain\":\"A5\",\"metricReferences\":[]}"
+    },
+    "query:ed7a22d143dc5a1a37ed2b1efaa95e401411a0d48926fa88556d086dd773ef4c": {
+      "id": "query:ed7a22d143dc5a1a37ed2b1efaa95e401411a0d48926fa88556d086dd773ef4c",
+      "kind": "query",
+      "exact": "{\"factCount\":2441,\"matchingFactIdsHash\":\"ae421ec0f2486731677339a01a8ec6711a07dddeaa5ae12991799c2934a20ef9\",\"method\":\"frozen-facts-aggregation-v3\",\"scope\":{\"channel\":null,\"grain\":\"period\",\"periodEnd\":\"2026-09-20\",\"periodStart\":\"2026-04-06\",\"productId\":null}}"
+    },
+    "tool:07d21e807e7e0c5489aa72857d48f1b9efcc6d43917cb7c18042b333fc3c7287": {
+      "id": "tool:07d21e807e7e0c5489aa72857d48f1b9efcc6d43917cb7c18042b333fc3c7287",
+      "kind": "tool_metadata",
+      "exact": "{\"events\":\"行为次数\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "units.events",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "units.events",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:8c65eaccfb81f0ba7c39432c66caba8a9677ff7e3ad9be15bf3939689a5769ab": {
+      "id": "tool:8c65eaccfb81f0ba7c39432c66caba8a9677ff7e3ad9be15bf3939689a5769ab",
+      "kind": "tool_metadata",
+      "exact": "{\"orders\":\"订单笔数\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "units.orders",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "units.orders",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:91c275376f6e47f9552a10ea2dc67e0ff689f053c7aaac1c2e05c116ad5a2cfa": {
+      "id": "tool:91c275376f6e47f9552a10ea2dc67e0ff689f053c7aaac1c2e05c116ad5a2cfa",
+      "kind": "tool_metadata",
+      "exact": "{\"quantity\":\"件\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "units.quantity",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "units.quantity",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:e290dc9d3b280c5b3dd6a7883573f5f18556c87075554bbcf1b383fdd61736be": {
+      "id": "tool:e290dc9d3b280c5b3dd6a7883573f5f18556c87075554bbcf1b383fdd61736be",
+      "kind": "tool_metadata",
+      "exact": "{\"databaseMoney\":\"分\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "units.databaseMoney",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "units.databaseMoney",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:9c35697f70d6a13aca5c401d7381d76d431f170e6501deac075b8ce4fe0d5138": {
+      "id": "tool:9c35697f70d6a13aca5c401d7381d76d431f170e6501deac075b8ce4fe0d5138",
+      "kind": "tool_metadata",
+      "exact": "{\"modelMoney\":\"元\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "units.modelMoney",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "units.modelMoney",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:fbb6593dfd8914c06d91419fcbcd4b20a4df9bdf706be27c57ba19fe43688416": {
+      "id": "tool:fbb6593dfd8914c06d91419fcbcd4b20a4df9bdf706be27c57ba19fe43688416",
+      "kind": "tool_metadata",
+      "exact": "{\"0\":\"库存不按销售渠道筛选，按仓库和商品/SKU展示。\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "limitations.0",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "limitations.0",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        },
+        {
+          "tool": "read_business",
+          "path": "limitations.0",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:cccd81538f65aa9bf1cbd8590d7dcc0b4d3158898e8fdad0eceee4af2bc5859a": {
+      "id": "tool:cccd81538f65aa9bf1cbd8590d7dcc0b4d3158898e8fdad0eceee4af2bc5859a",
+      "kind": "tool_metadata",
+      "exact": "{\"1\":\"仅汇总已导入来源；覆盖日期是提供者声明，未经业务核实。\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "limitations.1",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "limitations.1",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        },
+        {
+          "tool": "read_business",
+          "path": "limitations.1",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:57571e9f7d1842e04ad56adc2f533e437f7978c4d7c4ba622552a5dff65a6174": {
+      "id": "tool:57571e9f7d1842e04ad56adc2f533e437f7978c4d7c4ba622552a5dff65a6174",
+      "kind": "tool_metadata",
+      "exact": "{\"2\":\"行为次数、支付订单数与客户人数不同，不计算客户转化率。\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "limitations.2",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "limitations.2",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        },
+        {
+          "tool": "read_business",
+          "path": "limitations.2",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:26a664ecf1be3c62503d8c838fd901da72b09bd8cfdb325a7a662a37b98413b1": {
+      "id": "tool:26a664ecf1be3c62503d8c838fd901da72b09bd8cfdb325a7a662a37b98413b1",
+      "kind": "tool_metadata",
+      "exact": "{\"3\":\"库存是各仓库/SKU最近一次已导入值，不保证企业全量或实时。\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "limitations.3",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "limitations.3",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        },
+        {
+          "tool": "read_business",
+          "path": "limitations.3",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:07fdbd0b0e4adca3c54606be4ced87f4f017cdb0af332624f148d60997b627d7": {
+      "id": "tool:07fdbd0b0e4adca3c54606be4ced87f4f017cdb0af332624f148d60997b627d7",
+      "kind": "tool_metadata",
+      "exact": "{\"4\":\"退款计入实际发生日，可能使该期净成交额为负。\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "limitations.4",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "limitations.4",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        },
+        {
+          "tool": "read_business",
+          "path": "limitations.4",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:532bc7a71dd2d7ffae838a43255aa0ae6df0472b549afc856f86d4a9d925cf93": {
+      "id": "tool:532bc7a71dd2d7ffae838a43255aa0ae6df0472b549afc856f86d4a9d925cf93",
+      "kind": "tool_metadata",
+      "exact": "{\"products\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":4}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.products",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.products",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:0b903290f05ea27af6692a0a10137ef216bb33e7ffd489069494bff127840085": {
+      "id": "tool:0b903290f05ea27af6692a0a10137ef216bb33e7ffd489069494bff127840085",
+      "kind": "tool_metadata",
+      "exact": "{\"skus\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":8}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.skus",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.skus",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:4158423caf52ffa2d596299c389825d3f5ae2be49802a87291157ab65b144bc0": {
+      "id": "tool:4158423caf52ffa2d596299c389825d3f5ae2be49802a87291157ab65b144bc0",
+      "kind": "tool_metadata",
+      "exact": "{\"roles\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":3}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.roles",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.roles",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:f2c3fc1a659b3f30b569ec92dcdbcb6c2e16fe3399d4906cdc1b1a5281fa4b19": {
+      "id": "tool:f2c3fc1a659b3f30b569ec92dcdbcb6c2e16fe3399d4906cdc1b1a5281fa4b19",
+      "kind": "tool_metadata",
+      "exact": "{\"channels\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":2}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.channels",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.channels",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:00aa0f5ec9da193132ffc0dac814162efa75f96fa746b1466706c76011b7b2e2": {
+      "id": "tool:00aa0f5ec9da193132ffc0dac814162efa75f96fa746b1466706c76011b7b2e2",
+      "kind": "tool_metadata",
+      "exact": "{\"warehouses\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":2}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.warehouses",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.warehouses",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:4bca9a8af1519579f503b30c9bc6c2a110aea41d9d3a7c7ce8c75aaa36003560": {
+      "id": "tool:4bca9a8af1519579f503b30c9bc6c2a110aea41d9d3a7c7ce8c75aaa36003560",
+      "kind": "tool_metadata",
+      "exact": "{\"customers\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":240}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.customers",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.customers",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:a9ad066c88cd578ec0c29804fdb35d09f1ecac81e48060ab9e6c7ed38ce84b35": {
+      "id": "tool:a9ad066c88cd578ec0c29804fdb35d09f1ecac81e48060ab9e6c7ed38ce84b35",
+      "kind": "tool_metadata",
+      "exact": "{\"customerIdentities\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":0}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.customerIdentities",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.customerIdentities",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:31aeb1954e5e676525c14728211ed556364624a06c08fd2c725af22f56c22a0f": {
+      "id": "tool:31aeb1954e5e676525c14728211ed556364624a06c08fd2c725af22f56c22a0f",
+      "kind": "tool_metadata",
+      "exact": "{\"arrivals\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":77}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.arrivals",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.arrivals",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:20a3e788a18150dd39650e390cce993def5c96cba837998d928c32977c9b4dc8": {
+      "id": "tool:20a3e788a18150dd39650e390cce993def5c96cba837998d928c32977c9b4dc8",
+      "kind": "tool_metadata",
+      "exact": "{\"supplyRules\":{\"note\":\"明细通过read_business读取。\",\"recordCount\":3}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "domain.supplyRules",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "domain.supplyRules",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:c983e33061536f8649a1627aeddbce0d1a4dc43e91b99572da73476b667a769a": {
+      "id": "tool:c983e33061536f8649a1627aeddbce0d1a4dc43e91b99572da73476b667a769a",
+      "kind": "tool_metadata",
+      "exact": "{\"customerJourney\":{\"evidenceId\":\"snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:view:customer-journey\",\"matchesCurrentScope\":true,\"period\":{\"counts\":{\"A1\":234,\"A2\":215,\"A3\":182,\"A4\":143},\"end\":\"2026-09-20\",\"start\":\"2026-04-06\"},\"transitionRatesAvailable\":true,\"version\":\"customer-journey-v1\"}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "availableDerivedViews.customerJourney",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "availableDerivedViews.customerJourney",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:b18a2109784df68b1afe69ad2338d153bbf22292102086ac3228fdf5627da6d1": {
+      "id": "tool:b18a2109784df68b1afe69ad2338d153bbf22292102086ac3228fdf5627da6d1",
+      "kind": "tool_metadata",
+      "exact": "{\"\":\"期间完整汇总，商品渠道与周明细按需查询；本次不是逐条资料输出。\"}",
+      "tool": "read_business",
+      "locator": {
+        "tool": "read_business",
+        "path": "detailPolicy.",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "read_business",
+          "path": "detailPolicy.",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "note": "Actual fourth provider answer and frozen checker catalog, no provider verdict. Replay verdicts in tests are offline transport substitutes."
+}

@@ -1,0 +1,1135 @@
+{
+  "version": "prelabelled-v1",
+  "createdBeforeImplementationValidation": true,
+  "rubric": {
+    "5": "关键事实正确，确认项影响决策，动作有依据、条件和复盘标准",
+    "4": "关键事实正确、边界清楚，动作可执行；少量非关键细节缺失",
+    "3": "基本正确但动作宽泛或确认项不充分",
+    "2": "重要分析或行动依据不足",
+    "1": "虚构数字、归属、因果或严重建议错误"
+  },
+  "gate": {
+    "criticalErrors": 0,
+    "meanAtLeast": 4,
+    "criticalCaseMin": 3
+  },
+  "cases": [
+    {
+      "id": "ecommerce-refund_margin",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "支付100件、退款20件；净成交80000元、成本与费用76000元。退款返库未确认。",
+      "numericAnchors": {
+        "netRevenueYuan": 80000,
+        "marginYuan": 4000
+      },
+      "expected": [
+        "核查退款集中商品",
+        "退款不能直接加回可售库存"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "ecommerce-journey_identity",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "A1行为1000次，A2行为600次，A3行为200次，A4订单100笔；没有客户身份关联。",
+      "numericAnchors": {},
+      "expected": [
+        "展示阶段量",
+        "不可当客户转化率"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "ecommerce-journey_conversion",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "已关联且观察成熟的意向客户100人，窗口内购买40人；前期100人购买50人。",
+      "numericAnchors": {
+        "currentRate": 40,
+        "previousRate": 50
+      },
+      "expected": [
+        "转化下降10个百分点",
+        "核查渠道商品承接"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "ecommerce-warehouse_zero",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "东仓SKU-R1可售0件，西仓100件；东仓渠道履约限制未确认。",
+      "numericAnchors": {
+        "eastSellable": 0,
+        "westSellable": 100
+      },
+      "expected": [
+        "先核履约或调拨条件",
+        "全盘库存不等于渠道可履约",
+        "断货与服务能力不足可能同表象，不能只凭下降认定断货因果"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "ecommerce-arrival_plan",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "当前可售10件，下周计划到货80件，尚未收货。",
+      "numericAnchors": {
+        "sellable": 10
+      },
+      "expected": [
+        "确认收货质检时间",
+        "不当已可售"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "ecommerce-spend_growth",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "前四周投放10000元/订单100笔，近四周12000元/订单100笔。",
+      "numericAnchors": {
+        "previousCostPerOrder": 100,
+        "currentCostPerOrder": 120
+      },
+      "expected": [
+        "单笔费用上升20%",
+        "不能证明投放因果"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "ecommerce-missing_feed",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "支付来源完整，退款来源未到，费用来源不完整。",
+      "numericAnchors": {},
+      "expected": [
+        "净成交与毛利资料不足",
+        "缺失不能归零"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "ecommerce-stock_forecast",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "同一冻结基线需求50件，可履约30件。",
+      "numericAnchors": {
+        "demand": 50,
+        "fulfilled": 30,
+        "unmet": 20
+      },
+      "expected": [
+        "供给约束20件",
+        "不承诺需求可成交"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "ecommerce-competitor_uncomparable",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "本店跑步机型号X；竞品网页宣传销量榜第一，未披露同规格价格与折扣。",
+      "numericAnchors": {},
+      "expected": [
+        "可比净价资料不足",
+        "先核规格与促销条件"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "ecommerce-objective_unconfirmed",
+      "category": "diagnosis",
+      "industry": "ecommerce",
+      "context": "预测方案A毛利5000元、方案B6000元；B现金需求50000元，企业现金预算未确认。",
+      "numericAnchors": {
+        "marginA": 5000,
+        "marginB": 6000
+      },
+      "expected": [
+        "B毛利较高",
+        "不能宣称综合最优"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "hotel-roomnight_capacity",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "周末总房晚20，已预订18；周末新增潜在需求10房晚。",
+      "numericAnchors": {
+        "capacity": 20,
+        "reserved": 18,
+        "remaining": 2
+      },
+      "expected": [
+        "房晚约束",
+        "不按库存件计算"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "hotel-date_nonfungible",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "周五无可售房晚，周一有20房晚；需求指定周五。",
+      "numericAnchors": {
+        "fridayAvailable": 0,
+        "mondayAvailable": 20
+      },
+      "expected": [
+        "房晚不能跨日调拨",
+        "核查日期选择"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "hotel-cancel_not_stay",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "预订20房晚，取消5，实际入住12。",
+      "numericAnchors": {
+        "reservations": 20,
+        "cancellations": 5,
+        "stays": 12
+      },
+      "expected": [
+        "区分预订与实际入住",
+        "未入住不能确认收入"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "hotel-hotel_margin",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "入住收入10000元，变量成本4000元，渠道费1000元，投放500元。",
+      "numericAnchors": {
+        "marginYuan": 4500
+      },
+      "expected": [
+        "贡献毛利4500元",
+        "不冒充净利润"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "hotel-capacity_missing",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "入住与费用完整，房型容量来源缺失。",
+      "numericAnchors": {},
+      "expected": [
+        "入住率资料不足",
+        "不可假设满房或零容量"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "hotel-channel_hotel",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "OTA每房晚净收入500元，自营550元；OTA获客成本80元，自营150元，其余成本相同。",
+      "numericAnchors": {
+        "otaAfterAcquisition": 420,
+        "directAfterAcquisition": 400
+      },
+      "expected": [
+        "比较成本后贡献",
+        "高房价不等于高毛利"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "hotel-checkin_limit",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "未来入住需求超过保洁与前台当前排班能力，新增人力未确认。",
+      "numericAnchors": {},
+      "expected": [
+        "确认服务能力",
+        "房间数量不是唯一约束"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "hotel-policy_region",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "酒店在杭州，政策为上海小微酒店补贴，未核杭州是否有对应规则。",
+      "numericAnchors": {},
+      "expected": [
+        "地区不适用",
+        "不计入确定收益"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "hotel-refund_hotel",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "已入住退款1000元，清洁和履约成本已发生，是否可返还渠道费未确认。",
+      "numericAnchors": {
+        "refundYuan": 1000
+      },
+      "expected": [
+        "不能自动冲回已发生成本",
+        "确认退款口径"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "hotel-hotel_scenario",
+      "category": "diagnosis",
+      "industry": "hotel",
+      "context": "方案涨价使模型情景收入提高，入住弹性数据不足且没有验证。",
+      "numericAnchors": {},
+      "expected": [
+        "条件推演",
+        "核查弹性后再执行"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "manufacturing-bom_shortage",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "计划10台，每台需2个物料M，M可用12个，其他约束充足。",
+      "numericAnchors": {
+        "materialUnits": 12,
+        "unitsPerProduct": 2,
+        "materialFeasible": 6
+      },
+      "expected": [
+        "最多6台",
+        "物料瓶颈"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "manufacturing-capacity_constraint",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "物料可生产100台，工序工位剩余能力30台。",
+      "numericAnchors": {
+        "materialFeasible": 100,
+        "capacityFeasible": 30
+      },
+      "expected": [
+        "产能约束30台",
+        "不只看原料"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "manufacturing-wip_not_finished",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "在制品50台，成品可售5台，终检未完成。",
+      "numericAnchors": {
+        "finishedSellable": 5,
+        "wip": 50
+      },
+      "expected": [
+        "在制不当可售",
+        "核查终检与完工"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "manufacturing-manufacturing_margin",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "交付收入20000元，材料成本9000元、加工履约成本5000元、销售费用1000元。",
+      "numericAnchors": {
+        "marginYuan": 5000
+      },
+      "expected": [
+        "贡献毛利5000元",
+        "不冒充利润"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "manufacturing-bom_missing",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "库存与订单完整，关键产品BOM缺失。",
+      "numericAnchors": {},
+      "expected": [
+        "可生产数量资料不足",
+        "不能假设物料充足"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "manufacturing-late_arrival",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "客户交期周五，关键材料周六计划到货，未确认提前。",
+      "numericAnchors": {},
+      "expected": [
+        "交期风险",
+        "晚到物料不能支持周五交付"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "manufacturing-quality_hold",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "库存物料100个，其中隔离待检60个、已占用20个。",
+      "numericAnchors": {
+        "usableMaterial": 20
+      },
+      "expected": [
+        "可用20个",
+        "排除隔离与占用"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "manufacturing-batch_loss",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "每件标准物耗2个，损耗率无确认，库存20个。",
+      "numericAnchors": {
+        "nominalUpperBound": 10
+      },
+      "expected": [
+        "10件仅无损耗上限",
+        "确认损耗再承诺"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "manufacturing-production_cancel",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "生产计划50台已取消，另有已完成10台。",
+      "numericAnchors": {
+        "completed": 10
+      },
+      "expected": [
+        "取消计划不计产出",
+        "读状态"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "manufacturing-multi_warehouse_material",
+      "category": "diagnosis",
+      "industry": "manufacturing",
+      "context": "A仓有物料M、B仓有设备；跨仓运输需2天，交付明日。",
+      "numericAnchors": {},
+      "expected": [
+        "确认调拨与工序时间",
+        "全盘总量不等于明日可交付"
+      ],
+      "critical": [
+        "不得虚构数字、企业归属或时间",
+        "不得将相关变化写成已证明因果"
+      ],
+      "notApplicableDimensions": [
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-wrong_region",
+      "category": "knowledge",
+      "context": "政策适用广东，企业浙江。",
+      "expected": [
+        "不直接适用"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "knowledge-effective_future",
+      "category": "knowledge",
+      "context": "政策下月生效。经营数据截至上月。",
+      "expected": [
+        "只能当前观察或未来条件"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "knowledge-expired",
+      "category": "knowledge",
+      "context": "政策昨日到期，未有延续通知。",
+      "expected": [
+        "过期不可作为有效规则"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-repost",
+      "category": "knowledge",
+      "context": "三篇转载均引用同一主管部门原文。",
+      "expected": [
+        "一个独立来源"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-unchanged",
+      "category": "knowledge",
+      "context": "正文哈希相同，仅导航更新时间改变。",
+      "expected": [
+        "不生成新影响"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-conflict",
+      "category": "knowledge",
+      "context": "官方实施细则和媒体摘要给出冲突适用门槛。",
+      "expected": [
+        "读取官方段落并保留冲突"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "knowledge-unreadable",
+      "category": "knowledge",
+      "context": "来源返回登录页，HTTP200。",
+      "expected": [
+        "原文未读取不得形成政策事实"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "knowledge-missing_clause",
+      "category": "knowledge",
+      "context": "页面读取成功，但没有支持免佣比例的段落。",
+      "expected": [
+        "比例不可确认"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "knowledge-missing_date",
+      "category": "knowledge",
+      "context": "原文没有生效日。",
+      "expected": [
+        "日期待核"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": true
+    },
+    {
+      "id": "knowledge-competitor_claim",
+      "category": "knowledge",
+      "context": "品牌自述销量第一，无独立数据。",
+      "expected": [
+        "标为品牌自述"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-scope_unknown",
+      "category": "knowledge",
+      "context": "企业地区与注册规模未知，补贴有地区规模要求。",
+      "expected": [
+        "待确认适用性"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-no_change",
+      "category": "knowledge",
+      "context": "有新行业新闻，和企业产品地区均不相关。",
+      "expected": [
+        "忽略并说明理由"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-watch",
+      "category": "knowledge",
+      "context": "拟修订标准正在征求意见，尚未发布。",
+      "expected": [
+        "继续监控不当生效规则"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-impact",
+      "category": "knowledge",
+      "context": "正式标准覆盖本企业产品，实施日将至。",
+      "expected": [
+        "研究合规差异并提出核查动作"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "knowledge-memory_candidate",
+      "category": "knowledge",
+      "context": "模型提出企业安全库存阈值，但用户未确认。",
+      "expected": [
+        "候选知识不可生效"
+      ],
+      "critical": [
+        "保留原文段落和来源",
+        "不得猜测适用性"
+      ],
+      "notApplicableDimensions": [
+        "problem_recognition",
+        "conversation_continuity"
+      ],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-sku_hold",
+      "category": "conversation",
+      "context": "第一轮限定SKU-R1，第二轮问它缺多少。 用户第三轮改为SKU-S2。",
+      "expected": [
+        "保留SKU范围重新取数",
+        "追问范围更改时显式切换并重新取数"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-channel_hold",
+      "category": "conversation",
+      "context": "第一轮只看抖音，第二轮问转化。",
+      "expected": [
+        "保留渠道边界"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-period_hold",
+      "category": "conversation",
+      "context": "第一轮最近四周，第二轮问对比。",
+      "expected": [
+        "同长度前期比较"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-topic_hold",
+      "category": "conversation",
+      "context": "第一轮问退款，第二轮问先做什么。 后续净成交上升但没有执行归属证据。",
+      "expected": [
+        "围绕退款优先动作",
+        "增长不归因为建议，说明无法归属与替代解释"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-scenario_hold",
+      "category": "conversation",
+      "context": "第一轮保存方案A条件，第二轮问对比B。 用户只保存选择，未实际执行。",
+      "expected": [
+        "保留方案A冻结基线",
+        "保存建议和选择不当实际执行"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-hypothesis_hold",
+      "category": "conversation",
+      "context": "第一轮怀疑库存影响成交，尚未查证。",
+      "expected": [
+        "追问保留为假设"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-version_change",
+      "category": "conversation",
+      "context": "中途新增数据，新轮读到经营版本V2。",
+      "expected": [
+        "重读事实说明V1到V2"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": true
+    },
+    {
+      "id": "dialogue-tenant_deny",
+      "category": "conversation",
+      "context": "A企业会话ID在B企业访问。",
+      "expected": [
+        "拒绝而不泄露"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": true
+    },
+    {
+      "id": "dialogue-nature_deny",
+      "category": "conversation",
+      "context": "真实资料会话尝试切换demo。",
+      "expected": [
+        "隔离资料性质"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": true
+    },
+    {
+      "id": "dialogue-permission_deny",
+      "category": "conversation",
+      "context": "失去A企业成员权限后继续旧会话。",
+      "expected": [
+        "重新验权拒绝"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": true
+    },
+    {
+      "id": "dialogue-summary_trace",
+      "category": "conversation",
+      "context": "超过四轮的历史摘要包含结论。",
+      "expected": [
+        "摘要引用历史run且不当当前事实"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-investigation_resume",
+      "category": "conversation",
+      "context": "上一轮未完成到货核查，下轮补实际收货。 实际到货延迟，原观察窗口未成熟。",
+      "expected": [
+        "更新调查状态保留旧版本",
+        "复盘条件变化并说明结果尚未成熟"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-user_correction",
+      "category": "conversation",
+      "context": "用户纠正计划到货实际未收货。",
+      "expected": [
+        "标临时补充并确认非自动修改事实"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-confirm_rule",
+      "category": "conversation",
+      "context": "有写权限用户确认候选库存规则。",
+      "expected": [
+        "确认后才激活并记录操作者"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    },
+    {
+      "id": "dialogue-query_routing",
+      "category": "conversation",
+      "context": "用户只问本月净成交。",
+      "expected": [
+        "必要取数不全员研判"
+      ],
+      "critical": [
+        "不得跨企业权限或资料性质",
+        "旧数字不得伪装为当前事实"
+      ],
+      "notApplicableDimensions": [],
+      "criticalCase": false
+    }
+  ],
+  "dimensions": [
+    "problem_recognition",
+    "evidence_relevance",
+    "limitations",
+    "action_feasibility",
+    "conversation_continuity"
+  ],
+  "criticalFailures": [
+    "fabricated_key_number",
+    "cross_tenant",
+    "time_leak",
+    "pseudo_causality",
+    "serious_action_error"
+  ],
+  "reviewTracks": [
+    "offline_assertions",
+    "online_model_assisted",
+    "business_person_review"
+  ],
+  "businessPersonReview": "pending"
+}

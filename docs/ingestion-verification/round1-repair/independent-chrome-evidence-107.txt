@@ -1,0 +1,40 @@
+URL: http://127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+Browser tab: 1084666186, Title: "NEO · 增长决策工作台", URL: "http://127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea".
+1 AXWebArea NEO · 增长决策工作台, URL: 127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+	2 container 经营证据
+		3 button 关闭
+		4 heading A1 行为量, Value: 2
+			5 text A1 行为量
+		6 text 已导入行为事件数量之和；不是去重人数
+		7 container
+			8 text 单位： 次  · 来源记录  2  条
+		9 text 107
+		10 container
+			11 text NEO 本地验收样例  ·  demo-events.csv  · 第  2  条 CSV 记录 {
+  "source_record_id": "ev1",
+  "occurred_at": "2026-08-31T16:00:00.000Z",
+  "business_date": "2026-09-01",
+  "product_id": "P1",
+  "sku_id": null,
+  "channel": "抖音",
+  "event_type": "content_view",
+  "quantity": 100,
+  "contact_id": null
+}
+			12 link Description: 下载原文件, Value: 127.0.0.1:3102/api/v1/ingestion-batches/3b75fb23-b8f7-41c9-8d35-c19234d1c3d3/file?businessId=test-a&dataNature=demo
+		13 container
+			14 text NEO 本地验收样例  ·  repair-add-seven.csv  · 第  2  条 CSV 记录 {
+  "source_record_id": "repair-add-seven",
+  "occurred_at": "2026-09-01T16:00:00.000Z",
+  "business_date": "2026-09-02",
+  "product_id": "P1",
+  "sku_id": null,
+  "channel": "抖音",
+  "event_type": "impression",
+  "quantity": 7,
+  "contact_id": null
+}
+			15 link Description: 下载原文件, Value: 127.0.0.1:3102/api/v1/ingestion-batches/8eeb1586-fd4b-4e70-9e85-8782bd027a9d/file?businessId=test-a&dataNature=demo
+		16 text CSV 行号按表头及逻辑记录计数，含换行的单元格仍是一条记录。
+
+The focused UI element is 3 button 关闭

@@ -1,0 +1,2 @@
+source_record_id,order_id,order_line_id,entry_type,occurred_at,channel,product_id,sku_id,quantity,amount_cents,variable_cost_cents
+front-paid,front-order2,front-line2,paid,2026-09-02T12:00:00,抖音,P1,SKU1,1,10000,4000

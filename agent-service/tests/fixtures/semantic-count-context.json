@@ -1,0 +1,37 @@
+{
+  "runId": "live-query-task2-47496072-bed9-479b-8c6e-4e2907a6e37e",
+  "responses": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"conclusion\": \"期间 2026-04-06 至 2026-09-20：支付订单 223 笔、退款订单 19 笔；对应支付件数 240 件、退款件数 21 件。退款按实际发生日计入，可能使该期净成交为负。\", \"evidenceIds\": [\"E011\"], \"alternatives\": [], \"gaps\": [], \"candidates\": [], \"followups\": []}"
+      },
+      "usage": {
+        "prompt_tokens": 1707,
+        "completion_tokens": 100,
+        "total_tokens": 1807,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1707
+      }
+    },
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"claims\":[{\"i\":0,\"s\":\"S\",\"r\":[4,5],\"c\":[],\"g\":[]},{\"i\":1,\"s\":\"S\",\"r\":[0,1],\"c\":[],\"g\":[\"支付件数与支付订单笔数是不同指标，不可由笔数推断件数\"]},{\"i\":2,\"s\":\"I\",\"r\":[12,16],\"c\":[],\"g\":[\"仅声明退款计入实际发生日可能使净成交额为负，未确认该期净成交实际为负\"]}]}"
+      },
+      "usage": {
+        "prompt_tokens": 1643,
+        "completion_tokens": 113,
+        "total_tokens": 1756,
+        "prompt_tokens_details": {
+          "cached_tokens": 128
+        },
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 1515
+      }
+    }
+  ]
+}

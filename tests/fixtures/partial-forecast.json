@@ -1,0 +1,692 @@
+{
+  "calculationVersion": "scenario-v1.2",
+  "forecastCoverage": {
+    "status": "partial",
+    "forecastedSkuIds": [
+      "sim-M1-S1",
+      "sim-M1-S2",
+      "sim-R1-S1",
+      "sim-R1-S2",
+      "sim-S2-S1",
+      "sim-S2-S2",
+      "sim-X2-S1",
+      "sim-X2-S2"
+    ],
+    "unestimatedSkuIds": [
+      "ui-new-sku"
+    ],
+    "unestimatedProductIds": [
+      "ui-new"
+    ],
+    "inventorySkuIds": [
+      "sim-M1-S1",
+      "sim-M1-S2",
+      "sim-R1-S1",
+      "sim-R1-S2",
+      "sim-S2-S1",
+      "sim-S2-S2",
+      "sim-X2-S1",
+      "sim-X2-S2",
+      "ui-new-sku"
+    ],
+    "salesTotalsScope": "forecasted_skus_only",
+    "inventoryTotalsScope": "snapshot_inventory_including_unestimated_demand",
+    "endingInventoryMeaning": "conditional_carry_forward_not_full_demand_forecast",
+    "unestimatedEndingUnits": 70,
+    "unestimatedEndingInventoryCostCents": 70000,
+    "inventoryValuationComplete": true
+  },
+  "snapshotId": "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f",
+  "businessId": "neo-sim-acceptance-20261004",
+  "dataNature": "demo",
+  "inputHash": "de5f7f38fadb59829484bcc3350f6c221ddc21027d4aa515ce506c1389d6d657",
+  "assumptionsHash": "bd0ce8cf5822fda625e2446ed0e9d5414e4e1576991cd26781f967934bbf6f93",
+  "asOf": "2026-09-24",
+  "horizonDays": 28,
+  "unit": "件",
+  "orderCount": null,
+  "intervalMeaning": "assumption_sensitivity_not_confidence_interval",
+  "daily": [
+    {
+      "date": "2026-09-25",
+      "units": 1.9642857142857142,
+      "unmetUnits": 0,
+      "netRevenueCents": 471305,
+      "variableCostCents": 414893,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 108.03571428571429
+    },
+    {
+      "date": "2026-09-26",
+      "units": 1.9642857142857142,
+      "unmetUnits": 0,
+      "netRevenueCents": 471305,
+      "variableCostCents": 414893,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 106.07142857142857
+    },
+    {
+      "date": "2026-09-27",
+      "units": 1.9642857142857142,
+      "unmetUnits": 0,
+      "netRevenueCents": 471305,
+      "variableCostCents": 414893,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 104.10714285714286
+    },
+    {
+      "date": "2026-09-28",
+      "units": 1.9642857142857142,
+      "unmetUnits": 0,
+      "netRevenueCents": 471305,
+      "variableCostCents": 414893,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 104.14285714285714
+    },
+    {
+      "date": "2026-09-29",
+      "units": 1.9642857142857142,
+      "unmetUnits": 0,
+      "netRevenueCents": 471305,
+      "variableCostCents": 414893,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 102.17857142857143
+    },
+    {
+      "date": "2026-09-30",
+      "units": 1.9642857142857142,
+      "unmetUnits": 0,
+      "netRevenueCents": 471305,
+      "variableCostCents": 414893,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 100.21428571428571
+    },
+    {
+      "date": "2026-10-01",
+      "units": 1.9642857142857142,
+      "unmetUnits": 0,
+      "netRevenueCents": 471305,
+      "variableCostCents": 414893,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 98.25
+    },
+    {
+      "date": "2026-10-02",
+      "units": 1.9642857142857142,
+      "unmetUnits": 0,
+      "netRevenueCents": 471305,
+      "variableCostCents": 414893,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 96.28571428571428
+    },
+    {
+      "date": "2026-10-03",
+      "units": 1.7499999999999998,
+      "unmetUnits": 0.2142857142857144,
+      "netRevenueCents": 438320,
+      "variableCostCents": 387464,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 94.53571428571428
+    },
+    {
+      "date": "2026-10-04",
+      "units": 1.607142857142857,
+      "unmetUnits": 0.3571428571428572,
+      "netRevenueCents": 416330,
+      "variableCostCents": 369179,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 92.92857142857143
+    },
+    {
+      "date": "2026-10-05",
+      "units": 1.607142857142857,
+      "unmetUnits": 0.3571428571428572,
+      "netRevenueCents": 416330,
+      "variableCostCents": 369179,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 91.32142857142857
+    },
+    {
+      "date": "2026-10-06",
+      "units": 1.607142857142857,
+      "unmetUnits": 0.3571428571428572,
+      "netRevenueCents": 416330,
+      "variableCostCents": 369179,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 89.71428571428571
+    },
+    {
+      "date": "2026-10-07",
+      "units": 1.607142857142857,
+      "unmetUnits": 0.3571428571428572,
+      "netRevenueCents": 416330,
+      "variableCostCents": 369179,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 88.10714285714286
+    },
+    {
+      "date": "2026-10-08",
+      "units": 1.607142857142857,
+      "unmetUnits": 0.3571428571428572,
+      "netRevenueCents": 416330,
+      "variableCostCents": 369179,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 86.5
+    },
+    {
+      "date": "2026-10-09",
+      "units": 1.607142857142857,
+      "unmetUnits": 0.3571428571428572,
+      "netRevenueCents": 416330,
+      "variableCostCents": 369179,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 84.89285714285714
+    },
+    {
+      "date": "2026-10-10",
+      "units": 1.1785714285714268,
+      "unmetUnits": 0.7857142857142874,
+      "netRevenueCents": 389369,
+      "variableCostCents": 354179,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 83.71428571428571
+    },
+    {
+      "date": "2026-10-11",
+      "units": 0.8571428571428573,
+      "unmetUnits": 1.1071428571428568,
+      "netRevenueCents": 234292,
+      "variableCostCents": 250750,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 82.85714285714286
+    },
+    {
+      "date": "2026-10-12",
+      "units": 0.7142857142857142,
+      "unmetUnits": 1.25,
+      "netRevenueCents": 122872,
+      "variableCostCents": 139036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 82.14285714285714
+    },
+    {
+      "date": "2026-10-13",
+      "units": 0.7142857142857142,
+      "unmetUnits": 1.25,
+      "netRevenueCents": 122872,
+      "variableCostCents": 139036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 81.42857142857143
+    },
+    {
+      "date": "2026-10-14",
+      "units": 0.7142857142857142,
+      "unmetUnits": 1.25,
+      "netRevenueCents": 122872,
+      "variableCostCents": 139036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 80.71428571428571
+    },
+    {
+      "date": "2026-10-15",
+      "units": 0.46428571428571425,
+      "unmetUnits": 1.5,
+      "netRevenueCents": 68290,
+      "variableCostCents": 107036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 80.25
+    },
+    {
+      "date": "2026-10-16",
+      "units": 0.46428571428571425,
+      "unmetUnits": 1.5,
+      "netRevenueCents": 68290,
+      "variableCostCents": 107036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 79.78571428571429
+    },
+    {
+      "date": "2026-10-17",
+      "units": 0.46428571428571425,
+      "unmetUnits": 1.5,
+      "netRevenueCents": 68290,
+      "variableCostCents": 107036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 79.32142857142857
+    },
+    {
+      "date": "2026-10-18",
+      "units": 0.46428571428571425,
+      "unmetUnits": 1.5,
+      "netRevenueCents": 68290,
+      "variableCostCents": 107036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 78.85714285714286
+    },
+    {
+      "date": "2026-10-19",
+      "units": 0.46428571428571425,
+      "unmetUnits": 1.5,
+      "netRevenueCents": 68290,
+      "variableCostCents": 107036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 78.39285714285714
+    },
+    {
+      "date": "2026-10-20",
+      "units": 0.46428571428571425,
+      "unmetUnits": 1.5,
+      "netRevenueCents": 68290,
+      "variableCostCents": 107036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 77.92857142857143
+    },
+    {
+      "date": "2026-10-21",
+      "units": 0.46428571428571425,
+      "unmetUnits": 1.5,
+      "netRevenueCents": 68290,
+      "variableCostCents": 107036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 77.46428571428571
+    },
+    {
+      "date": "2026-10-22",
+      "units": 0.46428571428571425,
+      "unmetUnits": 1.5,
+      "netRevenueCents": 68290,
+      "variableCostCents": 107036,
+      "spendCents": 16964,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 77
+    }
+  ],
+  "products": [
+    {
+      "productId": "sim-M1",
+      "units": 14,
+      "unmetUnits": 6,
+      "netRevenueCents": 852780
+    },
+    {
+      "productId": "sim-R1",
+      "units": 8,
+      "unmetUnits": 9,
+      "netRevenueCents": 1553436
+    },
+    {
+      "productId": "sim-S2",
+      "units": 8,
+      "unmetUnits": 3,
+      "netRevenueCents": 3499300
+    },
+    {
+      "productId": "sim-X2",
+      "units": 5,
+      "unmetUnits": 2,
+      "netRevenueCents": 2339820
+    }
+  ],
+  "endingInventory": [
+    {
+      "skuId": "sim-M1-S1",
+      "warehouseId": "sim-W-east",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-M1-S1",
+      "warehouseId": "sim-W-west",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-M1-S2",
+      "warehouseId": "sim-W-east",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-M1-S2",
+      "warehouseId": "sim-W-west",
+      "units": 1,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-R1-S1",
+      "warehouseId": "sim-W-east",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-R1-S1",
+      "warehouseId": "sim-W-west",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-R1-S2",
+      "warehouseId": "sim-W-east",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-R1-S2",
+      "warehouseId": "sim-W-west",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-S2-S1",
+      "warehouseId": "sim-W-east",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-S2-S1",
+      "warehouseId": "sim-W-west",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-S2-S2",
+      "warehouseId": "sim-W-east",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-S2-S2",
+      "warehouseId": "sim-W-west",
+      "units": 4,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-X2-S1",
+      "warehouseId": "sim-W-east",
+      "units": 1,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-X2-S1",
+      "warehouseId": "sim-W-west",
+      "units": 1,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-X2-S2",
+      "warehouseId": "sim-W-east",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "sim-X2-S2",
+      "warehouseId": "sim-W-west",
+      "units": 0,
+      "demandStatus": "forecasted"
+    },
+    {
+      "skuId": "ui-new-sku",
+      "warehouseId": "sim-W-east",
+      "units": 70,
+      "demandStatus": "unestimated"
+    }
+  ],
+  "weeks": [
+    {
+      "start": "2026-09-25",
+      "end": "2026-10-01",
+      "units": 13.75,
+      "unmetUnits": 0,
+      "netRevenueCents": 3299135,
+      "variableCostCents": 2904251,
+      "spendCents": 118748,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 98.25
+    },
+    {
+      "start": "2026-10-02",
+      "end": "2026-10-08",
+      "units": 11.75,
+      "unmetUnits": 2,
+      "netRevenueCents": 2991275,
+      "variableCostCents": 2648252,
+      "spendCents": 118748,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 86.5
+    },
+    {
+      "start": "2026-10-09",
+      "end": "2026-10-15",
+      "units": 6.25,
+      "unmetUnits": 7.5,
+      "netRevenueCents": 1476897,
+      "variableCostCents": 1498252,
+      "spendCents": 118748,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 80.25
+    },
+    {
+      "start": "2026-10-16",
+      "end": "2026-10-22",
+      "units": 3.25,
+      "unmetUnits": 10.5,
+      "netRevenueCents": 478030,
+      "variableCostCents": 749252,
+      "spendCents": 118748,
+      "extraCostCents": 0,
+      "contributionMarginCents": null,
+      "endingUnits": 77
+    }
+  ],
+  "totals": {
+    "units": 35,
+    "unmetUnits": 20,
+    "netRevenueCents": 8245337,
+    "variableCostCents": 7800007,
+    "spendCents": 474992,
+    "extraCostCents": 0,
+    "contributionMarginCents": null,
+    "endingUnits": 77,
+    "endingInventoryCostCents": 2843718
+  },
+  "assumptions": {
+    "adjustments": [],
+    "arrivals": [],
+    "transfers": [],
+    "extraCostCents": 0,
+    "extraCostAssumption": null
+  },
+  "limitations": [
+    "预测范围不完整：无历史支付销量的 SKU ui-new-sku 需求未估计，不等于零需求；已知库存和到货保留，期末库存为未扣减这些未知需求的条件结余；贡献毛利暂不计算，不能按局部毛利推荐全范围方案。",
+    "库存不按销售渠道筛选，按仓库和商品/SKU展示。",
+    "仅汇总已导入来源；覆盖日期是提供者声明，未经业务核实。",
+    "行为次数、支付订单数与客户人数不同，不计算客户转化率。",
+    "库存是各仓库/SKU最近一次已导入值，不保证企业全量或实时。",
+    "退款计入实际发生日，可能使该期净成交额为负。",
+    "销量基于已观察销售，不等于潜在需求；不自动推断缺货损失。",
+    "情景范围来自假设敏感性，不是置信区间。",
+    "销量为支付商品出库件数，净成交额沿用历史退款金额比例；退款返库及成本冲回未建模。",
+    "库存资金按已有可售库存账面成本计价；新增到货沿用历史单位成本估算。",
+    "按当前快照范围计算；若只选部分渠道，未估计其他渠道对共享库存的占用。",
+    "没有历史支付销量的新品未生成数值预测，补充新品需求假设后才能纳入。",
+    "SYNTHETIC_DEMO：合成经营事实；日内需求按周均匀分配。",
+    "无销量历史 SKU 的新增到货沿用已知期初库存单位账面成本作为估值假设；期初单位成本未知时到货估值也未知，不代表采购报价。",
+    "未建立未来每单件数关系，不输出预测客户人数或订单笔数。"
+  ],
+  "backtest": {
+    "status": "evaluated",
+    "folds": 4,
+    "seriesCount": 16,
+    "sampleStart": "2026-06-01",
+    "sampleEnd": "2026-09-20",
+    "horizonWeeks": 4,
+    "actualUnits": 182,
+    "coldStartUnits": 4,
+    "wape": {
+      "fourWeekMean": 1.065934065934066,
+      "lastWeek": 1.1318681318681318
+    },
+    "aggregateWape": {
+      "fourWeekMean": 0.21153846153846154,
+      "lastWeek": 0.25274725274725274
+    },
+    "bias": {
+      "fourWeekMean": -0.10989010989010989,
+      "lastWeek": -0.03296703296703297
+    },
+    "foldResults": [
+      {
+        "trainEnd": "2026-05-31",
+        "testStart": "2026-06-01",
+        "testEnd": "2026-06-28",
+        "actualUnits": 43,
+        "wape": {
+          "fourWeekMean": 0.9534883720930233,
+          "lastWeek": 1.0465116279069768
+        }
+      },
+      {
+        "trainEnd": "2026-06-28",
+        "testStart": "2026-06-29",
+        "testEnd": "2026-07-26",
+        "actualUnits": 44,
+        "wape": {
+          "fourWeekMean": 1.1136363636363635,
+          "lastWeek": 1.1818181818181819
+        }
+      },
+      {
+        "trainEnd": "2026-07-26",
+        "testStart": "2026-07-27",
+        "testEnd": "2026-08-23",
+        "actualUnits": 40,
+        "wape": {
+          "fourWeekMean": 1.1875,
+          "lastWeek": 1.15
+        }
+      },
+      {
+        "trainEnd": "2026-08-23",
+        "testStart": "2026-08-24",
+        "testEnd": "2026-09-20",
+        "actualUnits": 55,
+        "wape": {
+          "fourWeekMean": 1.0272727272727273,
+          "lastWeek": 1.1454545454545455
+        }
+      }
+    ],
+    "grain": "SKU/channel × week",
+    "meaning": "WAPE 是误差；按相同时间切分比较，合成或公开数据结果不代表本企业经营精度"
+  },
+  "evidenceIds": [
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:paidOrders",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:netRevenueCents",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:spendCents",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:variableCostCents",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:contributionMarginCents",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:A1",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:A2",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:A3",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:A5",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:operatingPulse",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:inventoryCostCents",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-04-06",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-04-13",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-04-20",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-04-27",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-05-04",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-05-11",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-05-18",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-05-25",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-06-01",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-06-08",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-06-15",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-06-22",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-06-29",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-07-06",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-07-13",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-07-20",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-07-27",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-08-03",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-08-10",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-08-17",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-08-24",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-08-31",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-09-07",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:week-2026-09-14",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:materials",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:customerAnalysis",
+    "snap-4c99054ced69032a8d6753968f99da643dbac4815fd285ffbec86cb6cadf623f:supply"
+  ],
+  "backtestAvailability": {
+    "status": "no_paid_series",
+    "paidRecords": 233,
+    "availableByForecastDate": 0,
+    "missingAvailability": 0,
+    "meaning": "内嵌引擎回测仅按经营发生时间回顾；此处只核对资料在预测日期是否已录入，不证明每个训练窗的历史资料完整可用。"
+  },
+  "id": "forecast-0d6f97d1-7d34-489b-9192-f617ca4898ba",
+  "kind": "forecast",
+  "parentId": null,
+  "createdAt": "2026-10-04T09:19:53.919Z",
+  "title": "维持现状"
+}

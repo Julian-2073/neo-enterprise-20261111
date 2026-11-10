@@ -1,0 +1,11 @@
+.neo-live-people-host .neo-operating-scope{display:none}
+.neo-live-people-host .neo-page-heading>p{max-width:1050px;font-size:18px;line-height:1.6}
+.neo-live-people-host .neo-live-journey-period{display:flex;gap:14px;align-items:center;padding:9px 5px 0;color:#5476a9;font-size:13px}
+.neo-live-people-host .neo-live-journey-period small{font-size:12px;color:#8b9ab1}
+.neo-live-people-host .neo-funnel{grid-template-columns:minmax(0,1fr) 95px minmax(0,1fr) 95px minmax(0,1fr) 95px minmax(0,1fr)}
+.neo-live-people-host .neo-funnel-stage>div small{font-size:11px;line-height:1.5;padding:0 2px}
+.neo-live-people-host .neo-live-journey-basis{padding:5px 4px 12px;color:#7182a0;font-size:12px}
+.neo-live-people-host .neo-live-journey-basis summary{cursor:pointer;color:#006bff;font-size:13px}
+.neo-live-people-host .neo-live-journey-basis p{margin:10px 0;line-height:1.7}
+@media(max-width:1100px){.neo-live-people-host .neo-funnel{grid-template-columns:minmax(0,1fr) 70px minmax(0,1fr) 70px minmax(0,1fr) 70px minmax(0,1fr)}}
+@media(max-width:600px){.neo-live-people-host .neo-funnel{grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr) 48px minmax(0,1fr) 48px minmax(0,1fr)}.neo-live-people-host .neo-funnel-stage>div small{font-size:9px}.neo-live-people-host .neo-page-heading>p{font-size:15px}}

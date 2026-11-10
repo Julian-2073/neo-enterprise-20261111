@@ -1,0 +1,38 @@
+/** Explicit opt-in HTTP evaluator. No source setup, substitutions or grading. */
+import {mkdir,writeFile,readFile} from 'node:fs/promises';
+import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {frozenCases} from './frozen-case-fixtures.mjs';
+const argv=process.argv.slice(2),get=(name,fallback)=>{const i=argv.indexOf(name);return i<0?fallback:argv[i+1];};
+if(!argv.includes('--execute'))throw Error('Real provider calls require explicit --execute plus an input manifest; no calls were made.');
+const manifestPath=get('--manifest');if(!manifestPath)throw Error('--manifest must map frozen case IDs to actual authorized API input scopes and natural turns.');
+const manifest=JSON.parse(await readFile(manifestPath)),{data,digest}=await frozenCases();if(manifest.frozenHash!==digest)throw Error('Manifest frozen hash mismatch');
+const selectedIds=get('--cases','').split(',').filter(Boolean),limit=Number(get('--limit','3')),maxCalls=Number(get('--max-model-calls','3')),maxTokens=Number(get('--max-tokens','12000'));
+if(!Number.isInteger(limit)||limit<1||limit>60||!Number.isInteger(maxCalls)||maxCalls<1||maxCalls>8||!Number.isInteger(maxTokens)||maxTokens<1||maxTokens>60000)throw Error('Bounded selectors/caps invalid');
+const base=new URL(get('--base-url','http://127.0.0.1:3112'));if(base.protocol!=='http:'||!['127.0.0.1','localhost'].includes(base.hostname))throw Error('Only explicitly launched local gateway accepted');
+const out=path.resolve(get('--out','outputs/agent-optimization/frozen-live/'+new Date().toISOString().replace(/[:.]/g,'-')));await mkdir(out,{recursive:true});
+async function request(resource,scope,body){const u=new URL('/api/v1/'+resource,base);for(const [k,v] of Object.entries(scope??{}))if(v!=null)u.searchParams.set(k,v);const r=await fetch(u,{method:body?'POST':'GET',headers:{'content-type':'application/json',origin:base.origin},...(body?{body:JSON.stringify(body)}:{}),signal:AbortSignal.timeout(65000)});return {httpStatus:r.status,body:await r.json()};}
+const version=await (await fetch(new URL('/__neo_version',base))).json();if(version.executionMode!=='live')throw Error('Gateway is not in live mode');
+const originalInput=version.seed?.businessId;const chosen=data.cases.filter(c=>!selectedIds.length||selectedIds.includes(c.id)).slice(0,limit);if(selectedIds.some(id=>!data.cases.some(c=>c.id===id)))throw Error('Unknown frozen case ID');
+const receipt={track:'actual_provider_API',frozenHash:digest,head:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),gatewayVersion:version,actualInputPath:manifest.inputPath??null,manifestPath,defaultBusiness:originalInput,caseLimit:limit,maxCallsPerTurn:maxCalls,maxTokensPerTurn:maxTokens,onlineScores:null,humanReview:'pending_human_review',startedAt:new Date().toISOString(),cases:data.cases.map(c=>({id:c.id,status:'not_executed',notApplicableDimensions:c.notApplicableDimensions??[],scores:null}))};
+await writeFile(path.join(out,'receipt.json'),JSON.stringify(receipt,null,2));
+for(const c of chosen){const entry=manifest.cases?.find(x=>x.id===c.id),row=receipt.cases.find(x=>x.id===c.id),dir=path.join(out,c.id);await mkdir(dir,{recursive:true});
+ if(c.category==='knowledge'){
+  if(!entry?.scope?.businessId||!entry.monitorTaskId){row.status='unsupported_knowledge_task_manifest';continue;}
+  const action=entry.action??'resume';if(!['resume','recheck'].includes(action))throw Error('Knowledge evaluator only resumes an existing frozen task or explicitly rechecks its document.');
+  row.fixtureReference=entry.fixtureReference??null;row.actualScope=entry.scope;const body={requestId:crypto.randomUUID(),dataNature:entry.scope.dataNature??'demo',...(entry.documentId?{documentId:entry.documentId}:{})};await writeFile(path.join(dir,'request.json'),JSON.stringify({scope:entry.scope,taskId:entry.monitorTaskId,action,body},null,2));const admitted=await request(`monitor/${entry.monitorTaskId}/${action}`,entry.scope,body);await writeFile(path.join(dir,'admission.json'),JSON.stringify(admitted,null,2));let r=admitted;const deadline=Date.now()+Number(get('--timeout-seconds','660'))*1000;
+  if(admitted.httpStatus<300){do{await new Promise(resolve=>setTimeout(resolve,1500));r=await request('monitor/'+entry.monitorTaskId,entry.scope);await writeFile(path.join(dir,'result.json'),JSON.stringify(r,null,2));}while(['pending','running'].includes(r.body.item?.status)&&Date.now()<deadline);}
+  row.status=r.body.item?.status==='completed'?'provider_completed_semantic_review_pending':'failed_or_partial';row.monitorTaskId=entry.monitorTaskId;row.reportedUsage=r.body.item?.payload?.documents??null;row.usageNotice='Gateway monitor document/run references preserved; per-call private service journal must be attached separately, never inferred from successful HTTP.';row.rubricReview='pending_model_assisted_and_human_review';await writeFile(path.join(out,'receipt.json'),JSON.stringify(receipt,null,2));continue;
+ }
+ if(!entry?.scope?.businessId||!entry.scope.snapshotId||!Array.isArray(entry.turns)||!entry.turns.length){row.status='unsupported_input_manifest';continue;}
+ if(entry.turns.length>8)throw Error('At most eight bounded turns per case');row.fixtureReference=entry.fixtureReference??null;row.actualScope=entry.scope;row.turns=[];
+ let sessionId;
+ for(const [index,turn] of entry.turns.entries()){if(typeof turn.question!=='string'||!turn.question.trim())throw Error('Each case needs exact natural question; no generic substituted question');const body={snapshotId:entry.scope.snapshotId,dataNature:entry.scope.dataNature??'demo',mode:entry.mode??'joint',purpose:'analysis',question:turn.question,sessionId,requestId:'frozen-'+c.id+'-'+crypto.randomUUID(),...(turn.dialogueScope?{dialogueScope:turn.dialogueScope}:{}),budget:{maxModelCalls:maxCalls,maxTokens,maxMarketSearches:0}};
+  await writeFile(path.join(dir,`turn-${index}-request.json`),JSON.stringify({scope:entry.scope,body},null,2));let r=await request('agent-runs',entry.scope,body);await writeFile(path.join(dir,`turn-${index}-admission.json`),JSON.stringify(r,null,2));if(r.httpStatus>=300){row.turns.push({index,status:'admission_failed',error:r.body});break;}
+  sessionId=r.body.sessionId;const id=r.body.id;const deadline=Date.now()+Number(get('--timeout-seconds','660'))*1000;
+  while(['queued','pending_dispatch','running'].includes(r.body.status)&&Date.now()<deadline){await new Promise(resolve=>setTimeout(resolve,1500));r=await request('agent-runs/'+encodeURIComponent(id),entry.scope);await writeFile(path.join(dir,`turn-${index}-result.json`),JSON.stringify(r,null,2));if(r.httpStatus>=300)break;}
+  const observation=await request('agent-runs/'+encodeURIComponent(id)+'/observability',entry.scope);await writeFile(path.join(dir,`turn-${index}-usage-journal.json`),JSON.stringify(observation,null,2));await writeFile(path.join(dir,`turn-${index}-result.json`),JSON.stringify(r,null,2));row.turns.push({index,runId:id,sessionId,status:r.body.status,httpStatus:r.httpStatus,usage:observation.body.observability??null,evidence:dir});if(r.body.status!=='completed')break;
+ }
+ row.status=row.turns.length===entry.turns.length&&row.turns.every(t=>t.status==='completed')?'provider_completed_semantic_review_pending':'failed_or_partial';row.rubricReview='pending_model_assisted_and_human_review';await writeFile(path.join(out,'receipt.json'),JSON.stringify(receipt,null,2));
+}
+receipt.finishedAt=new Date().toISOString();await writeFile(path.join(out,'receipt.json'),JSON.stringify(receipt,null,2));console.log(JSON.stringify({out,executed:receipt.cases.filter(c=>c.turns?.length).length,pending:receipt.cases.filter(c=>c.status==='not_executed').length,scored:0}));

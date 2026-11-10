@@ -1,0 +1,28 @@
+{
+  "dataNature": "demo",
+  "source": "NEO前端接入第二组隔离样例",
+  "period": [
+    "2026-09-01",
+    "2026-09-02"
+  ],
+  "before": {
+    "A1": 107,
+    "paidOrders": 1,
+    "netRevenueCents": 20000,
+    "spendCents": 2000,
+    "variableCostCents": 10000,
+    "contributionMarginCents": 8000,
+    "inventoryCostCents": 20000,
+    "sellable": 4
+  },
+  "after": {
+    "A1": 114,
+    "paidOrders": 2,
+    "netRevenueCents": 30000,
+    "spendCents": 3000,
+    "variableCostCents": 14000,
+    "contributionMarginCents": 13000,
+    "inventoryCostCents": 30000,
+    "sellable": 6
+  }
+}

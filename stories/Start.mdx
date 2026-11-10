@@ -1,0 +1,10 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="NEO/使用说明" />
+
+# NEO 开发预览
+页面、证据抽屉和周报故事显式使用最初演示模式，复用原组件。这些故事不发起经营写入，不调用在线模型。
+产品入口仍是 `/demo`，读取数据库并使用已配置的真实在线智能体。
+选择「后端建设总览」查看当前TS后端、FastAPI、资料、预测、决策与知识的源码链路。可拖动、缩放和点击节点。
+源码发现不等于当前版本测试通过，也不等于真实经营效果。链路图不会将旧验证计为新版本完成率。
+运行 `npm run storybook`，本机6006端口；`npm run build-storybook`生成独立预览。`npm run backend-map`刷新图中的源码依据。

@@ -1,0 +1,9 @@
+{
+  "sourceHead": "35e87e3f0ca0035fc62ead6d4badfca77a6f0b98",
+  "legacyRunId": "run-5c718021-4d66-43ba-9647-16e3602b81f3",
+  "legacyInputSha256": "51f098358afb393a44cc6df1386e7b6d4bafaf30eeda91916b9caef7da99708b",
+  "legacyOriginalReceipt": "outputs/agent-optimization/task4-ui-runs-35e87e3.json",
+  "providerOriginalReceipt": "outputs/agent-optimization/provider-live-35e87e3/receipt.json",
+  "nature": "demo_synthetic",
+  "purpose": "offline budget/protocol regression only; recorded failures retained, never model quality pass"
+}

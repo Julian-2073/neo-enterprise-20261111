@@ -1,0 +1,13 @@
+import {writeFile,mkdir} from 'node:fs/promises';
+import {execFileSync,spawnSync} from 'node:child_process';
+import path from 'node:path';
+import {frozenCases,caseFixture} from './frozen-case-fixtures.mjs';
+import {evaluateDialogueCases} from './frozen-dialogue-path.mjs';
+import {evaluateKnowledgeCases} from './frozen-knowledge-path.mjs';
+import {stableSource} from './stable-source.mjs';
+const {data,digest}=await frozenCases(),root=process.cwd(),out=path.resolve(process.env.NEO_EVALUATION_OUTPUT||'outputs/agent-optimization/frozen-offline/'+new Date().toISOString().replace(/[:.]/g,'-'));await mkdir(out,{recursive:true});
+const source=await stableSource(root);const cases=data.cases.map((c,i)=>{const f=caseFixture(c,i);return {id:c.id,category:c.category,context:c.context,businessId:f.config.businessId,knowledgeScope:{entities:[f.config.entityId],channels:[f.config.channelId],asOf:f.generation.state.asOf},job:f.job,notApplicableDimensions:c.notApplicableDimensions??[],deterministicAssertions:Object.entries(f.oracles).map(([name,passed])=>({name,passed})),expectationCoverage:f.fixtureComplete?'distinct_structured_fixture_numeric_and_condition_checks_quality_pending':'partial_fixture_expectations_unsupported',calculatorAssertions:Object.entries(c.numericAnchors??{}).map(([key,expected])=>({key,expected,actual:f.observed[key]??null,status:Object.hasOwn(f.observed,key)?'executed':'unsupported',passed:Object.hasOwn(f.observed,key)?f.observed[key]===expected:null}))};});
+const dialogue=await evaluateDialogueCases(data.cases.filter(c=>c.category==='conversation'));await writeFile(path.join(out,'dialogue-api-results.json'),JSON.stringify(dialogue,null,2));
+const knowledge=await evaluateKnowledgeCases(data.cases.filter(c=>c.category==='knowledge'));await writeFile(path.join(out,'knowledge-native-results.json'),JSON.stringify(knowledge,null,2));
+const input={knowledgeEvidence:knowledge,dialogueEvidence:dialogue.map(({requests,...r})=>r),frozenHash:digest,lineage:{head:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),sourceDigest:source.digest,executionMode:'offline',inputPath:'tests/fixtures/frozen-businesses.json',originalAcceptanceUntouched:true},cases};await writeFile(path.join(out,'inputs.json'),JSON.stringify(input,null,2));
+const child=spawnSync('agent-service/.venv/bin/python',['-m','neo_agent.frozen_evaluation',path.join(out,'inputs.json'),out],{stdio:'inherit',env:{...process.env,PYTHONPATH:'agent-service',LLM_API_KEY:'',NEO_MARKET_PROVIDER:'disabled'}});process.exitCode=child.status??1;

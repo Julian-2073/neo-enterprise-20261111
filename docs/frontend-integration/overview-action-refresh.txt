@@ -1,0 +1,87 @@
+http://127.0.0.1:3102/demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631&view=action
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "我的客户":
+      - /url: /demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "供应链与库存":
+      - /url: /demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "渠道与竞品":
+      - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - generic: 本周行动周报
+  - generic: 本地验收企业 A
+  - generic: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02 · 截至 2026-09-02
+  - generic: 验收样例 · 已保存
+- main:
+  - heading "先看可能的未来，再决定下一步" [level=1]
+  - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+  - tablist "协同与决策步骤":
+    - tab "1 经营联动":
+      - generic: "1"
+      - text: 经营联动
+    - tab "2 预测推演":
+      - generic: "2"
+      - text: 预测推演
+    - tab "3 行动决策" [selected]:
+      - generic: "3"
+      - text: 行动决策
+  - text: 转化
+  - generic: 待接入
+  - text: 供给
+  - generic: 待接入
+  - text: 市场
+  - generic: 待验证
+  - tabpanel "3 行动决策":
+    - heading "行动后端待接入" [level=2]
+    - generic: 待接入
+    - heading "方案 A · 保持现状" [level=3]
+    - paragraph: 行动推演与观察结果待接入。
+    - term: 负责人
+    - definition: 待接入
+    - term: 截止时间
+    - definition: 待接入
+    - term: 观察指标
+    - definition: 待接入
+    - term: 预算假设
+    - definition: 待接入
+    - button "查看已导入库存与在途数量":
+      - generic: 查看已导入库存与在途数量
+    - button "查看已导入行为与订单":
+      - generic: 查看已导入行为与订单
+    - button "对照竞品价格与渠道成本" [disabled]:
+      - generic: 对照竞品价格与渠道成本
+    - button "行动后端待接入" [disabled]:
+      - text: 行动后端待接入
+    - button "重置草案" [disabled]
+    - paragraph: 行动后端待接入，尚无已执行行动与收益记录。
+  - complementary "行动编排智能体演示面板":
+    - heading "行动编排智能体" [level=2]
+    - button "重置演示对话" [disabled]:
+    - button "建议行动 · 待接入" [disabled]:
+      - generic: 建议行动 · 待接入
+    - paragraph: 智能体后端待接入。当前页面只读取已保存的经营数据与证据，不生成经营判断。
+    - textbox "输入问题或经营补充" [disabled]:
+      - /placeholder: 智能体对话后端待接入
+    - generic: 补充经营信息或继续追问
+    - button "发送消息" [disabled]:
+    - generic: 智能体对话、研判与行动后端待接入
+  - generic: 行动生命周期
+  - generic: "1"
+  - text: 待接入
+  - generic: "2"
+  - text: 待接入
+  - generic: "3"
+  - text: 待接入
+  - generic: "4"
+  - text: 待接入
+  - generic: "5"
+  - text: 待接入
+- contentinfo: 数据来自已提交导入记录 · snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631 · 来源覆盖与业务真实性需另行核实

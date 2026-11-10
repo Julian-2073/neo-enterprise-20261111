@@ -1,0 +1,4 @@
+URL: http://127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8
+Browser tab: 1, Title: "NEO · 增长决策工作台", URL: "http://127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8".
+There has been no change in the accessibility tree.
+The focused UI element is 0 AXWebArea NEO · 增长决策工作台, URL: 127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-aa67f4067707d090685b3f0101a48d74e86791dda86d6a281bbfc35297ed74c8

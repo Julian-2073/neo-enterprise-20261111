@@ -1,0 +1,110 @@
+http://127.0.0.1:3102/demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "我的客户":
+      - /url: /demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "供应链与库存":
+      - /url: /demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "渠道与竞品":
+      - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - generic: 本周行动周报
+  - generic: 本地验收企业 A
+  - generic: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02 · 截至 2026-09-02
+  - generic: 验收样例 · 已保存
+- main:
+  - heading "生意预测/协同" [level=1]
+  - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+  - button "统计期净成交额 ¥300.00 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02":
+    - generic: 统计期净成交额
+    - strong: ¥300.00
+    - generic: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02
+  - generic: 统计期贡献毛利
+  - strong: ¥130.00
+  - generic: 占净成交 43.3%
+  - generic: 统计期投放费用
+  - strong: ¥30.00
+  - generic: 占净成交 10.0%
+  - button "已导入库存成本货值 ¥300.00 已导入范围 · 截至所选日期":
+    - generic: 已导入库存成本货值
+    - strong: ¥300.00
+    - generic: 已导入范围 · 截至所选日期
+  - tablist "协同与决策步骤":
+    - tab "1 经营联动" [selected]:
+      - generic: "1"
+      - text: 经营联动
+    - tab "2 预测推演":
+      - generic: "2"
+      - text: 预测推演
+    - tab "3 行动决策":
+      - generic: "3"
+      - text: 行动决策
+  - tabpanel "1 经营联动":
+    - heading "三域经营脉搏 · 共同时间轴" [level=2]
+    - generic: 异常判断待接入
+    - heading "人 · 4A 转化" [level=3]
+    - paragraph: 实际次数 / 笔数
+    - link "查看人页":
+      - /url: /demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+      - text: 查看人页
+    - region "行为与支付订单走势":
+      - generic: 曝光行为（次）
+      - generic: 互动行为（次）
+      - generic: 意向行为（次）
+      - generic: 支付订单（笔）
+      - application:
+        - generic: "26"
+        - generic: "79"
+        - generic: "131"
+    - heading "货 · 三类供给" [level=3]
+    - paragraph: 达标 SKU 占比
+    - link "查看货页":
+      - /url: /demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+      - text: 查看货页
+    - region "三类供给达标率":
+      - generic: 入门品
+      - generic: 主力成交品
+      - generic: 旗舰形象品
+      - application
+    - heading "场 · 渠道与竞品" [level=3]
+    - paragraph: 同期观察 · 待核查
+    - link "查看场页":
+      - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+      - text: 查看场页
+    - text: 09-01–09-02
+    - generic: "09.01"
+    - heading "联合研判" [level=2]
+    - heading "已知事实" [level=3]
+    - paragraph: 已读取保存的经营数据
+    - heading "待核查" [level=3]
+    - paragraph: 客户关联、供给规则及因果证据待补齐。
+    - heading "优先动作" [level=3]
+    - paragraph: 行动建议后端待接入。
+    - button "看未来，比较方案":
+      - text: 看未来，比较方案
+  - complementary "三智能体协作演示面板":
+    - heading "三智能体协作" [level=2]
+    - button "重置演示对话" [disabled]:
+    - group "协同智能体":
+      - button "协同" [pressed]
+      - button "人"
+      - button "货"
+      - button "场"
+    - button "建议行动 · 待接入" [disabled]:
+      - generic: 建议行动 · 待接入
+    - paragraph: 智能体后端待接入。当前页面只读取已保存的经营数据与证据，不生成经营判断。
+    - textbox "输入问题或经营补充" [disabled]:
+      - /placeholder: 智能体对话后端待接入
+    - generic: 补充经营信息或继续追问
+    - button "发送消息" [disabled]:
+    - generic: 智能体对话、研判与行动后端待接入
+- contentinfo: 数据来自已提交导入记录 · snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631 · 来源覆盖与业务真实性需另行核实
+- generic: "0"

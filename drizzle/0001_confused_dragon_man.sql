@@ -1,0 +1,1 @@
+ALTER TABLE `business_events` ADD `artwork_name` text;

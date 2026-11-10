@@ -1,0 +1,4 @@
+﻿source_record_id,occurred_at,warehouse_id,product_id,sku_id,sellable_units,inventory_cost_cents,in_transit_units,safety_units
+stock1,2026-09-01,W1,P1,SKU1,5,25000,0,3
+stock2,2026-09-02,W1,P1,SKU1,0,0,2,3
+stock3,2026-09-02,W2,P1,SKU1,4,20000,0,

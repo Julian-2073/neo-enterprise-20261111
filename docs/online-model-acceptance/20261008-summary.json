@@ -1,0 +1,52 @@
+{
+  "scope": {
+    "businessId": "neo-sim-acceptance-20261004",
+    "dataNature": "demo",
+    "snapshotId": "snap-9d4f3fedc823e7dac9946e53686c5e64bf115b7140a356439a4844705be2cc3d"
+  },
+  "overallStatus": "partial_pass",
+  "cases": [
+    {
+      "index": 0,
+      "runId": "run-3f2087eb-eebf-4af2-abf5-6720f129ff1f",
+      "status": "completed"
+    },
+    {
+      "index": 1,
+      "runId": "run-39632459-66d9-4e84-b62f-0868e62feb6a",
+      "status": "completed"
+    },
+    {
+      "index": 2,
+      "runId": "run-2fe98e4c-e78f-48f9-9950-ff17aec12bd5",
+      "status": "failed"
+    }
+  ],
+  "ledgerAudit": {
+    "totalNewInvocations": 14,
+    "totalReportedTokens": 114153,
+    "batchInvocations": 10,
+    "batchReportedTokens": 62679,
+    "otherReviewInvocations": 4,
+    "otherReviewReportedTokens": 51474,
+    "oldCallRowsAltered": [],
+    "newUncertainCalls": 0
+  },
+  "regression": {
+    "pythonAffectedTestsPassed": 148,
+    "typecheck": "passed",
+    "stableBuild": "passed",
+    "originalDemoProtectedFilesUnchanged": 8
+  },
+  "notValidated": [
+    "Full joint assessment online rerun after calendar repair",
+    "60-case online business evaluation",
+    "Human scored action quality",
+    "Fresh external policy collection and applicability",
+    "Real enterprise outcomes"
+  ],
+  "failedReleaseGates": [
+    "Joint diagnosis did not reach final semantic support verification",
+    "Unread or absent identity rows were conflated with unavailable derived customer links in rejected draft"
+  ]
+}

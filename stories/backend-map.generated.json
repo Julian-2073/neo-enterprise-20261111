@@ -1,0 +1,917 @@
+{
+  "schemaVersion": 2,
+  "scannedAt": "2026-10-05T19:15:44.781Z",
+  "sourceFingerprint": "95a5792f418df6b6da01b169d99c14987cfe0ee1fbd1c79aaad04f7b585ce106",
+  "projectRoot": "/Users/majun/Desktop/NEO/NEO后端交接包2026-09-30/growthos-dashboard",
+  "scan": {
+    "files": 155,
+    "contractPath": "docs/稳定主版本.md",
+    "warnings": [],
+    "limits": "扫描TS资源分支和FastAPI声明。计数仅代表发现代码，不代表运行、模型质量或业务通过。"
+  },
+  "current": {
+    "routes": [
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/businesses",
+        "resource": "businesses",
+        "methods": [
+          "GET"
+        ],
+        "line": 69
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/import-templates",
+        "resource": "import-templates",
+        "methods": [
+          "GET"
+        ],
+        "line": 73
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/ingestion-batches",
+        "resource": "ingestion-batches",
+        "methods": [
+          "POST"
+        ],
+        "line": 83
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/ingestion-batches",
+        "resource": "ingestion-batches",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 111
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/operating-snapshots",
+        "resource": "operating-snapshots",
+        "methods": [
+          "POST"
+        ],
+        "line": 146
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/operating-options",
+        "resource": "operating-options",
+        "methods": [
+          "GET"
+        ],
+        "line": 156
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/operating-snapshots",
+        "resource": "operating-snapshots",
+        "methods": [
+          "GET"
+        ],
+        "line": 170
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/operating-materials",
+        "resource": "operating-materials",
+        "methods": [
+          "GET"
+        ],
+        "line": 173
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/operating-snapshot",
+        "resource": "operating-snapshot",
+        "methods": [
+          "GET"
+        ],
+        "line": 180
+      },
+      {
+        "file": "server/api.ts",
+        "route": "/api/v1/evidence",
+        "resource": "evidence",
+        "methods": [
+          "GET"
+        ],
+        "line": 197
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/agent-policy",
+        "resource": "agent-policy",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/agent-runs",
+        "resource": "agent-runs",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/agent-sessions",
+        "resource": "agent-sessions",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/forecasts",
+        "resource": "forecasts",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/scenarios",
+        "resource": "scenarios",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/decisions",
+        "resource": "decisions",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/briefings",
+        "resource": "briefings",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/reports",
+        "resource": "reports",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/agent-domain",
+        "resource": "agent-domain",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/market-evidence",
+        "resource": "market-evidence",
+        "methods": [],
+        "line": 258
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/agent-policy",
+        "resource": "agent-policy",
+        "methods": [
+          "GET"
+        ],
+        "line": 259
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/agent-domain",
+        "resource": "agent-domain",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 260
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/agent-runs",
+        "resource": "agent-runs",
+        "methods": [
+          "POST",
+          "GET"
+        ],
+        "line": 273
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/agent-sessions",
+        "resource": "agent-sessions",
+        "methods": [
+          "GET"
+        ],
+        "line": 307
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/forecasts",
+        "resource": "forecasts",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 311
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/scenarios",
+        "resource": "scenarios",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 311
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/decisions",
+        "resource": "decisions",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 311
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/market-evidence",
+        "resource": "market-evidence",
+        "methods": [
+          "GET"
+        ],
+        "line": 343
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/briefings",
+        "resource": "briefings",
+        "methods": [
+          "GET"
+        ],
+        "line": 346
+      },
+      {
+        "file": "server/agents.ts",
+        "route": "/api/v1/reports",
+        "resource": "reports",
+        "methods": [
+          "GET"
+        ],
+        "line": 346
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/definitions",
+        "resource": "definitions",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 72
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/imports",
+        "resource": "imports",
+        "methods": [
+          "POST",
+          "GET"
+        ],
+        "line": 78
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/builds",
+        "resource": "builds",
+        "methods": [
+          "GET"
+        ],
+        "line": 83
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/builds",
+        "resource": "builds",
+        "methods": [
+          "POST"
+        ],
+        "line": 84
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/snapshots",
+        "resource": "snapshots",
+        "methods": [
+          "GET"
+        ],
+        "line": 85
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/results",
+        "resource": "results",
+        "methods": [
+          "POST",
+          "GET"
+        ],
+        "line": 86
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/objects",
+        "resource": "objects",
+        "methods": [
+          "POST"
+        ],
+        "line": 87
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/objects",
+        "resource": "objects",
+        "methods": [
+          "GET"
+        ],
+        "line": 88
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/object-sets",
+        "resource": "object-sets",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 89
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/quality",
+        "resource": "quality",
+        "methods": [
+          "GET"
+        ],
+        "line": 95
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/resources",
+        "resource": "resources",
+        "methods": [
+          "GET"
+        ],
+        "line": 96
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/graph",
+        "resource": "graph",
+        "methods": [
+          "GET"
+        ],
+        "line": 97
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/functions",
+        "resource": "functions",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 110
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/agents",
+        "resource": "agents",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 111
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/actions",
+        "resource": "actions",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 112
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/runs",
+        "resource": "runs",
+        "methods": [
+          "GET",
+          "POST"
+        ],
+        "line": 113
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/health",
+        "resource": "health",
+        "methods": [
+          "POST"
+        ],
+        "line": 120
+      },
+      {
+        "file": "server/ontology/api.ts",
+        "route": "/api/v1/ontology/health",
+        "resource": "health",
+        "methods": [
+          "GET"
+        ],
+        "line": 121
+      }
+    ],
+    "pythonRoutes": [
+      {
+        "file": "agent-service/neo_agent/app.py",
+        "route": "/health",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "file": "agent-service/neo_agent/app.py",
+        "route": "/runs",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "file": "agent-service/neo_agent/app.py",
+        "route": "/queue",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "file": "agent-service/neo_agent/app.py",
+        "route": "/patrols/{snapshot_id}",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "file": "agent-service/neo_agent/app.py",
+        "route": "/runs/{ident}",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "file": "agent-service/neo_agent/app.py",
+        "route": "/runs/{ident}/cancel",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "file": "agent-service/neo_agent/app.py",
+        "route": "/runs/{ident}/resume",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "file": "agent-service/neo_agent/app.py",
+        "route": "/calculate/{kind}",
+        "methods": [
+          "POST"
+        ]
+      }
+    ],
+    "tables": [
+      "ontology_definitions",
+      "ontology_imports",
+      "ontology_builds",
+      "ontology_objects",
+      "ontology_links",
+      "ontology_object_sets",
+      "ontology_edits",
+      "ontology_runs",
+      "ontology_heads",
+      "ontology_result_objects",
+      "ontology_result_links",
+      "datasets",
+      "business_events",
+      "businesses",
+      "business_members",
+      "data_sources",
+      "ingestion_batches",
+      "ingestion_rows",
+      "ingestion_issues",
+      "business_facts",
+      "operating_snapshots",
+      "evidence_records",
+      "evidence_facts",
+      "audit_events",
+      "neo_domain_records",
+      "neo_inputs",
+      "neo_sessions",
+      "neo_runs",
+      "neo_artifacts",
+      "neo_market_evidence"
+    ]
+  },
+  "pages": [
+    {
+      "id": "home",
+      "name": "今日经营",
+      "route": "/demo",
+      "file": "app/demo/page.tsx",
+      "story": "neo-pages--home"
+    },
+    {
+      "id": "people",
+      "name": "我的客户",
+      "route": "/demo?page=people",
+      "file": "app/demo/page.tsx",
+      "story": "neo-pages--people"
+    },
+    {
+      "id": "goods",
+      "name": "供应链与库存",
+      "route": "/demo?page=goods",
+      "file": "app/demo/page.tsx",
+      "story": "neo-pages--goods"
+    },
+    {
+      "id": "market",
+      "name": "渠道与竞品",
+      "route": "/demo?page=market",
+      "file": "app/demo/page.tsx",
+      "story": "neo-pages--market"
+    },
+    {
+      "id": "overview",
+      "name": "预测与推演",
+      "route": "/demo?page=overview",
+      "file": "app/demo/page.tsx",
+      "story": "neo-pages--overview"
+    },
+    {
+      "id": "weekly",
+      "name": "经营决策周报",
+      "route": "/demo?page=weekly",
+      "file": "app/demo/page.tsx",
+      "story": "neo-weekly-report--default"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "identity",
+      "title": "企业与权限",
+      "file": "server/api.ts",
+      "resource": "businesses",
+      "methods": [
+        "GET"
+      ],
+      "source": [
+        "server/auth.ts",
+        "export async function context"
+      ],
+      "work": "按用户与企业核对读取和写入权限。",
+      "storage": "企业与成员",
+      "endpoints": [
+        {
+          "endpoint": "GET /api/v1/businesses",
+          "codePresent": true
+        }
+      ],
+      "codePresent": true,
+      "evidence": [
+        {
+          "file": "server/auth.ts",
+          "line": 30,
+          "found": true,
+          "excerpt": "export async function context(request: Request, runtime: Runtime, businessId?: string | null): Promise<Context> {\n    assert(runtime.DB, 503, \"STORAGE_UNAVAILABLE\", \"D1 数据库不可用\");\n    const userId = await identity(request, runtime);\n    cons"
+        }
+      ],
+      "verification": {
+        "integration": {
+          "status": "unverified",
+          "note": "静态源码发现不替代当前版本实际链路验收。"
+        },
+        "business": {
+          "status": "unverified",
+          "note": "真实企业经营效果需另验。"
+        }
+      }
+    },
+    {
+      "id": "ingestion",
+      "title": "资料入库",
+      "file": "server/api.ts",
+      "resource": "ingestion-batches",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "source": [
+        "server/ingestion.ts",
+        "export"
+      ],
+      "work": "CSV校验、原件保存、提交事实；生成器只用于隔离验收。",
+      "storage": "来源、批次与事实",
+      "endpoints": [
+        {
+          "endpoint": "GET /api/v1/ingestion-batches",
+          "codePresent": true
+        },
+        {
+          "endpoint": "POST /api/v1/ingestion-batches",
+          "codePresent": true
+        }
+      ],
+      "codePresent": true,
+      "evidence": [
+        {
+          "file": "server/ingestion.ts",
+          "line": 8,
+          "found": true,
+          "excerpt": "export async function getBatch(ctx: Context, id: string) {\n    const batch = await first<Batch>(ctx.db, \"SELECT * FROM ingestion_batches WHERE id=? AND business_id=?\", id, ctx.businessId);\n    assert(batch, 404, \"NOT_FOUND\", \"批次不存在\");\n    r"
+        }
+      ],
+      "verification": {
+        "integration": {
+          "status": "unverified",
+          "note": "静态源码发现不替代当前版本实际链路验收。"
+        },
+        "business": {
+          "status": "unverified",
+          "note": "真实企业经营效果需另验。"
+        }
+      }
+    },
+    {
+      "id": "snapshot",
+      "title": "看板与证据",
+      "file": "server/api.ts",
+      "resource": "operating-snapshot",
+      "methods": [
+        "GET"
+      ],
+      "source": [
+        "server/snapshots.ts",
+        "export"
+      ],
+      "work": "原demo读取已保存快照，指标保持相同范围。",
+      "storage": "快照与证据",
+      "endpoints": [
+        {
+          "endpoint": "GET /api/v1/operating-snapshot",
+          "codePresent": true
+        }
+      ],
+      "codePresent": true,
+      "evidence": [
+        {
+          "file": "server/snapshots.ts",
+          "line": 13,
+          "found": true,
+          "excerpt": "export function addDays(day: string, days: number) { const d = new Date(`${day}T00:00:00Z`); d.setUTCDate(d.getUTCDate() + days); return d.toISOString().slice(0, 10); }\nexport function defaultPeriod(asOf: string) {\n    const day = new Date("
+        }
+      ],
+      "verification": {
+        "integration": {
+          "status": "unverified",
+          "note": "静态源码发现不替代当前版本实际链路验收。"
+        },
+        "business": {
+          "status": "unverified",
+          "note": "真实企业经营效果需另验。"
+        }
+      }
+    },
+    {
+      "id": "agents",
+      "title": "智能体调查",
+      "file": "server/agents.ts",
+      "resource": "agent-runs",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "source": [
+        "agent-service/neo_agent/agent.py",
+        "class AgentRuntime"
+      ],
+      "work": "真实模型读取固定经营事实与相关业务知识，任务和回复保存。",
+      "storage": "运行、会话与轨迹",
+      "endpoints": [
+        {
+          "endpoint": "GET /api/v1/agent-runs",
+          "codePresent": true
+        },
+        {
+          "endpoint": "POST /api/v1/agent-runs",
+          "codePresent": true
+        }
+      ],
+      "codePresent": true,
+      "evidence": [
+        {
+          "file": "agent-service/neo_agent/agent.py",
+          "line": 95,
+          "found": true,
+          "excerpt": "class AgentRuntime:\n    def __init__(self,checkpointer,model=None,market=None,progress=None,observer=None):\n        self.model=model or Model();self.market=market or Market();self.progress=progress;self.observer=observer\n        graph=State"
+        }
+      ],
+      "verification": {
+        "integration": {
+          "status": "unverified",
+          "note": "静态源码发现不替代当前版本实际链路验收。"
+        },
+        "business": {
+          "status": "unverified",
+          "note": "真实企业经营效果需另验。"
+        }
+      }
+    },
+    {
+      "id": "forecast",
+      "title": "预测与情景",
+      "file": "server/agents.ts",
+      "resource": "forecasts",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "source": [
+        "agent-service/neo_agent/engine.py",
+        "def simulate"
+      ],
+      "work": "确定性工具计算基线与情景，不把假设写成实际效果。",
+      "storage": "输入、计算与方案",
+      "endpoints": [
+        {
+          "endpoint": "GET /api/v1/forecasts",
+          "codePresent": true
+        },
+        {
+          "endpoint": "POST /api/v1/forecasts",
+          "codePresent": true
+        }
+      ],
+      "codePresent": true,
+      "evidence": [
+        {
+          "file": "agent-service/neo_agent/engine.py",
+          "line": 110,
+          "found": true,
+          "excerpt": "def simulate(env, assumptions=None):\n    a=ScenarioAssumptions.model_validate(assumptions or {})\n    weeks,groups=prepare(env); s=env['snapshot']; origin=day(s['asOf']); dates=[origin+timedelta(days=i+1) for i in range(28)]\n    products=sor"
+        }
+      ],
+      "verification": {
+        "integration": {
+          "status": "unverified",
+          "note": "静态源码发现不替代当前版本实际链路验收。"
+        },
+        "business": {
+          "status": "unverified",
+          "note": "真实企业经营效果需另验。"
+        }
+      }
+    },
+    {
+      "id": "decisions",
+      "title": "老板选择与周报",
+      "file": "server/agents.ts",
+      "resource": "decisions",
+      "methods": [
+        "GET",
+        "POST"
+      ],
+      "source": [
+        "lib/decision-history.ts",
+        "export"
+      ],
+      "work": "保存选择与理由，周报回读；不执行投放或采购。",
+      "storage": "选择与理由",
+      "endpoints": [
+        {
+          "endpoint": "GET /api/v1/decisions",
+          "codePresent": true
+        },
+        {
+          "endpoint": "POST /api/v1/decisions",
+          "codePresent": true
+        }
+      ],
+      "codePresent": true,
+      "evidence": [
+        {
+          "file": "lib/decision-history.ts",
+          "line": 1,
+          "found": true,
+          "excerpt": "export type ResultScope={businessId:string;dataNature:string;snapshotId:string;ontologyRef?:{buildId:string}|null};\nexport function sameResultScope(a:ResultScope,b:ResultScope){return a.businessId===b.businessId&&a.dataNature===b.dataNature"
+        }
+      ],
+      "verification": {
+        "integration": {
+          "status": "unverified",
+          "note": "静态源码发现不替代当前版本实际链路验收。"
+        },
+        "business": {
+          "status": "unverified",
+          "note": "真实企业经营效果需另验。"
+        }
+      }
+    },
+    {
+      "id": "ontology",
+      "title": "经营对象与关系",
+      "file": "server/ontology/api.ts",
+      "resource": "object-sets",
+      "methods": [
+        "POST"
+      ],
+      "source": [
+        "server/ontology/query.ts",
+        "export"
+      ],
+      "work": "在固定企业、模型与资料版本内查询对象和关系。",
+      "storage": "定义、投影与来源",
+      "endpoints": [
+        {
+          "endpoint": "POST /api/v1/ontology/object-sets",
+          "codePresent": true
+        }
+      ],
+      "codePresent": true,
+      "evidence": [
+        {
+          "file": "server/ontology/query.ts",
+          "line": 6,
+          "found": true,
+          "excerpt": "export async function buildMetadata(ctx:Context,id:unknown,n?:unknown){const build=await getBuild(ctx,id,n);assert(['ready','partial'].includes(build.status),409,'BUILD_UNAVAILABLE','投影未就绪');return {build,definition:((await readBuildInput(b"
+        }
+      ],
+      "verification": {
+        "integration": {
+          "status": "unverified",
+          "note": "静态源码发现不替代当前版本实际链路验收。"
+        },
+        "business": {
+          "status": "unverified",
+          "note": "真实企业经营效果需另验。"
+        }
+      }
+    },
+    {
+      "id": "knowledge",
+      "title": "业务知识",
+      "file": "agent-service/neo_agent/knowledge.py",
+      "resource": null,
+      "methods": [],
+      "source": [
+        "agent-service/neo_agent/knowledge.py",
+        "def business_knowledge"
+      ],
+      "work": "读取来源明确的30条业务关系规则与50项实践建议；商户参数仍待确认。",
+      "storage": "主仓版本化知识包",
+      "endpoints": [],
+      "codePresent": true,
+      "evidence": [
+        {
+          "file": "agent-service/neo_agent/knowledge.py",
+          "line": 14,
+          "found": true,
+          "excerpt": "def business_knowledge(env, role='joint', question='', limit=6):\n    s=env['snapshot']\n    if not s.get('businessId') or s.get('dataNature') not in ('demo','business'):\n        raise ValueError('知识检索必须绑定当前企业与资料性质')\n    if role not in ('conv"
+        }
+      ],
+      "verification": {
+        "integration": {
+          "status": "unverified",
+          "note": "静态源码发现不替代当前版本实际链路验收。"
+        },
+        "business": {
+          "status": "unverified",
+          "note": "真实企业经营效果需另验。"
+        }
+      }
+    }
+  ],
+  "totals": {
+    "capabilities": 8,
+    "codeGroups": 8,
+    "codeOperations": 11,
+    "accepted": 0
+  }
+}

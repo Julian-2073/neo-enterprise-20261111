@@ -1,0 +1,8 @@
+[
+ {"businessId":"eval-ecommerce-a","industry":"ecommerce","entityId":"SKU-R1","name":"跑步机R1","channelId":"douyin","channelName":"抖音","horizonDays":1,"cashBudgetCents":10000000},
+ {"businessId":"eval-ecommerce-b","industry":"ecommerce","entityId":"SKU-S2","name":"跑步机S2","channelId":"tmall","channelName":"天猫","horizonDays":1,"cashBudgetCents":null},
+ {"businessId":"eval-hotel-a","industry":"hotel","entityId":"room-standard","name":"标准房","channelId":"ota","channelName":"OTA","horizonDays":1,"cashBudgetCents":10000000},
+ {"businessId":"eval-hotel-b","industry":"hotel","entityId":"room-suite","name":"套房","channelId":"direct","channelName":"自营","horizonDays":1,"cashBudgetCents":null},
+ {"businessId":"eval-manufacturing-a","industry":"manufacturing","entityId":"machine-a","name":"设备A","channelId":"direct","channelName":"直销","horizonDays":1,"cashBudgetCents":10000000},
+ {"businessId":"eval-manufacturing-b","industry":"manufacturing","entityId":"machine-b","name":"设备B","channelId":"dealer","channelName":"经销","horizonDays":1,"cashBudgetCents":null}
+]

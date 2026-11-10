@@ -1,0 +1,488 @@
+{
+  "runId": "live-query-task2-bd542e5f-ee41-4b26-9e5f-5c8fc663890c",
+  "response": {
+    "role": "assistant",
+    "content": "{\"conclusion\": \"经营期内已观测到支付订单 223 笔、退款订单 19 笔（退款按实际发生日计入）；同期支付 240 件、退款 21 件。行为次数与客户人数、订单笔数不可混算。\", \"evidenceIds\": [\"E011\", \"E009\"], \"alternatives\": [], \"gaps\": [\"退款订单的按周/渠道明细未在本轮读取范围\"], \"candidates\": [], \"followups\": []}"
+  },
+  "usage": {
+    "prompt_tokens": 2625,
+    "completion_tokens": 105,
+    "total_tokens": 2730,
+    "prompt_tokens_details": {
+      "cached_tokens": 2432
+    },
+    "prompt_cache_hit_tokens": 2432,
+    "prompt_cache_miss_tokens": 193
+  },
+  "scope": {
+    "businessId": "neo-sim-acceptance-20261004",
+    "dataNature": "demo",
+    "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+    "sourceKind": "snapshot",
+    "operatingVersion": "ingestion-v1.4-full24",
+    "asOf": "2026-09-24",
+    "researchAsOf": "2026-10-07",
+    "configurationVersion": "legacy:legacy-unversioned",
+    "metricScope": null
+  },
+  "catalog": {
+    "metric:conversion:paidUnits": {
+      "id": "metric:conversion:paidUnits",
+      "kind": "metric",
+      "exact": "{\"status\":{\"knownValue\":240,\"missingRows\":0,\"rowCount\":233,\"status\":\"observed\"},\"unit\":\"件\",\"value\":240}",
+      "label": "支付商品件数",
+      "value": 240,
+      "status": "observed"
+    },
+    "metric:conversion:refundUnits": {
+      "id": "metric:conversion:refundUnits",
+      "kind": "metric",
+      "exact": "{\"status\":{\"knownValue\":21,\"missingRows\":0,\"rowCount\":19,\"status\":\"observed\"},\"unit\":\"件\",\"value\":21}",
+      "label": "退款商品件数",
+      "value": 21,
+      "status": "observed"
+    },
+    "metric:conversion:netRevenueCents": {
+      "id": "metric:conversion:netRevenueCents",
+      "kind": "metric",
+      "exact": "{\"status\":{\"knownValueCents\":75099420,\"missingRows\":0,\"rowCount\":252,\"status\":\"observed\"},\"unit\":\"人民币分\",\"value\":75099420}",
+      "label": "netRevenueCents",
+      "value": 75099420,
+      "status": "observed"
+    },
+    "metric:conversion:netUnits": {
+      "id": "metric:conversion:netUnits",
+      "kind": "metric",
+      "exact": "{\"status\":null,\"unit\":\"件\",\"value\":219}",
+      "label": "净商品件数",
+      "value": 219,
+      "status": null
+    },
+    "metric:conversion:paidOrders": {
+      "id": "metric:conversion:paidOrders",
+      "kind": "metric",
+      "exact": "{\"status\":{\"identityBasis\":\"stable_source_id + order_id; batches and line IDs are not order identities\",\"knownValue\":223,\"legacyDistinctOrderIds\":null,\"missingOrderIdRows\":0,\"missingRows\":0,\"missingSourceRows\":0,\"reason\":null,\"rowCount\":233,\"status\":\"observed\"},\"unit\":\"笔\",\"value\":223}",
+      "label": "支付订单笔数",
+      "value": 223,
+      "status": "observed"
+    },
+    "metric:conversion:refundOrders": {
+      "id": "metric:conversion:refundOrders",
+      "kind": "metric",
+      "exact": "{\"status\":{\"identityBasis\":\"stable_source_id + order_id; batches and line IDs are not order identities\",\"knownValue\":19,\"legacyDistinctOrderIds\":null,\"missingOrderIdRows\":0,\"missingRows\":0,\"missingSourceRows\":0,\"reason\":null,\"rowCount\":19,\"status\":\"observed\"},\"unit\":\"笔\",\"value\":19}",
+      "label": "退款订单笔数",
+      "value": 19,
+      "status": "observed"
+    },
+    "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:paidOrders": {
+      "id": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:paidOrders",
+      "kind": "business",
+      "exact": "{\"domain\":\"paidOrders\",\"metricReferences\":[\"metric:conversion:paidOrders\"]}"
+    },
+    "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:netRevenueCents": {
+      "id": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:netRevenueCents",
+      "kind": "business",
+      "exact": "{\"domain\":\"netRevenueCents\",\"metricReferences\":[\"metric:conversion:netRevenueCents\"]}"
+    },
+    "query:ed7a22d143dc5a1a37ed2b1efaa95e401411a0d48926fa88556d086dd773ef4c": {
+      "id": "query:ed7a22d143dc5a1a37ed2b1efaa95e401411a0d48926fa88556d086dd773ef4c",
+      "kind": "query",
+      "exact": "{\"factCount\":2441,\"matchingFactIdsHash\":\"ae421ec0f2486731677339a01a8ec6711a07dddeaa5ae12991799c2934a20ef9\",\"method\":\"frozen-facts-aggregation-v3\",\"scope\":{\"channel\":null,\"grain\":\"period\",\"periodEnd\":\"2026-09-20\",\"periodStart\":\"2026-04-06\",\"productId\":null}}"
+    },
+    "tool:8c65eaccfb81f0ba7c39432c66caba8a9677ff7e3ad9be15bf3939689a5769ab": {
+      "id": "tool:8c65eaccfb81f0ba7c39432c66caba8a9677ff7e3ad9be15bf3939689a5769ab",
+      "kind": "tool_metadata",
+      "exact": "{\"orders\":\"订单笔数\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "units.orders",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "units.orders",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:91c275376f6e47f9552a10ea2dc67e0ff689f053c7aaac1c2e05c116ad5a2cfa": {
+      "id": "tool:91c275376f6e47f9552a10ea2dc67e0ff689f053c7aaac1c2e05c116ad5a2cfa",
+      "kind": "tool_metadata",
+      "exact": "{\"quantity\":\"件\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "units.quantity",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "units.quantity",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:5ee9c4d1700d260608481e0d5810c2e32fbb568694ea38dc0317095f9436c0e0": {
+      "id": "tool:5ee9c4d1700d260608481e0d5810c2e32fbb568694ea38dc0317095f9436c0e0",
+      "kind": "tool_metadata",
+      "exact": "{\"0\":\"仅汇总已导入来源；覆盖日期是提供者声明，未经业务核实。\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "limitations.0",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "limitations.0",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:1492eaea8b4ba864ba38add1184f065ab0f36b1c014519ed29f6e7c7a0f9a8ac": {
+      "id": "tool:1492eaea8b4ba864ba38add1184f065ab0f36b1c014519ed29f6e7c7a0f9a8ac",
+      "kind": "tool_metadata",
+      "exact": "{\"1\":\"行为次数、支付订单数与客户人数不同，不计算客户转化率。\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "limitations.1",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "limitations.1",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:5756f29c8f844a3510e1f2753903fcd07cec00165a276e1c8316fba070156568": {
+      "id": "tool:5756f29c8f844a3510e1f2753903fcd07cec00165a276e1c8316fba070156568",
+      "kind": "tool_metadata",
+      "exact": "{\"2\":\"退款计入实际发生日，可能使该期净成交额为负。\"}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "limitations.2",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "limitations.2",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:c983e33061536f8649a1627aeddbce0d1a4dc43e91b99572da73476b667a769a": {
+      "id": "tool:c983e33061536f8649a1627aeddbce0d1a4dc43e91b99572da73476b667a769a",
+      "kind": "tool_metadata",
+      "exact": "{\"customerJourney\":{\"evidenceId\":\"snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54:view:customer-journey\",\"matchesCurrentScope\":true,\"period\":{\"counts\":{\"A1\":234,\"A2\":215,\"A3\":182,\"A4\":143},\"end\":\"2026-09-20\",\"start\":\"2026-04-06\"},\"transitionRatesAvailable\":true,\"version\":\"customer-journey-v1\"}}",
+      "tool": "describe_business",
+      "locator": {
+        "tool": "describe_business",
+        "path": "availableDerivedViews.customerJourney",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "range": {
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "describe_business",
+          "path": "availableDerivedViews.customerJourney",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "range": {
+              "start": "2026-04-06",
+              "end": "2026-09-20"
+            }
+          }
+        }
+      ]
+    },
+    "tool:5fe7c82f97e56ab32c806e4471a6dfe289a4c261d0d366c8565c8c75bdaaab20": {
+      "id": "tool:5fe7c82f97e56ab32c806e4471a6dfe289a4c261d0d366c8565c8c75bdaaab20",
+      "kind": "tool_metadata",
+      "exact": "{\"0\":\"仅汇总已导入来源；覆盖日期是提供者声明，未经业务核实。\"}",
+      "tool": "read_business",
+      "locator": {
+        "tool": "read_business",
+        "path": "limitations.0",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "periodStart": "2026-04-06",
+          "periodEnd": "2026-09-20",
+          "productId": null,
+          "channel": null,
+          "grain": "period",
+          "start": "2026-04-06",
+          "end": "2026-09-20"
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "read_business",
+          "path": "limitations.0",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "periodStart": "2026-04-06",
+            "periodEnd": "2026-09-20",
+            "productId": null,
+            "channel": null,
+            "grain": "period",
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      ]
+    },
+    "tool:2b629eb375f0d996a14c6b60cdb25c3d3efd20c38a495e623f88c54645904f23": {
+      "id": "tool:2b629eb375f0d996a14c6b60cdb25c3d3efd20c38a495e623f88c54645904f23",
+      "kind": "tool_metadata",
+      "exact": "{\"1\":\"行为次数、支付订单数与客户人数不同，不计算客户转化率。\"}",
+      "tool": "read_business",
+      "locator": {
+        "tool": "read_business",
+        "path": "limitations.1",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "periodStart": "2026-04-06",
+          "periodEnd": "2026-09-20",
+          "productId": null,
+          "channel": null,
+          "grain": "period",
+          "start": "2026-04-06",
+          "end": "2026-09-20"
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "read_business",
+          "path": "limitations.1",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "periodStart": "2026-04-06",
+            "periodEnd": "2026-09-20",
+            "productId": null,
+            "channel": null,
+            "grain": "period",
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      ]
+    },
+    "tool:92fd9b802c3608370fd684ba8947305cb8143e1cea1452c0a8be37142ae98d07": {
+      "id": "tool:92fd9b802c3608370fd684ba8947305cb8143e1cea1452c0a8be37142ae98d07",
+      "kind": "tool_metadata",
+      "exact": "{\"2\":\"退款计入实际发生日，可能使该期净成交额为负。\"}",
+      "tool": "read_business",
+      "locator": {
+        "tool": "read_business",
+        "path": "limitations.2",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "periodStart": "2026-04-06",
+          "periodEnd": "2026-09-20",
+          "productId": null,
+          "channel": null,
+          "grain": "period",
+          "start": "2026-04-06",
+          "end": "2026-09-20"
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "read_business",
+          "path": "limitations.2",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "periodStart": "2026-04-06",
+            "periodEnd": "2026-09-20",
+            "productId": null,
+            "channel": null,
+            "grain": "period",
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      ]
+    },
+    "tool:e903429b9ef26169bb026909ce405f4d2a691eb843254f1c8d7399c16d043903": {
+      "id": "tool:e903429b9ef26169bb026909ce405f4d2a691eb843254f1c8d7399c16d043903",
+      "kind": "tool_metadata",
+      "exact": "{\"\":\"期间完整汇总，商品渠道与周明细按需查询；本次不是逐条资料输出。\"}",
+      "tool": "read_business",
+      "locator": {
+        "tool": "read_business",
+        "path": "detailPolicy.",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "periodStart": "2026-04-06",
+          "periodEnd": "2026-09-20",
+          "productId": null,
+          "channel": null,
+          "grain": "period",
+          "start": "2026-04-06",
+          "end": "2026-09-20"
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "read_business",
+          "path": "detailPolicy.",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "periodStart": "2026-04-06",
+            "periodEnd": "2026-09-20",
+            "productId": null,
+            "channel": null,
+            "grain": "period",
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      ]
+    },
+    "tool:45e673b916a6a74775da314d0b993556ccd08362b612a9feae60b44464da9bb0": {
+      "id": "tool:45e673b916a6a74775da314d0b993556ccd08362b612a9feae60b44464da9bb0",
+      "kind": "tool_metadata",
+      "exact": "{\"readCoverage\":{\"availabilityConclusion\":\"not_assessed\",\"calculated\":{\"channelAggregates\":true,\"periodTotals\":true,\"records\":true,\"weeklyAggregates\":true},\"delivered\":{\"channelAggregates\":false,\"periodTotals\":true,\"records\":false,\"weeklyAggregates\":false},\"meaning\":\"本轮读取范围指已向回答模型投递的字段；底层已计算内容另列calculated。未投递不表示资料库没有明细。\",\"metricKeys\":[\"paidOrders\",\"paidUnits\",\"refundOrders\",\"refundUnits\"],\"requestedGrain\":\"period\"}}",
+      "tool": "read_business",
+      "locator": {
+        "tool": "read_business",
+        "path": "readCoverage",
+        "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+        "scope": {
+          "periodStart": "2026-04-06",
+          "periodEnd": "2026-09-20",
+          "productId": null,
+          "channel": null,
+          "grain": "period",
+          "start": "2026-04-06",
+          "end": "2026-09-20"
+        }
+      },
+      "readLocations": [
+        {
+          "tool": "read_business",
+          "path": "readCoverage",
+          "inputId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+          "scope": {
+            "periodStart": "2026-04-06",
+            "periodEnd": "2026-09-20",
+            "productId": null,
+            "channel": null,
+            "grain": "period",
+            "start": "2026-04-06",
+            "end": "2026-09-20"
+          }
+        }
+      ]
+    }
+  },
+  "recordedResponses": [
+    {
+      "response": {
+        "role": "assistant",
+        "content": "{\"conclusion\": \"经营期内已观测到支付订单 223 笔、退款订单 19 笔（退款按实际发生日计入）；同期支付 240 件、退款 21 件。行为次数与客户人数、订单笔数不可混算。\", \"evidenceIds\": [\"E011\", \"E009\"], \"alternatives\": [], \"gaps\": [\"退款订单的按周/渠道明细未在本轮读取范围\"], \"candidates\": [], \"followups\": []}"
+      },
+      "usage": {
+        "prompt_tokens": 2625,
+        "completion_tokens": 105,
+        "total_tokens": 2730,
+        "prompt_tokens_details": {
+          "cached_tokens": 2432
+        },
+        "prompt_cache_hit_tokens": 2432,
+        "prompt_cache_miss_tokens": 193
+      }
+    },
+    {
+      "response": {
+        "role": "assistant",
+        "content": "{\"claims\":[{\"i\":0,\"s\":\"S\",\"r\":[4,5],\"c\":[],\"g\":[]},{\"i\":1,\"s\":\"S\",\"r\":[0,1],\"c\":[],\"g\":[]},{\"i\":2,\"s\":\"S\",\"r\":[9,10,11,16],\"c\":[],\"g\":[]},{\"i\":3,\"s\":\"I\",\"r\":[29],\"c\":[],\"g\":[\"证据仅说明按需查询与期间汇总，未直接确认退款订单周/渠道明细是否在读取范围\"]}]}"
+      },
+      "usage": {
+        "prompt_tokens": 1805,
+        "completion_tokens": 119,
+        "total_tokens": 1924,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1805
+      }
+    }
+  ],
+  "note": "Original fifth provider responses plus the new offline frozen delivery-coverage catalog; original checker indices refer to its original catalog, never remapped into a fabricated S verdict."
+}

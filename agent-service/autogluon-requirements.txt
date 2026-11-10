@@ -1,0 +1,2 @@
+# Deliberately separate from both chat and the existing numerical environment.
+autogluon.timeseries==1.6.3

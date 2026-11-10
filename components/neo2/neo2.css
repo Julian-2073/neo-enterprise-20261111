@@ -1,0 +1,98 @@
+/* /neo2 workspace styles — same design tokens as components/business/workspace.css. */
+.neo2-shell{min-height:100vh;background:#f5f7fb;color:#23324a;font:15px/1.6 Arial,"PingFang SC",sans-serif;display:flex}
+.neo2-nav{width:216px;flex:0 0 auto;background:#fff;border-right:1px solid #dde4ee;padding:20px 14px;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh}
+.neo2-logo{font-size:24px;font-weight:800;letter-spacing:2px;padding:0 10px 6px;display:block}
+.neo2-logo small{display:block;font-size:11px;color:#667791;font-weight:400;letter-spacing:0}
+.neo2-nav a{display:block;padding:9px 10px;border-radius:8px;color:#23324a;text-decoration:none;font-size:14px}
+.neo2-nav a:hover{background:#eef4ff}
+.neo2-nav a[aria-current=page]{background:#eef4ff;color:#145dcc;font-weight:700}
+.neo2-nav .neo2-nav-secondary{margin-top:8px;border-top:1px solid #e4eaf2;padding-top:10px}
+.neo2-main{flex:1;min-width:0;padding:26px 30px;max-width:1150px}
+.neo2-main h1{font-size:26px;margin:0 0 6px}
+.neo2-subtitle{color:#667791;font-size:13px;margin:0 0 18px}
+.neo2-grid{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.neo2-grid>.neo2-card{flex:1 1 340px;margin:0}
+.neo2-card{background:#fff;border:1px solid #dce4ef;border-radius:14px;padding:20px 22px;margin:16px 0;box-shadow:0 2px 8px #dce4ef33}
+.neo2-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.neo2-card h2{font-size:18px;margin:0}
+.neo2-card h3{font-size:15px;margin:14px 0 8px}
+.neo2-card-actions{display:flex;gap:10px;flex-wrap:wrap}
+.neo2-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0}
+.neo2-metric{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:0}
+.neo2-metric strong{font-size:23px;letter-spacing:-.3px;color:#1b385d}
+.neo2-metric-unavailable strong{color:#667791;font-weight:600}
+.neo2-metric-label{font-size:13px;color:#54637c}
+.neo2-metric-meta{color:#8a97ab;font-size:11px}
+.neo2-badge{display:inline-flex;flex-direction:column;line-height:1.35;font-size:12px;font-weight:700;border-radius:6px;padding:3px 8px;background:#eef2f8;color:#54637c}
+.neo2-badge small{font-weight:400;font-size:11px}
+.neo2-availability-available{background:#eaf7ee;color:#246c44}
+.neo2-availability-partial{background:#fdf3dd;color:#8a5b0a}
+.neo2-availability-blocked{background:#fff1f2;color:#983a49}
+.neo2-availability-not_supported{background:#f0f1f4;color:#667791}
+.neo2-state-detected,.neo2-state-decision_ready{background:#fff1f2;color:#983a49}
+.neo2-state-investigating,.neo2-state-acting{background:#eef4ff;color:#164f9e}
+.neo2-state-observing,.neo2-state-pending_verification{background:#fdf3dd;color:#8a5b0a}
+.neo2-state-reviewed{background:#eaf7ee;color:#246c44}
+.neo2-state-closed,.neo2-state-cancelled,.neo2-state-rejected,.neo2-state-superseded,.neo2-state-withdrawn{background:#f0f1f4;color:#667791}
+.neo2-state-approved,.neo2-state-completed{background:#eaf7ee;color:#246c44}
+.neo2-state-draft,.neo2-state-pending_confirmation,.neo2-state-ready,.neo2-state-in_progress,.neo2-state-submitted{background:#eef4ff;color:#164f9e}
+.neo2-table{overflow-x:auto}
+.neo2-table table{border-collapse:collapse;width:100%;white-space:nowrap}
+.neo2-table th,.neo2-table td{padding:11px 12px;border-bottom:1px solid #e4eaf2;text-align:left;font-size:14px}
+.neo2-table th{background:#f5f8fd;font-size:13px;color:#65748c}
+.neo2-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.neo2-list li{border:1px solid #e4eaf2;border-radius:10px;padding:12px 14px}
+.neo2-list .neo2-item-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.neo2-list .neo2-item-head strong{font-size:15px}
+.neo2-list .neo2-item-meta{color:#667791;font-size:12px;margin-top:4px}
+.neo2-list .neo2-item-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.neo2-notice{border-radius:8px;padding:12px 14px;margin:12px 0;font-size:14px}
+.neo2-notice-error{background:#fff1f2;color:#983a49;border:1px solid #f2bac4}
+.neo2-notice-info{background:#eef4ff;color:#164f9e;border:1px solid #becde1}
+.neo2-notice-success{background:#eaf7ee;color:#246c44}
+.neo2-note{color:#667791;font-size:13px;margin:6px 0}
+.neo2-empty{border:1px dashed #becde1;border-radius:12px;padding:22px;text-align:center;color:#54637c;margin:14px 0}
+.neo2-empty h3{margin:0 0 6px;font-size:16px}
+.neo2-actions{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.neo2-shell button{border:1px solid #becde1;background:#eef4ff;border-radius:8px;padding:8px 14px;color:#164f9e;font:inherit;font-size:14px}
+.neo2-shell button:disabled{opacity:.5;cursor:not-allowed}
+.neo2-link{background:none!important;border:0!important;padding:0!important;text-decoration:underline!important;color:#215db4!important;text-align:left}
+.neo2-shell input,.neo2-shell select,.neo2-shell textarea{background:#fff;border:1px solid #bdcbe0;border-radius:7px;padding:8px 10px;min-height:38px;color:#23324a;font:inherit;max-width:100%}
+.neo2-shell textarea{min-height:56px;width:100%}
+.neo2-shell label{display:flex;flex-direction:column;gap:5px;font-size:13px;color:#54637c}
+.neo2-form{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
+.neo2-form label{flex:0 1 240px}
+.neo2-reason-form{margin-top:10px;border-top:1px solid #e4eaf2;padding-top:10px;display:flex;flex-direction:column;gap:8px;max-width:520px}
+.neo2-transitions{display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start}
+.neo2-dialog{border:1px solid #becde1;border-radius:16px;width:min(820px,94vw);max-height:85vh;padding:24px 26px;color:#23324a;overflow:auto}
+.neo2-dialog::backdrop{background:#23324a55}
+.neo2-close{float:right}
+.neo2-evidence-section{border-top:1px solid #dce4ef;padding:14px 0}
+.neo2-evidence-section h3{margin:0 0 6px}
+.neo2-shell pre{font-size:12px;background:#f5f7fb;border-radius:7px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere}
+.neo2-tabs{display:flex;gap:4px;border-bottom:2px solid #dce4ef;margin:16px 0 0;flex-wrap:wrap}
+.neo2-tabs button{border:1px solid #dce4ef;border-bottom:0;border-radius:10px 10px 0 0;background:#f5f8fd;color:#54637c}
+.neo2-tabs button[aria-selected=true]{background:#fff;color:#145dcc;font-weight:700}
+.neo2-tab-panel{padding-top:14px}
+.neo2-kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px 18px;margin:8px 0}
+.neo2-kv div{font-size:14px}
+.neo2-kv dt{font-size:12px;color:#667791}
+.neo2-kv dd{margin:2px 0 0;font-weight:600}
+.neo2-footer{padding:18px 30px;color:#667791;font-size:12px}
+.neo2-scope-bar{display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap;margin:14px 0}
+.neo2-scope-bar label{flex:0 1 220px}
+.neo2-detail-json{margin-top:8px}
+.neo2-inline-error{color:#983a49;font-size:13px}
+.neo2-sr-hint{font-size:12px;color:#667791}
+.neo2-nav-short{display:none}
+@media(max-width:900px){
+ .neo2-shell{flex-direction:column}
+ .neo2-nav{width:100%;height:auto;position:static;flex-direction:row;flex-wrap:wrap;align-items:center;border-right:0;border-bottom:1px solid #dde4ee}
+ .neo2-nav a{padding:7px 9px;font-size:13px}
+ .neo2-nav .neo2-nav-secondary{margin-top:0;border-top:0;padding-top:0;margin-left:auto}
+ .neo2-logo small{display:none}
+ .neo2-nav-label{display:none}
+ .neo2-nav-short{display:inline}
+ .neo2-main{padding:16px}
+}
+.neo2-shell button:focus-visible,.neo2-shell input:focus-visible,.neo2-shell select:focus-visible,.neo2-shell textarea:focus-visible,.neo2-shell a:focus-visible{outline:3px solid #9ec7ff;outline-offset:2px}

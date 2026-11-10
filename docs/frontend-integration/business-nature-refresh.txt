@@ -1,0 +1,82 @@
+http://127.0.0.1:3102/demo?page=people&businessId=test-a&dataNature=business
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?businessId=test-a&dataNature=business
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?businessId=test-a&dataNature=business
+    - link "我的客户":
+      - /url: /demo?page=people&businessId=test-a&dataNature=business
+    - link "供应链与库存":
+      - /url: /demo?page=goods&businessId=test-a&dataNature=business
+    - link "渠道与竞品":
+      - /url: /demo?page=market&businessId=test-a&dataNature=business
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&businessId=test-a&dataNature=business
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&businessId=test-a&dataNature=business
+    - generic: 本周行动周报
+  - generic: 本地验收企业 A
+  - generic: 暂无经营快照 · 截至 待导入
+  - generic: 业务导入 · 待核实
+- main:
+  - heading "我的客户" [level=1]
+  - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+  - button "A1 曝光行为 待补数据 次":
+    - text: A1 曝光行为
+    - generic: 待补数据
+    - generic: 次
+  - text: 待接入
+  - generic: →
+  - button "A2 互动行为 待补数据 次":
+    - text: A2 互动行为
+    - generic: 待补数据
+    - generic: 次
+  - text: 待接入
+  - generic: →
+  - button "A3 意向行为 待补数据 次":
+    - text: A3 意向行为
+    - generic: 待补数据
+    - generic: 次
+  - text: 待接入
+  - generic: →
+  - generic: 前期比较待接入
+  - button "A4 支付订单 待补数据 笔":
+    - text: A4 支付订单
+    - generic: 待补数据
+    - generic: 笔
+  - button "查看记录口径和证据 →"
+  - region "4A 经营脉搏":
+    - heading "4A 经营脉搏" [level=3]
+    - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+    - generic: 曝光行为（次）
+    - generic: 互动行为（次）
+    - generic: 意向行为（次）
+    - generic: 支付订单（笔）
+    - application
+  - heading "统计期净成交额组成" [level=2]
+  - strong: 待补数据
+  - generic "商品 / 平台 / 履约成本 待补数据"
+  - generic "投放费用 待补数据"
+  - generic "贡献毛利 待补数据"
+  - generic: 商品 / 平台 / 履约成本
+  - generic: 待补数据 · 待补数据
+  - generic: 投放费用
+  - generic: 待补数据 · 待补数据
+  - generic: 贡献毛利
+  - generic: 待补数据 · 待补数据
+  - complementary "转化纠察智能体演示面板":
+    - heading "转化纠察智能体" [level=2]
+    - button "重置演示对话" [disabled]:
+    - button "建议行动 · 待接入" [disabled]:
+      - generic: 建议行动 · 待接入
+    - paragraph: 智能体后端待接入。当前页面只读取已保存的经营数据与证据，不生成经营判断。
+    - textbox "输入问题或经营补充" [disabled]:
+      - /placeholder: 智能体对话后端待接入
+    - generic: 补充经营信息或继续追问
+    - button "发送消息" [disabled]:
+    - generic: 智能体对话、研判与行动后端待接入
+  - link "查看联动证据 →":
+    - /url: /demo?page=overview&businessId=test-a&dataNature=business
+- contentinfo: 数据来自已提交导入记录 · 尚无经营快照 · 来源覆盖与业务真实性需另行核实

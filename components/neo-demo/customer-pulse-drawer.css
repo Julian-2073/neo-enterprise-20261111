@@ -1,0 +1,23 @@
+.neo-pulse-drawer{width:min(640px,100vw)}
+.neo-pulse-drawer h2{font-size:26px;line-height:1.4;margin-bottom:18px}
+.neo-pulse-drawer h3{font-size:16px;margin:0 0 10px;color:#263a59}
+.neo-pulse-drawer section{margin:22px 0}
+.neo-pulse-drawer section>p{font-size:14px;line-height:1.8;color:#526986}
+.neo-pulse-judgment{padding:18px;background:#eef6ff;border:1px solid #d7e9ff;border-radius:14px}
+.neo-pulse-judgment strong{font-size:21px;line-height:1.5;color:#173f77}
+.neo-pulse-judgment p{font-size:14px;line-height:1.8;margin:8px 0 0;color:#526986}
+.neo-pulse-definition{font-size:13px;margin:18px 0;gap:8px 15px}
+.neo-pulse-table{width:100%;border-collapse:collapse;font-size:13px;text-align:left}
+.neo-pulse-table th,.neo-pulse-table td{padding:10px 7px;border-bottom:1px solid #e7effa}
+.neo-pulse-table thead th{color:#7186a7;font-weight:500}
+.neo-pulse-table tbody th{color:#334d73;font-weight:600}
+.neo-pulse-table tr.is-focused{background:#eef6ff}
+.neo-pulse-note{font-size:12px!important;color:#8394ae!important;line-height:1.7;margin:9px 0}
+.neo-pulse-action{background:#f7fbff;border-left:3px solid #3487ff;padding:14px 16px;border-radius:5px}
+.neo-pulse-source{margin:0 0 5px!important;font-size:13px!important;line-height:1.6}
+.neo-pulse-drawer summary{cursor:pointer;color:#3f76b5;font-size:13px;line-height:1.8}
+.neo-pulse-trace{margin:15px 0;border-top:1px solid #edf2fa;padding-top:12px}
+.neo-pulse-trace li,.neo-pulse-trace p{font-size:12px;line-height:1.8;color:#7185a2;overflow-wrap:anywhere}
+.neo-pulse-trace details{margin:8px 0}
+.neo-pulse-trace a{color:#006bff;margin-left:6px}
+@media(max-width:600px){.neo-pulse-drawer{padding:22px}.neo-pulse-drawer h2{font-size:22px}.neo-pulse-table{font-size:12px}.neo-pulse-table th,.neo-pulse-table td{padding:9px 4px}}

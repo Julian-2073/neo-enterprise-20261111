@@ -1,0 +1,54 @@
+{
+  "source": "Recorded synthetic acceptance run; replay only, no provider calls",
+  "runId": "live-query-task2-5339be75-9264-4b85-972f-1746d667b658",
+  "responses": [
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"conclusion\": \"本期间（2026-04-06至2026-09-20）支付订单223笔、退款订单19笔，均为订单笔数而非客户人数。\", \"evidenceIds\": [\"E011\"], \"alternatives\": [], \"gaps\": [\"退款订单数缺少独立证据ID，仅有合计值支持\"], \"candidates\": [], \"followups\": []}"
+      },
+      "usage": {
+        "prompt_tokens": 2601,
+        "completion_tokens": 83,
+        "total_tokens": 2684,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 2601
+      }
+    },
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"claims\":[[0,\"C\",[3,4,0,1],[],[],[]],\"claims\":[[0,\"C\",[3,4],[],[\"支付订单223与退款订单19为空合计值，与证据矛盾：已支付订单240、已退款订单21\"]],[1,\"S\",[4],[],[]],[2,\"I\",[],[],[\"仅汇总已导入来源；行为次数、支付订单数与客户人数不同，不计算客户转化率\"]],[3,\"I\",[],[],[\"仅汇总已导入来源；行为次数、支付订单数与客户人数不同，不计算客户转化率\"]],[4,\"I\",[],[],[\"经营目标未登记，无法核实最优方案\"]],[5,\"I\",[],[],[\"经营约束未完整确认，无法核实可执行条件\"]],[6,\"I\",[],[],[\"无法核实是否可能改变经营判断\"]],[7,\"I\",[],[],[\"核对来源与业务口径缺少可核实的业务规则证据\"]]}"
+      },
+      "usage": {
+        "prompt_tokens": 1816,
+        "completion_tokens": 213,
+        "total_tokens": 2029,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 1816
+      }
+    },
+    {
+      "message": {
+        "role": "assistant",
+        "content": "{\"claims\":[[0,\"S\",[3,4,5,6],[],[]],[1,\"I\",[],[\"退款订单数本身有独立证据ID（metric:conversion:refundOrders、query），只是未另附独立来源ID\"]],[2,\"I\",[],[],\"属推断性判断，无直接证据支持\"],[3,\"I\",[],[],\"conversion仅为字段名，无具体转化内容\"],[4,\"I\",[],[],\"无经营目标登记与否的证据\"],[5,\"I\",[],[],\"无经营约束确认状态的证据\"],[6,\"I\",[],[],\"无影响经营判断的证据\"],[7,\"I\",[],[],\"无来源与业务口径核对结果的证据\"]]}"
+      },
+      "usage": {
+        "prompt_tokens": 1856,
+        "completion_tokens": 154,
+        "total_tokens": 2010,
+        "prompt_tokens_details": {
+          "cached_tokens": 1664
+        },
+        "prompt_cache_hit_tokens": 1664,
+        "prompt_cache_miss_tokens": 192
+      }
+    }
+  ]
+}

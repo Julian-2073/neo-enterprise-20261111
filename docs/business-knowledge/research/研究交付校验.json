@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-10-04T13:56:17.406862+08:00",
+  "scope": "研究文件回读与一致性校验，非程序或业务验收",
+  "files_indexed": 1102,
+  "unique_contents": 401,
+  "modules": 50,
+  "business_rules": 30,
+  "sources": 29,
+  "source_paths_verified": 57,
+  "local_links_verified": 59,
+  "issues": [],
+  "project_files_changed_since_index": [
+    "并行优化/2026-10-04/data-ingestion/README.md",
+    "并行优化/2026-10-04/data-ingestion/docs/api/operating-materials.openapi.json",
+    "并行优化/2026-10-04/data-ingestion/docs/optimization-data-contract.md",
+    "并行优化/2026-10-04/data-ingestion/scripts/generate-materials-contract.mjs",
+    "监督/NEO_项目监督台账.md"
+  ],
+  "report_sha256": "eddb375d0aef709443e42ea692a37ca7acfbb363ca83193914726ca5f50995f3",
+  "source_access_gaps": [
+    "PostHog Funnels independent open failed; search original excerpt read",
+    "Odoo17 independent open timeout; search original excerpt read",
+    "Odoo19 failed and excluded from adopted sources",
+    "Two research papers abstract only; full methodology not verified"
+  ],
+  "not_tested": [
+    "runtime",
+    "browser",
+    "database",
+    "live model",
+    "merchant effectiveness"
+  ],
+  "changed_file_followup": "已回读最新数据契约及监督台账，在报告中加入并发更新复核，反例与已修复状态分开",
+  "changed_file_hashes_at_followup": {
+    "并行优化/2026-10-04/data-ingestion/README.md": "35f347cebe8023232a6d01ebb5b170c6c26bb6d613b014f775e9f0a2852a3717",
+    "并行优化/2026-10-04/data-ingestion/docs/api/operating-materials.openapi.json": "7f6f9d6c735ab6e730641dd997cf5697ede23b090104e40ba1e7f78c8bb75f96",
+    "并行优化/2026-10-04/data-ingestion/docs/optimization-data-contract.md": "40e75f9d64c28d5df563ac0cb4b21d6b56cf662b123990ac108ae1b50c823d69",
+    "并行优化/2026-10-04/data-ingestion/scripts/generate-materials-contract.mjs": "62d184ea180b45436821a3b2bf63e91be169bc0081136c03a8807eafb41e9120",
+    "监督/NEO_项目监督台账.md": "e2dae14bbb3309cc00ac32a58c10e61280cbd154003ccfaadffc9205185b9693"
+  }
+}

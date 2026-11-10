@@ -1,0 +1,81 @@
+/* Business workbench only. The original example keeps its own layout. */
+.neo-live-market-host{--market-muted:#647b99;--market-positive:#087f76;--market-negative:#d84467}
+.neo-live-market-host .neo-main{padding-top:18px}
+.neo-live-market-host .neo-market-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin:0 0 18px}
+.neo-live-market-host .neo-market-heading>div{min-width:0;max-width:1050px}
+.neo-live-market-host .neo-market-heading h1{font-size:30px;line-height:1.3;letter-spacing:-.5px;margin-bottom:6px}
+.neo-live-market-host .neo-market-heading p{font-size:14px;line-height:1.6;color:var(--market-muted);margin:0}
+.neo-live-market-host .neo-market-heading>button{flex-shrink:0;margin-top:5px}
+.neo-live-market-host .neo-primary-column{min-width:0;gap:12px}
+.neo-live-market-host .neo-card{padding:16px;border-radius:14px}
+.neo-live-market-host .neo-card h2{font-size:18px;line-height:1.4;margin:0}
+.neo-live-market-host .neo-signal-grid{gap:10px}
+.neo-live-market-host .neo-market-signal{text-align:left;cursor:pointer;font:inherit;color:inherit;min-width:0;display:flex;flex-direction:column;align-items:stretch;padding:15px 16px}
+.neo-live-market-host .neo-market-signal:disabled{cursor:default;opacity:1}
+.neo-live-market-host button:focus-visible{outline:2px solid #2678e8;outline-offset:3px}
+.neo-live-market-host .neo-market-signal:hover:not(:disabled){border-color:#95caff;background:#f9fcff}
+.neo-live-market-host .neo-signal-title{align-items:flex-start;gap:10px}
+.neo-live-market-host .neo-signal-title .neo-icon-circle{width:34px;height:34px;border-radius:10px}
+.neo-live-market-host .neo-signal-title svg{width:22px;height:22px}
+.neo-live-market-host .neo-signal-title h3{font-size:15px;margin:0 0 3px;color:#1d3556}
+.neo-live-market-host .neo-signal-title p{font-size:12px;line-height:1.5;color:var(--market-muted);min-height:18px}
+.neo-live-market-host .neo-market-signal>.neo-market-signal-value{font-size:38px;font-weight:750;line-height:1.15;color:#0661db;letter-spacing:-1px;font-variant-numeric:tabular-nums;text-align:left;margin:14px 0 4px}
+.neo-live-market-host .neo-market-metric-label{font-size:11px;color:var(--market-muted);line-height:1.5}
+.neo-live-market-host .neo-market-signal-hint{display:flex;align-items:center;gap:5px;font-size:11px;color:#3f7ebc;margin-top:12px;padding-top:9px;border-top:1px solid #e8eff8}
+.neo-live-market-host .neo-market-note{font-size:12px;color:var(--market-muted);line-height:1.5;margin:6px 0 12px}
+.neo-live-market-host .neo-matrix{overflow:auto;gap:5px}
+.neo-live-market-host .matrix-head{padding:8px;font-size:12px;border-radius:7px}
+.neo-live-market-host .matrix-channel{font-size:12px;line-height:1.5;gap:6px;padding:10px;border-radius:7px;color:#2c5079}
+.neo-live-market-host .matrix-channel svg{width:19px;flex-shrink:0}
+.neo-live-market-host .matrix-cell{padding:12px;text-align:left;border-radius:8px;min-height:0}
+.neo-live-market-host .neo-market-cell-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:5px;min-height:20px}
+.neo-live-market-host .neo-market-cell-heading>b{font-size:12px;line-height:1.5;font-weight:600;color:#2f527c}
+.neo-live-market-host .neo-market-cell-heading>em{font-size:10px;white-space:nowrap;margin:0;line-height:1.5}
+.neo-live-market-host .neo-market-cell-metrics{display:grid;grid-template-columns:.8fr 1.2fr;gap:10px;margin-top:10px}
+.neo-live-market-host .matrix-cell .neo-market-cell-label{font-size:10px;line-height:1.5;display:block;color:var(--market-muted)}
+.neo-live-market-host .neo-market-cell-number{display:flex;align-items:baseline;gap:3px;margin-top:2px;white-space:nowrap}
+.neo-live-market-host .neo-market-cell-number strong{font-size:21px;line-height:1.25;font-weight:750;letter-spacing:-.5px;font-variant-numeric:tabular-nums;color:#15375e}
+.neo-live-market-host .neo-market-cell-metrics>div:nth-child(2) strong{font-size:18px}
+.neo-live-market-host .neo-market-cell-number small{font-size:10px;color:var(--market-muted)}
+.neo-live-market-host .matrix-cell .neo-market-change{display:block;font-size:11px;font-weight:550;line-height:1.5;margin-top:3px;color:var(--market-muted);font-variant-numeric:tabular-nums}
+.neo-live-market-host .matrix-cell .neo-market-change.positive{color:var(--market-positive)}
+.neo-live-market-host .matrix-cell .neo-market-change.negative{color:var(--market-negative)}
+.neo-live-market-host .neo-market-cell-foot{display:flex;flex-wrap:wrap;gap:4px 12px;border-top:1px solid #dfeaf7;margin-top:10px;padding-top:7px}
+.neo-live-market-host .neo-market-cell-foot>span{font-size:10px;line-height:1.5;color:var(--market-muted);margin:0}
+.neo-live-market-host .neo-market-cell-foot b{display:inline;font-size:11px;font-weight:600;color:#345777;font-variant-numeric:tabular-nums}
+.neo-live-market-host .neo-market-cell-foot small{font-size:10px;margin-left:2px}
+.neo-live-market-host .neo-helper{font-size:11px;color:var(--market-muted);margin:9px 0 0;line-height:1.5}
+.neo-live-market-host .neo-market-section-title{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.neo-live-market-host .neo-market-section-title small{font-size:11px;color:var(--market-muted)}
+.neo-live-market-host .neo-market-events{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch}
+.neo-live-market-host .neo-market-events button{display:flex;flex-direction:column;gap:6px;text-align:left;padding:10px 12px;border-left:2px solid #dceaff;background:#f6faff;border-radius:0 7px 7px 0}
+.neo-live-market-host .neo-market-events b{font-size:11px;line-height:1.5}
+.neo-live-market-host .neo-market-events strong{font-size:13px;line-height:1.6;color:#2e4c70;font-weight:600}
+.neo-live-market-host .neo-market-events span{font-size:11px;line-height:1.5;color:var(--market-muted)}
+.neo-live-market-host .neo-market-events small{font-size:10px;color:var(--market-muted);margin-top:auto;overflow-wrap:anywhere}
+.neo-live-market-host .neo-market-selection{margin-top:10px;color:var(--market-muted);font-size:12px}
+.neo-live-market-host .neo-market-selection p{padding:6px 0;border-bottom:1px solid #e7eef7}
+.neo-live-market-host .neo-money-heading{gap:12px;margin-bottom:10px}
+.neo-live-market-host .neo-money-heading strong{font-size:26px;font-variant-numeric:tabular-nums}
+.neo-live-market-host .neo-agent-compact{min-height:0;max-height:none;padding:18px;gap:10px}
+.neo-live-market-host .neo-agent-compact .neo-agent-title{margin:0 0 2px;gap:8px}
+.neo-live-market-host .neo-agent-compact .neo-agent-title h2{font-size:21px}
+.neo-live-market-host .neo-agent-compact .neo-market-policy{margin:0;font-size:11px}
+.neo-live-market-host .neo-agent-compact .neo-suggest{min-height:38px;padding:9px 10px;margin:0;font-size:12px}
+.neo-live-market-host .neo-agent-compact .neo-chat-log{min-height:0;max-height:320px;margin:0;padding:4px 0;gap:12px}
+.neo-live-market-host .neo-agent-compact .neo-message{gap:8px}
+.neo-live-market-host .neo-agent-compact .neo-message-content{max-width:calc(100% - 36px)}
+.neo-live-market-host .neo-agent-compact .neo-message-body{font-size:13px;line-height:1.65;padding:10px 12px}
+.neo-live-market-host .neo-agent-compact .neo-message-body p{margin:0 0 8px}
+.neo-live-market-host .neo-agent-compact .neo-speaker{font-size:11px;margin-bottom:4px}
+.neo-live-market-host .neo-agent-compact .neo-reply-details{font-size:11px;margin-top:4px}
+.neo-live-market-host .neo-agent-compact .neo-prompts{margin:0;gap:6px}
+.neo-live-market-host .neo-agent-compact .neo-prompts button{font-size:11px;padding:7px 9px}
+.neo-live-market-host .neo-agent-compact .neo-composer{margin:0;padding:10px;border-radius:10px}
+.neo-live-market-host .neo-agent-compact .neo-composer textarea{min-height:52px;height:52px;font-size:13px}
+.neo-live-market-host .neo-agent-compact .neo-composer-footer{margin-top:4px}
+.neo-live-market-host .neo-agent-compact .neo-composer-footer small{font-size:10px}
+.neo-live-market-host .neo-agent-compact>.neo-local-note{margin:0;font-size:10px;line-height:1.5}
+@media(max-width:1100px){.neo-live-market-host .neo-columns{grid-template-columns:minmax(0,1fr) 320px;gap:12px}.neo-live-market-host .neo-market-signal{padding:12px}.neo-live-market-host .neo-signal-title .neo-icon-circle{display:none}.neo-live-market-host .neo-market-events{grid-template-columns:1fr}}
+@media(max-width:850px){.neo-live-market-host .neo-columns{grid-template-columns:1fr}.neo-live-market-host .neo-agent-compact{position:static;max-height:none}.neo-live-market-host .neo-market-heading h1{font-size:25px}.neo-live-market-host .neo-market-events{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:540px){.neo-live-market-host .neo-market-heading{flex-direction:column;gap:4px}.neo-live-market-host .neo-signal-grid{gap:6px}.neo-live-market-host .neo-signal-title h3{font-size:13px}.neo-live-market-host .neo-signal-title p{font-size:11px;min-height:33px}.neo-live-market-host .neo-market-signal>.neo-market-signal-value{font-size:29px;margin-top:10px}.neo-live-market-host .neo-market-signal-hint{font-size:10px}.neo-live-market-host .neo-market-metric-label{font-size:10px}.neo-live-market-host .neo-market-section-title{align-items:flex-start;flex-direction:column;gap:3px}.neo-live-market-host .neo-market-events{grid-template-columns:1fr}}

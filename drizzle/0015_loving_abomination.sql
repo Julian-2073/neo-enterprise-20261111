@@ -1,0 +1,1 @@
+ALTER TABLE `neo_business_inputs` ADD `import_id` text;

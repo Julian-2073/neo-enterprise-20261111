@@ -1,0 +1,29 @@
+{
+  "input": {
+    "snapshot": {
+      "asOf": "2026-09-24"
+    },
+    "facts": [
+      {
+        "kind": "orders",
+        "availableAt": "2026-09-25T00:01:00+08:00",
+        "fact": {
+          "entry_type": "paid"
+        }
+      }
+    ]
+  },
+  "actual": {
+    "status": "historical_availability_unverified",
+    "paidRecords": 1,
+    "availableByForecastDate": 1,
+    "missingAvailability": 0,
+    "meaning": "内嵌引擎回测仅按经营发生时间回顾；此处只核对资料在预测日期是否已录入，不证明每个训练窗的历史资料完整可用。"
+  },
+  "expected": {
+    "status": "no_paid_series",
+    "availableByForecastDate": 0
+  },
+  "pass": false,
+  "reason": "上海时间9月25日零点01分，在9月24日的经营预测截止日之后；当前UTC23:59截止把它算成之前已录入。"
+}

@@ -1,0 +1,4 @@
+﻿source_record_id,order_id,order_line_id,entry_type,occurred_at,channel,product_id,sku_id,quantity,amount_cents,variable_cost_cents
+pay1,O1,L1,paid,2026-09-01,抖音,P1,SKU1,2,20000,10000
+pay2,O1,L2,paid,2026-09-01,抖音,P1,SKU2,1,10000,5000
+refund1,O1,L1,refund,2026-09-02,抖音,P1,SKU1,1,10000,5000

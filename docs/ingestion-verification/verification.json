@@ -1,0 +1,231 @@
+{
+  "verifiedAt": "2026-10-03T08:21:04.669Z",
+  "scope": "local_demo_only",
+  "businessId": "test-a",
+  "dataNature": "demo",
+  "baseline": "17fefe4",
+  "files": [
+    {
+      "kind": "expenses",
+      "batchId": "9fc9b384-466a-4346-9def-743f22fb7d16",
+      "status": "committed",
+      "rows": 1,
+      "sha256": "26bfc3faf69b0be69ecad21415e0bedeedf1007c3c560d6c45d3b00b354dca31",
+      "r2ByteReadback": true
+    },
+    {
+      "kind": "inventory",
+      "batchId": "53d8fa22-3109-4777-936c-88aa520cae0a",
+      "status": "committed",
+      "rows": 3,
+      "sha256": "b6308a1ee657d524732fb278236de6872b15e5fd4f6e527569ab94b1574dfc79",
+      "r2ByteReadback": true
+    },
+    {
+      "kind": "orders",
+      "batchId": "1068f969-b31b-4eae-a627-e6a1c4dfab60",
+      "status": "committed",
+      "rows": 3,
+      "sha256": "8f69d3524ed01dc3393a7432623957f9f22b63532c193f08c3635b7d6b951e48",
+      "r2ByteReadback": true
+    },
+    {
+      "kind": "events",
+      "batchId": "65eb91fc-d8fb-48c4-a094-2bb7495203af",
+      "status": "committed",
+      "rows": 2,
+      "sha256": "bb0fa9b4ab9667866345636374d90c5260ccd1fdef9a207af91d6aef987c9f1b",
+      "r2ByteReadback": true
+    }
+  ],
+  "snapshot": {
+    "id": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d",
+    "businessId": "test-a",
+    "businessName": "本地验收企业 A",
+    "dataNature": "demo",
+    "asOf": "2026-09-02",
+    "periodStart": "2026-09-01",
+    "periodEnd": "2026-09-02",
+    "productId": null,
+    "channel": null,
+    "timezone": "Asia/Shanghai",
+    "generatedAt": "2026-10-03T08:10:53.744Z",
+    "calculationVersion": "ingestion-v1.1",
+    "batchIds": [
+      "1068f969-b31b-4eae-a627-e6a1c4dfab60",
+      "53d8fa22-3109-4777-936c-88aa520cae0a",
+      "65eb91fc-d8fb-48c4-a094-2bb7495203af",
+      "9fc9b384-466a-4346-9def-743f22fb7d16"
+    ],
+    "coverage": [
+      {
+        "batchId": "65eb91fc-d8fb-48c4-a094-2bb7495203af",
+        "kind": "events",
+        "sourceId": "test-a:8c02bcce4e317dd7e25e3da9c9a0c0f7fad9dfe94ec651dd6240c619dc57243a",
+        "start": "2026-09-01",
+        "end": "2026-09-02"
+      },
+      {
+        "batchId": "1068f969-b31b-4eae-a627-e6a1c4dfab60",
+        "kind": "orders",
+        "sourceId": "test-a:8c02bcce4e317dd7e25e3da9c9a0c0f7fad9dfe94ec651dd6240c619dc57243a",
+        "start": "2026-09-01",
+        "end": "2026-09-02"
+      },
+      {
+        "batchId": "53d8fa22-3109-4777-936c-88aa520cae0a",
+        "kind": "inventory",
+        "sourceId": "test-a:8c02bcce4e317dd7e25e3da9c9a0c0f7fad9dfe94ec651dd6240c619dc57243a",
+        "start": "2026-09-01",
+        "end": "2026-09-02"
+      },
+      {
+        "batchId": "9fc9b384-466a-4346-9def-743f22fb7d16",
+        "kind": "expenses",
+        "sourceId": "test-a:8c02bcce4e317dd7e25e3da9c9a0c0f7fad9dfe94ec651dd6240c619dc57243a",
+        "start": "2026-09-01",
+        "end": "2026-09-02"
+      }
+    ],
+    "dataStatus": "demo",
+    "limitations": [
+      "库存不按销售渠道筛选，按仓库和商品/SKU展示。",
+      "仅汇总已导入来源；覆盖日期是提供者声明，未经业务核实。",
+      "行为次数、支付订单数与客户人数不同，不计算客户转化率。",
+      "库存是各仓库/SKU最近一次已导入值，不保证企业全量或实时。",
+      "退款计入实际发生日，可能使该期净成交额为负。"
+    ],
+    "data": {
+      "financial": {
+        "paidOrders": 1,
+        "netRevenueCents": 20000,
+        "spendCents": 2000,
+        "variableCostCents": 10000,
+        "contributionMarginCents": 8000
+      },
+      "events": {
+        "A1": 100,
+        "A2": null,
+        "A3": 10,
+        "A5": null
+      },
+      "inventory": [
+        {
+          "source_record_id": "stock2",
+          "occurred_at": "2026-09-01T16:00:00.000Z",
+          "business_date": "2026-09-02",
+          "product_id": "P1",
+          "sku_id": "SKU1",
+          "channel": null,
+          "warehouse_id": "W1",
+          "sellable_units": 0,
+          "inventory_cost_cents": 0,
+          "in_transit_units": 2,
+          "safety_units": 3,
+          "factId": "53d8fa22-3109-4777-936c-88aa520cae0a:3",
+          "evidenceId": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:stock-53d8fa22-3109-4777-936c-88aa520cae0a:3"
+        },
+        {
+          "source_record_id": "stock3",
+          "occurred_at": "2026-09-01T16:00:00.000Z",
+          "business_date": "2026-09-02",
+          "product_id": "P1",
+          "sku_id": "SKU1",
+          "channel": null,
+          "warehouse_id": "W2",
+          "sellable_units": 4,
+          "inventory_cost_cents": 20000,
+          "in_transit_units": 0,
+          "safety_units": null,
+          "factId": "53d8fa22-3109-4777-936c-88aa520cae0a:4",
+          "evidenceId": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:stock-53d8fa22-3109-4777-936c-88aa520cae0a:4"
+        }
+      ],
+      "channels": [
+        {
+          "channel": "抖音",
+          "paidOrders": 1,
+          "netRevenueCents": 20000,
+          "spendCents": 2000,
+          "evidenceId": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:channel-%E6%8A%96%E9%9F%B3"
+        }
+      ],
+      "weeks": [
+        {
+          "start": "2026-09-01",
+          "end": "2026-09-02",
+          "events": {
+            "A1": 100,
+            "A2": null,
+            "A3": 10,
+            "A5": null
+          },
+          "paidOrders": 1,
+          "netRevenueCents": 20000,
+          "spendCents": 2000
+        }
+      ]
+    },
+    "evidenceIds": {
+      "paidOrders": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:paidOrders",
+      "netRevenueCents": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:netRevenueCents",
+      "spendCents": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:spendCents",
+      "variableCostCents": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:variableCostCents",
+      "contributionMarginCents": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:contributionMarginCents",
+      "A1": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:A1",
+      "A2": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:A2",
+      "A3": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:A3",
+      "A5": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:A5",
+      "week:2026-09-01": "snap-c2e41456e94ee45122440aff4d134bc566049be6e0dac6f7eab54db02487b85d:week-2026-09-01"
+    }
+  },
+  "readbacks": {
+    "restartPersistence": true,
+    "twoIndependentHttpConnectionsEqual": true,
+    "evidenceOriginalRows": [
+      2,
+      3,
+      4
+    ],
+    "businessBEmpty": true,
+    "businessNatureEmpty": true,
+    "finalVersionServerRestart": true,
+    "importHistoryNatureIsolation": true
+  },
+  "tests": {
+    "logicAndD1R2": 46,
+    "renderedPagesAndRoutes": 18,
+    "typeScript": "pass",
+    "newCodeESLint": "pass",
+    "productionBuild": "pass",
+    "productionLocalIdentityGuard": "pass",
+    "finalLogs": [
+      "final-ingestion-tests.log",
+      "final-typescript.log",
+      "final-eslint.log",
+      "final-build.log",
+      "final-rendered-tests.log",
+      "production-auth-guard.log"
+    ]
+  },
+  "browser": {
+    "inAppUploadCommitDashboardAndEvidence": "pass_before_final_ui_cleanup",
+    "screenshot": "dashboard.png",
+    "secondIndependentBrowserSession": "pending_browser_bridge_unavailable_and_native_chrome_interrupted",
+    "finalPeopleGoodsMarketInteractions": "pending"
+  },
+  "deployment": {
+    "remoteWrites": false,
+    "published": false
+  },
+  "acceptance": "implementation_and_local_engineering_checks_passed_remaining_browser_acceptance_pending",
+  "templates": [
+    "public/import-templates/v1/events.csv",
+    "public/import-templates/v1/orders.csv",
+    "public/import-templates/v1/inventory.csv",
+    "public/import-templates/v1/expenses.csv"
+  ],
+  "identity": {
+    "userId": "local-owner"
+  }
+}

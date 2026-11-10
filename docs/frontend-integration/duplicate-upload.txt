@@ -1,0 +1,168 @@
+http://127.0.0.1:3102/data/imports?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- banner:
+  - link "NEO":
+    - /url: /?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - navigation "经营导航":
+    - link "今日经营":
+      - /url: /?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "我的客户":
+      - /url: /analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "供应链与库存":
+      - /url: /analysis/goods?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "渠道与竞品":
+      - /url: /analysis/market?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "数据导入":
+      - /url: /data/imports?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - link "演示入口":
+    - /url: /demo?mode=example
+- main:
+  - text: 企业
+  - combobox "企业":
+    - option "本地验收企业 A" [selected]
+    - option "本地验收企业 B"
+  - text: 数据性质
+  - combobox "数据性质":
+    - option "验收样例" [selected]
+    - option "业务导入 · 待业务核实"
+  - generic: 管理员
+  - heading "数据导入" [level=1]
+  - paragraph: 先校验预览，再确认入库。每文件最多 1,000 条、1 MiB；仅接收 UTF-8 标准 CSV。
+  - text: 模板
+  - combobox "模板":
+    - option "经营事件" [selected]
+    - option "订单与退款"
+    - option "库存快照"
+    - option "渠道投放费用"
+  - text: 来源名称
+  - textbox "来源名称":
+    - /placeholder: 如：抖音店铺月度导出
+    - text: NEO前端接入第二组隔离样例
+  - text: 覆盖起日
+  - textbox "覆盖起日": 2026-09-01
+  - text: 覆盖止日
+  - textbox "覆盖止日": 2026-09-02
+  - text: CSV 文件
+  - button "CSV 文件"
+  - button "上传并校验"
+  - paragraph: 行为次数；支持 A1–A3 与 A5，不接收累计快照、订单或费用。
+  - link "下载标准模板":
+    - /url: /api/v1/import-templates/events?businessId=test-a&dataNature=demo&format=csv
+  - link "下载隔离验收样例":
+    - /url: /import-samples/demo-events.csv
+  - button "校验此模板的验收样例"
+  - paragraph: 覆盖日期由数据提供者声明。相同来源名称应持续复用，订单退款须使用原订单来源。
+  - status: 已回读同一文件的已有批次，未重复创建。
+  - heading "批次预览：events.csv" [level=2]
+  - paragraph: 已入库 · 1 条 · 重复 0 条 · 校验版本 1
+  - button "确认入库并更新看板" [disabled]
+  - link "下载原文件":
+    - /url: /api/v1/ingestion-batches/d86f8823-ed68-4978-81a2-7961637254fb/file?businessId=test-a&dataNature=demo
+  - link "下载错误报告":
+    - /url: /api/v1/ingestion-batches/d86f8823-ed68-4978-81a2-7961637254fb/issues?businessId=test-a&dataNature=demo&format=csv
+  - link "查看经营看板":
+    - /url: /?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - heading "有效记录预览" [level=3]
+  - paragraph: 存在错误时，下面的有效行也不会被部分入库。
+  - generic "第 2 条"
+  - text: 截至日期
+  - textbox "截至日期": 2026-09-02
+  - text: 统计起日
+  - textbox "统计起日": 2026-09-01
+  - text: 统计止日
+  - textbox "统计止日": 2026-09-02
+  - text: 商品 ID
+  - textbox "商品 ID"
+  - text: 渠道
+  - textbox "渠道"
+  - button "生成 / 更新快照"
+  - paragraph: 默认统计截至日期前的八个完整自然周；库存使用独立截至时点。所有页面读取同一快照。
+  - generic: 快照 snap-a963bdd2df6b · 2026-09-01 至 2026-09-02 · 截至 2026-09-02 · Asia/Shanghai
+  - heading "导入历史" [level=2]
+  - table:
+    - rowgroup:
+      - row "文件 性质 类型 状态 新增 重复":
+        - columnheader "文件"
+        - columnheader "性质"
+        - columnheader "类型"
+        - columnheader "状态"
+        - columnheader "新增"
+        - columnheader "重复"
+    - rowgroup:
+      - row "expenses.csv 验收样例 渠道投放费用 已入库 1 0":
+        - cell "expenses.csv":
+          - button "expenses.csv"
+        - cell "验收样例"
+        - cell "渠道投放费用"
+        - cell "已入库"
+        - cell "1"
+        - cell "0"
+      - row "inventory.csv 验收样例 库存快照 已入库 1 0":
+        - cell "inventory.csv":
+          - button "inventory.csv"
+        - cell "验收样例"
+        - cell "库存快照"
+        - cell "已入库"
+        - cell "1"
+        - cell "0"
+      - row "orders.csv 验收样例 订单与退款 已入库 1 0":
+        - cell "orders.csv":
+          - button "orders.csv"
+        - cell "验收样例"
+        - cell "订单与退款"
+        - cell "已入库"
+        - cell "1"
+        - cell "0"
+      - row "events.csv 验收样例 经营事件 已入库 1 0":
+        - cell "events.csv":
+          - button "events.csv"
+        - cell "验收样例"
+        - cell "经营事件"
+        - cell "已入库"
+        - cell "1"
+        - cell "0"
+      - row "repair-add-seven.csv 验收样例 经营事件 已入库 1 0":
+        - cell "repair-add-seven.csv":
+          - button "repair-add-seven.csv"
+        - cell "验收样例"
+        - cell "经营事件"
+        - cell "已入库"
+        - cell "1"
+        - cell "0"
+      - row "demo-expenses.csv 验收样例 渠道投放费用 已入库 1 0":
+        - cell "demo-expenses.csv":
+          - button "demo-expenses.csv"
+        - cell "验收样例"
+        - cell "渠道投放费用"
+        - cell "已入库"
+        - cell "1"
+        - cell "0"
+      - row "demo-inventory.csv 验收样例 库存快照 已入库 3 0":
+        - cell "demo-inventory.csv":
+          - button "demo-inventory.csv"
+        - cell "验收样例"
+        - cell "库存快照"
+        - cell "已入库"
+        - cell "3"
+        - cell "0"
+      - row "demo-orders.csv 验收样例 订单与退款 已入库 3 0":
+        - cell "demo-orders.csv":
+          - button "demo-orders.csv"
+        - cell "验收样例"
+        - cell "订单与退款"
+        - cell "已入库"
+        - cell "3"
+        - cell "0"
+      - row "demo-events.csv 验收样例 经营事件 已入库 2 0":
+        - cell "demo-events.csv":
+          - button "demo-events.csv"
+        - cell "验收样例"
+        - cell "经营事件"
+        - cell "已入库"
+        - cell "2"
+        - cell "0"
+- contentinfo:
+  - text: 数据来自已提交导入记录。来源覆盖与业务真实性需另行核实。
+  - link "预测与协同":
+    - /url: /analysis/overview?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - link "周报":
+    - /url: /reports/weekly?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631

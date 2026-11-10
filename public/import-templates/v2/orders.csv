@@ -1,0 +1,1 @@
+source_record_id,order_id,order_line_id,entry_type,occurred_at,channel,product_id,sku_id,quantity,amount_cents,variable_cost_cents,contact_id,identity_namespace,external_contact_id

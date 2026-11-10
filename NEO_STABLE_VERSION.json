@@ -1,0 +1,186 @@
+{
+  "version": "neo-main-integrated-20261006",
+  "status": "historical_accepted_local_integration_superseded",
+  "currentSourcePolicy": "Local builds identify the current source by neo-local-<digest>; an uncommitted workspace is a candidate, not an accepted release.",
+  "acceptedAt": "2026-10-05T19:18:57.802392+00:00",
+  "gitBase": "477190c71287ba5f582105b8bc13b1937ddddbd8",
+  "gitTag": "neo-integrated-2026-10-06",
+  "mainPath": "/Users/majun/Desktop/NEO/NEO后端交接包2026-09-30/growthos-dashboard",
+  "frontend": "/demo",
+  "runtimeSourceDigest": "b96b9be3990998f05add5595157ff99bc57ef85e9ad9ef6e9687cd5d230f2863",
+  "executionMode": "live",
+  "autoPatrolEnabled": false,
+  "dataNature": "demo",
+  "sourceKind": "SYNTHETIC_DEMO",
+  "businessId": "neo-sim-acceptance-20261004",
+  "snapshotId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+  "facts": 3259,
+  "importBatches": 32,
+  "localState": "outputs/stable-local/",
+  "migrationSequence": "0000 through 0009; existing 0007_fluffy_cerebro retained",
+  "acceptance": {
+    "scope": "four previously external artifact categories integrated into main, online knowledge retrieval plumbing",
+    "pythonTests": 200,
+    "developmentToolNodeTests": 6,
+    "agentRuntimeNodeTests": 27,
+    "productionRenderTests": 20,
+    "syntheticQualityAssertions": 15850,
+    "syntheticHttpChecks": 220,
+    "syntheticFactsInNewIsolatedValidationDb": 3259,
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "privateLocalBuild": "passed",
+    "storybookBuild": "passed",
+    "realModelCompletedRuns": 1,
+    "knowledgeTrace": {
+      "version": "neo-business-knowledge-20261006-v1",
+      "digest": "221a433252ae8e667a159dbd3ac4644ee25cb9ef9f02a37410bb6126aa664c42",
+      "ruleIds": [
+        "K04",
+        "K02",
+        "K03",
+        "K07",
+        "K08",
+        "K09"
+      ]
+    },
+    "browserChecks": [
+      "original demo data and saved conversations after restart",
+      "online question completed",
+      "backend flow diagram and clickable knowledge node",
+      "original home component in explicitly labelled fixture story"
+    ],
+    "sourceBuildRuntimeFingerprint": "passed",
+    "qualification": "Component/build/tool integration and online execution verified; no real enterprise outcome or comprehensive answer-quality acceptance"
+  },
+  "protection": {
+    "originalDatabaseFilesUnchanged": 7,
+    "credentialFilesUnchanged": 2
+  },
+  "evidencePath": "/Users/majun/Desktop/NEO/监督/全部接入-2026-10-06",
+  "rollbackPath": "/Users/majun/Desktop/NEO/监督/main-stable-2026-10-05/rollback-before-merge",
+  "remaining": [
+    "真实经营资料未验收",
+    "本轮核验在线对话链路；模型完整经营研判质量尚未签收，已登记重复查询被拒绝后的误报与细节缺口误报",
+    "外部市场检索与自动巡检未开启或验收",
+    "真实预测提升未验收",
+    "未发布生产、未迁移原企业库",
+    "本轮新在线回复仍混淆部分客户阶段和身份核实状态；未签收完整经营回答质量",
+    "30条关系规则为参考知识，企业规则确认/撤回/过期和长期记忆未实现"
+  ],
+  "decisionBoundary": "仅推演与保存经营选择，不下单、投放、采购或派单",
+  "manualChatEnabled": true,
+  "marketSearchEnabled": false,
+  "previousStableAcceptance": {
+    "version": "neo-main-stable-20261005",
+    "gitTag": "neo-stable-2026-10-05",
+    "runtimeSourceDigest": "1e7349c972ff00cded6ce6c06332791803c6d94dd1413bff05fba1dc7c29963b",
+    "acceptance": {
+      "mergedNodeTests": 199,
+      "mergedPythonTests": 186,
+      "finalMainRenderTests": 20,
+      "finalDisplayRelatedRegression": 13,
+      "finalDisplayRelatedRegressionIsSubset": true,
+      "mainHttpChecks": 81,
+      "restartReadbackChecks": 7,
+      "full24Assertions": 19359,
+      "browserPages": [
+        "今日经营",
+        "我的客户",
+        "供应链与库存",
+        "渠道与竞品",
+        "生意预测/协同",
+        "周报"
+      ],
+      "typecheck": "passed",
+      "productionBuild": "passed",
+      "privateLocalBuild": "passed",
+      "evidenceQualification": "All merged suites passed in the frozen candidate; source copied to main with fingerprints. Final main display-only change passed 13 related checks and final typecheck/build/20 renders plus browser/restart readback. 19359 are assertions, not test cases."
+    },
+    "evidencePath": "/Users/majun/Desktop/NEO/监督/main-stable-2026-10-05"
+  },
+  "previousOnlineChatAcceptance": {
+    "version": "neo-main-stable-20261005-chat1",
+    "status": "accepted_local_online_chat",
+    "acceptedAt": "2026-10-05T18:34:24.798224+00:00",
+    "gitBase": "60807cb6f57b207db2cad716eebbc71b732a497c",
+    "gitTag": "neo-chat-fixed-2026-10-06",
+    "mainPath": "/Users/majun/Desktop/NEO/NEO后端交接包2026-09-30/growthos-dashboard",
+    "frontend": "/demo",
+    "runtimeSourceDigest": "0916973eab31bea9602d5559674faef366e575e27339414d0feb927c3f73bea8",
+    "executionMode": "live",
+    "autoPatrolEnabled": false,
+    "dataNature": "demo",
+    "sourceKind": "SYNTHETIC_DEMO",
+    "businessId": "neo-sim-acceptance-20261004",
+    "snapshotId": "snap-47be2ef26d853f87532a4c3835c93d290731dbcbc398df99f4e4375d32d6cc54",
+    "facts": 3259,
+    "importBatches": 32,
+    "localState": "outputs/stable-local/",
+    "migrationSequence": "0000 through 0009; existing 0007_fluffy_cerebro retained",
+    "acceptance": {
+      "scope": "online_manual_conversation_chain",
+      "pythonTests": 195,
+      "relatedNodeUniqueCases": 52,
+      "nodeQualification": "Serial log 51 pass and one newly authored fixture provenance failure. Corrected fixture and all 21 runtime tests passed; 31 other related cases retain valid serial proof. Not a full Node suite run.",
+      "renderTests": 26,
+      "typecheck": "passed",
+      "productionBuild": "passed_before_final_python_only_changes",
+      "privateLocalBuild": "passed_same_source_as_running_service",
+      "realModelCompletedRuns": 4,
+      "specialists": [
+        "conversion",
+        "supply",
+        "market"
+      ],
+      "sameSessionFollowup": "passed",
+      "browserReloadReadback": "passed",
+      "sourceBuildRuntimeFingerprint": "passed"
+    },
+    "protection": {
+      "originalDatabaseFilesUnchanged": 7,
+      "credentialFilesUnchanged": 2,
+      "acceptedFiveLineFilesUnchanged": 504
+    },
+    "evidencePath": "/Users/majun/Desktop/NEO/监督/agent-chat-fix-2026-10-05",
+    "rollbackPath": "/Users/majun/Desktop/NEO/监督/main-stable-2026-10-05/rollback-before-merge",
+    "remaining": [
+      "真实经营资料未验收",
+      "本轮核验在线对话链路；模型完整经营研判质量尚未签收，已登记重复查询被拒绝后的误报与细节缺口误报",
+      "外部市场检索与自动巡检未开启或验收",
+      "真实预测提升未验收",
+      "未发布生产、未迁移原企业库"
+    ],
+    "decisionBoundary": "仅推演与保存经营选择，不下单、投放、采购或派单",
+    "manualChatEnabled": true,
+    "marketSearchEnabled": false,
+    "previousStableAcceptance": {
+      "version": "neo-main-stable-20261005",
+      "gitTag": "neo-stable-2026-10-05",
+      "runtimeSourceDigest": "1e7349c972ff00cded6ce6c06332791803c6d94dd1413bff05fba1dc7c29963b",
+      "acceptance": {
+        "mergedNodeTests": 199,
+        "mergedPythonTests": 186,
+        "finalMainRenderTests": 20,
+        "finalDisplayRelatedRegression": 13,
+        "finalDisplayRelatedRegressionIsSubset": true,
+        "mainHttpChecks": 81,
+        "restartReadbackChecks": 7,
+        "full24Assertions": 19359,
+        "browserPages": [
+          "今日经营",
+          "我的客户",
+          "供应链与库存",
+          "渠道与竞品",
+          "生意预测/协同",
+          "周报"
+        ],
+        "typecheck": "passed",
+        "productionBuild": "passed",
+        "privateLocalBuild": "passed",
+        "evidenceQualification": "All merged suites passed in the frozen candidate; source copied to main with fingerprints. Final main display-only change passed 13 related checks and final typecheck/build/20 renders plus browser/restart readback. 19359 are assertions, not test cases."
+      },
+      "evidencePath": "/Users/majun/Desktop/NEO/监督/main-stable-2026-10-05"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+URL: http://127.0.0.1:3102/analysis/goods?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+Browser tab: 1, Title: "NEO · 增长决策工作台", URL: "http://127.0.0.1:3102/analysis/goods?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea".
+1 AXWebArea NEO · 增长决策工作台, URL: 127.0.0.1:3102/analysis/goods?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+	2 container
+		3 link Description: NEO, Value: 127.0.0.1:3102/?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+		4 container 经营导航
+			5 link Description: 今日经营, Value: 127.0.0.1:3102/?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+			6 link Description: 我的客户, Value: 127.0.0.1:3102/analysis/people?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+			7 link Description: 供应链与库存, Value: 127.0.0.1:3102/analysis/goods?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+			8 link Description: 渠道与竞品, Value: 127.0.0.1:3102/analysis/market?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+			9 link Description: 数据导入, Value: 127.0.0.1:3102/data/imports?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+		10 link Description: 演示入口, Value: 127.0.0.1:3102/demo
+	11 container
+		12 text 企业
+		13 pop up button (collapsed, settable) Description: 企业, Value: 本地验收企业 A, Secondary Actions: Expand
+			14 menu
+				15 (selected) 本地验收企业 A
+				16 本地验收企业 B
+		17 text 数据性质
+		18 pop up button (collapsed, settable) Description: 数据性质, Value: 验收样例, Secondary Actions: Expand
+			19 menu
+				20 (selected) 验收样例
+				21 业务导入 · 待业务核实
+		22 text 管理员
+		23 heading 供应链与库存, Value: 1
+			24 text 供应链与库存
+		25 container
+			26 text 截至日期
+			27 date field (settable) Description: 截至日期, Value: 2026-09-02
+				28 container
+					29 stepper
+					30 stepper
+					31 stepper
+				32 pop up button 显示日期选择器 显示日期选择器
+			33 text 统计起日
+			34 date field (settable) Description: 统计起日, Value: 2026-09-01
+				35 container
+					36 stepper
+					37 stepper
+					38 stepper
+				39 pop up button 显示日期选择器 显示日期选择器
+			40 text 统计止日
+			41 date field (settable) Description: 统计止日, Value: 2026-09-02
+				42 container
+					43 stepper
+					44 stepper
+					45 stepper
+				46 pop up button 显示日期选择器 显示日期选择器
+			47 text 商品 ID
+			48 text field (settable) 商品 ID
+			49 text 渠道
+			50 text field (settable) 渠道
+			51 button 生成 / 更新快照
+		52 text 默认统计截至日期前的八个完整自然周；库存使用独立截至时点。所有页面读取同一快照。
+		53 text 快照  snap-99bd0287d700  ·  2026-09-01  至  2026-09-02  · 截至  2026-09-02  · Asia/Shanghai
+		54 heading 已导入库存 · 截至 2026-09-02, Value: 2
+			55 text 已导入库存 · 截至  2026-09-02
+		56 container
+			57 text 已导入  2  个仓库/SKU 组合；可售  4  件。覆盖范围以来源为准。
+		58 table
+			59 row
+				60 cell
+					61 text 商品 / SKU
+				62 cell
+					63 text 仓库
+				64 cell
+					65 text 可售
+				66 cell
+					67 text 在途
+				68 cell
+					69 text 安全库存
+				70 cell
+					71 text 库存成本
+				72 cell
+					73 text 来源时点
+			74 row
+				75 cell
+					76 button P1 / SKU1
+						77 text P1
+						78 text  / 
+						79 text SKU1
+				80 cell
+					81 text W1
+				82 cell
+					83 text 0 件
+				84 cell
+					85 text 2 件
+				86 cell
+					87 text 3 件
+				88 cell
+					89 text ¥0.00
+				90 cell
+					91 text 2026-09-02
+			92 row
+				93 cell
+					94 button P1 / SKU1
+						95 text P1
+						96 text  / 
+						97 text SKU1
+				98 cell
+					99 text W2
+				100 cell
+					101 text 4 件
+				102 cell
+					103 text 0 件
+				104 cell
+					105 text 待补数据
+				106 cell
+					107 text ¥200.00
+				108 cell
+					109 text 2026-09-02
+		110 heading 数据范围与限制, Value: 2
+			111 text 数据范围与限制
+		112 text 库存不按销售渠道筛选，按仓库和商品/SKU展示。
+		113 text 仅汇总已导入来源；覆盖日期是提供者声明，未经业务核实。
+		114 text 行为次数、支付订单数与客户人数不同，不计算客户转化率。
+		115 text 库存是各仓库/SKU最近一次已导入值，不保证企业全量或实时。
+		116 text 退款计入实际发生日，可能使该期净成交额为负。
+		117 text 验收样例，不用于真实经营决策。
+	118 container
+		119 text 数据来自已提交导入记录。来源覆盖与业务真实性需另行核实。
+		120 link Description: 预测与协同, Value: 127.0.0.1:3102/analysis/overview?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+		121 link Description: 周报, Value: 127.0.0.1:3102/reports/weekly?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea
+
+The focused UI element is 1 AXWebArea NEO · 增长决策工作台, URL: 127.0.0.1:3102/analysis/goods?businessId=test-a&dataNature=demo&snapshotId=snap-99bd0287d700b3956487fe96b95a96a1a0ceaef0b581a82cd59323303cb47aea

@@ -1,0 +1,3 @@
+﻿source_record_id,occurred_at,event_type,channel,quantity,product_id,contact_id
+ev1,2026-09-01,content_view,抖音,100,P1,
+ev2,2026-09-01,inquiry,抖音,10,P1,

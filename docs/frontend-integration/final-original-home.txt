@@ -1,0 +1,172 @@
+http://127.0.0.1:3102/demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "我的客户":
+      - /url: /demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "供应链与库存":
+      - /url: /demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "渠道与竞品":
+      - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - generic: 本周行动周报
+  - generic: 本地验收企业 A
+  - generic: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02 · 截至 2026-09-02
+  - generic: 验收样例 · 已保存
+- main:
+  - generic: 本地验收企业 A · 今日经营状况
+  - heading "经营决策" [level=2]
+  - button "查看今日简报":
+    - text: 查看今日简报
+  - text: 当前判断
+  - generic: "01"
+  - heading "已读取保存的经营数据" [level=1]
+  - paragraph: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02；支付订单 2 笔，A1 行为 114 次。
+  - text: 待业务核实
+  - text: 如果维持现状
+  - generic: "02"
+  - generic: 未来 4 周有效成交
+  - strong: 待接入人
+  - paragraph: 预测后端待接入
+  - link "比较未来情景":
+    - /url: /demo?page=overview&view=forecast&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - text: 建议先做
+  - generic: "03"
+  - heading "行动后端待接入" [level=3]
+  - paragraph: 尚未接入负责人、执行状态与观察结果。
+  - link "进入行动清单":
+    - /url: /demo?page=overview&view=action&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+  - strong: 增长智能体
+  - button "客户转化 A3 行为 10 次，支付订单 2 笔":
+    - generic: 客户转化
+    - generic: A3 行为 10 次，支付订单 2 笔
+  - button "供需核查 已导入库存 2 条；按仓库/SKU回读":
+    - generic: 供需核查
+    - generic: 已导入库存 2 条；按仓库/SKU回读
+  - button "市场观察 渠道费用已接入；竞品信息待接入" [disabled]:
+    - generic: 市场观察
+    - generic: 渠道费用已接入；竞品信息待接入
+  - paragraph: 经营数据截至 2026-09-02；智能体、预测、行动及外部信息待接入。
+  - button "统计期净成交额 ¥300.00 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02":
+    - generic: 统计期净成交额
+    - strong: ¥300.00
+    - generic: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02
+  - generic: 统计期贡献毛利
+  - strong: ¥130.00
+  - generic: 占净成交 43.3%
+  - generic: 统计期投放费用
+  - strong: ¥30.00
+  - generic: 占净成交 10.0%
+  - button "已导入库存成本货值 ¥300.00 已导入范围 · 截至所选日期":
+    - generic: 已导入库存成本货值
+    - strong: ¥300.00
+    - generic: 已导入范围 · 截至所选日期
+  - heading "人 客户转化" [level=2]:
+    - text: 人
+    - text: 客户转化
+  - heading "已读取保存的经营数据" [level=3]
+  - paragraph: 行为按次数，支付订单按笔；客户去重与转化率待接入。
+  - button "A3 行为次数 10 次 支付订单 2 笔":
+    - text: A3 行为次数
+    - strong: 10 次
+    - text: 支付订单
+    - strong: 2 笔
+  - region "行为与支付订单走势":
+    - heading "行为与支付订单走势" [level=3]
+    - application:
+      - generic: 09-01–09-02
+      - generic: "26"
+      - generic: "79"
+      - generic: "131"
+  - link "进入人的分析":
+    - /url: /demo?page=people&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - text: 进入人的分析
+  - heading "货 供应链与库存" [level=2]:
+    - text: 货
+    - text: 供应链与库存
+  - heading "已保存的仓库与 SKU 库存" [level=3]
+  - paragraph: 已导入 2 条库存；供给目标与到货时间待接入。
+  - button "查看库存证据":
+    - text: 查看库存证据
+  - region "三类货盘供给达标率 · 待接入":
+    - heading "三类货盘供给达标率 · 待接入" [level=3]
+    - application:
+      - generic: 09-01–09-02
+  - link "进入货的分析":
+    - /url: /demo?page=goods&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - text: 进入货的分析
+  - heading "场 渠道与市场" [level=2]:
+    - text: 场
+    - text: 渠道与市场
+  - heading "渠道费用与订单已保存" [level=3]
+  - paragraph: 商品角色、竞品和市场判断待接入。
+  - generic: 入门品
+  - generic: 主力品
+  - generic: 旗舰品
+  - generic: 抖音
+  - button "待接入" [disabled]
+  - button "待接入" [disabled]
+  - button "待接入" [disabled]
+  - link "进入场的分析":
+    - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - text: 进入场的分析
+  - heading "未来预判 未来 4 周预览" [level=2]:
+    - text: 未来预判
+    - text: 未来 4 周预览
+  - heading "未来有效成交待接入" [level=3]
+  - paragraph: 预测后端待接入
+  - link "比较预测与方案":
+    - /url: /demo?page=overview&view=forecast&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+    - text: 比较预测与方案
+  - region "支付订单历史 · 未来预测待接入":
+    - heading "支付订单历史 · 未来预测待接入" [level=3]
+    - application:
+      - generic: 09-01–09-02
+      - generic: 未来1周
+      - generic: 未来2周
+      - generic: 未来3周
+      - generic: 未来4周
+      - generic: "0"
+      - generic: "0"
+      - generic: "1"
+      - generic: "1"
+      - generic: "2"
+      - generic: "2"
+  - dialog "今日经营简报":
+    - generic: 本地验收企业 A · 老板工作台
+    - heading "今日经营简报" [level=2]
+    - paragraph: 当前快照的经营摘要；经营判断待补齐规则与依据。
+    - button "关闭今日经营简报" [active]:
+    - text: 今日重点 · 已保存快照
+    - strong: 已读取保存的经营数据
+    - paragraph: 已导入商品 / 已导入渠道 / 2026-09-01 至 2026-09-02
+    - article:
+      - heading "行业政策" [level=3]
+      - strong: 等待可信政策来源
+      - paragraph: 尚未接入官方政策信息；接入后会显示发布日期、来源及与企业的关联。
+      - generic: 来源状态：待接入 · 暂不形成判断
+    - article:
+      - heading "我的企业" [level=3]
+      - strong: 支付订单 2 笔
+      - paragraph: 净成交额 ¥300.00，投放费用 ¥30.00，贡献毛利 ¥130.00。
+      - generic: 来源：已提交导入记录 · 截至 2026-09-02
+    - article:
+      - heading "市场观察与机会" [level=3]
+      - text: 市场信息与机会来源待接入
+      - generic: 近期市场变化
+      - heading "值得关注的机会" [level=4]
+      - link "查看渠道与竞品":
+        - /url: /demo?page=market&businessId=test-a&dataNature=demo&snapshotId=snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631
+        - text: 查看渠道与竞品
+    - generic: 经营数据截至 2026-09-02；政策、市场、诊断规则待接入。
+    - button "进入今日经营":
+      - text: 进入今日经营
+- contentinfo: 数据来自已提交导入记录 · snap-a963bdd2df6b0548d1113bae19f6da96525ee4031261b12274c47c496e74f631 · 来源覆盖与业务真实性需另行核实
+- generic: "1"

@@ -1,0 +1,12 @@
+{
+  "sourceRunId": "run-38e087d6-c9c7-448d-8b03-9d1f82b7df12",
+  "sourceHead": "f188ca16b76b641fe0d4ccd3f7f996f0468a2eb3",
+  "sourceReceipt": "outputs/agent-optimization/ui-live-f188-runs.json",
+  "rawPayloadSha256": "7a68fddf9f240650d1506bd23f68b06436dae88f2cdec7270ca75cdaa4c9e051",
+  "fixtureSha256": "929c4dc0f8fa7547d7acc389d33f65a17db4e0fb14a8306d39b077b176aa6d1e",
+  "status": "failed",
+  "taskType": "DIAGNOSE",
+  "modelInvocations": 3,
+  "reportedTokens": 25144,
+  "role": "unchanged historical input; offline derivative recomputes task/caps before new admission, never resumes or rewrites original"
+}

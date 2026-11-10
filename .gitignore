@@ -1,0 +1,68 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.vinext/
+/out/
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+/dist/
+/.wrangler/
+/outputs/
+/work/
+
+.dev.vars*
+agent-service/.venv/
+agent-service/.forecast-venv/
+agent-service/state/
+__pycache__/
+.pytest_cache/
+!agent-service/.env.example
+
+# Generated local stable build and isolated simulation runtime
+.cache/
+outputs/
+
+# Local temporary acceptance probes
+tests/.ontology-storage-work/
+*.tsbuildinfo
+
+# Development previews; not the product frontend
+/storybook-static/
+agent-service/.autogluon-venv/
+
+# Isolated open source adapters
+integrations/ontogpt/.venv/
+
+.litellm_cache/
+
+agent-service/.forecast-venv
+agent-service/.autogluon-venv

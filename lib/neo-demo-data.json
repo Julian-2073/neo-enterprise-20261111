@@ -1,0 +1,729 @@
+{
+  "meta": {
+    "version": "2026-09-29-agent-interaction-v1",
+    "isMock": true,
+    "asOf": "2026-09-24",
+    "business": "COCA健身",
+    "periodStart": "2026-07-27",
+    "periodEnd": "2026-09-20",
+    "units": {
+      "people": "人",
+      "stock": "件",
+      "salesQuantity": "件",
+      "money": "元",
+      "rate": "百分比"
+    },
+    "weeks": [
+      {
+        "label": "第1周",
+        "start": "2026-07-27",
+        "end": "2026-08-02"
+      },
+      {
+        "label": "第2周",
+        "start": "2026-08-03",
+        "end": "2026-08-09"
+      },
+      {
+        "label": "第3周",
+        "start": "2026-08-10",
+        "end": "2026-08-16"
+      },
+      {
+        "label": "第4周",
+        "start": "2026-08-17",
+        "end": "2026-08-23"
+      },
+      {
+        "label": "第5周",
+        "start": "2026-08-24",
+        "end": "2026-08-30"
+      },
+      {
+        "label": "第6周",
+        "start": "2026-08-31",
+        "end": "2026-09-06"
+      },
+      {
+        "label": "第7周",
+        "start": "2026-09-07",
+        "end": "2026-09-13"
+      },
+      {
+        "label": "第8周",
+        "start": "2026-09-14",
+        "end": "2026-09-20"
+      }
+    ]
+  },
+  "scopes": {
+    "conversion": {
+      "id": "r1-douyin-8w",
+      "productId": "R1",
+      "channelId": "douyin",
+      "period": "最近8个完整周",
+      "label": "R1 / 抖音店铺 / 近8周"
+    },
+    "inventory": {
+      "id": "all-stock-asof",
+      "productId": "all",
+      "channelId": "all",
+      "asOf": "2026-09-24",
+      "valuation": "成本",
+      "label": "全商品库存成本货值 / 当前时点"
+    },
+    "channelSpend": {
+      "id": "all-channel-8w",
+      "productId": "all",
+      "channelId": "all",
+      "period": "最近8个完整周",
+      "label": "全商品 / 全渠道 / 近8周"
+    },
+    "r1Stock": {
+      "id": "r1-stock-asof",
+      "productId": "R1",
+      "channelId": "all",
+      "asOf": "2026-09-24",
+      "label": "R1 / 全渠道 / 当前可售库存成本"
+    },
+    "supply": {
+      "id": "all-supply-8w",
+      "productId": "all",
+      "channelId": "all",
+      "period": "最近8个完整周",
+      "label": "各商品角色 / 全渠道 / 达标SKU占比"
+    }
+  },
+  "issue": {
+    "id": "intent-conversion-supply-01",
+    "title": "意向在增长，成交没跟上",
+    "status": "待核查",
+    "anomalyWeekIndexes": [
+      6,
+      7
+    ],
+    "causalityConfirmed": false
+  },
+  "conversion": {
+    "scopeId": "r1-douyin-8w",
+    "stageWeekly": {
+      "A1": [
+        8400,
+        9200,
+        9800,
+        10100,
+        10600,
+        11000,
+        11400,
+        11900
+      ],
+      "A2": [
+        1900,
+        2100,
+        2300,
+        2400,
+        2500,
+        2700,
+        2800,
+        2900
+      ],
+      "A3": [
+        220,
+        245,
+        270,
+        290,
+        325,
+        355,
+        375,
+        400
+      ],
+      "A4": [
+        36,
+        39,
+        42,
+        47,
+        43,
+        38,
+        33,
+        32
+      ]
+    },
+    "stageTotals": {
+      "A1": 82400,
+      "A2": 19600,
+      "A3": 2480,
+      "A4": 310
+    },
+    "stageNames": {
+      "A1": "看过",
+      "A2": "兴趣",
+      "A3": "意向",
+      "A4": "有效成交"
+    },
+    "previousComparablePeriod": {
+      "label": "前一等长8周",
+      "a3ToA4Ratio": 0.157,
+      "isMockBenchmark": true
+    },
+    "normalizedMode": {
+      "baseline": "每条序列前4周均值",
+      "baseValue": 100
+    },
+    "rateNote": "演示阶段比值；正式去重与同批客户口径待真实数据确认。"
+  },
+  "financial": {
+    "scopeId": "r1-douyin-8w",
+    "netRevenue": 589000,
+    "variableCost": 348000,
+    "advertisingSpend": 88000,
+    "contributionMargin": 153000,
+    "formula": "netRevenue-variableCost-advertisingSpend",
+    "isNetProfit": false
+  },
+  "productRoles": [
+    {
+      "id": "entry",
+      "name": "入门品",
+      "skuCount": 6,
+      "currentInventoryCost": 210000,
+      "currentQualifiedSkuCount": 5,
+      "qualifiedSkuWeekly": [
+        6,
+        6,
+        6,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "rolePurpose": "首购承接、扩大新客"
+    },
+    {
+      "id": "core",
+      "name": "主力成交品",
+      "skuCount": 18,
+      "currentInventoryCost": 764000,
+      "currentQualifiedSkuCount": 13,
+      "qualifiedSkuWeekly": [
+        18,
+        17,
+        16,
+        15,
+        15,
+        15,
+        14,
+        13
+      ],
+      "rolePurpose": "成交驱动、贡献主要利润"
+    },
+    {
+      "id": "flagship",
+      "name": "旗舰形象品",
+      "skuCount": 4,
+      "currentInventoryCost": 286000,
+      "currentQualifiedSkuCount": 4,
+      "qualifiedSkuWeekly": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "rolePurpose": "高价格、品牌调性与形象"
+    }
+  ],
+  "inventory": {
+    "scopeId": "all-stock-asof",
+    "totalInventoryCost": 1260000,
+    "supplyTargetRatio": 0.8,
+    "stockSafetyDaysMethod": "demo fixed fixtures; real computation pending data integration",
+    "r1CurrentSellableStockCost": 58000,
+    "shortageOpportunityScenarioRange": [
+      36000,
+      52000
+    ],
+    "shortageOpportunityType": "情景估值，不计入库存货值，不代表已发生损失"
+  },
+  "products": [
+    {
+      "id": "M1",
+      "name": "可调节哑铃 M1",
+      "roleId": "entry",
+      "netQuantity8w": 420,
+      "sellableUnits": 68,
+      "inTransitUnits": 120,
+      "eta": "2026-10-08",
+      "coverageDays": 46,
+      "status": "正常"
+    },
+    {
+      "id": "R1",
+      "name": "家用划船机 R1",
+      "roleId": "core",
+      "netQuantity8w": 310,
+      "sellableUnits": 42,
+      "safetyStockUnits": 80,
+      "inTransitUnits": 180,
+      "eta": "2026-10-06",
+      "coverageDays": 9,
+      "status": "低于安全线",
+      "stockWeekly": [
+        260,
+        240,
+        210,
+        180,
+        140,
+        100,
+        72,
+        42
+      ],
+      "sellableStockCost": 58000
+    },
+    {
+      "id": "S2",
+      "name": "智能跑步机 S2",
+      "roleId": "core",
+      "netQuantity8w": 260,
+      "sellableUnits": 210,
+      "inTransitUnits": 80,
+      "eta": "2026-10-12",
+      "coverageDays": 32,
+      "status": "正常"
+    },
+    {
+      "id": "X2",
+      "name": "旗舰跑步机 X2",
+      "roleId": "flagship",
+      "netQuantity8w": 16,
+      "sellableUnits": 24,
+      "inTransitUnits": 0,
+      "eta": null,
+      "coverageDays": 82,
+      "status": "备货待评估"
+    }
+  ],
+  "market": {
+    "scopeId": "all-channel-8w",
+    "channelSpends": [
+      {
+        "channelId": "douyin",
+        "name": "抖音",
+        "amount": 120000
+      },
+      {
+        "channelId": "tmall",
+        "name": "天猫",
+        "amount": 65000
+      },
+      {
+        "channelId": "content",
+        "name": "内容种草",
+        "amount": 25000
+      }
+    ],
+    "totalChannelSpend": 210000,
+    "roleMatrix": [
+      {
+        "channelId": "douyin",
+        "roleId": "entry",
+        "headline": "首购承接稳定",
+        "status": "normal",
+        "subtext": "新客占比28%（模拟）"
+      },
+      {
+        "channelId": "douyin",
+        "roleId": "core",
+        "headline": "意向↑ · 成交↓",
+        "status": "needs_check",
+        "subtext": "投放成本+36%（模拟；近2周平均点击成本较前2周）"
+      },
+      {
+        "channelId": "douyin",
+        "roleId": "flagship",
+        "headline": "高价咨询增加",
+        "status": "normal",
+        "subtext": "商品页咨询+52%（模拟；近2周较前2周）"
+      },
+      {
+        "channelId": "tmall",
+        "roleId": "entry",
+        "headline": "搜索流量稳定",
+        "status": "normal",
+        "subtext": "搜索UV+12%（模拟；近2周较前2周）"
+      },
+      {
+        "channelId": "tmall",
+        "roleId": "core",
+        "headline": "搜索成交稳定",
+        "status": "normal",
+        "subtext": "成交量+8%（模拟；近2周较前2周）"
+      },
+      {
+        "channelId": "tmall",
+        "roleId": "flagship",
+        "headline": "高价带销售稳健",
+        "status": "normal",
+        "subtext": "客单价+6%（模拟；近2周较前2周）"
+      },
+      {
+        "channelId": "xiaohongshu",
+        "roleId": "entry",
+        "headline": "种草笔记增加",
+        "status": "normal",
+        "subtext": "相关笔记+65%（模拟；近2周较前2周）"
+      },
+      {
+        "channelId": "xiaohongshu",
+        "roleId": "core",
+        "headline": "用户讨论活跃",
+        "status": "normal",
+        "subtext": "互动量+48%（模拟；近2周较前2周）"
+      },
+      {
+        "channelId": "xiaohongshu",
+        "roleId": "flagship",
+        "headline": "品牌讨论增加",
+        "status": "normal",
+        "subtext": "正向声量+72%（模拟；近2周较前2周）"
+      }
+    ],
+    "signals": [
+      {
+        "id": "demand",
+        "title": "居家有氧关注上升",
+        "delta": 0.32,
+        "comparison": "近2周较前2周",
+        "date": "2026-08-29",
+        "sourceType": "平台指数（演示来源）",
+        "verified": false
+      },
+      {
+        "id": "competition",
+        "title": "主力价带促销增加",
+        "delta": 0.45,
+        "comparison": "近2周较前2周模拟竞品促销曝光",
+        "date": "2026-09-12",
+        "sourceType": "公开商品页（演示来源）",
+        "verified": false
+      },
+      {
+        "id": "channel",
+        "title": "抖音主力品承接承压",
+        "delta": -0.18,
+        "comparison": "近2周商品详情到下单比值较前2周",
+        "date": "2026-09-16",
+        "sourceType": "广告后台（演示来源）",
+        "verified": false
+      }
+    ],
+    "events": [
+      {
+        "id": "event-0829",
+        "date": "2026-08-29",
+        "title": "类目搜索热度上升",
+        "sourceType": "平台指数（演示来源）",
+        "evidenceType": "外部模拟观察",
+        "verified": false
+      },
+      {
+        "id": "event-0912",
+        "date": "2026-09-12",
+        "title": "竞品A主力价带促销",
+        "sourceType": "公开商品页（演示来源）",
+        "evidenceType": "外部模拟观察",
+        "verified": false
+      },
+      {
+        "id": "event-0916",
+        "date": "2026-09-16",
+        "title": "抖音投放单价上升",
+        "sourceType": "广告后台（演示来源）",
+        "evidenceType": "模拟内部渠道观察",
+        "verified": false
+      }
+    ]
+  },
+  "opportunities": [
+    {
+      "id": "op-channel",
+      "title": "渠道活动窗口与主力品补货节奏可能形成增量",
+      "kind": "渠道窗口",
+      "reason": "活动窗口可能与补货节奏重合，需核对类目与活动规则",
+      "status": "模拟观察 · 待验证",
+      "source": "演示样例，未抓取真实平台活动",
+      "date": "2026-09-24",
+      "linkedPage": "market"
+    },
+    {
+      "id": "op-flagship",
+      "title": "高价旗舰品关注变化值得观察",
+      "kind": "需求变化",
+      "reason": "关注增长未必形成成交，应结合咨询质量与商品供给",
+      "status": "模拟观察 · 待验证",
+      "source": "演示样例",
+      "date": "2026-09-24",
+      "linkedPage": "market"
+    },
+    {
+      "id": "op-supply",
+      "title": "替代供应资源待评估",
+      "kind": "供给备选",
+      "reason": "需核对可售数量、资质、调拨时效与成本",
+      "status": "模拟线索 · 待评估",
+      "source": "演示样例，未建立真实供应商连接",
+      "date": "2026-09-24",
+      "linkedPage": "goods"
+    }
+  ],
+  "forecast": {
+    "scopeId": "r1-douyin-8w",
+    "forecastOrigin": "2026-09-24",
+    "historicalSeriesKey": "conversion.stageWeekly.A4",
+    "forecastWeeks": [
+      {
+        "start": "2026-09-24",
+        "end": "2026-09-30"
+      },
+      {
+        "start": "2026-10-01",
+        "end": "2026-10-07"
+      },
+      {
+        "start": "2026-10-08",
+        "end": "2026-10-14"
+      },
+      {
+        "start": "2026-10-15",
+        "end": "2026-10-21"
+      }
+    ],
+    "baselineWeeklyMedian": [
+      31,
+      30,
+      29,
+      28
+    ],
+    "baselineTotalRange": [
+      105,
+      135
+    ],
+    "weeklyDisplayLower": [
+      28,
+      26,
+      24,
+      22
+    ],
+    "weeklyDisplayUpper": [
+      34,
+      34,
+      34,
+      33
+    ],
+    "intervalNote": "演示区间，不是统计校准置信区间；周度展示边界不与总量区间做简单加总",
+    "modelStatus": "本地预设，未真实回测",
+    "judgment": {
+      "name": "Jev判断辅助（模拟）",
+      "priority": "高",
+      "mainConstraint": "供给待核查",
+      "evidenceSufficiency": "中",
+      "requiresHumanReview": true
+    },
+    "scenarioFixtures": [
+      {
+        "id": "budget-keep-eta-original",
+        "budgetMultiplier": 1,
+        "eta": "2026-10-06",
+        "weeklyMedian": [
+          31,
+          30,
+          29,
+          28
+        ],
+        "totalRange": [
+          105,
+          135
+        ],
+        "type": "演示基线"
+      },
+      {
+        "id": "budget-keep-eta-early",
+        "budgetMultiplier": 1,
+        "eta": "2026-09-29",
+        "weeklyMedian": [
+          33,
+          33,
+          32,
+          31
+        ],
+        "totalRange": [
+          118,
+          150
+        ],
+        "type": "情景样例，非真实因果效果"
+      },
+      {
+        "id": "budget-up-eta-original",
+        "budgetMultiplier": 1.2,
+        "eta": "2026-10-06",
+        "weeklyMedian": [
+          31,
+          31,
+          30,
+          29
+        ],
+        "totalRange": [
+          96,
+          145
+        ],
+        "type": "情景样例，供给约束未解除"
+      },
+      {
+        "id": "budget-up-eta-early",
+        "budgetMultiplier": 1.2,
+        "eta": "2026-09-29",
+        "weeklyMedian": [
+          35,
+          35,
+          34,
+          33
+        ],
+        "totalRange": [
+          120,
+          158
+        ],
+        "type": "情景样例，非真实因果效果"
+      }
+    ],
+    "scenarioCards": [
+      {
+        "id": "A",
+        "title": "保持现状",
+        "fixtureId": "budget-keep-eta-original",
+        "assumption": "保持现有供给与投放节奏"
+      },
+      {
+        "id": "B",
+        "title": "先核查并保供",
+        "fixtureId": "budget-keep-eta-early",
+        "assumption": "仅在补货可提前一周的假设成立时展示保供情景；未确认时标待核查"
+      },
+      {
+        "id": "C",
+        "title": "加大投放",
+        "fixtureId": "budget-up-eta-original",
+        "assumption": "预算增加20%，供给按原计划；不保证增量"
+      }
+    ]
+  },
+  "actions": {
+    "defaultDraft": {
+      "id": "demo-draft-supply-01",
+      "title": "48小时供给核查",
+      "status": "draft",
+      "owner": "供应链负责人 + 渠道总监",
+      "dueDate": "2026-10-01",
+      "goal": "核实主力品缺货规格与R1可售/在途时间",
+      "budget": null,
+      "evidenceIds": [
+        "stock-r1",
+        "supply-core",
+        "conversion-gap"
+      ],
+      "hypotheses": [
+        "供给不足可能影响承接，待核查"
+      ],
+      "observationMetrics": [
+        "可售天数",
+        "A3→A4阶段比值"
+      ],
+      "isDemo": true
+    },
+    "lifecycle": [
+      "draft",
+      "human_confirmed",
+      "executing_demo",
+      "observing_demo",
+      "reviewed_demo"
+    ],
+    "statusLabels": {
+      "draft": "草案",
+      "human_confirmed": "人工确认",
+      "executing_demo": "演示执行",
+      "observing_demo": "演示观察",
+      "reviewed_demo": "演示复盘"
+    },
+    "initialCounts": {
+      "awaitingConfirmation": 1,
+      "executing": 2,
+      "observing": 1
+    },
+    "sideEffectPolicy": "local_only"
+  },
+  "agents": [
+    {
+      "id": "conversion",
+      "name": "转化纠察智能体",
+      "recommendedAction": "核查转化断点",
+      "placeholder": "继续追问，或补充你的经营判断…",
+      "questions": [
+        "按渠道查看",
+        "联查库存"
+      ],
+      "initialAssistant": "近两周A3上升、A4回落。当前8周A3→A4比值12.5%，较前一等长周期下降3.2个百分点。建议核查客服承接与可售库存。"
+    },
+    {
+      "id": "supply",
+      "name": "供需纠察智能体",
+      "recommendedAction": "核查异常SKU",
+      "placeholder": "询问库存、补货或调拨方案…",
+      "questions": [
+        "查看在途",
+        "比较调拨方案"
+      ],
+      "initialAssistant": "主力品供给达标率13/18，约72.2%。R1可售42件，建议核查缺货规格与补货时间。"
+    },
+    {
+      "id": "market",
+      "name": "市场观察智能体",
+      "recommendedAction": "核查渠道证据",
+      "placeholder": "追问市场变化，或补充竞品信息…",
+      "questions": [
+        "查看竞品变化",
+        "联查人货"
+      ],
+      "initialAssistant": "抖音×主力品出现意向与成交错位，竞品促销与投放成本变化同期出现；原因仍待核查。"
+    },
+    {
+      "id": "joint",
+      "name": "三智能体协作",
+      "recommendedAction": "生成联动核查清单",
+      "placeholder": "向三位智能体追问，或@指定智能体…",
+      "questions": [
+        "先查哪一项",
+        "生成清单"
+      ],
+      "availableAgents": [
+        "joint",
+        "conversion",
+        "supply",
+        "market"
+      ],
+      "initialAssistant": "先核查可售库存与客服承接，再检查价格与渠道成本。同期变化不代表因果。"
+    },
+    {
+      "id": "orchestrator",
+      "name": "行动编排智能体",
+      "recommendedAction": "生成行动草案",
+      "placeholder": "输入补货时间、预算或你的决策约束…",
+      "questions": [
+        "调整预算",
+        "比较方案"
+      ],
+      "initialAssistant": "已汇总人、货、场证据。可基于预算和到货假设比较本地演示情景，再形成需人工确认的草案。"
+    }
+  ]
+}

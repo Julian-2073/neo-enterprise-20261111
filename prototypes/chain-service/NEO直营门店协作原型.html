@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="light">
+  <title>NEO · 直营门店协作原型</title>
+  <style>@charset "UTF-8";
+:root{--ink:#172b47;--muted:#63758c;--faint:#8a98aa;--blue:#2466e8;--blue-soft:#edf3ff;--teal:#157e77;--teal-soft:#eaf6f3;--amber:#a36019;--amber-soft:#fff6e7;--line:#e3e9f1;--canvas:#f4f7fb;--white:#fff;--shadow:0 10px 38px #1938550a;--accent:var(--blue);--accent-soft:var(--blue-soft)}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font:14px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.42}button,a,input,select,textarea,summary{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #69a1ff;outline-offset:3px}button{color:inherit}a{color:var(--accent);text-decoration:none}h1,h2,h3,h4,p{margin:0}h1{font-size:30px;letter-spacing:-.8px;line-height:1.4;font-weight:680}h2{font-size:18px;line-height:1.5;font-weight:650;letter-spacing:-.2px}h3{font-size:15px;font-weight:650}h4{font-size:13px}small,.small{font-size:12px}svg{vertical-align:middle;flex-shrink:0}button svg{width:18px;height:18px}.muted{color:var(--muted)}.faint{color:var(--faint)}.mono,.number{font-variant-numeric:tabular-nums}.eyebrow{font-size:11px;font-weight:650;letter-spacing:.8px;color:var(--muted);text-transform:uppercase}.flex{display:flex;align-items:center;gap:10px}.between{display:flex;align-items:center;justify-content:space-between;gap:14px}.wrap{flex-wrap:wrap}.stack{display:grid;gap:16px}.stack-sm{display:grid;gap:10px}.gap{margin-top:18px}.gap-sm{margin-top:10px}.spacer{flex:1}.positive{color:var(--teal)}.warning{color:var(--amber)}.blue-text{color:var(--blue)}.nowrap{white-space:nowrap}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.demo-strip{height:30px;display:flex;align-items:center;justify-content:center;gap:8px;background:#edf2fa;color:#556b89;font-size:11px;letter-spacing:.2px;border-bottom:1px solid #e1e8f3}.demo-strip svg{width:13px;height:13px}.topbar{height:76px;background:var(--white);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:30px;padding:0 30px;position:relative;z-index:10}.wordmark{font-size:30px;font-weight:820;letter-spacing:-1.7px;line-height:1;color:#103b79;display:flex;align-items:center;gap:9px}.wordmark i{width:7px;height:28px;background:var(--blue);border-radius:4px;display:inline-block;transform:skew(-15deg)}.brand-caption{border-left:1px solid var(--line);padding-left:22px}.brand-caption strong{font-size:13px;font-weight:600;display:block}.brand-caption span{font-size:11px;color:var(--muted)}.role-switch{margin:auto;display:flex;gap:4px;border:1px solid var(--line);padding:4px;border-radius:9px;background:#f6f8fb}.role-switch button{border:0;background:transparent;padding:8px 17px;border-radius:6px;font-size:12px;display:flex;gap:7px;align-items:center;color:var(--muted)}.role-switch button.active{background:white;color:var(--accent);box-shadow:0 1px 5px #18375412;font-weight:650}.top-tools{display:flex;align-items:center;gap:8px}.top-tools .avatar{margin-left:8px}.workspace{display:grid;grid-template-columns:206px minmax(0,1fr);min-height:calc(100vh - 106px)}.sidebar{padding:29px 16px 22px 22px;border-right:1px solid var(--line);background:#f9fbfd;display:flex;flex-direction:column;gap:25px}.sidebar .brand-scope{padding:0 12px}.brand-scope strong{display:block;font-size:13px;margin-top:6px}.brand-scope p{font-size:11px;color:var(--muted);margin-top:3px}.sidebar nav{display:grid;gap:6px}.nav-item{display:flex;align-items:center;gap:10px;width:100%;padding:11px 12px;border:0;background:transparent;text-align:left;border-radius:7px;color:var(--muted);font-size:13px}.nav-item.active{background:var(--accent-soft);color:var(--accent);font-weight:650}.nav-item:hover:not(.active){background:#edf1f7}.nav-item svg{width:19px;height:19px}.nav-item .nav-dot{width:6px;height:6px;background:var(--accent);border-radius:50%;margin-left:auto}.kept-modules{padding:0 12px;font-size:11px;color:var(--muted);line-height:2.3}.kept-modules summary{cursor:pointer}.kept-modules span{display:block;padding-left:10px}.sidebar-bottom{margin-top:auto;border-top:1px solid var(--line);padding:20px 12px 0;font-size:11px;color:var(--muted)}.scenario-note{margin-top:8px;font-size:11px;color:var(--muted)}.main{min-width:0;max-width:1600px;width:100%;padding:28px 32px 20px;margin:0 auto}.page-heading{margin:22px 0;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}.page-heading p{font-size:13px;color:var(--muted);margin-top:7px}.page-heading .eyebrow{margin-bottom:7px}.scope-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:7px;background:white;color:var(--muted);font-size:12px}.avatar{width:34px;height:34px;border-radius:50%;background:#e7edf9;color:#426294;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:650;flex-shrink:0}.avatar.teal{background:#dff0e9;color:var(--teal)}.avatar.purple{background:#eee8fa;color:#7563a6}.avatar.amber{background:#fbefdd;color:#a17642}.avatar.slate{background:#e9edf2;color:#667991}.avatar.rose{background:#f6e9ed;color:#a45f75}.avatar.large{width:52px;height:52px;font-size:19px}.stage-track{display:flex;border:1px solid var(--line);border-radius:10px;background:white;padding:12px 15px;gap:0;box-shadow:0 1px 2px #18345103}.stage-track button{border:0;background:transparent;padding:4px 5px;display:flex;align-items:center;gap:8px;flex:1;text-align:left;color:var(--faint);font-size:11px;position:relative}.stage-track button:not(:last-child):after{content:"";height:1px;background:var(--line);flex:1;margin:0 10px}.stage-track b{font:500 11px/22px ui-monospace,SFMono-Regular,monospace;display:inline-flex;align-items:center;justify-content:center;width:23px;height:23px;border-radius:50%;background:#f1f4f8;flex-shrink:0}.stage-track .done{color:var(--teal)}.stage-track .done b{background:var(--teal-soft)}.stage-track .current{color:var(--accent);font-weight:650}.stage-track .current b{background:var(--accent);color:white}.stage-track b svg{width:13px;height:13px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #d4deeb;background:white;border-radius:7px;padding:9px 14px;font-size:12px;font-weight:550;line-height:1.6;transition:background .15s,transform .15s}.btn:hover:not(:disabled){background:#f4f7fc;border-color:#b7c9e1}.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}.btn.primary:hover:not(:disabled){filter:brightness(.96);background:var(--accent)}.btn.soft{background:var(--accent-soft);border-color:transparent;color:var(--accent)}.btn.small{padding:6px 10px;font-size:11px}.btn.block{width:100%}.btn.ghost{border-color:transparent;background:transparent;color:var(--muted)}.btn.icon{width:34px;height:34px;padding:6px}.btn.text{padding:3px 0;background:transparent;border:0;color:var(--accent)}.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:5px;background:#f0f3f7;color:var(--muted);font-size:10px;font-weight:500;white-space:nowrap;line-height:1.7}.badge.blue{color:#285fbd;background:var(--blue-soft)}.badge.teal{color:var(--teal);background:var(--teal-soft)}.badge.amber{color:var(--amber);background:var(--amber-soft)}.badge.rose{color:#ae4b61;background:#fbeef1}.badge.dot:before{content:"";width:5px;height:5px;background:currentColor;border-radius:50%}
+.card{background:white;border:1px solid var(--line);border-radius:11px;padding:23px;min-width:0;box-shadow:0 1px 2px #18345103}.card.compact{padding:18px}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.card-head h2{font-size:16px}.card-head p{font-size:11px;color:var(--muted);margin-top:4px}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.metric{padding:18px 20px;background:white;border:1px solid var(--line);border-radius:10px;position:relative;overflow:hidden}.metric .label{font-size:12px;color:var(--muted)}.metric .value{font-size:31px;line-height:1.3;letter-spacing:-1px;font-weight:650;margin:7px 0 8px;font-variant-numeric:tabular-nums}.metric .value em{font-size:12px;font-style:normal;color:var(--muted);font-weight:400;letter-spacing:0;margin-left:5px}.metric .foot{font-size:10px;color:var(--muted);display:flex;gap:8px;align-items:center}.metric-spark{position:absolute;right:17px;top:50px;width:60px;height:28px;opacity:.8}.main-grid{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:20px;align-items:start}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.issue-hero{position:relative;padding:26px;background:linear-gradient(120deg,#edf4ff,#f9fbff);border:1px solid #cedffb;border-radius:11px;overflow:hidden}.issue-hero .issue-icon{width:42px;height:42px;border-radius:12px;background:#fff;color:var(--blue);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 15px #205bd210}.issue-hero h2{font-size:24px;line-height:1.5;margin:14px 0 9px;max-width:560px;letter-spacing:-.5px}.issue-hero p{font-size:12px;color:#527092;max-width:600px;line-height:1.85}.issue-hero .actions{margin-top:20px}.issue-numbers{display:flex;gap:28px;margin-top:20px;padding-top:17px;border-top:1px solid #dce6f5}.issue-numbers strong{display:block;font-size:24px;font-weight:620;letter-spacing:-.5px}.issue-numbers small{color:var(--muted);font-size:11px}.issue-numbers em{font-size:12px;font-style:normal;font-weight:400}
+.agent-card{background:white;border:1px solid #d8e4f5;border-radius:11px;overflow:hidden}.agent-head{display:flex;align-items:center;gap:9px;padding:17px 18px;border-bottom:1px solid #e5edf7;background:#fbfdff}.agent-symbol{display:flex;align-items:center;justify-content:center;width:33px;height:33px;border-radius:10px;background:var(--accent-soft);color:var(--accent)}.agent-head strong{display:block;font-size:12px}.agent-head small{display:block;font-size:10px;color:var(--muted)}.agent-body{padding:18px}.agent-body h3{font-size:14px;line-height:1.7}.agent-body p{font-size:12px;color:var(--muted);line-height:1.9;margin-top:9px}.agent-source{font-size:10px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px;margin-top:13px}.agent-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:13px}.agent-chips button{border:1px solid var(--line);border-radius:5px;background:white;font-size:10px;color:var(--muted);padding:5px 8px;text-align:left}.agent-input{display:flex;margin-top:15px;gap:6px}.agent-input input{width:0;flex:1;min-width:0;border:1px solid var(--line);border-radius:6px;font-size:11px;padding:8px}.agent-answer{margin-top:12px;background:var(--accent-soft);padding:12px;border-radius:7px;font-size:12px;line-height:1.8}.mini-list{display:grid;gap:13px}.mini-item{display:flex;gap:10px;align-items:flex-start}.mini-item .iconbox{background:#f0f4fa;padding:7px;border-radius:7px;color:var(--muted)}.mini-item .iconbox svg{width:16px;height:16px}.mini-item strong{display:block;font-size:12px}.mini-item p{font-size:11px;color:var(--muted);margin-top:4px}.mini-item button{margin-top:6px}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px;text-align:left;white-space:nowrap}th{font-size:10px;font-weight:500;color:var(--muted);padding:0 12px 12px;border-bottom:1px solid var(--line)}td{padding:15px 12px;border-bottom:1px solid #eef2f7}th:first-child,td:first-child{padding-left:0}th:last-child,td:last-child{padding-right:0}tr:last-child td{border-bottom:0}td strong{font-weight:550}td .sub{display:block;color:var(--muted);font-size:10px;margin-top:3px}.row-selected{background:#f8fbff}.heatmap{display:grid;grid-template-columns:70px repeat(5,minmax(0,1fr));gap:7px;font-size:10px;align-items:center}.heatmap .col-label{text-align:center;color:var(--muted)}.heatmap .cell{text-align:center;border-radius:5px;padding:11px 2px;background:#edf3fc;color:#5b7dba;font-variant-numeric:tabular-nums}.heatmap .cell.medium{background:#cfe0fb;color:#3964a3}.heatmap .cell.high{background:#729dee;color:white}.heatmap .cell.target{background:#fff1d8;color:#a36019;outline:1px solid #e3b96e;outline-offset:1px;font-weight:650}.heatmap .row-label{font-size:11px;color:var(--muted)}.legend{display:flex;gap:15px;font-size:10px;color:var(--muted);align-items:center;margin-top:15px}.legend span{display:inline-flex;align-items:center;gap:5px}.legend i{width:8px;height:8px;border-radius:2px;display:inline-block;background:#edf3fc}.legend i.medium{background:#cfe0fb}.legend i.high{background:#729dee}
+.notice{display:flex;align-items:flex-start;gap:9px;background:#f5f8fd;border-radius:7px;padding:12px 14px;color:var(--muted);font-size:11px;line-height:1.8}.notice svg{width:16px;height:16px;margin-top:2px;color:#8295b0}.notice.amber{background:var(--amber-soft);color:#94601f}.notice.teal{background:var(--teal-soft);color:#29746d}.notice.blue{background:var(--blue-soft);color:#3c67a6}.notice p{font-size:inherit}.tabs{display:flex;gap:23px;border-bottom:1px solid var(--line);margin-bottom:20px;overflow:auto;white-space:nowrap}.tabs button{border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);padding:11px 2px;font-size:12px}.tabs button.active{color:var(--accent);font-weight:650;border-bottom-color:var(--accent)}.back-link{border:0;background:transparent;color:var(--muted);padding:0;font-size:11px;display:inline-flex;align-items:center;gap:6px}.back-link svg{width:14px;height:14px}.meta-row{display:flex;gap:17px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:12px}.meta-row span{display:flex;align-items:center;gap:6px}.meta-row svg{width:14px;height:14px}.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.evidence-card{padding:16px;border:1px solid var(--line);border-radius:8px}.evidence-card .value{font-size:28px;font-weight:630;margin:6px 0}.evidence-card .value span{font-size:12px;color:var(--muted);font-weight:400}.bar{height:6px;border-radius:5px;background:#edf1f7;overflow:hidden}.bar i{display:block;height:100%;background:#80a5ee;border-radius:5px}.evidence-card p{font-size:11px;color:var(--muted);margin-top:8px}.fact-row{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid #edf1f6}.fact-row:last-child{border:0}.fact-row .fact-icon{color:var(--teal);margin-top:2px}.fact-row p{font-size:12px;color:var(--muted);margin-top:3px}.fact-row h3{font-size:13px}.field{display:block;margin:15px 0}.field>span{display:block;font-size:11px;color:var(--muted);margin-bottom:7px}.field textarea,.field select,.field input{width:100%;border:1px solid #d8e1ec;border-radius:7px;background:#fff;padding:10px 12px;color:var(--ink);font-size:12px}.field textarea{resize:vertical;min-height:85px;line-height:1.8}.plan-option{display:flex;gap:10px;border:1px solid var(--line);border-radius:8px;padding:14px;cursor:pointer}.plan-option.selected{border-color:#84a9ec;background:#f6f9ff}.plan-option input{accent-color:var(--accent);margin-top:4px}.plan-option strong{font-size:13px}.plan-option p{font-size:11px;color:var(--muted);margin-top:3px}.kv{display:grid;grid-template-columns:90px 1fr;gap:11px;font-size:12px}.kv dt{color:var(--muted)}.kv dd{margin:0}.log{display:grid;gap:0}.log-item{position:relative;padding:0 0 20px 23px;border-left:1px solid #e0e7f1;margin-left:5px}.log-item:before{content:"";position:absolute;left:-4px;top:6px;width:7px;height:7px;border-radius:50%;background:#9fb4d2;box-shadow:0 0 0 4px white}.log-item:last-child{border-color:transparent;padding-bottom:0}.log-item strong{display:block;font-size:11px;font-weight:550}.log-item p{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.75}.log-item small{display:block;font-size:9px;color:var(--faint);margin-bottom:4px}.log-item:first-child:before{background:var(--accent)}.footer-note{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:22px 0 0;font-size:10px;color:var(--faint)}
+.store-mode{--accent:var(--teal);--accent-soft:var(--teal-soft)}.store-mode .issue-hero{background:linear-gradient(120deg,#edf8f4,#fafffd);border-color:#cae5dc}.store-mode .issue-hero p{color:#597f76}.store-mode .issue-hero .issue-icon{color:var(--teal)}.store-mode .issue-numbers{border-color:#d9eae4}.store-mode .agent-card{border-color:#d7e8e2}.store-mode .agent-head{background:#fbfefd;border-color:#e4eee9}.store-mode .plan-option.selected{border-color:#77ada0;background:#f5fbf8}.store-mode .nav-item.active{background:var(--teal-soft)}
+.priority-card{padding:20px;border:1px solid #cae5dc;background:#f5fbf8;border-radius:9px}.priority-card h2{font-size:20px;line-height:1.5;margin:9px 0}.priority-card p{font-size:12px;color:var(--muted);line-height:1.85}.priority-number{width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;font:600 11px ui-monospace,monospace;background:var(--teal);border-radius:7px;color:white}.timeline{display:grid;gap:0}.appointment{display:grid;grid-template-columns:60px 1fr auto;gap:14px;align-items:start;padding:16px 0;border-bottom:1px solid #edf1f6}.appointment:last-child{border-bottom:0}.appointment time{font:550 13px ui-monospace,SFMono-Regular,monospace;color:var(--muted);padding-top:4px}.appointment strong{font-size:12px;display:block}.appointment p{font-size:11px;color:var(--muted);margin-top:4px}.task-step{display:flex;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}.task-step:last-child{border:0}.step-circle{width:25px;height:25px;border-radius:50%;border:1px solid #ccd6e2;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;flex-shrink:0;margin-top:1px}.task-step.done .step-circle{background:var(--teal-soft);color:var(--teal);border-color:transparent}.task-step.done .step-circle svg{width:16px;height:16px}.task-step h3{font-size:13px}.task-step p{font-size:11px;color:var(--muted);margin:4px 0 9px}.task-step .step-content{flex:1;min-width:0}.check-row{display:flex;align-items:flex-start;gap:11px;padding:16px;border:1px solid var(--line);border-radius:8px;background:white;cursor:pointer}.check-row input{margin-top:4px;accent-color:var(--accent);width:16px;height:16px;flex-shrink:0}.check-row strong{display:block;font-size:12px}.check-row p{font-size:11px;color:var(--muted);margin-top:4px}.check-row.checked{border-color:#b8d8cb;background:#f8fcfa}.task-summary{padding:18px;background:var(--accent-soft);border-radius:8px}.task-summary p{font-size:12px;color:var(--muted);margin-top:6px}.handoff{display:flex;align-items:center;gap:13px;padding:16px 18px;border:1px solid #d2e1f7;background:#f9fbff;border-radius:9px}.handoff .iconbox{color:var(--blue)}.handoff strong{font-size:12px;display:block}.handoff p{font-size:11px;color:var(--muted);margin-top:3px}
+.customer-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:7px;background:white;padding:8px 12px;max-width:290px;flex:1;min-width:180px;color:var(--muted)}.search input{border:0;outline:none;min-width:0;width:100%;font-size:12px;color:var(--ink);background:transparent}.search svg{width:16px;height:16px}.filter-pills{display:flex;gap:5px}.filter-pills button{padding:7px 11px;border:1px solid transparent;border-radius:6px;background:transparent;font-size:11px;color:var(--muted)}.filter-pills button.active{border-color:#c6ded5;background:#eef7f2;color:var(--teal)}.customer-name{display:flex;align-items:center;gap:10px}.customer-name button{border:0;background:transparent;font-size:12px;font-weight:600;padding:0;text-align:left;color:var(--ink)}.customer-name button:hover{color:var(--accent)}.selection-box{width:16px;height:16px;accent-color:var(--teal)}.customer-bulk{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#f5faf7;padding:14px 17px;border-top:1px solid #dfece5;border-radius:0 0 9px 9px;margin:0 -23px -23px}.customer-bulk p{font-size:11px;color:var(--muted)}.customer-bulk strong{color:var(--teal)}.customer-counts{display:flex;gap:24px;margin-bottom:18px}.customer-counts div{font-size:11px;color:var(--muted)}.customer-counts strong{display:block;font-size:23px;color:var(--ink);font-weight:620}.customer-card-note{font-size:10px;color:var(--muted);margin-top:12px}.empty{text-align:center;padding:38px 24px;color:var(--muted);font-size:12px}.empty svg{width:32px;height:32px;margin-bottom:12px;color:#9babc0}.empty h3{margin-bottom:7px;color:var(--ink)}.empty p{line-height:1.85}.empty .btn{margin-top:16px}.result-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}.result-tile{border:1px solid var(--line);border-radius:8px;padding:17px 13px;background:white}.result-tile strong{display:block;font-size:25px;font-weight:620;margin:6px 0;color:var(--teal)}.result-tile small{font-size:10px;color:var(--muted)}.result-tile span{font-size:11px;color:var(--muted)}.journey{display:flex;gap:7px;align-items:center;margin:15px 0;flex-wrap:wrap}.journey .node{flex:1;min-width:80px;background:#f3f7fb;border-radius:7px;padding:10px;text-align:center;font-size:10px;color:var(--muted)}.journey .node b{font-size:19px;display:block;color:var(--ink);font-weight:620}.journey>svg{width:14px;height:14px;color:#aab9c9}.result-quote{border-left:3px solid var(--teal);padding:12px 16px;background:#f5faf7;font-size:13px;line-height:1.85;margin:15px 0}.mobile-nav{display:none}
+.overlay-backdrop{position:fixed;inset:0;z-index:100;display:flex;justify-content:center;align-items:center;background:#152b4759;backdrop-filter:blur(3px);padding:25px}.dialog{max-width:650px;width:100%;max-height:calc(100dvh - 50px);overflow:auto;background:white;border-radius:13px;box-shadow:0 30px 100px #102b4738;animation:enter .16s ease-out}.dialog.drawer{max-width:480px;height:100%;max-height:100%;border-radius:13px 0 0 13px;margin-left:auto}.overlay-backdrop.drawer-backdrop{padding:0}.dialog-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 25px;border-bottom:1px solid var(--line);position:sticky;top:0;background:white;z-index:2}.dialog-head h2{font-size:18px}.dialog-body{padding:24px 25px}.dialog-foot{padding:17px 25px;background:#fafbfd;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px;position:sticky;bottom:0}.guide-step{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}.guide-step:last-child{border:0}.guide-step b{font-size:12px}.guide-step p{font-size:11px;color:var(--muted);margin-top:4px}.guide-step .num{font:500 12px/28px ui-monospace,monospace;width:28px;height:28px;border-radius:8px;background:var(--blue-soft);color:var(--blue);text-align:center;flex-shrink:0}.customer-detail-head{display:flex;gap:13px;align-items:center;margin-bottom:20px}.customer-detail-head h2{font-size:22px}.customer-detail-head p{font-size:11px;color:var(--muted);margin-top:3px}.booking-slots{display:grid;grid-template-columns:1fr 1fr;gap:12px}.slot{border:1px solid var(--line);background:white;border-radius:8px;padding:15px;display:block;cursor:pointer}.slot:has(input:checked){border-color:var(--teal);background:var(--teal-soft)}.slot input{accent-color:var(--teal);margin-right:6px}.slot strong{font:600 19px ui-monospace,monospace}.slot span{display:block;font-size:11px;color:var(--muted);margin-top:5px}.slot.disabled{background:#f4f6f8;opacity:.6;cursor:not-allowed}.callout{padding:17px;background:#f7f9fc;border:1px solid var(--line);border-radius:8px;line-height:1.9;font-size:12px;color:#52667f}.demo-label{font-size:10px;color:#8b6c3b;background:#fff7e9;padding:3px 6px;border-radius:4px}#toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,12px);z-index:150;background:#1c3856;color:white;padding:11px 20px;border-radius:8px;box-shadow:0 5px 25px #18345126;font-size:12px;max-width:min(90vw,560px);opacity:0;pointer-events:none;transition:opacity .18s,transform .18s}#toast.visible{opacity:1;transform:translate(-50%,0)}#toast.error{background:#8f4e31}@keyframes enter{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1600px){.main{padding:32px 45px}.main-grid{grid-template-columns:minmax(0,1fr) 350px}}
+@media(max-width:1200px){.workspace{grid-template-columns:174px minmax(0,1fr)}.sidebar{padding-left:12px;padding-right:10px}.main{padding:23px}.main-grid{grid-template-columns:minmax(0,1fr) 270px;gap:16px}.card{padding:19px}.customer-bulk{margin:0 -19px -19px}.metric{padding:15px}.metric .value{font-size:26px}.metric-spark{display:none}.topbar{padding:0 23px;gap:17px}.brand-caption{display:none}.issue-hero h2{font-size:22px}.two-col{grid-template-columns:1fr}.main-grid>.stack>.two-col{grid-template-columns:1fr}.stage-track button:not(:last-child):after{margin:0 6px}}
+@media(max-width:980px){.main-grid{grid-template-columns:1fr}.main-grid>aside{display:grid;grid-template-columns:1fr 1fr;gap:16px}.main-grid>aside>.agent-card{grid-column:1/-1}.main-grid>aside>.card{align-self:start}.workspace{grid-template-columns:160px minmax(0,1fr)}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.stage-track button{gap:5px;font-size:10px}.stage-track button:not(:last-child):after{margin:0 3px}.stage-track{padding:10px}.agent-chips button{font-size:11px}.page-heading h1{font-size:26px}.top-tools .avatar{display:none}}
+@media(max-width:700px){.demo-strip{font-size:9px;height:26px;letter-spacing:0}.topbar{height:64px;padding:0 16px;gap:10px}.wordmark{font-size:25px}.wordmark i{height:23px;width:5px}.role-switch{margin-left:auto;margin-right:0;padding:3px}.role-switch button{padding:6px 9px;font-size:10px;gap:5px}.role-switch svg{width:15px;height:15px}.top-tools .btn:not(.reset-btn){display:none}.top-tools .reset-btn{width:28px;height:28px;padding:4px}.top-tools .reset-btn>span:not([aria-hidden]){display:none}.workspace{display:block;min-height:calc(100vh - 90px)}.sidebar{display:none}.main{padding:18px 16px 90px}.stage-track{gap:2px;padding:9px 6px}.stage-track button{display:flex;flex-direction:column;gap:5px;padding:2px;font-size:9px;text-align:center}.stage-track button:not(:last-child):after{display:none}.stage-track b{width:20px;height:20px;font-size:10px}.page-heading{margin:23px 0 18px;align-items:flex-start}.page-heading h1{font-size:25px;letter-spacing:-.7px}.page-heading p{font-size:11px;line-height:1.9}.page-heading>.scope-chip{display:none}.page-heading .eyebrow{font-size:10px}.metrics{gap:9px;margin-bottom:15px}.metric{padding:15px}.metric .value{font-size:27px}.metric .label{font-size:11px}.metric .foot{font-size:9px;gap:4px}.card{padding:18px;border-radius:10px}.card-head{margin-bottom:15px}.card-head h2{font-size:15px}.card-head .btn.text{font-size:10px}.main-grid{gap:15px}.main-grid>aside{display:grid;grid-template-columns:1fr}.stack{gap:15px}.issue-hero{padding:21px}.issue-hero h2{font-size:22px;line-height:1.5}.issue-hero p{font-size:12px}.issue-numbers{gap:27px}.issue-numbers strong{font-size:23px}.issue-numbers small{font-size:10px}.btn{min-height:38px;font-size:12px;padding:8px 12px}.btn.small{min-height:33px;font-size:10px}.btn.icon{min-height:32px}.actions{display:flex;flex-wrap:wrap;gap:9px}.actions .btn{flex:1;white-space:nowrap}.heatmap{grid-template-columns:46px repeat(5,minmax(0,1fr));gap:5px;font-size:9px}.heatmap .row-label{font-size:9px}.heatmap .cell{padding:10px 1px}.legend{gap:9px;font-size:9px}.evidence-grid{gap:9px}.evidence-card{padding:13px}.evidence-card .value{font-size:25px}.evidence-card .value span{font-size:10px}.meta-row{gap:8px 14px;font-size:10px}.tabs{gap:18px;margin-bottom:17px}.tabs button{font-size:11px}.handoff{align-items:flex-start;flex-wrap:wrap}.handoff>.btn{width:100%}.task-step{padding:15px 0}.task-step p{line-height:1.85}.appointment{grid-template-columns:44px 1fr;gap:10px}.appointment>.badge{grid-column:2;justify-self:start}.appointment time{font-size:12px}.customer-toolbar{gap:10px}.search{max-width:none;flex-basis:100%}.filter-pills{width:100%}.filter-pills button{flex:1;font-size:10px}.customer-bulk{margin:0 -18px -18px;padding:14px;align-items:flex-start;flex-direction:column}.customer-bulk .btn{width:100%}.customer-counts{gap:22px}.result-grid{gap:8px}.result-tile{padding:13px 10px}.result-tile strong{font-size:22px}.result-tile span{font-size:10px}.result-tile small{font-size:9px}.footer-note{font-size:9px;align-items:flex-start}.footer-note>span:last-child{display:none}.overlay-backdrop{padding:12px}.dialog{max-height:calc(100dvh - 24px)}.dialog-head{padding:18px}.dialog-body{padding:20px 18px}.dialog-foot{padding:14px 18px;flex-wrap:wrap}.dialog-foot .btn{flex:1}.dialog.drawer{border-radius:0;max-width:100%}.booking-slots{gap:8px}.slot{padding:12px}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:30;border-top:1px solid var(--line);background:#fffffff5;backdrop-filter:blur(10px);padding:8px 10px max(9px,env(safe-area-inset-bottom));box-shadow:0 -5px 22px #24405f06}.mobile-nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;border:0;background:transparent;color:var(--muted);font-size:10px}.mobile-nav button.active{color:var(--accent);font-weight:600}.mobile-nav button svg{width:21px;height:21px}#toast{bottom:84px}.customer-table{min-width:0;white-space:normal}.customer-table thead{display:none}.customer-table tbody{display:block}.customer-table tr{display:grid;grid-template-columns:22px 1fr auto;gap:10px 8px;padding:17px 0;border-bottom:1px solid var(--line)}.customer-table td{padding:0;border:0}.customer-table td:nth-child(1){grid-column:1;grid-row:1;align-self:center}.customer-table td:nth-child(2){grid-column:2 / 4;grid-row:1}.customer-table td:nth-child(3){grid-column:2 / 4;grid-row:2;font-size:11px}.customer-table td:nth-child(4){grid-column:2;grid-row:3;align-self:center}.customer-table td:nth-child(5){grid-column:3;grid-row:3}.customer-table td[colspan]{grid-column:1 / -1}.customer-table .badge{font-size:9px}.customer-table .btn{padding:6px 8px}.topbar .btn.ghost{color:var(--muted)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<!-- Phosphor Icons attribution
+MIT License
+
+Copyright (c) 2020 Phosphor Icons
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-->
+</head>
+<body>
+  <div id="app"></div>
+  <div id="overlay"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <noscript>这个交互原型需要启用 JavaScript。所有数据均为本地模拟数据。</noscript>
+  <script>window.NeoIcons={"Buildings":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z\"></path></svg>","Storefront":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M232,96a7.89,7.89,0,0,0-.3-2.2L217.35,43.6A16.07,16.07,0,0,0,202,32H54A16.07,16.07,0,0,0,38.65,43.6L24.31,93.8A7.89,7.89,0,0,0,24,96h0v16a40,40,0,0,0,16,32v72a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V144a40,40,0,0,0,16-32V96ZM54,48H202l11.42,40H42.61Zm50,56h48v8a24,24,0,0,1-48,0Zm-16,0v8a24,24,0,0,1-35.12,21.26,7.88,7.88,0,0,0-1.82-1.06A24,24,0,0,1,40,112v-8ZM200,208H56V151.2a40.57,40.57,0,0,0,8,.8,40,40,0,0,0,32-16,40,40,0,0,0,64,0,40,40,0,0,0,32,16,40.57,40.57,0,0,0,8-.8Zm4.93-75.8a8.08,8.08,0,0,0-1.8,1.05A24,24,0,0,1,168,112v-8h48v8A24,24,0,0,1,204.93,132.2Z\"></path></svg>","ChartLineUp":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z\"></path></svg>","SquaresFour":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M104,40H56A16,16,0,0,0,40,56v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,104,40Zm0,64H56V56h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V56A16,16,0,0,0,200,40Zm0,64H152V56h48v48Zm-96,32H56a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,104,136Zm0,64H56V152h48v48Zm96-64H152a16,16,0,0,0-16,16v48a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V152A16,16,0,0,0,200,136Zm0,64H152V152h48v48Z\"></path></svg>","Users":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z\"></path></svg>","Target":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M221.87,83.16A104.1,104.1,0,1,1,195.67,49l22.67-22.68a8,8,0,0,1,11.32,11.32l-96,96a8,8,0,0,1-11.32-11.32l27.72-27.72a40,40,0,1,0,17.87,31.09,8,8,0,1,1,16-.9,56,56,0,1,1-22.38-41.65L184.3,60.39a87.88,87.88,0,1,0,23.13,29.67,8,8,0,0,1,14.44-6.9Z\"></path></svg>","ArrowRight":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z\"></path></svg>","ArrowLeft":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z\"></path></svg>","ArrowUpRight":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"></path></svg>","Check":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z\"></path></svg>","CheckCircle":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z\"></path></svg>","Circle":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Z\"></path></svg>","Clock":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z\"></path></svg>","CalendarBlank":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32ZM72,48v8a8,8,0,0,0,16,0V48h80v8a8,8,0,0,0,16,0V48h24V80H48V48ZM208,208H48V96H208V208Z\"></path></svg>","CaretDown":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z\"></path></svg>","CaretRight":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z\"></path></svg>","Package":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M223.68,66.15,135.68,18a15.88,15.88,0,0,0-15.36,0l-88,48.17a16,16,0,0,0-8.32,14v95.64a16,16,0,0,0,8.32,14l88,48.17a15.88,15.88,0,0,0,15.36,0l88-48.17a16,16,0,0,0,8.32-14V80.18A16,16,0,0,0,223.68,66.15ZM128,32l80.34,44-29.77,16.3-80.35-44ZM128,120,47.66,76l33.9-18.56,80.34,44ZM40,90l80,43.78v85.79L40,175.82Zm176,85.78h0l-80,43.79V133.82l32-17.51V152a8,8,0,0,0,16,0V107.55L216,90v85.77Z\"></path></svg>","WarningCircle":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm-8-80V80a8,8,0,0,1,16,0v56a8,8,0,0,1-16,0Zm20,36a12,12,0,1,1-12-12A12,12,0,0,1,140,172Z\"></path></svg>","Sparkle":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z\"></path></svg>","Robot":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M200,48H136V16a8,8,0,0,0-16,0V48H56A32,32,0,0,0,24,80V192a32,32,0,0,0,32,32H200a32,32,0,0,0,32-32V80A32,32,0,0,0,200,48Zm16,144a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V80A16,16,0,0,1,56,64H200a16,16,0,0,1,16,16Zm-52-56H92a28,28,0,0,0,0,56h72a28,28,0,0,0,0-56Zm-24,16v24H116V152ZM80,164a12,12,0,0,1,12-12h8v24H92A12,12,0,0,1,80,164Zm84,12h-8V152h8a12,12,0,0,1,0,24ZM72,108a12,12,0,1,1,12,12A12,12,0,0,1,72,108Zm88,0a12,12,0,1,1,12,12A12,12,0,0,1,160,108Z\"></path></svg>","ListChecks":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M224,128a8,8,0,0,1-8,8H128a8,8,0,0,1,0-16h88A8,8,0,0,1,224,128ZM128,72h88a8,8,0,0,0,0-16H128a8,8,0,0,0,0,16Zm88,112H128a8,8,0,0,0,0,16h88a8,8,0,0,0,0-16ZM82.34,42.34,56,68.69,45.66,58.34A8,8,0,0,0,34.34,69.66l16,16a8,8,0,0,0,11.32,0l32-32A8,8,0,0,0,82.34,42.34Zm0,64L56,132.69,45.66,122.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Zm0,64L56,196.69,45.66,186.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32,0l32-32a8,8,0,0,0-11.32-11.32Z\"></path></svg>","ChatsCircle":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M232.07,186.76a80,80,0,0,0-62.5-114.17A80,80,0,1,0,23.93,138.76l-7.27,24.71a16,16,0,0,0,19.87,19.87l24.71-7.27a80.39,80.39,0,0,0,25.18,7.35,80,80,0,0,0,108.34,40.65l24.71,7.27a16,16,0,0,0,19.87-19.86ZM62,159.5a8.28,8.28,0,0,0-2.26.32L32,168l8.17-27.76a8,8,0,0,0-.63-6,64,64,0,1,1,26.26,26.26A8,8,0,0,0,62,159.5Zm153.79,28.73L224,216l-27.76-8.17a8,8,0,0,0-6,.63,64.05,64.05,0,0,1-85.87-24.88A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.75,92.48A8,8,0,0,0,215.82,188.23Z\"></path></svg>","X":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z\"></path></svg>","ArrowCounterClockwise":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M224,128a96,96,0,0,1-94.71,96H128A95.38,95.38,0,0,1,62.1,197.8a8,8,0,0,1,11-11.63A80,80,0,1,0,71.43,71.39a3.07,3.07,0,0,1-.26.25L44.59,96H72a8,8,0,0,1,0,16H24a8,8,0,0,1-8-8V56a8,8,0,0,1,16,0V85.8L60.25,60A96,96,0,0,1,224,128Z\"></path></svg>","BookOpen":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M232,48H160a40,40,0,0,0-32,16A40,40,0,0,0,96,48H24a8,8,0,0,0-8,8V200a8,8,0,0,0,8,8H96a24,24,0,0,1,24,24,8,8,0,0,0,16,0,24,24,0,0,1,24-24h72a8,8,0,0,0,8-8V56A8,8,0,0,0,232,48ZM96,192H32V64H96a24,24,0,0,1,24,24V200A39.81,39.81,0,0,0,96,192Zm128,0H160a39.81,39.81,0,0,0-24,8V88a24,24,0,0,1,24-24h64Z\"></path></svg>","MagnifyingGlass":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z\"></path></svg>","Funnel":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M230.6,49.53A15.81,15.81,0,0,0,216,40H40A16,16,0,0,0,28.19,66.76l.08.09L96,139.17V216a16,16,0,0,0,24.87,13.32l32-21.34A16,16,0,0,0,160,194.66V139.17l67.74-72.32.08-.09A15.8,15.8,0,0,0,230.6,49.53ZM40,56h0Zm106.18,74.58A8,8,0,0,0,144,136v58.66L112,216V136a8,8,0,0,0-2.16-5.47L40,56H216Z\"></path></svg>","Info":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z\"></path></svg>","ShieldCheck":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M208,40H48A16,16,0,0,0,32,56v56c0,52.72,25.52,84.67,46.93,102.19,23.06,18.86,46,25.26,47,25.53a8,8,0,0,0,4.2,0c1-.27,23.91-6.67,47-25.53C198.48,196.67,224,164.72,224,112V56A16,16,0,0,0,208,40Zm0,72c0,37.07-13.66,67.16-40.6,89.42A129.3,129.3,0,0,1,128,223.62a128.25,128.25,0,0,1-38.92-21.81C61.82,179.51,48,149.3,48,112l0-56,160,0ZM82.34,141.66a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32l-56,56a8,8,0,0,1-11.32,0Z\"></path></svg>","Play":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M232.4,114.49,88.32,26.35a16,16,0,0,0-16.2-.3A15.86,15.86,0,0,0,64,39.87V216.13A15.94,15.94,0,0,0,80,232a16.07,16.07,0,0,0,8.36-2.35L232.4,141.51a15.81,15.81,0,0,0,0-27ZM80,215.94V40l143.83,88Z\"></path></svg>","SignOut":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M120,216a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V40a8,8,0,0,1,8-8h64a8,8,0,0,1,0,16H56V208h56A8,8,0,0,1,120,216Zm109.66-93.66-40-40a8,8,0,0,0-11.32,11.32L204.69,120H112a8,8,0,0,0,0,16h92.69l-26.35,26.34a8,8,0,0,0,11.32,11.32l40-40A8,8,0,0,0,229.66,122.34Z\"></path></svg>","MapPin":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M128,64a40,40,0,1,0,40,40A40,40,0,0,0,128,64Zm0,64a24,24,0,1,1,24-24A24,24,0,0,1,128,128Zm0-112a88.1,88.1,0,0,0-88,88c0,31.4,14.51,64.68,42,96.25a254.19,254.19,0,0,0,41.45,38.3,8,8,0,0,0,9.18,0A254.19,254.19,0,0,0,174,200.25c27.45-31.57,42-64.85,42-96.25A88.1,88.1,0,0,0,128,16Zm0,206c-16.53-13-72-60.75-72-118a72,72,0,0,1,144,0C200,161.23,144.53,209,128,222Z\"></path></svg>","Plus":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z\"></path></svg>","TrendUp":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M240,56v64a8,8,0,0,1-16,0V75.31l-82.34,82.35a8,8,0,0,1-11.32,0L96,123.31,29.66,189.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0L136,140.69,212.69,64H168a8,8,0,0,1,0-16h64A8,8,0,0,1,240,56Z\"></path></svg>","TrendDown":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M240,128v64a8,8,0,0,1-8,8H168a8,8,0,0,1,0-16h44.69L136,107.31l-34.34,34.35a8,8,0,0,1-11.32,0l-72-72A8,8,0,0,1,29.66,58.34L96,124.69l34.34-34.35a8,8,0,0,1,11.32,0L224,172.69V128a8,8,0,0,1,16,0Z\"></path></svg>","DotsThree":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Zm56-12a12,12,0,1,0,12,12A12,12,0,0,0,196,116ZM60,116a12,12,0,1,0,12,12A12,12,0,0,0,60,116Z\"></path></svg>","ClipboardText":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M168,152a8,8,0,0,1-8,8H96a8,8,0,0,1,0-16h64A8,8,0,0,1,168,152Zm-8-40H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16Zm56-64V216a16,16,0,0,1-16,16H56a16,16,0,0,1-16-16V48A16,16,0,0,1,56,32H92.26a47.92,47.92,0,0,1,71.48,0H200A16,16,0,0,1,216,48ZM96,64h64a32,32,0,0,0-64,0ZM200,48H173.25A47.93,47.93,0,0,1,176,64v8a8,8,0,0,1-8,8H88a8,8,0,0,1-8-8V64a47.93,47.93,0,0,1,2.75-16H56V216H200Z\"></path></svg>","CheckSquare":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM224,48V208a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V48A16,16,0,0,1,48,32H208A16,16,0,0,1,224,48ZM208,208V48H48V208H208Z\"></path></svg>","ArrowSquareOut":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M224,104a8,8,0,0,1-16,0V59.32l-66.33,66.34a8,8,0,0,1-11.32-11.32L196.68,48H152a8,8,0,0,1,0-16h64a8,8,0,0,1,8,8Zm-40,24a8,8,0,0,0-8,8v72H48V80h72a8,8,0,0,0,0-16H48A16,16,0,0,0,32,80V208a16,16,0,0,0,16,16H176a16,16,0,0,0,16-16V136A8,8,0,0,0,184,128Z\"></path></svg>","UserCircle":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z\"></path></svg>","PaperPlaneTilt":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.49,29.8L102,154l41.3,84.87A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14,0-.07-40.06-82.3,48-48a8,8,0,0,0-11.31-11.31l-48,48L24.08,98.25l-.07,0,.14,0L216,40Z\"></path></svg>","Prohibit":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm88,104a87.56,87.56,0,0,1-20.41,56.28L71.72,60.4A88,88,0,0,1,216,128ZM40,128A87.56,87.56,0,0,1,60.41,71.72L184.28,195.6A88,88,0,0,1,40,128Z\"></path></svg>","Lightning":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M215.79,118.17a8,8,0,0,0-5-5.66L153.18,90.9l14.66-73.33a8,8,0,0,0-13.69-7l-112,120a8,8,0,0,0,3,13l57.63,21.61L88.16,238.43a8,8,0,0,0,13.69,7l112-120A8,8,0,0,0,215.79,118.17ZM109.37,214l10.47-52.38a8,8,0,0,0-5-9.06L62,132.71l84.62-90.66L136.16,94.43a8,8,0,0,0,5,9.06l52.8,19.8Z\"></path></svg>","Receipt":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M72,104a8,8,0,0,1,8-8h96a8,8,0,0,1,0,16H80A8,8,0,0,1,72,104Zm8,40h96a8,8,0,0,0,0-16H80a8,8,0,0,0,0,16ZM232,56V208a8,8,0,0,1-11.58,7.15L192,200.94l-28.42,14.21a8,8,0,0,1-7.16,0L128,200.94,99.58,215.15a8,8,0,0,1-7.16,0L64,200.94,35.58,215.15A8,8,0,0,1,24,208V56A16,16,0,0,1,40,40H216A16,16,0,0,1,232,56Zm-16,0H40V195.06l20.42-10.22a8,8,0,0,1,7.16,0L96,199.06l28.42-14.22a8,8,0,0,1,7.16,0L160,199.06l28.42-14.22a8,8,0,0,1,7.16,0L216,195.06Z\"></path></svg>","Coffee":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><path d=\"M80,56V24a8,8,0,0,1,16,0V56a8,8,0,0,1-16,0Zm40,8a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,120,64Zm32,0a8,8,0,0,0,8-8V24a8,8,0,0,0-16,0V56A8,8,0,0,0,152,64Zm96,56v8a40,40,0,0,1-37.51,39.91,96.59,96.59,0,0,1-27,40.09H208a8,8,0,0,1,0,16H32a8,8,0,0,1,0-16H56.54A96.3,96.3,0,0,1,24,136V88a8,8,0,0,1,8-8H208A40,40,0,0,1,248,120ZM200,96H40v40a80.27,80.27,0,0,0,45.12,72h69.76A80.27,80.27,0,0,0,200,136Zm32,24a24,24,0,0,0-16-22.62V136a95.78,95.78,0,0,1-1.2,15A24,24,0,0,0,232,128Z\"></path></svg>"};</script>
+  <script>(function (root, factory) {
+  const api = factory();
+  if (typeof module === "object" && module.exports) module.exports = api;
+  else root.NeoModel = api;
+})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+  "use strict";
+  const VERSION = 1;
+  const customers = [
+    { id: "c1", name: "林女士", initials: "林", color: "blue", owner: "小林", last: "10月02日", preference: "工作日下午方便", note: "上次咨询过工作日下午的护理时段，希望下次提前确认。", status: "适合跟进", eligible: true, response: "同意预约", slot: "14:00", history: "10.02 完成头皮清洁护理 · 09.10 购买日常洗护", card: "次卡剩余 0 次", phone: "模拟顾客 C001" },
+    { id: "c2", name: "陈女士", initials: "陈", color: "teal", owner: "小林", last: "09月22日", preference: "偏好 15:00 后到店", note: "近期有明确护理咨询，尚未确定到店时间。", status: "适合跟进", eligible: true, response: "同意预约", slot: "15:00", history: "10.19 咨询可预约时段 · 09.22 完成头皮清洁护理", card: "普通会员", phone: "模拟顾客 C002" },
+    { id: "c3", name: "周女士", initials: "周", color: "purple", owner: "小雨", last: "10月06日", preference: "已预约晚间时段", note: "已有 10月21日 17:30 的预约，不重复邀约，也不把改约计作新增。", status: "已有预约", eligible: false, history: "10.18 已确认 10.21 17:30 的预约", card: "次卡剩余 2 次", phone: "模拟顾客 C003" },
+    { id: "c4", name: "许女士", initials: "许", color: "amber", owner: "小雨", last: "10月11日", preference: "近期已跟进", note: "10月19日已由小雨联系，正在等顾客回复。", status: "避免重复联系", eligible: false, history: "10.19 已联系，等待回复 · 10.11 完成护理", card: "普通会员", phone: "模拟顾客 C004" },
+    { id: "c5", name: "赵女士", initials: "赵", color: "slate", owner: "小林", last: "09月18日", preference: "不接收营销联系", note: "顾客明确不接收营销联系，本次不进入联系名单。", status: "请勿联系", eligible: false, history: "09.18 记录联系偏好：不接收营销联系", card: "普通会员", phone: "模拟顾客 C005" },
+    { id: "c6", name: "何女士", initials: "何", color: "rose", owner: "小林", last: "09月28日", preference: "有需求，时间待确认", note: "上次离店时希望有合适时段再联系，当前没有预约。", status: "适合跟进", eligible: true, response: "这次暂不预约", history: "09.28 完成护理，并记录后续联系意愿", card: "普通会员", phone: "模拟顾客 C006" },
+  ];
+  const slots = ["14:00", "15:00"];
+  function seed() {
+    return {
+      version: VERSION, checkRequested: false, checks: { staff: false, room: false, supply: false },
+      checked: false, supportArranged: false, published: false, accepted: false,
+      supportReceived: false, trained: false, contacted: [], responses: false, bookings: [],
+      executionSubmitted: false, executionAccepted: false, outcomeReady: false, reviewed: false,
+      decision: "", reviewNote: "", storeNote: "", contactDraft: "", events: [
+        { id: 0, actor: "总部 Agent", title: "发现时段供需不匹配", detail: "湖滨店下午预约占用率 42%，晚间 90%。建议先核查接待条件。", time: "10.20 09:00" },
+      ],
+    };
+  }
+  function derived(s) {
+    const stage = s.reviewed ? 5 : s.executionAccepted ? 4 : s.published ? 3 : s.checked ? 2 : s.checkRequested ? 1 : 0;
+    const completed = s.outcomeReady ? s.bookings.length : 0;
+    const retail = s.outcomeReady && s.bookings.some(b => b.customerId === "c1") ? 89 : 0;
+    return { stage, completed, serviceAmount: completed * 268, retail, full: s.bookings.length === 2,
+      canContact: s.accepted && s.supportReceived && s.trained && !s.executionSubmitted,
+      canSubmit: s.accepted && s.supportReceived && s.trained && s.responses && s.bookings.length === 2 && !s.executionSubmitted };
+  }
+  function transition(previous, action, payload = {}) {
+    const s = JSON.parse(JSON.stringify(previous));
+    const require = (condition, message) => { if (!condition) throw new Error(message); };
+    const log = (actor, title, detail) => {
+      const i = s.events.length;
+      const minutes = 5 * i;
+      const date = s.outcomeReady ? "10.21" : "10.20";
+      s.events.push({ id: i, actor, title, detail, time: `${date} ${String((s.outcomeReady ? 16 : 9) + Math.floor(minutes / 60)).padStart(2, "0")}:${String(minutes % 60).padStart(2, "0")}` });
+    };
+    switch (action) {
+      case "request-check":
+        if (s.checkRequested) return s;
+        s.checkRequested = true;
+        log("总部负责人 · 王宁", "发起湖滨店现场核查", "核对人员技能、护理间与耗材；不直接下发顾客邀约。");
+        break;
+      case "check":
+        require(s.checkRequested && !s.checked, "请先由总部发起核查。");
+        require(["staff", "room", "supply"].includes(payload.key), "未知核查项。");
+        s.checks[payload.key] = !!payload.value;
+        break;
+      case "submit-check":
+        if (s.checked) return s;
+        require(s.checkRequested && Object.values(s.checks).every(Boolean), "请完成三项现场核查。");
+        s.checked = true;
+        s.storeNote = String(payload.note || "小林与 A 护理间可用；护理耗材需补充 2 份。").slice(0, 600);
+        log("门店 Agent · 店长确认", "提交核查结果，并申请耗材支持", s.storeNote);
+        break;
+      case "support":
+        if (s.supportArranged) return s;
+        require(s.checked, "先等待门店核查结果。");
+        s.supportArranged = true;
+        log("总部运营 · 王宁", "安排补充 2 份护理耗材", "配送负责人：陈敏；计划今日 13:00 前到位。尚待门店确认收到。");
+        break;
+      case "publish":
+        if (s.published) return s;
+        require(s.checked && s.supportArranged, "请先完成核查并安排耗材支持。");
+        s.published = true;
+        log("总部负责人 · 王宁", "确认方案并下发湖滨店任务 · v1", "按原价 268 元精准跟进；仅使用 14:00、15:00 两个时段。耗材到位后开始，不移动已有晚间预约。");
+        break;
+      case "accept":
+        if (s.accepted) return s;
+        require(s.published, "等待总部发布任务。");
+        s.accepted = true;
+        log("湖滨店店长 · 李安", "接收任务，安排小林执行", "小林负责顾客跟进和服务；李安负责现场准备与进度。");
+        break;
+      case "receive":
+        if (s.supportReceived) return s;
+        require(s.accepted && s.supportArranged, "先接收任务并等待总部支持安排。");
+        s.supportReceived = true;
+        log("湖滨店店长 · 李安", "确认 2 份耗材已到位（模拟）", "资源前置条件已满足，现场仍需确认服务标准。");
+        break;
+      case "train":
+        if (s.trained) return s;
+        require(s.accepted, "请先接收任务。");
+        s.trained = true;
+        log("门店员工 · 小林", "确认服务与联系规则", "原价服务、尊重联系偏好、先确认时段，不承诺未确认的预约。");
+        break;
+      case "contact": {
+        require(derived(s).canContact, "请先接收任务、确认耗材到位并阅读执行规则。");
+        const ids = [...new Set(payload.ids || [])];
+        require(ids.length > 0, "请选择顾客。");
+        require(ids.every(id => customers.some(c => c.id === id && c.eligible)), "名单含已有预约或不适合联系的顾客。");
+        const fresh = ids.filter(id => !s.contacted.includes(id));
+        if (!fresh.length) return s;
+        s.contacted.push(...fresh);
+        s.contactDraft = String(payload.draft || "您好，您之前关注的护理项目有下午可选时段，方便了解一下吗？").slice(0, 800);
+        log("门店员工 · 小林", `完成 ${fresh.length} 位顾客的模拟联系`, `已确认名单与草稿：「${s.contactDraft}」本地模拟，不会发送任何外部消息。`);
+        break;
+      }
+      case "responses":
+        if (s.responses) return s;
+        require(["c1", "c2", "c6"].every(id => s.contacted.includes(id)), "先完成 3 位适合跟进顾客的模拟联系。");
+        s.responses = true;
+        log("门店 Agent", "汇总模拟回应：2 位愿意预约，1 位暂不预约", "林女士偏好 14:00，陈女士偏好 15:00；何女士本次暂不预约，停止本轮跟进。");
+        break;
+      case "book": {
+        require(s.responses && derived(s).canContact, "请先取得顾客回应并满足现场准备条件。");
+        const c = customers.find(c => c.id === payload.customerId);
+        require(c && c.response === "同意预约" && s.contacted.includes(c.id), "该顾客尚未同意预约。");
+        const existing = s.bookings.find(b => b.customerId === c.id);
+        if (existing) {
+          require(existing.slot === payload.slot, "顾客已有预约，请勿重复创建。");
+          return s;
+        }
+        require(slots.includes(payload.slot), "请选择已核实可用的时段。");
+        require(!s.bookings.some(b => b.slot === payload.slot), "该时段已被预约，请选择另一个时段。");
+        s.bookings.push({ id: `SIM-${c.id}`, customerId: c.id, slot: payload.slot, staff: "小林", room: "A 护理间", date: "2026-10-21" });
+        log("门店预约记录 · 模拟", `${c.name}预约确认：10月21日 ${payload.slot}`, "头皮清洁护理 · 60 分钟 · 268 元；小林 / A 护理间。未接真实预约系统。");
+        break;
+      }
+      case "submit-execution":
+        if (s.executionSubmitted) return s;
+        require(derived(s).canSubmit, "请完成现场准备、顾客回应和两条预约确认。");
+        s.executionSubmitted = true;
+        log("湖滨店店长 · 李安", "提交执行记录，等待总部验收", "3 位已联系，2 位预约已确认，1 位暂不预约。实际到店与服务结果仍待观察。");
+        break;
+      case "accept-execution":
+        if (s.executionAccepted) return s;
+        require(s.executionSubmitted, "请等待门店提交执行记录。");
+        s.executionAccepted = true;
+        log("总部负责人 · 王宁", "执行验收通过，进入结果观察", "确认名单、资源、联系和预约记录齐全；不将预约数当作服务完成数。");
+        break;
+      case "observe":
+        if (s.outcomeReady) return s;
+        require(s.executionAccepted, "请先完成执行验收。");
+        s.outcomeReady = true;
+        log("门店 Agent · 模拟观察", "载入 10月21日模拟服务结果", "2 位均到店并完成服务；林女士另购 89 元洗护商品。没有原晚间预约转移。");
+        break;
+      case "review":
+        if (s.reviewed) return s;
+        require(s.outcomeReady, "请先载入观察结果。");
+        require(["小范围继续验证", "暂停并调整"].includes(payload.decision), "请选择后续决定。");
+        s.reviewed = true;
+        s.decision = payload.decision;
+        s.reviewNote = String(payload.note || "本轮执行链路完整；样本较小，不能认定带来因果增量。").slice(0, 600);
+        log("总部负责人 · 王宁", `复盘确认：${s.decision}`, s.reviewNote);
+        break;
+      default: throw new Error("未知操作。");
+    }
+    return s;
+  }
+  return { VERSION, customers, slots, seed, derived, transition };
+});
+</script>
+  <script>(function () {
+  "use strict";
+  const M = window.NeoModel;
+  const KEY = "neo-chain-service-prototype-v1";
+  const routes = ["hq-home", "hq-issue", "store-home", "store-task", "customers"];
+  let storageWarning = false;
+  let state = M.seed();
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (saved && saved.version === M.VERSION && Array.isArray(saved.events) && saved.checks && Array.isArray(saved.bookings) && Array.isArray(saved.contacted)) state = { ...M.seed(), ...saved };
+  } catch { storageWarning = true; }
+  let route = routes.includes(location.hash.slice(1)) ? location.hash.slice(1) : "hq-home";
+  let issueTab = "evidence", customerFilter = "all", query = "";
+  let selected = new Set(M.customers.filter(c => c.eligible).map(c => c.id));
+  let modal = null, lastFocus = null, toastTimer;
+  const $ = s => document.querySelector(s);
+  const esc = v => String(v == null ? "" : v).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const icon = (name, cls = "") => `<span class="${cls}" aria-hidden="true">${window.NeoIcons[name] || window.NeoIcons.Circle}</span>`;
+  const btn = (text, action, style = "", ico = "", attrs = "") => `<button type="button" class="btn ${style}" data-action="${action}" ${attrs}>${ico ? icon(ico) : ""}${text}</button>`;
+  const nav = (text, dest, style = "", ico = "ArrowRight") => btn(text, "navigate", style, ico, `data-route="${dest}"`);
+  const badge = (text, style = "") => `<span class="badge ${style}">${text}</span>`;
+  const notice = (text, style = "") => `<div class="notice ${style}">${icon(style === "amber" ? "WarningCircle" : "Info")}<p>${text}</p></div>`;
+  const isStore = () => route.startsWith("store") || route === "customers";
+  const fmt = x => Number(x).toLocaleString("zh-CN");
+  function toast(text, error = false) {
+    clearTimeout(toastTimer); $("#toast").textContent = text;
+    $("#toast").className = `visible ${error ? "error" : ""}`;
+    toastTimer = setTimeout(() => { $("#toast").className = ""; }, 3600);
+  }
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); }
+    catch { storageWarning = true; }
+  }
+  function commit(action, payload, message) {
+    try {
+      state = M.transition(state, action, payload);
+      save(); closeModal(false); render();
+      if (message) toast(message);
+      return true;
+    } catch (e) { toast(e.message, true); return false; }
+  }
+  function go(dest, tab) {
+    if (!routes.includes(dest)) return;
+    if (tab) issueTab = tab;
+    closeModal(false); route = dest;
+    if (location.hash !== `#${dest}`) location.hash = dest;
+    else render();
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+  function phase() {
+    if (state.reviewed) return "已复盘";
+    if (state.outcomeReady) return "待确认复盘";
+    if (state.executionAccepted) return "观察中";
+    if (state.executionSubmitted) return "待验收";
+    if (state.accepted) return "门店执行中";
+    if (state.published) return "待门店接收";
+    if (state.checked) return "待确认方案";
+    if (state.checkRequested) return "门店核查中";
+    return "待核查";
+  }
+  function nextStep() {
+    if (!state.checkRequested) return { title: "先核实湖滨店的接待条件", text: "由总部发起人员、护理间和耗材核查。", dest: "hq-issue", tab: "evidence" };
+    if (!state.checked) return { title: "门店需要补充现场情况", text: "切换到湖滨店，完成三项现场核查。", dest: "store-task" };
+    if (!state.published) return { title: state.supportArranged ? "确认方案并下发任务" : "总部先解决耗材缺口", text: "补充 2 份耗材，预览门店收到的精准跟进任务。", dest: "hq-issue", tab: "plan" };
+    if (!state.accepted || !state.supportReceived || !state.trained) return { title: "接收任务，完成现场准备", text: "确认耗材到位，并阅读联系与服务规则。", dest: "store-task" };
+    if (!state.responses || state.bookings.length < 2) return { title: "跟进顾客并确认合适时段", text: "3 位适合跟进，2 个已核实的可预约时段。", dest: "customers" };
+    if (!state.executionSubmitted) return { title: "向总部提交执行记录", text: "预约记录已齐全，实际到店结果仍需观察。", dest: "store-task" };
+    if (!state.executionAccepted) return { title: "总部验收执行记录", text: "检查名单、准备、联系和预约，确认进入观察期。", dest: "hq-issue", tab: "execution" };
+    if (!state.outcomeReady) return { title: "进入模拟观察日", text: "载入 10月21日的到店、服务与商品结果。", dest: "hq-issue", tab: "review" };
+    if (!state.reviewed) return { title: "形成复盘与下一步决定", text: "区分执行完成、观察结果与尚未证实的增量。", dest: "hq-issue", tab: "review" };
+    return { title: "协作已完成，查看本轮复盘", text: "本轮决定与依据已保存，可随时重置再次体验。", dest: "hq-issue", tab: "review" };
+  }
+  function progress() {
+    const current = M.derived(state).stage;
+    const steps = ["发现问题", "门店核查", "总部安排", "门店执行", "结果观察", "经营复盘"];
+    return `<div class="stage-track" aria-label="协作进程">${steps.map((s, i) => `<button type="button" data-action="stage" data-index="${i}" class="${i < current ? "done" : i === current ? "current" : ""}" ${i === current ? 'aria-current="step"' : ""}><b>${i < current ? icon("Check") : i + 1}</b><span>${s}</span></button>`).join("")}</div>`;
+  }
+  function sidebar() {
+    const store = isStore();
+    const items = store
+      ? [["store-home", "今日", "SquaresFour"], ["store-task", "行动", "ListChecks"], ["customers", "顾客", "Users"]]
+      : [["hq-home", "今日经营", "SquaresFour"], ["hq-issue", "经营事项", "Target"]];
+    return `<aside class="sidebar"><div class="brand-scope"><span class="eyebrow">${store ? "STORE WORKSPACE" : "HEADQUARTERS"}</span><strong>${store ? "湖滨店" : "澄禾护理 · 总部"}</strong><p>${store ? "店长李安 · 本店经营与执行" : "王宁 · 直营运营负责人"}</p></div><nav aria-label="${store ? "门店" : "总部"}页面">${items.map(([id, label, ico]) => `<button type="button" class="nav-item ${route === id ? "active" : ""}" data-action="navigate" data-route="${id}" ${route === id ? 'aria-current="page"' : ""}>${icon(ico)}${label}${route === id ? '<span class="nav-dot"></span>' : ""}</button>`).join("")}${store ? `<button type="button" class="nav-item" data-action="learning">${icon("BookOpen")}学习与服务</button>` : ""}</nav>
+      ${store ? `<div class="kept-modules"><div class="eyebrow">正在协作</div><span>下午时段精准跟进</span><span>${phase()}</span></div>` : `<details class="kept-modules"><summary>原有 NEO 功能 · 保留</summary><span>我的客户</span><span>供应链与库存</span><span>渠道与竞品</span><span>生意预测 / 协同</span><span>本周经营决策</span><span>数据与智能中台</span><p class="scenario-note">本版独立演示五个新增核心页面，不替换原版功能。</p></details>`}
+      <div class="sidebar-bottom">${icon("ShieldCheck")} 本地模拟空间<p class="scenario-note">澄禾护理为虚构品牌。<br>不连接 CRM，不发送消息，<br>不调用真实 AI 模型。</p>${btn("查看演示指南", "guide", "text gap-sm", "BookOpen")}</div></aside>`;
+  }
+  function shell(content) {
+    const store = isStore();
+    const mobileItems = store ? [["store-home", "今日", "SquaresFour"], ["store-task", "行动", "ListChecks"], ["customers", "顾客", "Users"]] : [["hq-home", "今日经营", "SquaresFour"], ["hq-issue", "经营事项", "Target"]];
+    return `<div class="${store ? "store-mode" : ""}"><div class="demo-strip">${icon("Info")} 本地交互原型 · 全部为模拟数据 · Agent 使用预设场景演示</div><header class="topbar"><a class="wordmark" href="#hq-home" aria-label="NEO 总部首页"><i></i>NEO</a><div class="brand-caption"><strong>澄禾护理</strong><span>直营门店经营协作</span></div><div class="role-switch" aria-label="切换工作角色"><button type="button" class="${!store ? "active" : ""}" data-action="navigate" data-route="hq-home">${icon("Buildings")}总部工作台</button><button type="button" class="${store ? "active" : ""}" data-action="navigate" data-route="store-home">${icon("Storefront")}门店工作台</button></div><div class="top-tools">${btn("演示指南", "guide", "ghost small", "BookOpen")}${btn("<span>重置</span>", "reset", "ghost small reset-btn", "ArrowCounterClockwise", 'aria-label="重置演示"')}<span class="avatar ${store ? "teal" : ""}" title="${store ? "李安 · 店长" : "王宁 · 总部运营"}">${store ? "李" : "王"}</span></div></header>
+      <div class="workspace">${sidebar()}<main class="main">${progress()}${storageWarning ? notice("浏览器未允许保存进度；当前页面仍可完整演示，刷新可能重置。", "amber") : ""}${content}<footer class="footer-note"><span>NEO 连锁经营协作 · 交互原型 v1 · 场景资料：SYNTHETIC_DEMO</span><span>${state.events.length} 条协作记录 · 进度保存在本浏览器</span></footer></main></div><nav class="mobile-nav" aria-label="移动端页面">${mobileItems.map(([id, label, ico]) => `<button type="button" class="${route === id ? "active" : ""}" data-action="navigate" data-route="${id}">${icon(ico)}${label}</button>`).join("")}<button type="button" data-action="guide">${icon("BookOpen")}指南</button></nav></div>`;
+  }
+  function heading(kicker, title, description, right = "") {
+    return `<div class="page-heading"><div><div class="eyebrow">${kicker}</div><h1 tabindex="-1">${title}</h1><p>${description}</p></div>${right}</div>`;
+  }
+  function metric(label, value, unit, foot, tone = "", spark = false) {
+    return `<div class="metric"><div class="label">${label}</div><div class="value">${value}${unit ? `<em>${unit}</em>` : ""}</div><div class="foot ${tone}">${foot}</div>${spark ? `<svg class="metric-spark" viewBox="0 0 60 28" aria-hidden="true"><path d="M1 23 L10 18 L19 20 L28 12 L37 14 L48 7 L59 4" fill="none" stroke="#6a96e7" stroke-width="2" stroke-linecap="round"/></svg>` : ""}</div>`;
+  }
+  function agentCard(store = false) {
+    const n = nextStep();
+    let title, text;
+    if (state.reviewed) { title = "把经验留下，也保留证据边界。"; text = "本轮 2 位顾客完成服务，产生 89 元商品关联销售。记录证明本次协作与执行已完成，不能证明这一策略带来长期增量。"; }
+    else if (state.outcomeReady) { title = "结果已回到同一条经营事项。"; text = "两位顾客均按预约到店。建议先继续小范围观察，比较相似时段，并记录取消、改约与新增需求。"; }
+    else if (state.executionAccepted) { title = "预约已确认，服务结果还在观察。"; text = "执行验收已通过。接下来观察实际到店、服务完成与商品购买，分别保留记录。"; }
+    else if (state.executionSubmitted) { title = store ? "执行记录已提交，等待总部验收。" : "执行凭据齐全，请核对后验收。"; text = "3 位已联系，2 位确认预约，1 位暂不预约。总部核对资源、规则与预约记录后，进入实际服务观察。"; }
+    else if (state.bookings.length === 2) { title = "两条预约已确认，下一步提交记录。"; text = "14:00、15:00 均已安排。门店核对记录并提交总部；顾客是否实际到店，仍需在观察日确认。"; }
+    else if (state.responses) { title = "已收到顾客回应，确认具体时段。"; text = "林女士与陈女士愿意预约，何女士本次暂不预约。按顾客偏好核对人员与房间，每个时段最多安排一位。"; }
+    else if (state.contacted.length) { title = "本轮联系已记录，等待顾客回应。"; text = "继续跟进尚未联系的适合顾客，不重复联系已记录的名单。取得明确意愿之后，再安排预约。"; }
+    else if (store && !state.checked) { title = "先确认现场能接，再安排顾客。"; text = "小林具备对应技能，A 护理间有空档。请店长核实实际排班、房间与耗材，不把排班空白直接当作可接待。"; }
+    else if (!state.supportReceived && state.checked) { title = store ? "耗材到位后，再开始联系。" : "门店需要总部解决一项具体阻碍。"; text = "门店已确认人员与护理间可用，但还缺 2 份耗材。总部安排和门店收到分别记录，避免任务下达后仍无法执行。"; }
+    else if (state.published) { title = "3 位适合跟进，先看理由再联系。"; text = "名单已排除已有预约、近期已联系和不接收营销联系的顾客。两条可预约时段均为 60 分钟，价格和权益保持原方案。"; }
+    else { title = "先核查时段供需，再决定是否引流。"; text = "湖滨店下午占用率 42%，晚间 90%。现有资料提示时段分布不均；是否存在真正可用的接待能力，还需要门店确认。"; }
+    return `<section class="agent-card"><div class="agent-head"><span class="agent-symbol">${icon("Sparkle")}</span><div><strong>${store ? "湖滨店 Agent" : "总部 Agent"}</strong><small>持续跟进当前经营事项</small></div>${badge("场景演示", "")}</div><div class="agent-body"><h3>${title}</h3><p>${text}</p><div class="agent-source">依据：模拟预约记录、排班资料与${state.checked ? "已确认的门店反馈" : "待核查的现场条件"}</div><div class="agent-chips"><button type="button" data-action="ask" data-question="why">为什么值得关注？</button><button type="button" data-action="ask" data-question="next">下一步做什么？</button><button type="button" data-action="ask" data-question="boundary">能证明有效吗？</button></div><form class="agent-input" id="agent-form"><input aria-label="询问场景 Agent" placeholder="问问当前事项，例如：耗材怎么处理" maxlength="200"><button type="submit" class="btn soft icon" aria-label="发送场景问题">${icon("ArrowRight")}</button></form><div id="agent-answer" hidden></div><div class="gap">${btn(n.dest.startsWith("hq") === !store ? "继续处理这件事" : store ? "前往总部处理" : "前往门店处理", "next", "soft block", "ArrowRight")}</div><p style="font-size:10px">预设场景问答，不调用真实模型。</p></div></section>`;
+  }
+  function logCard(limit = 4) {
+    return `<section class="card compact"><div class="card-head"><h2>两端协作记录</h2>${btn("全部", "all-log", "text small", "ArrowUpRight")}</div><div class="log">${state.events.slice(-limit).reverse().map(e => `<div class="log-item"><small>${e.time} · ${esc(e.actor)}</small><strong>${esc(e.title)}</strong><p>${esc(e.detail)}</p></div>`).join("")}</div></section>`;
+  }
+  function handoff(dest, title, description, label, tab = "") {
+    return `<div class="handoff">${icon(dest.startsWith("hq") ? "Buildings" : "Storefront", "iconbox")}<div style="flex:1"><strong>${title}</strong><p>${description}</p></div>${btn(label, "navigate", "small", "ArrowRight", `data-route="${dest}" data-tab="${tab}"`)}</div>`;
+  }
+  function heatmap() {
+    const rows = [["湖滨店", 62, 48, 42, 58, 90], ["城西店", 56, 64, 67, 70, 82], ["滨江店", 71, 58, 61, 76, 88]];
+    return `<section class="card"><div class="card-head"><div><h2>预约分布 · 找到需要核查的时段</h2><p>10.12—10.18 · 已预约服务时长 / 可预约服务时长</p></div>${badge("历史模拟资料")}</div><div class="heatmap"><span></span>${["10—12", "12—14", "14—16", "16—18", "18—20"].map(x => `<span class="col-label">${x}</span>`).join("")}${rows.map((r, ri) => `<span class="row-label">${r[0]}</span>${r.slice(1).map((v, i) => `<span class="cell ${ri === 0 && i === 2 ? "target" : v >= 80 ? "high" : v >= 55 ? "medium" : ""}">${v}%</span>`).join("")}`).join("")}</div><div class="legend"><span><i></i>较低</span><span><i class="medium"></i>中等</span><span><i class="high"></i>较高</span><span class="spacer"></span><span>分布差异需要结合人员与项目解释</span></div></section>`;
+  }
+  function hqHome() {
+    const n = nextStep();
+    return heading("连锁经营 / 总部", "把经营变化，变成门店行动", "澄禾护理 · 3 家直营门店 · 本周经营观察 10.12—10.18", `<span class="scope-chip">${icon("Buildings")}全部直营门店 ${badge("模拟")}</span>`)
+      + `<div class="metrics">${metric("完成服务", "186", "人次", "覆盖 3 / 3 家门店", "", true)}${metric("服务完成金额", "49,848", "元", "按服务完成口径 · 不含储值", "", true)}${metric("商品销售净额", "3,115", "元", "商品订单单独计算", "", true)}${metric("10月21日已有预约", "38", "笔", "基准快照 · 不含本轮新增", "", true)}</div>
+      <div class="main-grid"><div class="stack"><section class="issue-hero"><div class="between"><div class="issue-icon">${icon("ChartLineUp")}</div>${badge(phase(), "blue dot")}</div><h2>下午有空档，<br>晚间却在等。</h2><p>湖滨店的预约集中在晚间。先核实下午是否具备接待条件，再选择适合的顾客与时段，避免一轮统一促销放大晚间压力。</p><div class="issue-numbers"><div><strong>42<em>%</em></strong><small>下午预约占用率</small></div><div><strong>90<em>%</em></strong><small>晚间预约占用率</small></div><div><strong>${state.checked ? "2" : "待核"}<em>${state.checked ? "个" : ""}</em></strong><small>可新增服务时段</small></div></div><div class="actions flex">${btn(state.reviewed ? "查看完整复盘" : "进入经营事项", "navigate", "primary", "ArrowRight", `data-route="hq-issue" data-tab="${state.reviewed ? "review" : "evidence"}"`)}${btn("查看依据", "evidence", "", "ChartLineUp")}</div></section>
+      <section class="card"><div class="card-head"><div><h2>直营门店经营</h2><p>同一观察期 · 服务与商品分开呈现</p></div>${badge("3 家门店")}</div><div class="table-wrap"><table><thead><tr><th>门店</th><th>完成服务</th><th>服务完成金额</th><th>商品净额</th><th>当前关注</th></tr></thead><tbody>${[["湖滨店",54,14472,995,"时段分布不均"],["城西店",63,16884,1020,"经营平稳"],["滨江店",69,18492,1100,"经营平稳"]].map((r,i)=>`<tr><td><strong>${r[0]}</strong><span class="sub">${i === 0 ? "本轮试点门店" : "用于对照观察"}</span></td><td>${r[1]} 人次</td><td>¥${fmt(r[2])}</td><td>¥${fmt(r[3])}</td><td>${i===0?btn(r[4],"navigate","text small","ArrowUpRight",'data-route="hq-issue"'):badge(r[4],"teal")}</td></tr>`).join("")}</tbody></table></div></section>${heatmap()}</div>
+      <aside class="stack">${agentCard()}<section class="card compact"><div class="card-head"><h2>总部待处理</h2>${badge(state.reviewed ? "已完成" : "1 项", state.reviewed ? "teal" : "amber")}</div><div class="mini-item">${icon(state.checked&&!state.supportArranged?"Package":"Target","iconbox")}<div><strong>${n.title}</strong><p>${n.text}</p>${btn("前往处理","next","text small","ArrowRight")}</div></div></section>${logCard(3)}</aside></div>`;
+  }
+  function evidenceTab() {
+    return `<section class="card"><div class="card-head"><h2>先区分事实与待核原因</h2>${btn("查看原始依据","evidence","text small","ArrowUpRight")}</div><div class="evidence-grid"><div class="evidence-card"><span class="eyebrow">下午 14:00—16:00</span><div class="value">42% <span>前期 58%</span></div><div class="bar"><i style="width:42%"></i></div><p>预约占用率下降 16 个百分点；不能据此认定人员闲置。</p></div><div class="evidence-card"><span class="eyebrow">晚间 18:00—20:00</span><div class="value">90% <span>前期 88%</span></div><div class="bar"><i style="width:90%"></i></div><p>部分项目出现候位，需要核查顾客时间偏好与技能限制。</p></div></div><div class="gap">${notice("观察期：10.12—10.18；对照期：10.05—10.11。全部资料均为合成演示数据。")}</div><div class="fact-row">${icon("CheckCircle","fact-icon")}<div><h3>已知事实：同店的时段分布有差异</h3><p>该变化值得关注，因为继续统一引流可能增加晚间压力。</p></div></div><div class="fact-row">${icon("WarningCircle","warning")}<div><h3>待核查：下午空档是否真的可以接待</h3><p>需要同时确认护理人员、房间、服务时长和耗材。</p></div></div><div class="gap">${!state.checkRequested?btn("发起门店核查","request-check","primary","PaperPlaneTilt"):state.checked?notice("门店核查已返回：人员与房间可用；需补充 2 份护理耗材。","teal"):notice("已请求湖滨店核查，等待店长确认现场情况。","blue")}</div></section>
+      ${state.checkRequested&&!state.checked?handoff("store-task","交给湖滨店核查","门店 Agent 将协助店长确认三个接待条件。","切换到门店核查"):state.checked?`<section class="card"><div class="card-head"><h2>门店现场反馈</h2>${badge("店长已确认","teal")}</div><p class="muted small">${esc(state.storeNote)}</p><div class="gap">${btn("查看方案与资源","issue-tab","primary","ArrowRight",'data-tab="plan"')}</div></section>`:""}`;
+  }
+  function planTab() {
+    if(!state.checked) return `<section class="card">${empty("先完成门店核查","方案需要真实可执行的前提。当前还未收到门店对人员、房间和耗材的确认。",state.checkRequested?"去门店核查":"发起核查",state.checkRequested?"store-task":"hq-issue",!state.checkRequested?"evidence":"")}</section>`;
+    return `<section class="card"><div class="card-head"><div><h2>选择一条符合门店条件的行动</h2><p>仅湖滨店试点 · 原价服务 · 14:00、15:00 各一个时段</p></div>${badge("方案 v1","blue")}</div><div class="stack-sm"><div class="plan-option selected">${icon("CheckCircle","blue-text")}<div><strong>精准跟进有需求的顾客</strong><p>不调整价格；先确认接待能力，再由员工联系 3 位适合跟进的顾客。</p></div></div><div class="plan-option">${icon("Circle","faint")}<div><strong>扩大统一促销</strong><p>本轮不采用：可能继续增加晚间需求，且需要额外预算与权益确认。</p></div></div></div><dl class="kv gap"><dt>目标</dt><dd>验证下午空档能否转成实际完成的服务</dd><dt>总部要求</dt><dd>268 元 / 60 分钟；不移动已确认的晚间预约；不重复联系顾客</dd><dt>门店可调整</dt><dd>具体联系顺序、人员分工；时段变更需要重新核查</dd><dt>完成凭据</dt><dd>联系结果、顾客意愿、预约确认记录</dd><dt>观察结果</dt><dd>实际到店、服务完成、取消或改约、商品关联销售</dd></dl></section>
+      <section class="card"><div class="card-head"><h2>总部需要提供的支持</h2>${badge(state.supportReceived?"门店已确认到位":state.supportArranged?"已安排 · 待门店确认到位":"待处理",state.supportReceived?"teal":state.supportArranged?"blue":"amber")}</div><div class="mini-item">${icon("Package","iconbox")}<div><strong>补充 2 份护理耗材</strong><p>负责人：陈敏 · 今日 13:00 前安排到店。门店确认收到后才允许开始联系。</p></div></div><div class="gap">${!state.supportArranged?btn("确认安排耗材补充","support","primary","Check"):notice(state.supportReceived?"门店已确认耗材到位。":"已安排补充，尚未收到门店到货确认。",state.supportReceived?"teal":"blue")}</div></section>
+      <section class="card"><div class="card-head"><h2>湖滨店将收到的任务</h2>${btn("预览任务","task-preview","text small","ArrowUpRight")}</div><div class="task-summary"><h3>核实准备后，跟进适合下午到店的顾客</h3><p>责任人：店长李安 · 执行人：小林<br>截止：10月20日 17:00 完成跟进与预约确认</p></div><div class="gap">${state.published?handoff("store-task","任务已下发湖滨店","方案 v1 已记录，总部支持与门店执行将持续回传。","切换到门店接收"):btn("确认方案并下发任务","publish","primary","PaperPlaneTilt",!state.supportArranged?'disabled title="先安排耗材支持"':"")}</div></section>`;
+  }
+  function executionTab() {
+    if(!state.published) return `<section class="card">${empty("任务尚未下发","核查完成后，先确认方案与资源，再安排门店执行。","查看方案","hq-issue","plan")}</section>`;
+    const items=[["门店接收",state.accepted,"李安接收，并安排小林执行"],["耗材到位",state.supportReceived,"2 份耗材由门店确认收到"],["服务规则",state.trained,"价格、权益与联系边界已确认"],["顾客联系",state.contacted.length===3,`${state.contacted.length} / 3 位适合跟进顾客已联系`],["预约确认",state.bookings.length===2,`${state.bookings.length} / 2 个时段完成预约确认`],["提交执行记录",state.executionSubmitted,"门店核对记录后提交总部验收"]];
+    return `<section class="card"><div class="card-head"><div><h2>湖滨店执行情况</h2><p>店长李安负责 · 小林执行 · 方案 v1</p></div>${badge(phase(),"blue")}</div>${items.map((x,i)=>`<div class="task-step ${x[1]?"done":""}"><span class="step-circle">${x[1]?icon("Check"):i+1}</span><div class="step-content"><h3>${x[0]}</h3><p>${x[2]}</p></div>${badge(x[1]?"已完成":"待完成",x[1]?"teal":"")}</div>`).join("")}<div class="gap">${state.executionSubmitted&&!state.executionAccepted?btn("验收执行记录，进入观察期","accept-execution","primary","ShieldCheck"):state.executionAccepted?notice("执行验收已通过。实际到店与服务结果单独观察。","teal"):nav("前往门店继续执行","store-task","primary")}</div></section>
+      <section class="card"><div class="card-head"><h2>预约凭据</h2>${badge("本地模拟记录")}</div>${state.bookings.length?bookingTable():notice("还没有本轮确认的预约。发出联系或生成话术，不会自动记作预约。")}</section>`;
+  }
+  function bookingTable() {
+    return `<div class="table-wrap"><table><thead><tr><th>顾客</th><th>日期 / 时段</th><th>人员与房间</th><th>状态</th></tr></thead><tbody>${state.bookings.map(b=>`<tr><td>${M.customers.find(c=>c.id===b.customerId).name}</td><td>10.21 ${b.slot}<span class="sub">60 分钟 · 268 元</span></td><td>${b.staff}<span class="sub">${b.room}</span></td><td>${badge(state.outcomeReady?"服务已完成":"预约已确认","teal")}</td></tr>`).join("")}</tbody></table></div>`;
+  }
+  function reviewTab() {
+    if(!state.executionAccepted) return `<section class="card">${empty("先让行动真正完成","门店提交执行记录、总部验收后，再观察实际到店与服务结果。","查看执行进展","hq-issue","execution")}</section>`;
+    if(!state.outcomeReady) return `<section class="card"><div class="card-head"><h2>执行已完成，等待观察结果</h2>${badge("观察中","blue")}</div><div class="journey"><div class="node">已联系<b>3</b></div>${icon("ArrowRight")}<div class="node">确认预约<b>2</b></div>${icon("ArrowRight")}<div class="node">实际到店<b>待观察</b></div></div>${notice("当前只能确认预约记录，尚不能得出完成服务或经营改善的结论。","amber")}<div class="gap"><h3>演示下一天会发生什么</h3><p class="small muted gap-sm">点击后将载入预设的 10月21日模拟结果，不会读取真实系统。</p>${btn("载入次日模拟服务结果","observe","primary gap","Play")}</div></section>`;
+    const d=M.derived(state);
+    return `<section class="card"><div class="card-head"><div><h2>从预约，看到实际服务结果</h2><p>观察日 10月21日 · 仅本轮行动关联的顾客与订单</p></div>${badge("模拟结果","teal")}</div><div class="journey"><div class="node">适合跟进<b>3</b></div>${icon("ArrowRight")}<div class="node">同意并预约<b>2</b></div>${icon("ArrowRight")}<div class="node">实际完成<b>${d.completed}</b></div></div><div class="result-grid"><div class="result-tile"><span>服务完成</span><strong>${d.completed} <small>人次</small></strong><small>未到店 0 · 取消 0</small></div><div class="result-tile"><span>服务完成金额</span><strong>¥${fmt(d.serviceAmount)}</strong><small>2 × 268 元</small></div><div class="result-tile"><span>商品关联销售</span><strong>¥${d.retail}</strong><small>日常洗护 1 件</small></div></div>${bookingTable()}<div class="gap">${notice("原晚间预约转移 0 笔。服务金额与商品金额分别展示；本轮没有储值交易。","teal")}</div><div class="result-quote">本轮证明：门店条件得到核实，支持与执行有回执，2 位顾客完成服务。<br><strong>尚未证明：这项策略造成了净增收入，或可以直接推广到所有门店。</strong></div><p class="small muted">只有一店两位顾客，没有对照实验；后续应比较可比时段，并继续记录取消、改约和重复需求。</p></section>
+      <section class="card"><div class="card-head"><h2>${state.reviewed?"已保存的经营决定":"确认下一步经营决定"}</h2>${state.reviewed?badge("已复盘","teal"):badge("待负责人确认","amber")}</div>${state.reviewed?`<div class="task-summary"><h3>${esc(state.decision)}</h3><p>${esc(state.reviewNote)}</p></div><div class="gap">${btn("查看完整协作记录","all-log","","ClipboardText")}</div>`:`<label class="field"><span>后续决定</span><select id="review-decision"><option>小范围继续验证</option><option>暂停并调整</option></select></label><label class="field"><span>复盘备注</span><textarea id="review-note" maxlength="600">先在湖滨店继续观察一周，保留原价与联系边界；比较相似时段，不将这两次完成服务解释为已证实的增量。</textarea></label>${btn("确认复盘并保存决定","review","primary","CheckCircle")}`}</section>`;
+  }
+  function hqIssue() {
+    return `${heading("经营事项 / 湖滨店", "让下午空档，变成可执行的接待计划", "从资料核查到门店执行，两端围绕同一条事项协作。",badge(phase(),"blue dot"))}<div class="meta-row" style="margin-top:-10px;margin-bottom:20px"><span>${icon("UserCircle")}负责人 王宁</span><span>${icon("Storefront")}试点 湖滨店</span><span>${icon("CalendarBlank")}10.20 执行 · 10.21 观察</span><span>${icon("ShieldCheck")}模拟事项 CH-1020</span></div><div class="main-grid"><div class="stack"><div class="tabs" aria-label="事项内容">${[["evidence","问题与依据"],["plan","方案与资源"],["execution","门店执行"],["review","结果与复盘"]].map(([id,text])=>`<button type="button" data-action="issue-tab" data-tab="${id}" class="${issueTab===id?"active":""}" ${issueTab===id?'aria-current="page"':""}>${text}</button>`).join("")}</div>${({evidence:evidenceTab,plan:planTab,execution:executionTab,review:reviewTab})[issueTab]()}</div><aside class="stack">${agentCard()}${logCard()}</aside></div>`;
+  }
+  function empty(title, text, label="", dest="", tab="") {
+    return `<div class="empty">${icon("Clock")}<h3>${title}</h3><p>${text}</p>${label?btn(label,"navigate","primary small","ArrowRight",`data-route="${dest}" data-tab="${tab}"`):""}</div>`;
+  }
+  function storeHome() {
+    const d = M.derived(state), n = nextStep();
+    const taskTitle = !state.checked ? "核实下午的人员、房间与耗材" : !state.published ? "等待总部安排耗材与确认方案" : !state.accepted ? "接收总部任务，安排本店执行" : !state.supportReceived ? "先确认耗材到位" : !state.trained ? "确认联系与服务规则" : !state.responses ? "跟进适合下午到店的顾客" : state.bookings.length<2 ? "根据顾客意愿确认预约" : !state.executionSubmitted ? "检查记录，向总部提交执行结果" : !state.outcomeReady ? "预约已确认，等待实际到店" : "服务结果已回传，查看本轮复盘";
+    return heading("湖滨店 / 店长李安", state.outcomeReady ? "今天的服务结果，已经回到经营事项" : "今天先把接待准备好", `${state.outcomeReady?"10月21日 · 模拟观察日":"10月20日 · 模拟执行日"}　｜　头皮清洁护理 · 60 分钟 / 次`, `<span class="scope-chip">${icon("Storefront")}湖滨店</span>`)
+      + `<div class="metrics">${metric("本次任务可用时段",state.checked?"2":"待核",state.checked?"个":"","")}${metric("已完成联系",state.contacted.length,"位","仅本轮适合跟进顾客")}${metric("新增确认预约",state.bookings.length,"笔","不含原有晚间预约")}${metric("已完成服务",state.outcomeReady?d.completed:"待观察",state.outcomeReady?"人次":"","")}</div>
+      <div class="main-grid"><div class="stack"><section class="card"><div class="card-head"><h2>今日优先行动</h2>${badge(phase(),"teal dot")}</div><div class="priority-card"><div class="between"><span class="priority-number">1</span>${badge(!state.checkRequested?"等待总部核查请求":state.published?"总部任务 · v1":"总部核查","teal")}</div><h2>${taskTitle}</h2><p>目标是把已核实的下午空档转成实际服务。先确认现场条件，再安排人员和顾客，执行结果回到同一条事项。</p><div class="gap flex wrap">${state.checkRequested?nav("打开行动详情","store-task","primary"):nav("去总部发起核查","hq-issue","primary")}${state.published?nav("查看相关顾客","customers",""):btn("为什么先做这件事","evidence","","Info")}</div></div><div class="mini-item gap">${icon("BookOpen","iconbox")}<div><strong>工作支持：联系前，先看服务与权益规则</strong><p>原价 268 元；按顾客意愿预约；不要承诺未确认的时段。</p>${btn("查看工作支持","learning","text small","ArrowRight")}</div></div></section>
+      <section class="card"><div class="card-head"><div><h2>10月21日 · 接待安排</h2><p>展示本次行动的时段，以及一条已有晚间预约</p></div>${badge("小林 / 小雨")}</div><div class="timeline">${M.slots.map(slot=>{const b=state.bookings.find(b=>b.slot===slot);return `<div class="appointment"><time>${slot}</time><div><strong>${b?M.customers.find(c=>c.id===b.customerId).name+" · 头皮清洁护理":"待安排 · 头皮清洁护理"}</strong><p>小林 / A 护理间 · 60 分钟</p>${b?btn("打开顾客","customer","text small","ArrowUpRight",`data-id="${b.customerId}"`):nav("从适合的顾客中安排","customers","text small")}</div>${badge(b?(state.outcomeReady?"已完成服务":"预约已确认"):state.checked?"已核实空档":"接待条件待核",b?"teal":"")}</div>`;}).join("")}<div class="appointment"><time>17:30</time><div><strong>周女士 · 头皮清洁护理</strong><p>小雨 / B 护理间 · 原有预约，本次不调整</p>${btn("打开顾客","customer","text small","ArrowUpRight",'data-id="c3"')}</div>${badge("已有预约")}</div></div></section>
+      <section class="card"><div class="card-head"><h2>顾客待办</h2>${nav("全部顾客","customers","text small","ArrowUpRight")}</div><div class="two-col"><div class="mini-item">${icon("ChatsCircle","iconbox")}<div><strong>${state.responses?"回应已整理":"3 位适合跟进的顾客"}</strong><p>${state.responses?"2 位愿意预约，1 位暂不预约。":"有需求记录，当前没有重复联系或既有预约。"} </p></div></div><div class="mini-item">${icon("ShieldCheck","iconbox")}<div><strong>3 位自动排除</strong><p>已有预约、近期已联系或不接收营销联系。</p></div></div></div></section></div>
+      <aside class="stack">${agentCard(true)}<section class="card compact"><div class="card-head"><h2>总部协作</h2>${badge(state.supportArranged?"已回复":"待协调",state.supportArranged?"teal":"")}</div><div class="mini-item">${icon("Package","iconbox")}<div><strong>${state.supportReceived?"耗材已到位":state.supportArranged?"总部已安排 2 份耗材":"耗材支持"}</strong><p>${state.supportReceived?"现场条件已确认，可按方案执行。":state.supportArranged?"陈敏负责，门店到货后确认。":"先核查现场，再向总部明确需要的支持。"} </p>${btn(n.title,"next","text small","ArrowRight")}</div></div></section>${logCard(3)}</aside></div>`;
+  }
+  function checkTask() {
+    if(!state.checkRequested) return `<section class="card">${empty("还没有待核查的事项","请先在总部的经营事项中发起现场核查。","前往总部","hq-issue","evidence")}</section>`;
+    if(state.checked) return `<section class="card"><div class="card-head"><h2>门店核查已提交</h2>${badge("已确认","teal")}</div><div class="task-summary"><h3>人员与房间可用，耗材需补充 2 份</h3><p>${esc(state.storeNote)}</p></div><div class="gap">${handoff("hq-issue","等待总部解决支持并确认方案","总部需要先安排耗材，再下发具体顾客跟进任务。","切换到总部","plan")}</div></section>`;
+    return `<section class="card"><div class="card-head"><h2>现场核查 · 三个接待条件</h2>${badge("店长确认","teal")}</div><p class="small muted" style="margin-bottom:18px">请核对下面的模拟现场资料，再向总部提交结果。核查不代表开始联系顾客。</p><div class="stack-sm">${[["staff","小林具备技能，14:00—16:00 可用","项目为头皮清洁护理，每次 60 分钟。排班与技能均需确认。"],["room","A 护理间可用，设备状态正常","两个时段顺序使用同一护理间，没有其他预约占用。"],["supply","发现耗材缺口，需要补充 2 份","现有耗材不足，向总部提出明确支持请求。"]].map(([key,title,text])=>`<label class="check-row ${state.checks[key]?"checked":""}"><input type="checkbox" data-check="${key}" ${state.checks[key]?"checked":""}><span><strong>${title}</strong><p>${text}</p></span></label>`).join("")}</div><label class="field"><span>补充现场说明</span><textarea id="store-note" maxlength="600" placeholder="可以补充门店现场约束">小林和 A 护理间可接待 10月21日 14:00、15:00 两次护理；需补充 2 份护理耗材，收到后才能开始执行。</textarea></label>${btn("提交核查并申请耗材支持","submit-check","primary","PaperPlaneTilt",!Object.values(state.checks).every(Boolean)?"disabled":"")}</section>`;
+  }
+  function taskStep(num,title,text,done,action="") {
+    return `<div class="task-step ${done?"done":""}"><span class="step-circle">${done?icon("Check"):num}</span><div class="step-content"><h3>${title}</h3><p>${text}</p>${action}</div>${done?badge("已完成","teal"):""}</div>`;
+  }
+  function executeTask() {
+    const d=M.derived(state);
+    return `<section class="card"><div class="card-head"><div><h2>跟进适合下午到店的顾客</h2><p>总部任务 v1 · 店长李安负责 · 小林执行</p></div>${badge(phase(),"teal")}</div><div class="task-summary"><h3>为什么现在做</h3><p>本店已核实两个下午空档。通过明确的顾客需求与合适时段，验证能否完成接待；不打折，不挪动已有预约。</p></div><dl class="kv gap"><dt>服务</dt><dd>头皮清洁护理 · 60 分钟 · 268 元</dd><dt>时段</dt><dd>10月21日 14:00、15:00</dd><dt>人员 / 房间</dt><dd>小林 / A 护理间</dd><dt>完成凭据</dt><dd>顾客意愿与预约确认；后续单独观察服务结果</dd></dl>${!state.accepted?`<div class="gap">${btn("接收任务，安排小林执行","accept","primary","CheckCircle")}</div>`:""}</section>
+      <section class="card"><div class="card-head"><h2>执行清单</h2>${badge(`${[state.supportReceived,state.trained,state.contacted.length===3,state.bookings.length===2,state.executionSubmitted].filter(Boolean).length} / 5`,"teal")}</div>
+      ${taskStep(1,"确认耗材已经到位","总部安排与实际到货分别记录。请店长确认 2 份耗材已收到。",state.supportReceived,state.supportReceived?"":btn("确认模拟耗材已到位","receive","small","Package",!state.accepted?"disabled":""))}
+      ${taskStep(2,"阅读联系与服务规则","原价服务；只联系适合跟进顾客；先确认时段，再承诺预约。",state.trained,btn(state.trained?"再次查看规则":"阅读并确认执行规则","learning","small","BookOpen",!state.accepted?"disabled":""))}
+      ${taskStep(3,"联系 3 位适合跟进的顾客","先检查名单与联系偏好，再确认话术。所有联系均为本地模拟。",state.contacted.length===3,nav("进入顾客工作页","customers",d.canContact?"primary small":"small","Users"))}
+      ${taskStep(4,"根据顾客意愿确认预约",state.responses?"2 位顾客愿意预约。每次预约都需要选择可用时段，并检查冲突。":"顾客意愿尚待确认。后续根据回应选择可用时段，并检查冲突。",state.bookings.length===2,`${state.responses?nav("查看回应与预约","customers","small","CalendarBlank"):notice("取得顾客回应后，才可以确认预约。")}`)}
+      ${taskStep(5,"核对记录并提交总部","提交表示执行凭据齐全；服务是否完成，需要后续业务记录。",state.executionSubmitted,state.executionSubmitted?notice(state.executionAccepted?"总部已验收通过，正在观察结果。":"已提交，等待总部验收。",state.executionAccepted?"teal":"blue"):btn("提交执行记录","submit-execution","primary small","PaperPlaneTilt",!d.canSubmit?"disabled":""))}
+      </section>${state.executionSubmitted?handoff("hq-issue",state.executionAccepted?"结果回到总部经营事项":"交给总部验收执行记录",state.executionAccepted?"进入结果观察与复盘，避免把预约当作服务完成。":"总部检查准备、联系与预约记录，再进入观察期。",state.executionAccepted?"查看结果与复盘":"切换到总部验收",state.executionAccepted?"review":"execution"):""}
+      <section class="card"><div class="card-head"><h2>遇到阻碍时</h2></div><p class="small muted">人员、房间或顾客需求发生变化时，先反馈具体约束，由对应负责人协调。</p><div class="gap">${btn("查看本轮支持请求","support-detail","","ChatsCircle")}</div></section>`;
+  }
+  function storeTask() {
+    return `${heading("湖滨店 / 行动详情",state.published?"把行动落实到人员、时段和顾客":"先核实门店能不能接待",state.published?"每个步骤保留完成记录，资源不足时可以向总部请求支持。":"总部提出问题，门店补充现场事实，共同决定下一步。",badge(phase(),"teal dot"))}<div class="main-grid"><div class="stack">${state.published?executeTask():checkTask()}</div><aside class="stack">${agentCard(true)}${logCard(4)}</aside></div>`;
+  }
+  function customerStatus(c) {
+    const b=state.bookings.find(b=>b.customerId===c.id);
+    if(b) return {label:state.outcomeReady?"服务已完成":"本轮预约已确认",tone:"teal"};
+    if(state.responses&&state.contacted.includes(c.id)) return {label:c.response,tone:c.response==="同意预约"?"blue":""};
+    if(state.contacted.includes(c.id)) return {label:"已联系 · 待回应",tone:"blue"};
+    return {label:c.status,tone:c.eligible?"teal":c.id==="c5"?"rose":"amber"};
+  }
+  function customerRows() {
+    const visible=M.customers.filter(c=>(customerFilter==="all"||customerFilter==="eligible"&&c.eligible||customerFilter==="excluded"&&!c.eligible)&&(!query||`${c.name}${c.owner}${c.preference}`.includes(query)));
+    return visible.length?visible.map(c=>{const status=customerStatus(c);const b=state.bookings.find(b=>b.customerId===c.id);return `<tr><td><input type="checkbox" class="selection-box" aria-label="选择${c.name}" data-customer-check="${c.id}" ${selected.has(c.id)?"checked":""} ${!c.eligible||state.contacted.includes(c.id)?"disabled":""}></td><td><div class="customer-name"><span class="avatar ${c.color}">${c.initials}</span><div><button type="button" data-action="customer" data-id="${c.id}">${c.name}</button><span class="sub">负责人 ${c.owner} · ${c.last} 到店</span></div></div></td><td>${c.preference}<span class="sub">${c.eligible?"有需求记录，可由员工确认后跟进":"本轮排除，保留原因"}</span></td><td>${badge(status.label,status.tone)}</td><td>${state.responses&&c.response==="同意预约"&&!b?btn("确认预约","booking","small","CalendarBlank",`data-id="${c.id}"`):btn("查看详情","customer","text small","ArrowUpRight",`data-id="${c.id}"`)}</td></tr>`;}).join(""):`<tr><td colspan="5"><div class="empty">没有匹配的顾客，试试其他名字或筛选条件。</div></td></tr>`;
+  }
+  function customersPage() {
+    const d=M.derived(state);
+    const fresh=[...selected].filter(id=>!state.contacted.includes(id));
+    return heading("湖滨店 / 顾客", "知道该跟进谁，也知道为什么", "顾客工作页 · 模拟档案与预约 · 未连接 CRM 或消息渠道",`<span class="scope-chip">${icon("ShieldCheck")}模拟客户资料</span>`)
+      + `<div class="main-grid"><div class="stack">${!d.canContact&&!state.executionSubmitted?notice("开始联系前，请在行动详情中接收任务、确认耗材到位，并阅读执行规则。","amber"):""}<section class="card"><div class="card-head"><div><h2>下午时段 · 顾客跟进清单</h2><p>按实际需求、现有预约和近期联系记录筛选</p></div>${nav("返回行动","store-task","text small","ArrowLeft")}</div><div class="customer-counts"><div><strong>6</strong>相关顾客</div><div><strong>3</strong>适合跟进</div><div><strong>${state.bookings.length}</strong>确认预约</div><div><strong>3</strong>本轮排除</div></div><div class="customer-toolbar"><label class="search">${icon("MagnifyingGlass")}<input type="search" id="customer-search" placeholder="搜索顾客、负责人" value="${esc(query)}" aria-label="搜索顾客"></label><div class="filter-pills">${[["all","全部顾客"],["eligible","适合跟进"],["excluded","本轮排除"]].map(([id,label])=>`<button type="button" data-action="customer-filter" data-filter="${id}" class="${customerFilter===id?"active":""}" aria-pressed="${customerFilter===id}">${label}</button>`).join("")}</div></div><div class="table-wrap"><table class="customer-table"><thead><tr><th><span class="sr-only">选择</span></th><th>顾客</th><th>跟进依据</th><th>当前状态</th><th>操作</th></tr></thead><tbody id="customer-rows">${customerRows()}</tbody></table></div><div class="customer-bulk"><p id="selection-count">已选 <strong>${fresh.length}</strong> 位可联系顾客<br>尊重联系偏好，已有预约不重复安排。</p>${state.contacted.length===3?btn(state.responses?"回应已整理":"载入模拟顾客回应","responses",state.responses?"":"primary","ChatsCircle",state.responses?"disabled":""):btn("检查名单与联系草稿","contact-preview","primary","PaperPlaneTilt",!d.canContact||!fresh.length?"disabled":"")}</div></section>
+      ${state.responses?`<section class="card"><div class="card-head"><h2>顾客回应与可用时段</h2>${badge("预设模拟回应","teal")}</div><div class="mini-list"><div class="mini-item">${icon("CheckCircle","positive")}<div><strong>林女士、陈女士愿意预约</strong><p>分别偏好 14:00 与 15:00。请根据实际可用时段办理，每个时段最多接待一位。</p></div></div><div class="mini-item">${icon("Info","muted")}<div><strong>何女士这次暂不预约</strong><p>结束本轮跟进，保留回应；不会自动追加联系任务。</p></div></div></div><div class="gap">${state.bookings.length===2?handoff("store-task","两条预约均已确认","回到行动详情，核对记录后提交总部。","返回行动提交"):notice(`${2-state.bookings.length} 个时段尚可安排。请点击顾客行的“确认预约”。`,"blue")}</div></section>`:`<section class="card"><div class="card-head"><h2>把顾客信息放回一次完整服务</h2>${btn("查看资料归属","crm-info","text small","Info")}</div><div class="two-col"><div class="mini-item">${icon("CalendarBlank","iconbox")}<div><strong>预约与服务记录</strong><p>人员、工位、时段与结果关联到同一顾客。</p></div></div><div class="mini-item">${icon("Package","iconbox")}<div><strong>服务与商品分开记录</strong><p>商品购买可与服务关联，保持各自订单明细。</p></div></div></div><p class="customer-card-note">本原型的顾客均为虚构，不包含真实联系方式。卡项和交易仅展示，未提供扣款或核销操作。</p></section>`}</div><aside class="stack">${agentCard(true)}<section class="card compact"><div class="card-head"><h2>联系前检查</h2></div><div class="mini-list">${[["CalendarBlank","已有预约先排除","周女士已有晚间预约。"],["Clock","近期联系不重复","许女士正在等待回复。"],["Prohibit","尊重联系偏好","赵女士不接收营销联系。"]].map(([i,t,p])=>`<div class="mini-item">${icon(i,"iconbox")}<div><strong>${t}</strong><p>${p}</p></div></div>`).join("")}</div></section></aside></div>`;
+  }
+  function render() {
+    $("#app").innerHTML=shell(({ "hq-home":hqHome,"hq-issue":hqIssue,"store-home":storeHome,"store-task":storeTask,customers:customersPage })[route]());
+    document.title=`${({"hq-home":"总部今日经营","hq-issue":"经营事项","store-home":"门店今日","store-task":"门店行动","customers":"门店顾客"})[route]} · NEO 交互原型`;
+  }
+  function openModal(type,id="") {
+    lastFocus=document.activeElement;modal={type,id};
+    let title="",body="",foot="",drawer=false;
+    if(type==="guide") {
+      title="用一个场景，走完两端协作";
+      body=`${notice("这是可操作的模拟原型。按钮会改变状态并同步到两端；没有真实系统连接或外部消息发送。","blue")}<div class="gap">${[["总部发现问题","在今日经营打开事项，查看依据并发起门店核查。"],["门店核实现场","确认人员、护理间和耗材；向总部反馈耗材缺口。"],["总部安排执行","安排耗材，预览任务并确认下发。"],["门店落实到顾客","接收任务、确认准备；检查名单、模拟联系、载入回应、分别预约。"],["总部验收与观察","核对执行记录后，载入次日模拟到店与服务结果。"],["共同复盘","查看服务与商品结果，确认下一步决定。"]].map(([t,p],i)=>`<div class="guide-step"><span class="num">${i+1}</span><div><b>${t}</b><p>${p}</p></div></div>`).join("")}</div><div class="gap">${notice("进度会保存在本浏览器；可以自由切换五个页面。右上角“重置”可重新体验。")}</div>`;
+      foot=btn("继续当前步骤","next","primary","ArrowRight");
+    } else if(type==="reset") {
+      title="重置这次模拟演示？";
+      body=`<p class="muted">将清除本原型在这个浏览器保存的核查、任务、预约与复盘进度，回到最初发现问题的状态。</p><div class="gap">${notice("只影响本地模拟原型，不涉及 NEO 的其他数据或真实业务系统。")}</div>`;
+      foot=btn("保留进度","close","")+btn("重置演示","confirm-reset","primary","ArrowCounterClockwise");
+    } else if(type==="evidence") {
+      title="经营依据 · 湖滨店";
+      body=`${notice("全部为合成演示资料，日期用于串联场景。","blue")}<dl class="kv gap"><dt>观察期</dt><dd>2026.10.12—10.18</dd><dt>对照期</dt><dd>2026.10.05—10.11</dd><dt>下午占用</dt><dd>42% ← 58%（下降 16 个百分点）</dd><dt>晚间占用</dt><dd>90% ← 88%</dd><dt>统计口径</dt><dd>对应时段内，已预约服务时长 / 可预约服务时长；仅可比的人员与服务项目</dd><dt>资料来源</dt><dd>模拟预约表、模拟人员排班与服务时长配置</dd></dl><div class="gap">${notice("预约占用率反映分布差异；空档是否真的可以接待，还要核查技能、房间、设备和耗材。","amber")}</div>`;
+      foot=btn("返回页面","close","primary");
+    } else if(type==="task-preview") {
+      title="门店将收到的任务";
+      body=`<div class="task-summary"><h3>跟进适合下午到店的顾客</h3><p>湖滨店 · 责任人李安 · 执行人小林</p></div><dl class="kv gap"><dt>为什么做</dt><dd>核实后的两个下午空档需要验证实际接待机会。</dd><dt>服务条件</dt><dd>头皮清洁护理，60 分钟，268 元；10.21 14:00 / 15:00。</dd><dt>前置条件</dt><dd>2 份耗材到位，员工确认执行规则。</dd><dt>总部统一</dt><dd>不打折；不挪动原有预约；尊重联系意愿。</dd><dt>门店安排</dt><dd>确定联系顺序与人员分工，反馈现场变化。</dd><dt>凭据</dt><dd>联系回应、预约确认、后续到店与服务记录。</dd></dl>`;
+      foot=btn("返回方案","close","primary");
+    } else if(type==="learning") {
+      title="工作支持 · 服务与联系规则";
+      body=`<div class="task-summary"><h3>头皮清洁护理</h3><p>标准时长 60 分钟 · 原价 268 元 · 小林具备对应技能<br>模拟知识版本 v1 · 适用湖滨店本轮任务</p></div><div class="gap mini-list">${[["先准备","核实人员、护理间、设备与耗材。任务安排不代表资源已经到位。"],["再联系","只跟进有需求、允许联系且没有重复任务的顾客。先询问意愿。"],["再确认","预约必须检查时段、人员和房间，不能先承诺后补记录。"],["服务后","服务完成与商品购买分别记录；回访围绕顾客反馈，不强行推销。"]].map(([t,p])=>`<div class="mini-item">${icon("CheckCircle","positive")}<div><strong>${t}</strong><p>${p}</p></div></div>`).join("")}</div><div class="gap">${notice("本页是原型中的工作支持材料，未验证员工技能或培训效果。")}</div>`;
+      foot=state.accepted&&!state.trained?btn("已阅读，确认本次执行规则","train","primary","Check"):btn("返回工作台","close","primary");
+    } else if(type==="support-detail") {
+      title="耗材支持 · 两端共同跟进";
+      body=`<dl class="kv"><dt>门店请求</dt><dd>补充 2 份护理耗材，满足两次服务准备。</dd><dt>提出者</dt><dd>湖滨店店长李安</dd><dt>总部责任人</dt><dd>王宁；配送负责人陈敏</dd><dt>总部安排</dt><dd>${state.supportArranged?"已安排，计划 10.20 13:00 前到位":"等待总部安排"}</dd><dt>门店回执</dt><dd>${state.supportReceived?"店长已确认模拟到货":"尚未确认到位"}</dd></dl><div class="gap">${notice("本轮阻碍是耗材缺口。支持请求有明确负责人，并在总部和门店同时显示。","blue")}</div>`;
+      foot=btn("返回任务","close","primary");
+    } else if(type==="all-log") {
+      title=`完整协作记录 · ${state.events.length} 条`;
+      body=`<div class="log">${state.events.slice().reverse().map(e=>`<div class="log-item"><small>${e.time} · ${esc(e.actor)}</small><strong>${esc(e.title)}</strong><p>${esc(e.detail)}</p></div>`).join("")}</div>`;
+      foot=btn("返回页面","close","primary");
+    } else if(type==="crm-info") {
+      title="顾客工作页与业务系统的分工";
+      body=`<p class="small muted">正式产品中，顾客工作页优先连接企业原有系统。本版所有记录均保存在浏览器，不连接任何系统。</p><dl class="kv gap"><dt>原有系统</dt><dd>顾客身份、会员权益、预约占用、支付与退款、库存。</dd><dt>NEO</dt><dd>经营判断、顾客跟进任务、人员协作、执行与复盘。</dd><dt>写入确认</dt><dd>实际预约需收到业务系统确认；消息草稿不等于已经发送。</dd><dt>本轮演示</dt><dd>用本地模拟记录演示确认结果、时段冲突与两端状态同步。</dd></dl>`;
+      foot=btn("我知道了","close","primary");
+    } else if(type==="customer") {
+      const c=M.customers.find(c=>c.id===id);
+      if(!c) return;
+      const b=state.bookings.find(b=>b.customerId===id),status=customerStatus(c);
+      title="顾客详情";drawer=true;
+      body=`<div class="customer-detail-head"><span class="avatar large ${c.color}">${c.initials}</span><div><h2>${c.name}</h2><p>${c.phone} · 非真实联系方式</p></div></div><div class="flex wrap">${badge(status.label,status.tone)}${badge(c.card)}${badge("负责人 "+c.owner)}</div><div class="gap"><h3>当前跟进依据</h3><p class="small muted gap-sm">${c.note}</p></div><div class="gap">${notice(c.eligible?"员工检查顾客意愿、可用时段和近期联系记录后，再采取行动。":"本次不进入联系名单："+c.note,c.eligible?"teal":"amber")}</div><div class="gap"><h3>顾客时间线</h3><div class="log gap">${c.history.split(" · ").map(x=>`<div class="log-item"><strong>${x}</strong><p>模拟业务记录</p></div>`).join("")}${state.contacted.includes(id)?`<div class="log-item"><strong>10.20 完成模拟联系</strong><p>${state.responses?c.response:"等待顾客回应"}</p></div>`:""}${b?`<div class="log-item"><strong>10.21 ${b.slot} · ${state.outcomeReady?"服务已完成":"预约已确认"}</strong><p>小林 / A 护理间 · 268 元</p></div>`:""}${state.outcomeReady&&id==="c1"?`<div class="log-item"><strong>10.21 日常洗护商品 · 89 元</strong><p>独立商品订单，与本次服务关联。</p></div>`:""}</div></div><div class="gap"><h3>联系偏好与权益</h3><dl class="kv gap-sm"><dt>联系偏好</dt><dd>${c.preference}</dd><dt>会员 / 卡项</dt><dd>${c.card} · 模拟展示</dd><dt>数据归属</dt><dd>正式产品由原系统维护，本页读取并关联任务。</dd></dl></div>`;
+      foot=state.responses&&c.response==="同意预约"&&!b?btn("选择时段并确认预约","booking","primary","CalendarBlank",`data-id="${id}"`):btn("返回顾客列表","close","primary");
+    } else if(type==="contact-preview") {
+      const ids=[...selected].filter(id=>!state.contacted.includes(id));
+      title="检查名单与联系草稿";
+      body=`${notice("这是模拟联系。确认后只更新本地记录，不会向任何人发送消息。","blue")}<div class="gap"><h3>本次名单</h3><div class="flex wrap gap-sm">${ids.map(id=>{const c=M.customers.find(c=>c.id===id);return badge(c.name+" · "+c.preference,"teal");}).join("")}</div></div><label class="field"><span>联系草稿 · 可以修改后确认</span><textarea id="contact-draft" maxlength="800" style="min-height:135px">您好，您之前关注的头皮清洁护理，明天下午有两个可安排的时段。如果您仍有需要，我们可以帮您核实合适的时间。项目为 60 分钟，原价 268 元。您看方便了解一下吗？</textarea></label><div class="gap">${notice("已有预约、近期已联系和不接收营销联系的顾客已排除。后续收到顾客意愿，再确认具体时段。")}</div>`;
+      foot=btn("返回检查","close","")+btn("确认模拟联系","contact","primary","PaperPlaneTilt");
+    } else if(type==="booking") {
+      const c=M.customers.find(c=>c.id===id);
+      if(!c) return;
+      title=`为${c.name}确认预约`;
+      const available=M.slots.filter(slot=>!state.bookings.some(b=>b.slot===slot));
+      const defaultSlot=available.includes(c.slot)?c.slot:available[0];
+      body=`<div class="customer-detail-head"><span class="avatar ${c.color}">${c.initials}</span><div><h3>${c.name}已同意预约</h3><p>偏好 ${c.slot} · 以员工确认的最终时段为准</p></div></div><dl class="kv"><dt>项目</dt><dd>头皮清洁护理 · 60 分钟 · 268 元</dd><dt>日期</dt><dd>2026年10月21日</dd><dt>人员 / 房间</dt><dd>小林 / A 护理间</dd></dl><div class="booking-slots gap">${M.slots.map(slot=>{const busy=state.bookings.find(b=>b.slot===slot);return `<label class="slot ${busy?"disabled":""}"><input type="radio" name="booking-slot" value="${slot}" ${slot===defaultSlot?"checked":""} ${busy?"disabled":""}><strong>${slot}</strong><span>${busy?"已被"+M.customers.find(c=>c.id===busy.customerId).name+"预约":"已核实可用 · 60 分钟"}</span></label>`;}).join("")}</div><div class="gap">${notice("点击后生成本地模拟预约确认记录；同一时段不能重复占用。","teal")}</div>`;
+      foot=btn("返回顾客","close","")+btn("确认模拟预约","book","primary","CheckCircle",`data-id="${id}" ${available.length?"":"disabled"}`);
+    }
+    $("#overlay").innerHTML=`<div class="overlay-backdrop ${drawer?"drawer-backdrop":""}" data-backdrop="true"><section class="dialog ${drawer?"drawer":""}" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1"><header class="dialog-head"><h2 id="dialog-title">${title}</h2>${btn("","close","ghost icon","X",'aria-label="关闭弹窗"')}</header><div class="dialog-body">${body}</div><footer class="dialog-foot">${foot}</footer></section></div>`;
+    $("#app").inert=true;document.body.style.overflow="hidden";
+    setTimeout(()=>$("#overlay .dialog")?.focus(),0);
+  }
+  function closeModal(restore=true) {
+    modal=null;$("#overlay").innerHTML="";$("#app").inert=false;document.body.style.overflow="";
+    if(restore&&lastFocus?.isConnected) lastFocus.focus();
+  }
+  function ask(question) {
+    const raw=question==="why"?"为什么值得关注？":question==="next"?"下一步做什么？":question==="boundary"?"能证明有效吗？":question;
+    let answer="";
+    if(/有效|证明|增量|复盘|收入/.test(raw)) answer="本轮只验证协作和执行记录。即使 2 位顾客完成服务，也不能据此认定策略带来因果增量；还需要可比时段、更多样本，并检查改约与取消。";
+    else if(/耗材|资源|阻碍/.test(raw)) answer=state.supportReceived?"门店已确认两份耗材到位。总部安排和门店收到各自有记录，可以继续按已确认方案执行。":state.supportArranged?"总部已安排陈敏补充两份耗材。请门店确认实际到位后再开始联系顾客。":"门店需要两份护理耗材。先提交核查与支持请求，再由总部安排责任人和到位时间。";
+    else if(/为什么|关注|原因/.test(raw)) answer="湖滨店下午预约占用率为 42%，晚间为 90%，提示时段需求与供给可能不匹配。当前只是值得核查的信号，还需要现场资料支持原因判断。";
+    else if(/顾客|客户|名单|联系/.test(raw)) answer="3 位有需求记录且适合跟进。周女士已有预约，许女士近期已联系，赵女士不接收营销联系，因此本轮排除。实际联系与预约都需要员工确认。";
+    else if(/预约|时段|冲突/.test(raw)) answer="本轮只有 10月21日 14:00 和 15:00 两个时段，均为 60 分钟，由小林使用 A 护理间服务。已占用的时段不能重复预约。";
+    else {const n=nextStep();answer=`当前建议：${n.title}。${n.text} 此问答为预设场景演示，仅覆盖当前协作流程。`;}
+    const box=$("#agent-answer");if(box){box.hidden=false;box.className="agent-answer";box.innerHTML=`<strong>${esc(raw)}</strong><p>${answer}</p>`;}
+  }
+  document.addEventListener("click",e=>{
+    if(e.target.dataset?.backdrop){closeModal();return;}
+    const target=e.target.closest("[data-action]");
+    if(!target||target.disabled)return;
+    const action=target.dataset.action;
+    const messages={
+      "request-check":"核查已发起。切换到湖滨店补充现场情况。",
+      "support":"总部已安排补充耗材，仍需门店确认到位。",
+      "publish":"方案 v1 已下发湖滨店。",
+      "accept":"任务已接收，小林负责执行。",
+      "receive":"模拟耗材已确认到位。",
+      "train":"执行规则已确认。",
+      "responses":"已载入预设回应：2 位愿意预约，1 位暂不预约。",
+      "submit-execution":"执行记录已提交，等待总部验收。",
+      "accept-execution":"执行验收通过，进入观察期。",
+      "observe":"已载入 10月21日模拟服务结果。",
+    };
+    if(action==="navigate"){go(target.dataset.route,target.dataset.tab);return;}
+    if(action==="next"){const n=nextStep();go(n.dest,n.tab);return;}
+    if(action==="issue-tab"){issueTab=target.dataset.tab;render();return;}
+    if(action==="stage"){
+      const i=Number(target.dataset.index),d=M.derived(state);
+      if(i>d.stage){toast("先完成当前步骤，后续阶段会随协作推进。");return;}
+      const steps=[["hq-home"],["store-task"],["hq-issue","plan"],["store-task"],["hq-issue","review"],["hq-issue","review"]];
+      go(...steps[i]);return;
+    }
+    if(action==="customer-filter"){customerFilter=target.dataset.filter;render();return;}
+    if(action==="ask"){ask(target.dataset.question);return;}
+    if(action==="close"){closeModal();return;}
+    if(action==="confirm-reset"){
+      state=M.seed();issueTab="evidence";selected=new Set(["c1","c2","c6"]);customerFilter="all";query="";
+      save();go("hq-home");toast("模拟演示已重置。");return;
+    }
+    if(action==="submit-check"){
+      if(commit(action,{note:$("#store-note")?.value},"核查已提交，并向总部申请两份耗材支持。")){}
+      return;
+    }
+    if(action==="contact"){
+      const text=$("#contact-draft")?.value.trim();
+      if(!text){toast("请先填写联系草稿。",true);return;}
+      commit(action,{ids:[...selected],draft:text},"模拟联系已记录，没有发送外部消息。");return;
+    }
+    if(action==="book"){
+      const slot=$('input[name="booking-slot"]:checked')?.value;
+      if(!slot){toast("请选择一个可用时段。",true);return;}
+      commit(action,{customerId:target.dataset.id,slot},"模拟预约已确认，并已同步两端进度。");return;
+    }
+    if(action==="review"){
+      commit(action,{decision:$("#review-decision").value,note:$("#review-note").value},"复盘与经营决定已保存，本轮协作完成。");return;
+    }
+    if(messages[action]){
+      if(commit(action,{},messages[action])){
+        if(action==="publish")issueTab="execution";
+        if(action==="accept-execution"||action==="observe")issueTab="review";
+        render();
+      }return;
+    }
+    if(["guide","reset","evidence","task-preview","learning","support-detail","all-log","crm-info","customer","contact-preview","booking"].includes(action))openModal(action,target.dataset.id);
+  });
+  document.addEventListener("change",e=>{
+    const el=e.target;
+    if(el.dataset.check){
+      const draft=$("#store-note")?.value;
+      if(commit("check",{key:el.dataset.check,value:el.checked})&&$("#store-note"))$("#store-note").value=draft;
+    }
+    if(el.dataset.customerCheck){
+      if(el.checked)selected.add(el.dataset.customerCheck);else selected.delete(el.dataset.customerCheck);
+      render();
+    }
+  });
+  document.addEventListener("input",e=>{
+    if(e.target.id==="customer-search"){query=e.target.value;$("#customer-rows").innerHTML=customerRows();}
+  });
+  document.addEventListener("submit",e=>{
+    e.preventDefault();
+    if(e.target.id==="agent-form"){const input=e.target.querySelector("input");if(input.value.trim()){ask(input.value.trim());input.value="";}}
+  });
+  document.addEventListener("keydown",e=>{
+    if(!modal)return;
+    if(e.key==="Escape"){e.preventDefault();closeModal();return;}
+    if(e.key==="Tab"){
+      const items=[...$("#overlay").querySelectorAll('button:not(:disabled), input:not(:disabled), select, textarea, a[href], [tabindex="0"]')].filter(el=>!el.hidden);
+      const first=items[0],last=items.at(-1);
+      if(!first)return;
+      if(e.shiftKey&&(document.activeElement===first||document.activeElement===$(".dialog"))){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    }
+  });
+  window.addEventListener("hashchange",()=>{
+    const next=location.hash.slice(1);
+    if(routes.includes(next)){route=next;closeModal(false);render();window.scrollTo(0,0);}
+  });
+  render();
+})();
+</script>
+</body>
+</html>

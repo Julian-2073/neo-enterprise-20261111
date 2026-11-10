@@ -1,0 +1,2 @@
+source_record_id,occurred_at,warehouse_id,product_id,sku_id,sellable_units,inventory_cost_cents,in_transit_units,safety_units
+front-stock-w2,2026-09-02T12:00:00,W2,P1,SKU1,6,30000,1,

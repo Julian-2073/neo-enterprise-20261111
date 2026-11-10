@@ -1,0 +1,212 @@
+http://127.0.0.1:3102/demo?mode=example
+- banner:
+  - link "NEO 今日经营":
+    - /url: /demo?mode=example
+    - img "NEO"
+  - navigation "主导航":
+    - link "今日经营":
+      - /url: /demo?mode=example
+    - link "我的客户":
+      - /url: /demo?page=people&mode=example
+    - link "供应链与库存":
+      - /url: /demo?page=goods&mode=example
+    - link "渠道与竞品":
+      - /url: /demo?page=market&mode=example
+    - link "生意预测/协同":
+      - /url: /demo?page=overview&mode=example
+  - link "本周行动周报":
+    - /url: /demo?page=weekly&mode=example
+    - generic: 本周行动周报
+  - generic: COCA健身
+  - generic: 全渠道 · 近 8 周 · 09.24
+  - generic: 模拟数据
+- main:
+  - generic: COCA健身 · 今日经营状况
+  - heading "经营决策" [level=2]
+  - button "查看今日简报":
+    - text: 查看今日简报
+  - text: 当前判断
+  - generic: "01"
+  - heading "意向增长，成交承接走弱" [level=1]
+  - paragraph: 主力品供给偏紧，抖音承接同步走弱。先核实供给与客服承接。
+  - text: 需要关注
+  - text: 如果维持现状
+  - generic: "02"
+  - generic: 未来 4 周有效成交
+  - strong: 105–135人
+  - paragraph: R1／抖音店铺的演示基线。供给约束若持续，投放增量不能直接视为成交增量。
+  - link "比较未来情景":
+    - /url: /demo?page=overview&view=forecast&mode=example
+  - text: 建议先做
+  - generic: "03"
+  - heading "48 小时供给核查" [level=3]
+  - paragraph: 核实 R1 可售与在途时间，复查客服承接，再决定是否增加投放。
+  - link "进入行动清单":
+    - /url: /demo?page=overview&view=action&mode=example
+  - strong: 增长智能体
+  - button "客户转化 A3 → A4 12.5%，前期 15.7%":
+    - generic: 客户转化
+    - generic: A3 → A4 12.5%，前期 15.7%
+  - button "供需核查 R1 可售 42 件，180 件在途":
+    - generic: 供需核查
+    - generic: R1 可售 42 件，180 件在途
+  - button "市场观察 竞品与渠道变化同期出现，待核查":
+    - generic: 市场观察
+    - generic: 竞品与渠道变化同期出现，待核查
+  - paragraph: 经营与市场数据截至 2026.09.24 · 四周区间为本地演示，尚未真实回测
+  - button "近 8 周净成交额 ¥589,000 R1 / 抖音":
+    - generic: 近 8 周净成交额
+    - strong: ¥589,000
+    - generic: R1 / 抖音
+  - generic: 近 8 周贡献毛利
+  - strong: ¥153,000
+  - generic: 占净成交 26.0%
+  - generic: 近 8 周投放费用
+  - strong: ¥88,000
+  - generic: 占净成交 14.9%
+  - button "当前库存成本货值 ¥1,260,000 全商品 · 当前":
+    - generic: 当前库存成本货值
+    - strong: ¥1,260,000
+    - generic: 全商品 · 当前
+  - heading "人 客户转化" [level=2]:
+    - text: 人
+    - text: 客户转化
+  - heading "意向上升，成交未同步增长" [level=3]
+  - paragraph: 近 8 周转化率下降，需核查承接环节。
+  - button "A3 → A4 转化率 12.5% 前期 15.7%":
+    - text: A3 → A4 转化率
+    - strong: 12.5%
+    - text: 前期
+    - strong: 15.7%
+  - region "近 8 周 A3 → A4 转化率":
+    - heading "近 8 周 A3 → A4 转化率" [level=3]
+    - application:
+      - generic: 1周
+      - generic: 2周
+      - generic: 3周
+      - generic: 4周
+      - generic: 5周
+      - generic: 6周
+      - generic: 7周
+      - generic: 8周
+      - generic: 6%
+      - generic: 18%
+      - generic: 30%
+  - link "进入人的分析":
+    - /url: /demo?page=people&mode=example
+    - text: 进入人的分析
+  - heading "货 供应链与库存" [level=2]:
+    - text: 货
+    - text: 供应链与库存
+  - heading "主力品连续两周低于供给目标" [level=3]
+  - paragraph: R1 可售 42 件，在途 180 件，10.06 预计到货。
+  - button "查看库存证据":
+    - text: 查看库存证据
+  - region "三类货盘供给达标率":
+    - heading "三类货盘供给达标率" [level=3]
+    - application:
+      - generic: 1周
+      - generic: 2周
+      - generic: 3周
+      - generic: 4周
+      - generic: 5周
+      - generic: 6周
+      - generic: 7周
+      - generic: 8周
+      - generic: 60%
+      - generic: 80%
+      - generic: 100%
+  - link "进入货的分析":
+    - /url: /demo?page=goods&mode=example
+    - text: 进入货的分析
+  - heading "场 渠道与市场" [level=2]:
+    - text: 场
+    - text: 渠道与市场
+  - heading "抖音主力品承接走弱" [level=3]
+  - paragraph: 竞品与渠道变化同期出现，原因待核查。
+  - generic: 入门品
+  - generic: 主力品
+  - generic: 旗舰品
+  - generic: 抖音
+  - button "稳定"
+  - button "需核查"
+  - button "稳定"
+  - generic: 天猫
+  - button "稳定"
+  - button "稳定"
+  - button "稳定"
+  - link "进入场的分析":
+    - /url: /demo?page=market&mode=example
+    - text: 进入场的分析
+  - heading "未来预判 未来 4 周预览" [level=2]:
+    - text: 未来预判
+    - text: 未来 4 周预览
+  - heading "未来有效成交 105–135 人" [level=3]
+  - paragraph: 基于现有数据的模拟预判。
+  - link "比较预测与方案":
+    - /url: /demo?page=overview&view=forecast&mode=example
+    - text: 比较预测与方案
+  - region "近 8 周实际与未来 4 周预测":
+    - heading "近 8 周实际与未来 4 周预测" [level=3]
+    - application:
+      - generic: 1周
+      - generic: 2周
+      - generic: 3周
+      - generic: 4周
+      - generic: 5周
+      - generic: 6周
+      - generic: 7周
+      - generic: 8周
+      - generic: "09.24"
+      - generic: "10.01"
+      - generic: "10.08"
+      - generic: "10.15"
+      - generic: "0"
+      - generic: "20"
+      - generic: "40"
+      - generic: "60"
+      - generic: "80"
+      - generic: 预测起点 09.24
+  - dialog "今日经营简报":
+    - generic: COCA健身 · 老板工作台
+    - heading "今日经营简报" [level=2]
+    - paragraph: 先看今日需要关注的经营判断，再决定从哪里追查。
+    - button "关闭今日经营简报" [active]:
+    - text: 今日重点 · 演示判断
+    - strong: 意向增长，成交承接走弱
+    - paragraph: 主力品供给偏紧；先核查 R1 可售与客服承接，再决定是否增加投放。
+    - article:
+      - heading "行业政策" [level=3]
+      - strong: 等待可信政策来源
+      - paragraph: 尚未接入官方政策信息；接入后会显示发布日期、来源及与企业的关联。
+      - generic: 来源状态：待接入 · 暂不形成判断
+    - article:
+      - heading "我的企业" [level=3]
+      - strong: A3 → A4 转化 12.5%
+      - paragraph: R1 可售 42 件，净成交额 ¥589,000。先核实库存与承接环节。
+      - generic: 来源：演示经营数据 · 截至 09.24
+    - article:
+      - heading "市场观察与机会" [level=3]
+      - text: 模拟信息 · 截至 2026.09.24 · 待验证
+      - generic: 近期市场变化
+      - generic: 08.29类目搜索热度上升
+      - generic: 09.12竞品A主力价带促销
+      - generic: 09.16抖音投放单价上升
+      - heading "值得关注的机会" [level=4]
+      - generic: "01"
+      - strong: 渠道活动窗口与主力品补货节奏可能形成增量
+      - paragraph: 活动窗口可能与补货节奏重合，需核对类目与活动规则
+      - generic: "02"
+      - strong: 高价旗舰品关注变化值得观察
+      - paragraph: 关注增长未必形成成交，应结合咨询质量与商品供给
+      - generic: "03"
+      - strong: 替代供应资源待评估
+      - paragraph: 需核对可售数量、资质、调拨时效与成本
+      - link "查看渠道与竞品":
+        - /url: /demo?page=market&mode=example
+        - text: 查看渠道与竞品
+    - generic: 演示简报 · 经营数据截至 2026.09.24；没有实时政策或外部市场接入。
+    - button "进入今日经营":
+      - text: 进入今日经营
+- contentinfo: 原型演示 · 不连接真实经营系统
+- generic: "0"

@@ -1,0 +1,5 @@
+{
+  "sha256": "832f078da40fff0751e9f1bc18d69f56e0d2960e4b7e6555fe148ade31c611f7",
+  "caseCount": 60,
+  "purpose": "Freeze expectations before offline/live outputs; do not alter expected answers to fit model results."
+}
